@@ -25,7 +25,7 @@ If you still want to try this out, then read on..
 
  - direct unsafe bindings to the Amiga system libraries (based on
    [Amiga NDK 3.2R4](https://www.hyperion-entertainment.com/index.php/downloads?view=details&file=126))
- - includes almost all definitions from NDK from Kickstart 1.0 (V30) to 3.2 (V47)
+ - includes almost all definitions from NDK for Kickstart 1.0 (V30) to 3.2 (V47)
  - the bindings are unsafe: it is very easy to write a program which crashes
  - no dependency to the Amiga Native Development Kit (NDK): no dependency to the NDK headers
    or amiga.lib (note: these bindings have been generated from some of the NDK headers)
@@ -39,7 +39,7 @@ If you still want to try this out, then read on..
  - functions with variadic arguments: there's always a similar function available
    without variadic arguments (the replacement function's name usually ends with Args, List or A)
  - amiga.lib functions: BeginIO(), CreatePort(), CreateTask(), NewList(), TimeDelay(), etc.
-   These are implemented in `amiga-support`.
+   These are implemented in [amiga-support](https://github.com/retrokp/amiga-support).
  - alib_stdio: functions duplicating libc functionality: printf(), fgetc(), etc.
  - debug.lib and ddebug.lib functions: KGetChar(), KPrintF(), DGetChar(), DPrintF(), etc.
  - direct access to hardware
@@ -110,9 +110,7 @@ To build the `tester` example, follow the steps above by replacing `hello-cli` w
 
 Often function string parameters are null-terminated. Sometimes they are not
 null-terminated and the length is given as an extra parameter. Structs mostly use null-terminated
-strings (`STRPTR`).
-
-Amiga uses the
+strings (`STRPTR`). Amiga uses the
 [ECMA-94](http://amigadev.elowar.com/read/ADCD_2.1/Devices_Manual_guide/node0083.html) encoding,
 which is the same as [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#History) and Latin1.
 
