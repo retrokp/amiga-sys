@@ -1,4 +1,8 @@
 //! Unsafe bindings for the Amiga (m68k) system libraries.
+//!
+//! Most functions take a pointer to its library as the first parameter.
+//! Call `abs_exec_library()` to get a pointer to the Exec library and call `OpenLibrary()`
+//! to open other libraries.
 
 #![feature(asm_experimental_arch)]
 #![allow(non_upper_case_globals)]
@@ -6,18 +10,24 @@
 #![allow(non_snake_case)]
 #![no_std]
 
+#[cfg(any(target_arch = "m68k", doc))]
 mod bindings;
+#[cfg(any(target_arch = "m68k", doc))]
 pub use bindings::*;
 
+#[cfg(any(target_arch = "m68k", doc))]
 mod constants;
+#[cfg(any(target_arch = "m68k", doc))]
 pub use constants::*;
 
 /// Returns a pointer to the exec library by reading the memory address 0x00000004.
+#[cfg(any(target_arch = "m68k", doc))]
 pub unsafe fn abs_exec_library() -> *mut Library {
     unsafe { *(0x00000004 as *mut usize) as *mut Library }
 }
 
 // ensure structs have correct sizes: these sizes have been taken from NDK3.1 STRUCTURE.OFFSETS
+#[cfg(any(target_arch = "m68k", doc))]
 const _: () = {
     ["Size of AChain"][::core::mem::size_of::<AChain>() - 274usize];
     ["Size of AmigaGuideHost"][::core::mem::size_of::<AmigaGuideHost>() - 40usize];
