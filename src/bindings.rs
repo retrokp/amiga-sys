@@ -19963,8 +19963,8 @@ pub unsafe fn LockAmigaGuideBase(AmigaGuideBase: *mut Library, handle: APTR) -> 
             in("a0") handle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20007,8 +20007,8 @@ pub unsafe fn OpenAmigaGuideA(
             in("a1") attrs,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20033,8 +20033,8 @@ pub unsafe fn OpenAmigaGuideAsyncA(
             in("d0") attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20072,8 +20072,8 @@ pub unsafe fn AmigaGuideSignal(AmigaGuideBase: *mut Library, cl: APTR) -> ULONG 
             in("a0") cl,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20093,8 +20093,8 @@ pub unsafe fn GetAmigaGuideMsg(AmigaGuideBase: *mut Library, cl: APTR) -> *mut A
             in("a0") cl,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20139,8 +20139,8 @@ pub unsafe fn SetAmigaGuideContextA(
             in("d1") attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20165,8 +20165,8 @@ pub unsafe fn SendAmigaGuideContextA(
             in("d0") attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20193,8 +20193,8 @@ pub unsafe fn SendAmigaGuideCmdA(
             in("d1") attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20219,8 +20219,8 @@ pub unsafe fn SetAmigaGuideAttrsA(
             in("a1") attrs,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20247,8 +20247,8 @@ pub unsafe fn GetAmigaGuideAttr(
             in("a1") storage,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20269,8 +20269,8 @@ pub unsafe fn LoadXRef(AmigaGuideBase: *mut Library, lock: BPTR, name: STRPTR) -
             in("a1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20314,8 +20314,8 @@ pub unsafe fn AddAmigaGuideHostA(
             in("a1") attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20340,8 +20340,8 @@ pub unsafe fn RemoveAmigaGuideHostA(
             in("a1") attrs,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "amigaguide.library" (V40) (Kickstart 3.1)
@@ -20361,8 +20361,8 @@ pub unsafe fn GetAmigaGuideString(AmigaGuideBase: *mut Library, id: LONG) -> STR
             in("d0") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "arexx.class" (V40) (Kickstart 3.1)
@@ -20381,8 +20381,8 @@ pub unsafe fn AREXX_GetClass(ARexxBase: *mut ::core::ffi::c_void) -> *mut Class 
             basereg = in(reg) ARexxBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "asl.library" (V36) (Kickstart 2.0)
@@ -20401,8 +20401,8 @@ pub unsafe fn AllocFileRequest(AslBase: *mut Library) -> *mut FileRequester {
             basereg = in(reg) AslBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "asl.library" (V36) (Kickstart 2.0)
@@ -20440,8 +20440,8 @@ pub unsafe fn RequestFile(AslBase: *mut Library, fileReq: *mut FileRequester) ->
             in("a0") fileReq,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "asl.library" (V36) (Kickstart 2.0)
@@ -20466,8 +20466,8 @@ pub unsafe fn AllocAslRequest(
             in("a0") tagList,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "asl.library" (V36) (Kickstart 2.0)
@@ -20506,8 +20506,8 @@ pub unsafe fn AslRequest(AslBase: *mut Library, requester: APTR, tagList: *const
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "asl.library" (V44) (Kickstart 3.5 / 1999)
@@ -20579,8 +20579,8 @@ pub unsafe fn ReadBattClock(BattClockBase: *mut ::core::ffi::c_void) -> ULONG {
             basereg = in(reg) BattClockBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "battclock.resource" (V36) (Kickstart 2.0)
@@ -20659,8 +20659,8 @@ pub unsafe fn ReadBattMem(
             in("d1") length,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "battmem.resource" (V36) (Kickstart 2.0)
@@ -20687,8 +20687,8 @@ pub unsafe fn WriteBattMem(
             in("d1") length,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "bevel.image" (V40) (Kickstart 3.1)
@@ -20707,8 +20707,8 @@ pub unsafe fn BEVEL_GetClass(BevelBase: *mut ::core::ffi::c_void) -> *mut Class 
             basereg = in(reg) BevelBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "bitmap.image" (V40) (Kickstart 3.1)
@@ -20727,8 +20727,8 @@ pub unsafe fn BITMAP_GetClass(BitMapBase: *mut ::core::ffi::c_void) -> *mut Clas
             basereg = in(reg) BitMapBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "bullet.library" (V38) (Kickstart 2.1)
@@ -20747,8 +20747,8 @@ pub unsafe fn OpenEngine(BulletBase: *mut Library) -> *mut GlyphEngine {
             basereg = in(reg) BulletBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "bullet.library" (V38) (Kickstart 2.1)
@@ -20791,8 +20791,8 @@ pub unsafe fn SetInfoA(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "bullet.library" (V38) (Kickstart 2.1)
@@ -20817,8 +20817,8 @@ pub unsafe fn ObtainInfoA(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "bullet.library" (V38) (Kickstart 2.1)
@@ -20843,8 +20843,8 @@ pub unsafe fn ReleaseInfoA(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "button.gadget" (V40) (Kickstart 3.1)
@@ -20863,8 +20863,8 @@ pub unsafe fn BUTTON_GetClass(ButtonBase: *mut ::core::ffi::c_void) -> *mut Clas
             basereg = in(reg) ButtonBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -20887,8 +20887,8 @@ pub unsafe fn OwnCard(
             in("a1") handle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -20930,8 +20930,8 @@ pub unsafe fn GetCardMap(CardResource: *mut ::core::ffi::c_void) -> *mut CardMem
             basereg = in(reg) CardResource,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -20954,8 +20954,8 @@ pub unsafe fn BeginCardAccess(
             in("a1") handle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -20978,8 +20978,8 @@ pub unsafe fn EndCardAccess(
             in("a1") handle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -20999,8 +20999,8 @@ pub unsafe fn ReadCardStatus(CardResource: *mut ::core::ffi::c_void) -> UBYTE {
             basereg = in(reg) CardResource,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value as u8;
     }
+    asm_ret_value as u8
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21025,8 +21025,8 @@ pub unsafe fn CardResetRemove(
             in("d0") flag,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21052,8 +21052,8 @@ pub unsafe fn CardMiscControl(
             in("d1") control_bits,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value as u8;
     }
+    asm_ret_value as u8
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21078,8 +21078,8 @@ pub unsafe fn CardAccessSpeed(
             in("d0") nanoseconds,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21104,8 +21104,8 @@ pub unsafe fn CardProgramVoltage(
             in("d0") voltage,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21128,8 +21128,8 @@ pub unsafe fn CardResetCard(
             in("a1") handle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21158,8 +21158,8 @@ pub unsafe fn CopyTuple(
             in("d0") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21184,8 +21184,8 @@ pub unsafe fn DeviceTuple(
             in("a1") storage,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21208,8 +21208,8 @@ pub unsafe fn IfAmigaXIP(
             in("a2") handle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21228,8 +21228,8 @@ pub unsafe fn CardForceChange(CardResource: *mut ::core::ffi::c_void) -> BOOL {
             basereg = in(reg) CardResource,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21248,8 +21248,8 @@ pub unsafe fn CardChangeCount(CardResource: *mut ::core::ffi::c_void) -> ULONG {
             basereg = in(reg) CardResource,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "card.resource" (V40) (Kickstart 3.1)
@@ -21268,8 +21268,8 @@ pub unsafe fn CardInterface(CardResource: *mut ::core::ffi::c_void) -> ULONG {
             basereg = in(reg) CardResource,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "checkbox.gadget" (V40) (Kickstart 3.1)
@@ -21288,8 +21288,8 @@ pub unsafe fn CHECKBOX_GetClass(CheckBoxBase: *mut ::core::ffi::c_void) -> *mut 
             basereg = in(reg) CheckBoxBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "chooser.gadget" (V40) (Kickstart 3.1)
@@ -21308,8 +21308,8 @@ pub unsafe fn CHOOSER_GetClass(ChooserBase: *mut ::core::ffi::c_void) -> *mut Cl
             basereg = in(reg) ChooserBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "chooser.gadget" (V40) (Kickstart 3.1)
@@ -21332,8 +21332,8 @@ pub unsafe fn AllocChooserNodeA(
             in("a0") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "chooser.gadget" (V40) (Kickstart 3.1)
@@ -21426,8 +21426,8 @@ pub unsafe fn ShowChooser(
             in("d1") ypos,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "chooser.gadget" (V40) (Kickstart 3.1)
@@ -21471,8 +21471,8 @@ pub unsafe fn AddICRVector(
             in("a1") interrupt,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "ciaa.resource|ciab.resource"
@@ -21511,8 +21511,8 @@ pub unsafe fn AbleICR(resource: *mut Library, mask: LONG) -> WORD {
             in("d0") mask,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "ciaa.resource|ciab.resource"
@@ -21532,8 +21532,8 @@ pub unsafe fn SetICR(resource: *mut Library, mask: LONG) -> WORD {
             in("d0") mask,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "clicktab.gadget" (V40) (Kickstart 3.1)
@@ -21552,8 +21552,8 @@ pub unsafe fn CLICKTAB_GetClass(ClickTabBase: *mut ::core::ffi::c_void) -> *mut 
             basereg = in(reg) ClickTabBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "clicktab.gadget" (V40) (Kickstart 3.1)
@@ -21576,8 +21576,8 @@ pub unsafe fn AllocClickTabNodeA(
             in("a0") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "clicktab.gadget" (V40) (Kickstart 3.1)
@@ -21714,8 +21714,8 @@ pub unsafe fn CreateCxObj(
             in("a1") arg2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -21736,8 +21736,8 @@ pub unsafe fn CxBroker(CxBase: *mut Library, nb: *const NewBroker, error: *mut L
             in("d0") error,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -21758,8 +21758,8 @@ pub unsafe fn ActivateCxObj(CxBase: *mut Library, co: *mut CxObj, flag: LONG) ->
             in("d0") flag,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -21815,8 +21815,8 @@ pub unsafe fn CxObjType(CxBase: *mut Library, co: *const CxObj) -> ULONG {
             in("a0") co,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -21836,8 +21836,8 @@ pub unsafe fn CxObjError(CxBase: *mut Library, co: *const CxObj) -> LONG {
             in("a0") co,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -21876,8 +21876,8 @@ pub unsafe fn SetCxObjPri(CxBase: *mut Library, co: *mut CxObj, pri: LONG) -> LO
             in("d0") pri,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -22036,8 +22036,8 @@ pub unsafe fn ParseIX(CxBase: *mut Library, description: CONST_STRPTR, ix: *mut 
             in("a1") ix,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -22057,8 +22057,8 @@ pub unsafe fn CxMsgType(CxBase: *mut Library, cxm: *const CxMsg) -> ULONG {
             in("a0") cxm,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -22078,8 +22078,8 @@ pub unsafe fn CxMsgData(CxBase: *mut Library, cxm: *const CxMsg) -> APTR {
             in("a0") cxm,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -22099,8 +22099,8 @@ pub unsafe fn CxMsgID(CxBase: *mut Library, cxm: *const CxMsg) -> LONG {
             in("a0") cxm,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -22189,8 +22189,8 @@ pub unsafe fn InvertKeyMap(
             in("a1") km,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "commodities.library" (V36) (Kickstart 2.0)
@@ -22229,8 +22229,8 @@ pub unsafe fn MatchIX(CxBase: *mut Library, event: *const InputEvent, ix: *const
             in("a1") ix,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "console.device"
@@ -22255,8 +22255,8 @@ pub unsafe fn CDInputHandler(
             in("a1") consoleDevice,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "console.device"
@@ -22285,8 +22285,8 @@ pub unsafe fn RawKeyConvert(
             in("a2") keyMap,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22313,8 +22313,8 @@ pub unsafe fn ObtainDataTypeA(
             in("a1") attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22357,8 +22357,8 @@ pub unsafe fn NewDTObjectA(
             in("a0") attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22405,8 +22405,8 @@ pub unsafe fn SetDTAttrsA(
             in("a3") attrs,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22431,8 +22431,8 @@ pub unsafe fn GetDTAttrsA(
             in("a2") attrs,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22461,8 +22461,8 @@ pub unsafe fn AddDTObject(
             in("d0") pos,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22514,8 +22514,8 @@ pub unsafe fn DoAsyncLayout(
             in("a1") gpl,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22544,8 +22544,8 @@ pub unsafe fn DoDTMethodA(
             in("a3") msg,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22570,8 +22570,8 @@ pub unsafe fn RemoveDTObject(
             in("a1") o,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22591,8 +22591,8 @@ pub unsafe fn GetDTMethods(DataTypesBase: *mut Library, object: *const Object) -
             in("a0") object,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22615,8 +22615,8 @@ pub unsafe fn GetDTTriggerMethods(
             in("a0") object,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22645,8 +22645,8 @@ pub unsafe fn PrintDTObjectA(
             in("a3") msg,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V40) (Kickstart 3.1)
@@ -22666,8 +22666,8 @@ pub unsafe fn GetDTString(DataTypesBase: *mut Library, id: ULONG) -> STRPTR {
             in("d0") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22692,8 +22692,8 @@ pub unsafe fn FindMethod(
             in("a1") searchmethodid,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22720,8 +22720,8 @@ pub unsafe fn FindTriggerMethod(
             in("d0") method,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22748,8 +22748,8 @@ pub unsafe fn CopyDTMethods(
             in("a2") exclude,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22776,8 +22776,8 @@ pub unsafe fn CopyDTTriggerMethods(
             in("a2") exclude,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22800,8 +22800,8 @@ pub unsafe fn FreeDTMethods(
             in("a0") methods,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22824,8 +22824,8 @@ pub unsafe fn GetDTTriggerMethodDataFlags(
             in("d0") triggermethod,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22863,8 +22863,8 @@ pub unsafe fn SaveDTObjectA(
             a4reg = in(reg) attrs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datatypes.library" (V47) (Kickstart 3.2 / 2020)
@@ -22884,8 +22884,8 @@ pub unsafe fn StartDragSelect(DataTypesBase: *mut Library, o: *mut Object) -> UL
             in("a0") o,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datebrowser.gadget" (V40) (Kickstart 3.1)
@@ -22904,8 +22904,8 @@ pub unsafe fn DATEBROWSER_GetClass(DateBrowserBase: *mut ::core::ffi::c_void) ->
             basereg = in(reg) DateBrowserBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datebrowser.gadget" (V40) (Kickstart 3.1)
@@ -22932,8 +22932,8 @@ pub unsafe fn JulianWeekDay(
             in("d2") year,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datebrowser.gadget" (V40) (Kickstart 3.1)
@@ -22958,8 +22958,8 @@ pub unsafe fn JulianMonthDays(
             in("d1") year,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "datebrowser.gadget" (V40) (Kickstart 3.1)
@@ -22979,8 +22979,8 @@ pub unsafe fn JulianLeapYear(DateBrowserBase: *mut ::core::ffi::c_void, year: LO
             in("d0") year,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "disk.resource"
@@ -23000,8 +23000,8 @@ pub unsafe fn AllocUnit(DiskBase: *mut ::core::ffi::c_void, unitNum: LONG) -> BO
             in("d0") unitNum,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "disk.resource"
@@ -23042,8 +23042,8 @@ pub unsafe fn GetUnit(
             in("a1") unitPointer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "disk.resource"
@@ -23080,8 +23080,8 @@ pub unsafe fn GetUnitID(DiskBase: *mut ::core::ffi::c_void, unitNum: LONG) -> LO
             in("d0") unitNum,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "disk.resource" (V37) (Kickstart 2.04)
@@ -23101,8 +23101,8 @@ pub unsafe fn ReadUnitID(DiskBase: *mut ::core::ffi::c_void, unitNum: LONG) -> L
             in("d0") unitNum,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library"
@@ -23122,8 +23122,8 @@ pub unsafe fn OpenDiskFont(DiskfontBase: *mut Library, textAttr: *mut TextAttr) 
             in("a0") textAttr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library"
@@ -23150,8 +23150,8 @@ pub unsafe fn AvailFonts(
             in("d1") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V34) (Kickstart 1.3)
@@ -23176,8 +23176,8 @@ pub unsafe fn NewFontContents(
             in("a1") fontName,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V34) (Kickstart 1.3)
@@ -23223,8 +23223,8 @@ pub unsafe fn NewScaledDiskFont(
             in("a1") destTextAttr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V45) (Kickstart 3.9 / 2000)
@@ -23244,8 +23244,8 @@ pub unsafe fn GetDiskFontCtrl(DiskfontBase: *mut Library, tagid: LONG) -> LONG {
             in("d0") tagid,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V45) (Kickstart 3.9 / 2000)
@@ -23283,8 +23283,8 @@ pub unsafe fn EOpenEngine(DiskfontBase: *mut Library, eEngine: *mut EGlyphEngine
             in("a0") eEngine,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V47) (Kickstart 3.2 / 2020)
@@ -23327,8 +23327,8 @@ pub unsafe fn ESetInfoA(
             in("a1") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V47) (Kickstart 3.2 / 2020)
@@ -23353,8 +23353,8 @@ pub unsafe fn EObtainInfoA(
             in("a1") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V47) (Kickstart 3.2 / 2020)
@@ -23379,8 +23379,8 @@ pub unsafe fn EReleaseInfoA(
             in("a1") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V47) (Kickstart 3.2 / 2020)
@@ -23407,8 +23407,8 @@ pub unsafe fn OpenOutlineFont(
             in("d0") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V47) (Kickstart 3.2 / 2020)
@@ -23454,8 +23454,8 @@ pub unsafe fn WriteFontContents(
             in("a2") fontContentsHeader,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V47) (Kickstart 3.2 / 2020)
@@ -23482,8 +23482,8 @@ pub unsafe fn WriteDiskFontHeaderA(
             in("a2") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "diskfont.library" (V47) (Kickstart 3.2 / 2020)
@@ -23510,8 +23510,8 @@ pub unsafe fn ObtainCharsetInfo(
             in("d2") wantedTag,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23532,8 +23532,8 @@ pub unsafe fn Open(DOSBase: *mut Library, name: CONST_STRPTR, accessMode: LONG) 
             in("d2") accessMode,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23553,8 +23553,8 @@ pub unsafe fn Close(DOSBase: *mut Library, file: BPTR) -> LONG {
             in("d1") file,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23576,8 +23576,8 @@ pub unsafe fn Read(DOSBase: *mut Library, file: BPTR, buffer: APTR, length: LONG
             in("d3") length,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23599,8 +23599,8 @@ pub unsafe fn Write(DOSBase: *mut Library, file: BPTR, buffer: CONST_APTR, lengt
             in("d3") length,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23619,8 +23619,8 @@ pub unsafe fn Input(DOSBase: *mut Library) -> BPTR {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23639,8 +23639,8 @@ pub unsafe fn Output(DOSBase: *mut Library) -> BPTR {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23662,8 +23662,8 @@ pub unsafe fn Seek(DOSBase: *mut Library, file: BPTR, position: LONG, offset: LO
             in("d3") offset,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23683,8 +23683,8 @@ pub unsafe fn DeleteFile(DOSBase: *mut Library, name: CONST_STRPTR) -> LONG {
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23705,8 +23705,8 @@ pub unsafe fn Rename(DOSBase: *mut Library, oldName: CONST_STRPTR, newName: CONS
             in("d2") newName,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23727,8 +23727,8 @@ pub unsafe fn Lock(DOSBase: *mut Library, name: CONST_STRPTR, type_: LONG) -> BP
             in("d2") type_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23766,8 +23766,8 @@ pub unsafe fn DupLock(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             in("d1") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23792,8 +23792,8 @@ pub unsafe fn Examine(
             in("d2") fileInfoBlock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23814,8 +23814,8 @@ pub unsafe fn ExNext(DOSBase: *mut Library, lock: BPTR, fileInfoBlock: *mut File
             in("d2") fileInfoBlock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23836,8 +23836,8 @@ pub unsafe fn Info(DOSBase: *mut Library, lock: BPTR, parameterBlock: *mut InfoD
             in("d2") parameterBlock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23857,8 +23857,8 @@ pub unsafe fn CreateDir(DOSBase: *mut Library, name: CONST_STRPTR) -> BPTR {
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23878,8 +23878,8 @@ pub unsafe fn CurrentDir(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             in("d1") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23898,8 +23898,8 @@ pub unsafe fn IoErr(DOSBase: *mut Library) -> LONG {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23928,8 +23928,8 @@ pub unsafe fn CreateProc(
             in("d4") stackSize,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -23967,8 +23967,8 @@ pub unsafe fn LoadSeg(DOSBase: *mut Library, name: CONST_STRPTR) -> BPTR {
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24006,8 +24006,8 @@ pub unsafe fn DeviceProc(DOSBase: *mut Library, name: CONST_STRPTR) -> *mut MsgP
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24028,8 +24028,8 @@ pub unsafe fn SetComment(DOSBase: *mut Library, name: CONST_STRPTR, comment: CON
             in("d2") comment,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24050,8 +24050,8 @@ pub unsafe fn SetProtection(DOSBase: *mut Library, name: CONST_STRPTR, protect: 
             in("d2") protect,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24071,8 +24071,8 @@ pub unsafe fn DateStamp(DOSBase: *mut Library, date: *mut DateStamp) -> *mut Dat
             in("d1") date,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24111,8 +24111,8 @@ pub unsafe fn WaitForChar(DOSBase: *mut Library, file: BPTR, timeout: LONG) -> L
             in("d2") timeout,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24132,8 +24132,8 @@ pub unsafe fn ParentDir(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             in("d1") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24153,8 +24153,8 @@ pub unsafe fn IsInteractive(DOSBase: *mut Library, file: BPTR) -> LONG {
             in("d1") file,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library"
@@ -24181,8 +24181,8 @@ pub unsafe fn Execute(
             in("d3") file2,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24203,8 +24203,8 @@ pub unsafe fn AllocDosObject(DOSBase: *mut Library, type_: ULONG, tags: *const T
             in("d2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24229,8 +24229,8 @@ pub unsafe fn AllocDosObjectTagList(
             in("d2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24284,8 +24284,8 @@ pub unsafe fn DoPkt(
             in("d7") arg5,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24306,8 +24306,8 @@ pub unsafe fn DoPkt0(DOSBase: *mut Library, port: *mut MsgPort, action: LONG) ->
             in("d2") action,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24329,8 +24329,8 @@ pub unsafe fn DoPkt1(DOSBase: *mut Library, port: *mut MsgPort, action: LONG, ar
             in("d3") arg1,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24359,8 +24359,8 @@ pub unsafe fn DoPkt2(
             in("d4") arg2,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24391,8 +24391,8 @@ pub unsafe fn DoPkt3(
             in("d5") arg3,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24425,8 +24425,8 @@ pub unsafe fn DoPkt4(
             in("d6") arg4,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24470,8 +24470,8 @@ pub unsafe fn WaitPkt(DOSBase: *mut Library) -> *mut DosPacket {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24541,8 +24541,8 @@ pub unsafe fn LockRecord(
             in("d5") timeout,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24567,8 +24567,8 @@ pub unsafe fn LockRecords(
             in("d2") timeout,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24590,8 +24590,8 @@ pub unsafe fn UnLockRecord(DOSBase: *mut Library, fh: BPTR, offset: ULONG, lengt
             in("d3") length,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24611,8 +24611,8 @@ pub unsafe fn UnLockRecords(DOSBase: *mut Library, recArray: *const RecordLock) 
             in("d1") recArray,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24632,8 +24632,8 @@ pub unsafe fn SelectInput(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             in("d1") fh,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24653,8 +24653,8 @@ pub unsafe fn SelectOutput(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             in("d1") fh,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24674,8 +24674,8 @@ pub unsafe fn FGetC(DOSBase: *mut Library, fh: BPTR) -> LONG {
             in("d1") fh,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24696,8 +24696,8 @@ pub unsafe fn FPutC(DOSBase: *mut Library, fh: BPTR, ch: LONG) -> LONG {
             in("d2") ch,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24718,8 +24718,8 @@ pub unsafe fn UnGetC(DOSBase: *mut Library, fh: BPTR, character: LONG) -> LONG {
             in("d2") character,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24748,8 +24748,8 @@ pub unsafe fn FRead(
             in("d4") number,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24778,8 +24778,8 @@ pub unsafe fn FWrite(
             in("d4") number,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24801,8 +24801,8 @@ pub unsafe fn FGets(DOSBase: *mut Library, fh: BPTR, buf: STRPTR, buflen: ULONG)
             in("d3") buflen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24823,8 +24823,8 @@ pub unsafe fn FPuts(DOSBase: *mut Library, fh: BPTR, str_: CONST_STRPTR) -> LONG
             in("d2") str_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24876,8 +24876,8 @@ pub unsafe fn VFPrintf(
             in("d3") argarray,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24897,8 +24897,8 @@ pub unsafe fn Flush(DOSBase: *mut Library, fh: BPTR) -> LONG {
             in("d1") fh,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24927,8 +24927,8 @@ pub unsafe fn SetVBuf(
             in("d4") size,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24948,8 +24948,8 @@ pub unsafe fn DupLockFromFH(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             in("d1") fh,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24969,8 +24969,8 @@ pub unsafe fn OpenFromLock(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             in("d1") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -24990,8 +24990,8 @@ pub unsafe fn ParentOfFH(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             in("d1") fh,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25012,8 +25012,8 @@ pub unsafe fn ExamineFH(DOSBase: *mut Library, fh: BPTR, fib: *mut FileInfoBlock
             in("d2") fib,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25038,8 +25038,8 @@ pub unsafe fn SetFileDate(
             in("d2") date,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25061,8 +25061,8 @@ pub unsafe fn NameFromLock(DOSBase: *mut Library, lock: BPTR, buffer: STRPTR, le
             in("d3") len,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25084,8 +25084,8 @@ pub unsafe fn NameFromFH(DOSBase: *mut Library, fh: BPTR, buffer: STRPTR, len: L
             in("d3") len,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25116,8 +25116,8 @@ pub unsafe fn SplitName(
             in("d5") size,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25138,8 +25138,8 @@ pub unsafe fn SameLock(DOSBase: *mut Library, lock1: BPTR, lock2: BPTR) -> LONG 
             in("d2") lock2,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25160,8 +25160,8 @@ pub unsafe fn SetMode(DOSBase: *mut Library, fh: BPTR, mode: LONG) -> LONG {
             in("d2") mode,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25192,8 +25192,8 @@ pub unsafe fn ExAll(
             in("d5") control,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25224,8 +25224,8 @@ pub unsafe fn ReadLink(
             in("d5") size,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25247,8 +25247,8 @@ pub unsafe fn MakeLink(DOSBase: *mut Library, name: CONST_STRPTR, dest: LONG, so
             in("d3") soft,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25270,8 +25270,8 @@ pub unsafe fn ChangeMode(DOSBase: *mut Library, type_: LONG, fh: BPTR, newmode: 
             in("d3") newmode,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25293,8 +25293,8 @@ pub unsafe fn SetFileSize(DOSBase: *mut Library, fh: BPTR, pos: LONG, mode: LONG
             in("d3") mode,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25314,8 +25314,8 @@ pub unsafe fn SetIoErr(DOSBase: *mut Library, result: LONG) -> LONG {
             in("d1") result,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25344,8 +25344,8 @@ pub unsafe fn Fault(
             in("d4") len,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25366,8 +25366,8 @@ pub unsafe fn PrintFault(DOSBase: *mut Library, code: LONG, header: CONST_STRPTR
             in("d2") header,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25396,8 +25396,8 @@ pub unsafe fn ErrorReport(
             in("d4") device,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25416,8 +25416,8 @@ pub unsafe fn Cli(DOSBase: *mut Library) -> *mut CommandLineInterface {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25437,8 +25437,8 @@ pub unsafe fn CreateNewProc(DOSBase: *mut Library, tags: *const TagItem) -> *mut
             in("d1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25458,8 +25458,8 @@ pub unsafe fn CreateNewProcTagList(DOSBase: *mut Library, tags: *const TagItem) 
             in("d1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25488,8 +25488,8 @@ pub unsafe fn RunCommand(
             in("d4") paramlen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25508,8 +25508,8 @@ pub unsafe fn GetConsoleTask(DOSBase: *mut Library) -> *mut MsgPort {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25529,8 +25529,8 @@ pub unsafe fn SetConsoleTask(DOSBase: *mut Library, task: *mut MsgPort) -> *mut 
             in("d1") task,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25549,8 +25549,8 @@ pub unsafe fn GetFileSysTask(DOSBase: *mut Library) -> *mut MsgPort {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25570,8 +25570,8 @@ pub unsafe fn SetFileSysTask(DOSBase: *mut Library, task: *mut MsgPort) -> *mut 
             in("d1") task,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25590,8 +25590,8 @@ pub unsafe fn GetArgStr(DOSBase: *mut Library) -> STRPTR {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25611,8 +25611,8 @@ pub unsafe fn SetArgStr(DOSBase: *mut Library, string: STRPTR) -> STRPTR {
             in("d1") string,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25632,8 +25632,8 @@ pub unsafe fn FindCliProc(DOSBase: *mut Library, num: ULONG) -> *mut Process {
             in("d1") num,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25652,8 +25652,8 @@ pub unsafe fn MaxCli(DOSBase: *mut Library) -> ULONG {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25673,8 +25673,8 @@ pub unsafe fn SetCurrentDirName(DOSBase: *mut Library, name: CONST_STRPTR) -> BO
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25695,8 +25695,8 @@ pub unsafe fn GetCurrentDirName(DOSBase: *mut Library, buf: STRPTR, len: LONG) -
             in("d2") len,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25716,8 +25716,8 @@ pub unsafe fn SetProgramName(DOSBase: *mut Library, name: CONST_STRPTR) -> BOOL 
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25738,8 +25738,8 @@ pub unsafe fn GetProgramName(DOSBase: *mut Library, buf: STRPTR, len: LONG) -> B
             in("d2") len,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25759,8 +25759,8 @@ pub unsafe fn SetPrompt(DOSBase: *mut Library, name: CONST_STRPTR) -> BOOL {
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25781,8 +25781,8 @@ pub unsafe fn GetPrompt(DOSBase: *mut Library, buf: STRPTR, len: LONG) -> BOOL {
             in("d2") len,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25802,8 +25802,8 @@ pub unsafe fn SetProgramDir(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             in("d1") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25822,8 +25822,8 @@ pub unsafe fn GetProgramDir(DOSBase: *mut Library) -> BPTR {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25848,8 +25848,8 @@ pub unsafe fn SystemTagList(
             in("d2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25870,8 +25870,8 @@ pub unsafe fn System(DOSBase: *mut Library, command: CONST_STRPTR, tags: *const 
             in("d2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25892,8 +25892,8 @@ pub unsafe fn AssignLock(DOSBase: *mut Library, name: CONST_STRPTR, lock: BPTR) 
             in("d2") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25914,8 +25914,8 @@ pub unsafe fn AssignLate(DOSBase: *mut Library, name: CONST_STRPTR, path: CONST_
             in("d2") path,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25936,8 +25936,8 @@ pub unsafe fn AssignPath(DOSBase: *mut Library, name: CONST_STRPTR, path: CONST_
             in("d2") path,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25958,8 +25958,8 @@ pub unsafe fn AssignAdd(DOSBase: *mut Library, name: CONST_STRPTR, lock: BPTR) -
             in("d2") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -25980,8 +25980,8 @@ pub unsafe fn RemAssignList(DOSBase: *mut Library, name: CONST_STRPTR, lock: BPT
             in("d2") lock,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26006,8 +26006,8 @@ pub unsafe fn GetDeviceProc(
             in("d2") dp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26045,8 +26045,8 @@ pub unsafe fn LockDosList(DOSBase: *mut Library, flags: ULONG) -> *mut DosList {
             in("d1") flags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26084,8 +26084,8 @@ pub unsafe fn AttemptLockDosList(DOSBase: *mut Library, flags: ULONG) -> *mut Do
             in("d1") flags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26105,8 +26105,8 @@ pub unsafe fn RemDosEntry(DOSBase: *mut Library, dlist: *mut DosList) -> BOOL {
             in("d1") dlist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26126,8 +26126,8 @@ pub unsafe fn AddDosEntry(DOSBase: *mut Library, dlist: *mut DosList) -> LONG {
             in("d1") dlist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26154,8 +26154,8 @@ pub unsafe fn FindDosEntry(
             in("d3") flags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26180,8 +26180,8 @@ pub unsafe fn NextDosEntry(
             in("d2") flags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26202,8 +26202,8 @@ pub unsafe fn MakeDosEntry(DOSBase: *mut Library, name: CONST_STRPTR, type_: LON
             in("d2") type_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26241,8 +26241,8 @@ pub unsafe fn IsFileSystem(DOSBase: *mut Library, name: CONST_STRPTR) -> BOOL {
             in("d1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26269,8 +26269,8 @@ pub unsafe fn Format(
             in("d3") dostype,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26291,8 +26291,8 @@ pub unsafe fn Relabel(DOSBase: *mut Library, drive: CONST_STRPTR, newname: CONST
             in("d2") newname,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26313,8 +26313,8 @@ pub unsafe fn Inhibit(DOSBase: *mut Library, name: CONST_STRPTR, onoff: LONG) ->
             in("d2") onoff,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26335,8 +26335,8 @@ pub unsafe fn AddBuffers(DOSBase: *mut Library, name: CONST_STRPTR, number: LONG
             in("d2") number,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26361,8 +26361,8 @@ pub unsafe fn CompareDates(
             in("d2") date2,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26382,8 +26382,8 @@ pub unsafe fn DateToStr(DOSBase: *mut Library, datetime: *mut DateTime) -> LONG 
             in("d1") datetime,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26403,8 +26403,8 @@ pub unsafe fn StrToDate(DOSBase: *mut Library, datetime: *mut DateTime) -> LONG 
             in("d1") datetime,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26433,8 +26433,8 @@ pub unsafe fn InternalLoadSeg(
             in("a2") stack,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26455,8 +26455,8 @@ pub unsafe fn InternalUnLoadSeg(DOSBase: *mut Library, seglist: BPTR, freefunc: 
             in("a1") freefunc,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26477,8 +26477,8 @@ pub unsafe fn NewLoadSeg(DOSBase: *mut Library, file: CONST_STRPTR, tags: *const
             in("d2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26503,8 +26503,8 @@ pub unsafe fn NewLoadSegTagList(
             in("d2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26531,8 +26531,8 @@ pub unsafe fn AddSegment(
             in("d3") system,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26559,8 +26559,8 @@ pub unsafe fn FindSegment(
             in("d3") system,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26580,8 +26580,8 @@ pub unsafe fn RemSegment(DOSBase: *mut Library, seg: *mut Segment) -> LONG {
             in("d1") seg,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26601,8 +26601,8 @@ pub unsafe fn CheckSignal(DOSBase: *mut Library, mask: LONG) -> LONG {
             in("d1") mask,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26629,8 +26629,8 @@ pub unsafe fn ReadArgs(
             in("d3") args,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26655,8 +26655,8 @@ pub unsafe fn FindArg(
             in("d2") arg_template,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26683,8 +26683,8 @@ pub unsafe fn ReadItem(
             in("d3") cSource,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26705,8 +26705,8 @@ pub unsafe fn StrToLong(DOSBase: *mut Library, string: CONST_STRPTR, value: *mut
             in("d2") value,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26731,8 +26731,8 @@ pub unsafe fn MatchFirst(
             in("d2") anchor,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26752,8 +26752,8 @@ pub unsafe fn MatchNext(DOSBase: *mut Library, anchor: *mut AnchorPath) -> LONG 
             in("d1") anchor,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26798,8 +26798,8 @@ pub unsafe fn ParsePattern(
             in("d3") patbuflen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26824,8 +26824,8 @@ pub unsafe fn MatchPattern(
             in("d2") str_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26863,8 +26863,8 @@ pub unsafe fn FilePart(DOSBase: *mut Library, path: CONST_STRPTR) -> STRPTR {
             in("d1") path,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26884,8 +26884,8 @@ pub unsafe fn PathPart(DOSBase: *mut Library, path: CONST_STRPTR) -> STRPTR {
             in("d1") path,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26912,8 +26912,8 @@ pub unsafe fn AddPart(
             in("d3") size,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26933,8 +26933,8 @@ pub unsafe fn StartNotify(DOSBase: *mut Library, notify: *mut NotifyRequest) -> 
             in("d1") notify,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -26981,8 +26981,8 @@ pub unsafe fn SetVar(
             in("d4") flags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27011,8 +27011,8 @@ pub unsafe fn GetVar(
             in("d4") flags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27033,8 +27033,8 @@ pub unsafe fn DeleteVar(DOSBase: *mut Library, name: CONST_STRPTR, flags: ULONG)
             in("d2") flags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27055,8 +27055,8 @@ pub unsafe fn FindVar(DOSBase: *mut Library, name: CONST_STRPTR, type_: ULONG) -
             in("d2") type_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27076,8 +27076,8 @@ pub unsafe fn CliInitNewcli(DOSBase: *mut Library, dp: *mut DosPacket) -> LONG {
             in("a0") dp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27097,8 +27097,8 @@ pub unsafe fn CliInitRun(DOSBase: *mut Library, dp: *mut DosPacket) -> LONG {
             in("a0") dp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27119,8 +27119,8 @@ pub unsafe fn WriteChars(DOSBase: *mut Library, buf: CONST_STRPTR, buflen: ULONG
             in("d2") buflen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27140,8 +27140,8 @@ pub unsafe fn PutStr(DOSBase: *mut Library, str_: CONST_STRPTR) -> LONG {
             in("d1") str_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V36) (Kickstart 2.0)
@@ -27162,8 +27162,8 @@ pub unsafe fn VPrintf(DOSBase: *mut Library, format: CONST_STRPTR, argarray: CON
             in("d2") argarray,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V37) (Kickstart 2.04)
@@ -27190,8 +27190,8 @@ pub unsafe fn ParsePatternNoCase(
             in("d3") patbuflen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V37) (Kickstart 2.04)
@@ -27216,8 +27216,8 @@ pub unsafe fn MatchPatternNoCase(
             in("d2") str_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V37) (Kickstart 2.04)
@@ -27238,8 +27238,8 @@ pub unsafe fn SameDevice(DOSBase: *mut Library, lock1: BPTR, lock2: BPTR) -> BOO
             in("d2") lock2,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V39) (Kickstart 3.0)
@@ -27289,8 +27289,8 @@ pub unsafe fn SetOwner(DOSBase: *mut Library, name: CONST_STRPTR, owner_info: LO
             in("d2") owner_info,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V47) (Kickstart 3.2 / 2020)
@@ -27310,8 +27310,8 @@ pub unsafe fn VolumeRequestHook(DOSBase: *mut Library, vol: CONST_STRPTR) -> LON
             in("d1") vol,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V47) (Kickstart 3.2 / 2020)
@@ -27330,8 +27330,8 @@ pub unsafe fn GetCurrentDir(DOSBase: *mut Library) -> BPTR {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V47) (Kickstart 3.2 / 2020)
@@ -27351,8 +27351,8 @@ pub unsafe fn PutErrStr(DOSBase: *mut Library, str_: CONST_STRPTR) -> LONG {
             in("d1") str_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V47) (Kickstart 3.2 / 2020)
@@ -27371,8 +27371,8 @@ pub unsafe fn ErrorOutput(DOSBase: *mut Library) -> LONG {
             basereg = in(reg) DOSBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V47) (Kickstart 3.2 / 2020)
@@ -27392,8 +27392,8 @@ pub unsafe fn SelectError(DOSBase: *mut Library, fh: BPTR) -> LONG {
             in("d1") fh,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V47) (Kickstart 3.2 / 2020)
@@ -27418,8 +27418,8 @@ pub unsafe fn DoShellMethodTagList(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "dos.library" (V47) (Kickstart 3.2 / 2020)
@@ -27440,8 +27440,8 @@ pub unsafe fn ScanStackToken(DOSBase: *mut Library, seg: BPTR, defaultstack: LON
             in("d2") defaultstack,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "drawlist.image" (V40) (Kickstart 3.1)
@@ -27460,8 +27460,8 @@ pub unsafe fn DRAWLIST_GetClass(DrawListBase: *mut ::core::ffi::c_void) -> *mut 
             basereg = in(reg) DrawListBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27484,8 +27484,8 @@ pub unsafe fn Supervisor(SysBase: *mut Library, userFunction: FPTR) -> ULONG {
             a5reg = in(reg) userFunction,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27555,8 +27555,8 @@ pub unsafe fn MakeLibrary(
             in("d1") segList,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27601,8 +27601,8 @@ pub unsafe fn FindResident(SysBase: *mut Library, name: CONST_STRPTR) -> *mut Re
             in("a1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27627,8 +27627,8 @@ pub unsafe fn InitResident(
             in("d1") segList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27753,8 +27753,8 @@ pub unsafe fn SetSR(SysBase: *mut Library, newSR: ULONG, mask: ULONG) -> ULONG {
             in("d1") mask,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27773,8 +27773,8 @@ pub unsafe fn SuperState(SysBase: *mut Library) -> APTR {
             basereg = in(reg) SysBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27817,8 +27817,8 @@ pub unsafe fn SetIntVector(
             in("a1") interrupt,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27895,8 +27895,8 @@ pub unsafe fn Allocate(SysBase: *mut Library, freeList: *mut MemHeader, byteSize
             in("d0") byteSize,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27942,8 +27942,8 @@ pub unsafe fn AllocMem(SysBase: *mut Library, byteSize: ULONG, requirements: ULO
             in("d1") requirements,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -27964,8 +27964,8 @@ pub unsafe fn AllocAbs(SysBase: *mut Library, byteSize: ULONG, location: APTR) -
             in("a1") location,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28004,8 +28004,8 @@ pub unsafe fn AvailMem(SysBase: *mut Library, requirements: ULONG) -> ULONG {
             in("d1") requirements,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28025,8 +28025,8 @@ pub unsafe fn AllocEntry(SysBase: *mut Library, entry: *const MemList) -> *mut M
             in("a0") entry,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28221,8 +28221,8 @@ pub unsafe fn RemHead(SysBase: *mut Library, list: *mut List) -> *mut Node {
             in("a0") list,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V47) (Kickstart 3.2 / 2020)
@@ -28242,8 +28242,8 @@ pub unsafe fn RemHeadMinList(SysBase: *mut Library, minlist: *mut MinList) -> *m
             in("a0") minlist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28263,8 +28263,8 @@ pub unsafe fn RemTail(SysBase: *mut Library, list: *mut List) -> *mut Node {
             in("a0") list,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V47) (Kickstart 3.2 / 2020)
@@ -28284,8 +28284,8 @@ pub unsafe fn RemTailMinList(SysBase: *mut Library, minlist: *mut MinList) -> *m
             in("a0") minlist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28325,8 +28325,8 @@ pub unsafe fn FindName(SysBase: *mut Library, list: *mut List, name: CONST_STRPT
             in("a1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28348,8 +28348,8 @@ pub unsafe fn AddTask(SysBase: *mut Library, task: *mut Task, initPC: APTR, fina
             in("a3") finalPC,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28387,8 +28387,8 @@ pub unsafe fn FindTask(SysBase: *mut Library, name: CONST_STRPTR) -> *mut Task {
             in("a1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28410,8 +28410,8 @@ pub unsafe fn SetTaskPri(SysBase: *mut Library, task: *mut Task, priority: LONG)
             in("d0") priority,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value as i8;
     }
+    asm_ret_value as i8
 }
 
 /// libname: "exec.library"
@@ -28432,8 +28432,8 @@ pub unsafe fn SetSignal(SysBase: *mut Library, newSignals: ULONG, signalSet: ULO
             in("d1") signalSet,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28454,8 +28454,8 @@ pub unsafe fn SetExcept(SysBase: *mut Library, newSignals: ULONG, signalSet: ULO
             in("d1") signalSet,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28475,8 +28475,8 @@ pub unsafe fn Wait(SysBase: *mut Library, signalSet: ULONG) -> ULONG {
             in("d0") signalSet,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28516,8 +28516,8 @@ pub unsafe fn AllocSignal(SysBase: *mut Library, signalNum: LONG) -> BYTE {
             in("d0") signalNum,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value as i8;
     }
+    asm_ret_value as i8
 }
 
 /// libname: "exec.library"
@@ -28555,8 +28555,8 @@ pub unsafe fn AllocTrap(SysBase: *mut Library, trapNum: LONG) -> LONG {
             in("d0") trapNum,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28649,8 +28649,8 @@ pub unsafe fn GetMsg(SysBase: *mut Library, port: *mut MsgPort) -> *mut Message 
             in("a0") port,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28688,8 +28688,8 @@ pub unsafe fn WaitPort(SysBase: *mut Library, port: *mut MsgPort) -> *mut Messag
             in("a0") port,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28709,8 +28709,8 @@ pub unsafe fn FindPort(SysBase: *mut Library, name: CONST_STRPTR) -> *mut MsgPor
             in("a1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28766,8 +28766,8 @@ pub unsafe fn OldOpenLibrary(SysBase: *mut Library, libName: CONST_STRPTR) -> *m
             in("a1") libName,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28812,8 +28812,8 @@ pub unsafe fn SetFunction(
             in("d0") newFunction,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28897,8 +28897,8 @@ pub unsafe fn OpenDevice(
             in("d1") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value as i8;
     }
+    asm_ret_value as i8
 }
 
 /// libname: "exec.library"
@@ -28937,8 +28937,8 @@ pub unsafe fn DoIO(SysBase: *mut Library, ioRequest: *mut IORequest) -> BYTE {
             in("a1") ioRequest,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value as i8;
     }
+    asm_ret_value as i8
 }
 
 /// libname: "exec.library"
@@ -28976,8 +28976,8 @@ pub unsafe fn CheckIO(SysBase: *mut Library, ioRequest: *const IORequest) -> *mu
             in("a1") ioRequest,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -28998,8 +28998,8 @@ pub unsafe fn WaitIO(SysBase: *mut Library, ioRequest: *mut IORequest) -> BYTE {
             in("a1") ioRequest,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value as i8;
     }
+    asm_ret_value as i8
 }
 
 /// libname: "exec.library"
@@ -29073,8 +29073,8 @@ pub unsafe fn OpenResource(SysBase: *mut Library, resName: CONST_STRPTR) -> APTR
             in("a1") resName,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -29103,8 +29103,8 @@ pub unsafe fn RawDoFmt(
             in("a3") putChData,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -29123,8 +29123,8 @@ pub unsafe fn GetCC(SysBase: *mut Library) -> ULONG {
             basereg = in(reg) SysBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -29144,8 +29144,8 @@ pub unsafe fn TypeOfMem(SysBase: *mut Library, address: CONST_APTR) -> ULONG {
             in("a1") address,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -29170,8 +29170,8 @@ pub unsafe fn Procure(
             in("a1") bidMsg,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library"
@@ -29219,8 +29219,8 @@ pub unsafe fn OpenLibrary(
             in("d0") version,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V33) (Kickstart 1.2)
@@ -29294,8 +29294,8 @@ pub unsafe fn AttemptSemaphore(SysBase: *mut Library, sigSem: *mut SignalSemapho
             in("a0") sigSem,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V33) (Kickstart 1.2)
@@ -29351,8 +29351,8 @@ pub unsafe fn FindSemaphore(SysBase: *mut Library, name: CONST_STRPTR) -> *mut S
             in("a1") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V33) (Kickstart 1.2)
@@ -29407,8 +29407,8 @@ pub unsafe fn SumKickData(SysBase: *mut Library) -> ULONG {
             basereg = in(reg) SysBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V33) (Kickstart 1.2)
@@ -29535,8 +29535,8 @@ pub unsafe fn CacheControl(SysBase: *mut Library, cacheBits: ULONG, cacheMask: U
             in("d1") cacheMask,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V36) (Kickstart 2.0)
@@ -29557,8 +29557,8 @@ pub unsafe fn CreateIORequest(SysBase: *mut Library, port: *mut MsgPort, size: U
             in("d0") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V36) (Kickstart 2.0)
@@ -29595,8 +29595,8 @@ pub unsafe fn CreateMsgPort(SysBase: *mut Library) -> *mut MsgPort {
             basereg = in(reg) SysBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V36) (Kickstart 2.0)
@@ -29653,8 +29653,8 @@ pub unsafe fn AllocVec(SysBase: *mut Library, byteSize: ULONG, requirements: ULO
             in("d1") requirements,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V36) (Kickstart 2.0)
@@ -29699,8 +29699,8 @@ pub unsafe fn CreatePool(
             in("d2") threshSize,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V39) (Kickstart 3.0)
@@ -29739,8 +29739,8 @@ pub unsafe fn AllocPooled(SysBase: *mut Library, poolHeader: APTR, memSize: ULON
             in("d0") memSize,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V39) (Kickstart 3.0)
@@ -29780,8 +29780,8 @@ pub unsafe fn AttemptSemaphoreShared(SysBase: *mut Library, sigSem: *mut SignalS
             in("a0") sigSem,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V36) (Kickstart 2.0)
@@ -29843,8 +29843,8 @@ pub unsafe fn CachePreDMA(
             in("d0") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V36) (Kickstart 2.0)
@@ -29925,8 +29925,8 @@ pub unsafe fn ObtainQuickVector(SysBase: *mut Library, interruptCode: APTR) -> U
             in("a0") interruptCode,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "exec.library" (V45) (Kickstart 3.9 / 2000)
@@ -29991,8 +29991,8 @@ pub unsafe fn AddBootNode(
             in("a1") configDev,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "expansion.library" (V33) (Kickstart 1.2)
@@ -30029,8 +30029,8 @@ pub unsafe fn AllocConfigDev(ExpansionBase: *mut Library) -> *mut ConfigDev {
             basereg = in(reg) ExpansionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "expansion.library" (V33) (Kickstart 1.2)
@@ -30055,8 +30055,8 @@ pub unsafe fn AllocExpansionMem(
             in("d1") slotAlign,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "expansion.library" (V33) (Kickstart 1.2)
@@ -30120,8 +30120,8 @@ pub unsafe fn FindConfigDev(
             in("d1") product,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "expansion.library" (V33) (Kickstart 1.2)
@@ -30203,8 +30203,8 @@ pub unsafe fn ReadExpansionByte(
             in("d0") offset,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value as u8;
     }
+    asm_ret_value as u8
 }
 
 /// libname: "expansion.library" (V33) (Kickstart 1.2)
@@ -30352,8 +30352,8 @@ pub unsafe fn GetCurrentBinding(
             in("d0") bindingSize,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "expansion.library" (V33) (Kickstart 1.2)
@@ -30373,8 +30373,8 @@ pub unsafe fn MakeDosNode(ExpansionBase: *mut Library, parmPacket: CONST_APTR) -
             in("a0") parmPacket,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "expansion.library" (V33) (Kickstart 1.2)
@@ -30401,8 +30401,8 @@ pub unsafe fn AddDosNode(
             in("a0") deviceNode,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "fuelgauge.gadget" (V40) (Kickstart 3.1)
@@ -30421,8 +30421,8 @@ pub unsafe fn FUELGAUGE_GetClass(FuelGaugeBase: *mut ::core::ffi::c_void) -> *mu
             basereg = in(reg) FuelGaugeBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30451,8 +30451,8 @@ pub unsafe fn CreateGadgetA(
             in("a2") taglist,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30522,8 +30522,8 @@ pub unsafe fn CreateMenusA(
             in("a1") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30568,8 +30568,8 @@ pub unsafe fn LayoutMenuItemsA(
             in("a2") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30596,8 +30596,8 @@ pub unsafe fn LayoutMenusA(
             in("a2") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30617,8 +30617,8 @@ pub unsafe fn GT_GetIMsg(GadToolsBase: *mut Library, iport: *mut MsgPort) -> *mu
             in("a0") iport,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30715,8 +30715,8 @@ pub unsafe fn GT_FilterIMsg(
             in("a1") imsg,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30739,8 +30739,8 @@ pub unsafe fn GT_PostFilterIMsg(
             in("a1") imsg,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30760,8 +30760,8 @@ pub unsafe fn CreateContext(GadToolsBase: *mut Library, glistptr: *mut *mut Gadg
             in("a0") glistptr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30817,8 +30817,8 @@ pub unsafe fn GetVisualInfoA(
             in("a1") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V36) (Kickstart 2.0)
@@ -30863,8 +30863,8 @@ pub unsafe fn SetDesignFontA(
             in("a2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V47) (Kickstart 3.2 / 2020)
@@ -30889,8 +30889,8 @@ pub unsafe fn ScaleGadgetRectA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "gadtools.library" (V39) (Kickstart 3.0)
@@ -30919,8 +30919,8 @@ pub unsafe fn GT_GetGadgetAttrsA(
             in("a3") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "getcolor.gadget" (V40) (Kickstart 3.1)
@@ -30939,8 +30939,8 @@ pub unsafe fn GETCOLOR_GetClass(GetColorBase: *mut ::core::ffi::c_void) -> *mut 
             basereg = in(reg) GetColorBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "getfile.gadget" (V40) (Kickstart 3.1)
@@ -30959,8 +30959,8 @@ pub unsafe fn GETFILE_GetClass(GetFileBase: *mut ::core::ffi::c_void) -> *mut Cl
             basereg = in(reg) GetFileBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "getfont.gadget" (V40) (Kickstart 3.1)
@@ -30979,8 +30979,8 @@ pub unsafe fn GETFONT_GetClass(GetFontBase: *mut ::core::ffi::c_void) -> *mut Cl
             basereg = in(reg) GetFontBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "getscreenmode.gadget" (V40) (Kickstart 3.1)
@@ -30999,8 +30999,8 @@ pub unsafe fn GETSCREENMODE_GetClass(GetScreenModeBase: *mut ::core::ffi::c_void
             basereg = in(reg) GetScreenModeBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "glyph.image" (V40) (Kickstart 3.1)
@@ -31019,8 +31019,8 @@ pub unsafe fn GLYPH_GetClass(GlyphBase: *mut ::core::ffi::c_void) -> *mut Class 
             basereg = in(reg) GlyphBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31063,8 +31063,8 @@ pub unsafe fn BltBitMap(
             in("a2") tempA,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31162,8 +31162,8 @@ pub unsafe fn TextLength(
             in("d0") count,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31190,8 +31190,8 @@ pub unsafe fn Text(
             in("d0") count,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31212,8 +31212,8 @@ pub unsafe fn SetFont(GfxBase: *mut Library, rp: *mut RastPort, textFont: *mut T
             in("a0") textFont,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31233,8 +31233,8 @@ pub unsafe fn OpenFont(GfxBase: *mut Library, textAttr: *const TextAttr) -> *mut
             in("a0") textAttr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31272,8 +31272,8 @@ pub unsafe fn AskSoftStyle(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             in("a1") rp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31300,8 +31300,8 @@ pub unsafe fn SetSoftStyle(
             in("d1") enable,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31571,8 +31571,8 @@ pub unsafe fn GetGBuffers(
             in("d0") flag,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31650,8 +31650,8 @@ pub unsafe fn AreaEllipse(
             in("d3") b,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31732,8 +31732,8 @@ pub unsafe fn MrgCop(GfxBase: *mut Library, view: *mut View) -> ULONG {
             in("a1") view,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31754,8 +31754,8 @@ pub unsafe fn MakeVPort(GfxBase: *mut Library, view: *mut View, vp: *mut ViewPor
             in("a1") vp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31871,8 +31871,8 @@ pub unsafe fn AreaMove(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LON
             in("d1") y,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31894,8 +31894,8 @@ pub unsafe fn AreaDraw(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LON
             in("d1") y,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -31915,8 +31915,8 @@ pub unsafe fn AreaEnd(GfxBase: *mut Library, rp: *mut RastPort) -> LONG {
             in("a1") rp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32127,8 +32127,8 @@ pub unsafe fn ReadPixel(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LO
             in("d1") y,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32150,8 +32150,8 @@ pub unsafe fn WritePixel(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: L
             in("d1") y,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32180,8 +32180,8 @@ pub unsafe fn Flood(
             in("d1") y,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32326,8 +32326,8 @@ pub unsafe fn CMove(
             in("d1") data,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32349,8 +32349,8 @@ pub unsafe fn CWait(GfxBase: *mut Library, copList: *mut UCopList, v: LONG, h: L
             in("d1") h,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32369,8 +32369,8 @@ pub unsafe fn VBeamPos(GfxBase: *mut Library) -> LONG {
             basereg = in(reg) GfxBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32469,8 +32469,8 @@ pub unsafe fn GetSprite(GfxBase: *mut Library, sprite: *mut SimpleSprite, num: L
             in("d0") num,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32679,8 +32679,8 @@ pub unsafe fn InitTmpRas(
             in("d0") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32756,8 +32756,8 @@ pub unsafe fn AllocRaster(GfxBase: *mut Library, width: ULONG, height: ULONG) ->
             in("d1") height,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32825,8 +32825,8 @@ pub unsafe fn OrRectRegion(
             in("a1") rectangle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32845,8 +32845,8 @@ pub unsafe fn NewRegion(GfxBase: *mut Library) -> *mut Region {
             basereg = in(reg) GfxBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -32871,8 +32871,8 @@ pub unsafe fn ClearRectRegion(
             in("a1") rectangle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33006,8 +33006,8 @@ pub unsafe fn XorRectRegion(
             in("a1") rectangle,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33045,8 +33045,8 @@ pub unsafe fn GetColorMap(GfxBase: *mut Library, entries: LONG) -> *mut ColorMap
             in("d0") entries,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33085,8 +33085,8 @@ pub unsafe fn GetRGB4(GfxBase: *mut Library, colorMap: *mut ColorMap, entry: LON
             in("d0") entry,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33129,8 +33129,8 @@ pub unsafe fn UCopperListInit(
             in("d0") n,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33217,8 +33217,8 @@ pub unsafe fn OrRegionRegion(
             in("a1") destRegion,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33243,8 +33243,8 @@ pub unsafe fn XorRegionRegion(
             in("a1") destRegion,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33269,8 +33269,8 @@ pub unsafe fn AndRegionRegion(
             in("a1") destRegion,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library"
@@ -33361,8 +33361,8 @@ pub unsafe fn AttemptLockLayerRom(GfxBase: *mut Library, layer: *mut Layer) -> B
             a5reg = in(reg) layer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33382,8 +33382,8 @@ pub unsafe fn GfxNew(GfxBase: *mut Library, gfxNodeType: ULONG) -> APTR {
             in("d0") gfxNodeType,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33465,8 +33465,8 @@ pub unsafe fn ScalerDiv(
             in("d2") denominator,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33495,8 +33495,8 @@ pub unsafe fn TextExtent(
             in("a2") textExtent,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33533,8 +33533,8 @@ pub unsafe fn TextFit(
             in("d3") constrainingBitHeight,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33554,8 +33554,8 @@ pub unsafe fn GfxLookUp(GfxBase: *mut Library, associateNode: CONST_APTR) -> APT
             in("a0") associateNode,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33580,8 +33580,8 @@ pub unsafe fn VideoControl(
             in("a1") tagarray,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33606,8 +33606,8 @@ pub unsafe fn OpenMonitor(
             in("d0") displayID,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33627,8 +33627,8 @@ pub unsafe fn CloseMonitor(GfxBase: *mut Library, monitorSpec: *mut MonitorSpec)
             in("a0") monitorSpec,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33648,8 +33648,8 @@ pub unsafe fn FindDisplayInfo(GfxBase: *mut Library, displayID: ULONG) -> Displa
             in("d0") displayID,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33669,8 +33669,8 @@ pub unsafe fn NextDisplayInfo(GfxBase: *mut Library, displayID: ULONG) -> ULONG 
             in("d0") displayID,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33701,8 +33701,8 @@ pub unsafe fn GetDisplayInfoData(
             in("d2") displayID,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33758,8 +33758,8 @@ pub unsafe fn ReadPixelLine8(
             in("a1") tempRP,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33792,8 +33792,8 @@ pub unsafe fn WritePixelLine8(
             in("a1") tempRP,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33828,8 +33828,8 @@ pub unsafe fn ReadPixelArray8(
             in("a1") temprp,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33864,8 +33864,8 @@ pub unsafe fn WritePixelArray8(
             in("a1") temprp,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33885,8 +33885,8 @@ pub unsafe fn GetVPModeID(GfxBase: *mut Library, vp: *const ViewPort) -> LONG {
             in("a0") vp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33906,8 +33906,8 @@ pub unsafe fn ModeNotAvailable(GfxBase: *mut Library, modeID: ULONG) -> LONG {
             in("d0") modeID,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33934,8 +33934,8 @@ pub unsafe fn WeighTAMatch(
             in("a2") targetTags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -33989,8 +33989,8 @@ pub unsafe fn ExtendFont(
             in("a1") fontTags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V36) (Kickstart 2.0)
@@ -34029,8 +34029,8 @@ pub unsafe fn CalcIVG(GfxBase: *mut Library, v: *mut View, vp: *mut ViewPort) ->
             in("a1") vp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34051,8 +34051,8 @@ pub unsafe fn AttachPalExtra(GfxBase: *mut Library, cm: *mut ColorMap, vp: *mut 
             in("a1") vp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34083,8 +34083,8 @@ pub unsafe fn ObtainBestPenA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34133,8 +34133,8 @@ pub unsafe fn GetAPen(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             in("a0") rp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34154,8 +34154,8 @@ pub unsafe fn GetBPen(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             in("a0") rp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34175,8 +34175,8 @@ pub unsafe fn GetDrMd(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             in("a0") rp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34196,8 +34196,8 @@ pub unsafe fn GetOutlinePen(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             in("a0") rp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34236,8 +34236,8 @@ pub unsafe fn SetChipRev(GfxBase: *mut Library, want: ULONG) -> ULONG {
             in("d0") want,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34322,8 +34322,8 @@ pub unsafe fn AllocBitMap(
             in("a0") friend_bitmap,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34366,8 +34366,8 @@ pub unsafe fn GetExtSpriteA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34394,8 +34394,8 @@ pub unsafe fn CoerceMode(
             in("d1") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34472,8 +34472,8 @@ pub unsafe fn ObtainPen(
             in("d4") f,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34494,8 +34494,8 @@ pub unsafe fn GetBitMapAttr(GfxBase: *mut Library, bm: *const BitMap, attrnum: U
             in("d1") attrnum,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34515,8 +34515,8 @@ pub unsafe fn AllocDBufInfo(GfxBase: *mut Library, vp: *mut ViewPort) -> *mut DB
             in("a0") vp,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34555,8 +34555,8 @@ pub unsafe fn SetOutlinePen(GfxBase: *mut Library, rp: *mut RastPort, pen: ULONG
             in("d0") pen,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34577,8 +34577,8 @@ pub unsafe fn SetWriteMask(GfxBase: *mut Library, rp: *mut RastPort, msk: ULONG)
             in("d0") msk,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34690,8 +34690,8 @@ pub unsafe fn FindColor(
             in("d4") maxcolor,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34716,8 +34716,8 @@ pub unsafe fn AllocSpriteDataA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34746,8 +34746,8 @@ pub unsafe fn ChangeExtSpriteA(
             in("a3") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V39) (Kickstart 3.0)
@@ -34823,8 +34823,8 @@ pub unsafe fn BestModeIDA(GfxBase: *mut Library, tags: *const TagItem) -> ULONG 
             in("a0") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "graphics.library" (V40) (Kickstart 3.1)
@@ -34902,8 +34902,8 @@ pub unsafe fn AddFreeList(
             in("a2") size,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library"
@@ -34923,8 +34923,8 @@ pub unsafe fn GetDiskObject(IconBase: *mut Library, name: CONST_STRPTR) -> *mut 
             in("a0") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library"
@@ -34949,8 +34949,8 @@ pub unsafe fn PutDiskObject(
             in("a1") diskobj,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library"
@@ -34993,8 +34993,8 @@ pub unsafe fn FindToolType(
             in("a1") typeName,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library"
@@ -35019,8 +35019,8 @@ pub unsafe fn MatchToolValue(
             in("a1") value,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library"
@@ -35045,8 +35045,8 @@ pub unsafe fn BumpRevision(
             in("a1") oldname,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V36) (Kickstart 2.0)
@@ -35073,8 +35073,8 @@ pub unsafe fn FreeAlloc(
             in("a2") type_,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V36) (Kickstart 2.0)
@@ -35094,8 +35094,8 @@ pub unsafe fn GetDefDiskObject(IconBase: *mut Library, type_: LONG) -> *mut Disk
             in("d0") type_,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V36) (Kickstart 2.0)
@@ -35115,8 +35115,8 @@ pub unsafe fn PutDefDiskObject(IconBase: *mut Library, diskObject: *const DiskOb
             in("a0") diskObject,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V36) (Kickstart 2.0)
@@ -35136,8 +35136,8 @@ pub unsafe fn GetDiskObjectNew(IconBase: *mut Library, name: CONST_STRPTR) -> *m
             in("a0") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V37) (Kickstart 2.04)
@@ -35157,8 +35157,8 @@ pub unsafe fn DeleteDiskObject(IconBase: *mut Library, name: CONST_STRPTR) -> BO
             in("a0") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35202,8 +35202,8 @@ pub unsafe fn DupDiskObjectA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35228,8 +35228,8 @@ pub unsafe fn IconControlA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35296,8 +35296,8 @@ pub unsafe fn GetIconRectangleA(
             a4reg = in(reg) tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35317,8 +35317,8 @@ pub unsafe fn NewDiskObject(IconBase: *mut Library, type_: LONG) -> *mut DiskObj
             in("d0") type_,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35343,8 +35343,8 @@ pub unsafe fn GetIconTagList(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35371,8 +35371,8 @@ pub unsafe fn PutIconTagList(
             in("a2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35399,8 +35399,8 @@ pub unsafe fn LayoutIconA(
             in("a2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "icon.library" (V44) (Kickstart 3.5 / 1999)
@@ -35445,8 +35445,8 @@ pub unsafe fn BumpRevisionLength(
             in("d0") maxLength,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35465,8 +35465,8 @@ pub unsafe fn AllocIFF(IFFParseBase: *mut Library) -> *mut IFFHandle {
             basereg = in(reg) IFFParseBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35487,8 +35487,8 @@ pub unsafe fn OpenIFF(IFFParseBase: *mut Library, iff: *mut IFFHandle, rwMode: L
             in("d0") rwMode,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35509,8 +35509,8 @@ pub unsafe fn ParseIFF(IFFParseBase: *mut Library, iff: *mut IFFHandle, control:
             in("d0") control,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35573,8 +35573,8 @@ pub unsafe fn ReadChunkBytes(
             in("d0") numBytes,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35601,8 +35601,8 @@ pub unsafe fn WriteChunkBytes(
             in("d0") numBytes,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35631,8 +35631,8 @@ pub unsafe fn ReadChunkRecords(
             in("d1") numRecords,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35661,8 +35661,8 @@ pub unsafe fn WriteChunkRecords(
             in("d1") numRecords,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35691,8 +35691,8 @@ pub unsafe fn PushChunk(
             in("d2") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35712,8 +35712,8 @@ pub unsafe fn PopChunk(IFFParseBase: *mut Library, iff: *mut IFFHandle) -> LONG 
             in("a0") iff,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35746,8 +35746,8 @@ pub unsafe fn EntryHandler(
             in("a2") object,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35780,8 +35780,8 @@ pub unsafe fn ExitHandler(
             in("a2") object,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35808,8 +35808,8 @@ pub unsafe fn PropChunk(
             in("d1") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35836,8 +35836,8 @@ pub unsafe fn PropChunks(
             in("d0") numPairs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35864,8 +35864,8 @@ pub unsafe fn StopChunk(
             in("d1") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35892,8 +35892,8 @@ pub unsafe fn StopChunks(
             in("d0") numPairs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35920,8 +35920,8 @@ pub unsafe fn CollectionChunk(
             in("d1") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35948,8 +35948,8 @@ pub unsafe fn CollectionChunks(
             in("d0") numPairs,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -35976,8 +35976,8 @@ pub unsafe fn StopOnExit(
             in("d1") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36004,8 +36004,8 @@ pub unsafe fn FindProp(
             in("d1") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36032,8 +36032,8 @@ pub unsafe fn FindCollection(
             in("d1") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36053,8 +36053,8 @@ pub unsafe fn FindPropContext(IFFParseBase: *mut Library, iff: *mut IFFHandle) -
             in("a0") iff,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36074,8 +36074,8 @@ pub unsafe fn CurrentChunk(IFFParseBase: *mut Library, iff: *mut IFFHandle) -> *
             in("a0") iff,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36098,8 +36098,8 @@ pub unsafe fn ParentChunk(
             in("a0") contextNode,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36128,8 +36128,8 @@ pub unsafe fn AllocLocalItem(
             in("d3") dataSize,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36149,8 +36149,8 @@ pub unsafe fn LocalItemData(IFFParseBase: *mut Library, localItem: *mut LocalCon
             in("a0") localItem,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36220,8 +36220,8 @@ pub unsafe fn FindLocalItem(
             in("d2") ident,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36248,8 +36248,8 @@ pub unsafe fn StoreLocalItem(
             in("d0") position,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36355,8 +36355,8 @@ pub unsafe fn OpenClipboard(IFFParseBase: *mut Library, unitNumber: LONG) -> *mu
             in("d0") unitNumber,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36394,8 +36394,8 @@ pub unsafe fn GoodID(IFFParseBase: *mut Library, id: LONG) -> LONG {
             in("d0") id,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36415,8 +36415,8 @@ pub unsafe fn GoodType(IFFParseBase: *mut Library, type_: LONG) -> LONG {
             in("d0") type_,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "iffparse.library" (V36) (Kickstart 2.0)
@@ -36437,8 +36437,8 @@ pub unsafe fn IDtoStr(IFFParseBase: *mut Library, id: LONG, buf: STRPTR) -> STRP
             in("a0") buf,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "input.device" (V36) (Kickstart 2.0)
@@ -36457,8 +36457,8 @@ pub unsafe fn PeekQualifier(InputBase: *mut ::core::ffi::c_void) -> UWORD {
             basereg = in(reg) InputBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "integer.gadget" (V40) (Kickstart 3.1)
@@ -36477,8 +36477,8 @@ pub unsafe fn INTEGER_GetClass(IntegerBase: *mut ::core::ffi::c_void) -> *mut Cl
             basereg = in(reg) IntegerBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36540,8 +36540,8 @@ pub unsafe fn AddGadget(
             in("d0") position,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36561,8 +36561,8 @@ pub unsafe fn ClearDMRequest(IntuitionBase: *mut Library, window: *mut Window) -
             in("a0") window,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36618,8 +36618,8 @@ pub unsafe fn CloseScreen(IntuitionBase: *mut Library, screen: *mut Screen) -> B
             in("a0") screen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36656,8 +36656,8 @@ pub unsafe fn CloseWorkBench(IntuitionBase: *mut Library) -> LONG {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36703,8 +36703,8 @@ pub unsafe fn DisplayAlert(
             in("d1") height,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36751,8 +36751,8 @@ pub unsafe fn DoubleClick(
             in("d3") cMicros,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36854,8 +36854,8 @@ pub unsafe fn GetDefPrefs(
             in("d0") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36880,8 +36880,8 @@ pub unsafe fn GetPrefs(
             in("d0") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36924,8 +36924,8 @@ pub unsafe fn ItemAddress(
             in("d0") menuNumber,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -36946,8 +36946,8 @@ pub unsafe fn ModifyIDCMP(IntuitionBase: *mut Library, window: *mut Window, flag
             in("d0") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37130,8 +37130,8 @@ pub unsafe fn OpenScreen(IntuitionBase: *mut Library, newScreen: *const NewScree
             in("a0") newScreen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37151,8 +37151,8 @@ pub unsafe fn OpenWindow(IntuitionBase: *mut Library, newWindow: *const NewWindo
             in("a0") newWindow,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37171,8 +37171,8 @@ pub unsafe fn OpenWorkBench(IntuitionBase: *mut Library) -> ULONG {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37249,8 +37249,8 @@ pub unsafe fn RemoveGadget(
             in("a1") gadget,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37313,8 +37313,8 @@ pub unsafe fn Request(
             in("a1") window,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37375,8 +37375,8 @@ pub unsafe fn SetDMRequest(
             in("a1") requester,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37401,8 +37401,8 @@ pub unsafe fn SetMenuStrip(
             in("a1") menu,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37516,8 +37516,8 @@ pub unsafe fn ViewAddress(IntuitionBase: *mut Library) -> *mut View {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37537,8 +37537,8 @@ pub unsafe fn ViewPortAddress(IntuitionBase: *mut Library, window: *const Window
             in("a0") window,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37605,8 +37605,8 @@ pub unsafe fn WindowLimits(
             in("d3") heightMax,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37633,8 +37633,8 @@ pub unsafe fn SetPrefs(
             in("d1") inform,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37654,8 +37654,8 @@ pub unsafe fn IntuiTextLength(IntuitionBase: *mut Library, iText: *const IntuiTe
             in("a0") iText,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37674,8 +37674,8 @@ pub unsafe fn WBenchToBack(IntuitionBase: *mut Library) -> BOOL {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37694,8 +37694,8 @@ pub unsafe fn WBenchToFront(IntuitionBase: *mut Library) -> BOOL {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37732,8 +37732,8 @@ pub unsafe fn AutoRequest(
             in("d3") height,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37786,8 +37786,8 @@ pub unsafe fn BuildSysRequest(
             in("d2") height,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37844,8 +37844,8 @@ pub unsafe fn MakeScreen(IntuitionBase: *mut Library, screen: *mut Screen) -> LO
             in("a0") screen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37864,8 +37864,8 @@ pub unsafe fn RemakeDisplay(IntuitionBase: *mut Library) -> LONG {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37884,8 +37884,8 @@ pub unsafe fn RethinkDisplay(IntuitionBase: *mut Library) -> LONG {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37912,8 +37912,8 @@ pub unsafe fn AllocRemember(
             in("d1") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -37974,8 +37974,8 @@ pub unsafe fn LockIBase(IntuitionBase: *mut Library, dontknow: ULONG) -> ULONG {
             in("d0") dontknow,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library"
@@ -38022,8 +38022,8 @@ pub unsafe fn GetScreenData(
             in("a1") screen,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V33) (Kickstart 1.2)
@@ -38081,8 +38081,8 @@ pub unsafe fn AddGList(
             in("a2") requester,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V33) (Kickstart 1.2)
@@ -38109,8 +38109,8 @@ pub unsafe fn RemoveGList(
             in("d0") numGad,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V33) (Kickstart 1.2)
@@ -38173,8 +38173,8 @@ pub unsafe fn ActivateGadget(
             in("a2") requester,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V33) (Kickstart 1.2)
@@ -38238,8 +38238,8 @@ pub unsafe fn QueryOverscan(
             in("d0") oScanType,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38311,8 +38311,8 @@ pub unsafe fn SetEditHook(IntuitionBase: *mut Library, hook: *mut Hook) -> *mut 
             in("a0") hook,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38337,8 +38337,8 @@ pub unsafe fn SetMouseQueue(
             in("d0") queueLength,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38376,8 +38376,8 @@ pub unsafe fn LockPubScreen(IntuitionBase: *mut Library, name: CONST_STRPTR) -> 
             in("a0") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38419,8 +38419,8 @@ pub unsafe fn LockPubScreenList(IntuitionBase: *mut Library) -> *mut List {
             basereg = in(reg) IntuitionBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38462,8 +38462,8 @@ pub unsafe fn NextPubScreen(
             in("a1") namebuf,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38501,8 +38501,8 @@ pub unsafe fn SetPubScreenModes(IntuitionBase: *mut Library, modes: ULONG) -> UW
             in("d0") modes,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38527,8 +38527,8 @@ pub unsafe fn PubScreenStatus(
             in("d0") statusFlags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38548,8 +38548,8 @@ pub unsafe fn ObtainGIRPort(IntuitionBase: *mut Library, gInfo: *mut GadgetInfo)
             in("a0") gInfo,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38639,8 +38639,8 @@ pub unsafe fn EasyRequestArgs(
             in("a3") args,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38669,8 +38669,8 @@ pub unsafe fn BuildEasyRequestArgs(
             in("a3") args,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38697,8 +38697,8 @@ pub unsafe fn SysReqHandler(
             in("d0") waitInput,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38723,8 +38723,8 @@ pub unsafe fn OpenWindowTagList(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38749,8 +38749,8 @@ pub unsafe fn OpenScreenTagList(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38802,8 +38802,8 @@ pub unsafe fn PointInImage(IntuitionBase: *mut Library, point: ULONG, image: *co
             in("a0") image,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38857,8 +38857,8 @@ pub unsafe fn NewObjectA(
             in("a2") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38901,8 +38901,8 @@ pub unsafe fn SetAttrsA(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38929,8 +38929,8 @@ pub unsafe fn GetAttr(
             in("a1") storagePtr,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38959,8 +38959,8 @@ pub unsafe fn SetGadgetAttrsA(
             in("a3") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -38980,8 +38980,8 @@ pub unsafe fn NextObject(IntuitionBase: *mut Library, objectPtrPtr: CONST_APTR) 
             in("a0") objectPtrPtr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -39012,8 +39012,8 @@ pub unsafe fn MakeClass(
             in("d1") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -39051,8 +39051,8 @@ pub unsafe fn GetScreenDrawInfo(IntuitionBase: *mut Library, screen: *mut Screen
             in("a0") screen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -39100,8 +39100,8 @@ pub unsafe fn ResetMenuStrip(
             in("a1") menu,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V36) (Kickstart 2.0)
@@ -39139,8 +39139,8 @@ pub unsafe fn FreeClass(IntuitionBase: *mut Library, classPtr: *mut IClass) -> B
             in("a0") classPtr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V39) (Kickstart 3.0)
@@ -39167,8 +39167,8 @@ pub unsafe fn AllocScreenBuffer(
             in("d0") flags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V39) (Kickstart 3.0)
@@ -39216,8 +39216,8 @@ pub unsafe fn ChangeScreenBuffer(
             in("a1") sb,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V39) (Kickstart 3.0)
@@ -39358,8 +39358,8 @@ pub unsafe fn DoGadgetMethodA(
             in("a3") message,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V39) (Kickstart 3.0)
@@ -39411,8 +39411,8 @@ pub unsafe fn TimedDisplayAlert(
             in("a1") time,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V39) (Kickstart 3.0)
@@ -39456,8 +39456,8 @@ pub unsafe fn ShowWindow(
             in("a1") other,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V47) (Kickstart 3.2 / 2020)
@@ -39477,8 +39477,8 @@ pub unsafe fn HideWindow(IntuitionBase: *mut Library, window: *mut Window) -> BO
             in("a0") window,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "intuition.library" (V47) (Kickstart 3.2 / 2020)
@@ -39503,8 +39503,8 @@ pub unsafe fn IntuitionControlA(
             in("a1") taglist,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "keymap.library" (V36) (Kickstart 2.0)
@@ -39541,8 +39541,8 @@ pub unsafe fn AskKeyMapDefault(KeymapBase: *mut Library) -> *mut KeyMap {
             basereg = in(reg) KeymapBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "keymap.library" (V36) (Kickstart 2.0)
@@ -39571,8 +39571,8 @@ pub unsafe fn MapRawKey(
             in("a2") keyMap,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "keymap.library" (V36) (Kickstart 2.0)
@@ -39603,8 +39603,8 @@ pub unsafe fn MapANSI(
             in("a2") keyMap,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "label.image" (V40) (Kickstart 3.1)
@@ -39623,8 +39623,8 @@ pub unsafe fn LABEL_GetClass(LabelBase: *mut ::core::ffi::c_void) -> *mut Class 
             basereg = in(reg) LabelBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39679,8 +39679,8 @@ pub unsafe fn CreateUpfrontLayer(
             in("a2") bm2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39717,8 +39717,8 @@ pub unsafe fn CreateBehindLayer(
             in("a2") bm2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39739,8 +39739,8 @@ pub unsafe fn UpfrontLayer(LayersBase: *mut Library, dummy: LONG, layer: *mut La
             in("a1") layer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39761,8 +39761,8 @@ pub unsafe fn BehindLayer(LayersBase: *mut Library, dummy: LONG, layer: *mut Lay
             in("a1") layer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39791,8 +39791,8 @@ pub unsafe fn MoveLayer(
             in("d1") dy,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39821,8 +39821,8 @@ pub unsafe fn SizeLayer(
             in("d1") dy,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39869,8 +39869,8 @@ pub unsafe fn BeginUpdate(LayersBase: *mut Library, l: *mut Layer) -> LONG {
             in("a0") l,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -39910,8 +39910,8 @@ pub unsafe fn DeleteLayer(LayersBase: *mut Library, dummy: LONG, layer: *mut Lay
             in("a1") layer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -40052,8 +40052,8 @@ pub unsafe fn WhichLayer(
             in("d1") y,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -40090,8 +40090,8 @@ pub unsafe fn NewLayerInfo(LayersBase: *mut Library) -> *mut Layer_Info {
             basereg = in(reg) LayersBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -40129,8 +40129,8 @@ pub unsafe fn FattenLayerInfo(LayersBase: *mut Library, li: *mut Layer_Info) -> 
             in("a0") li,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -40173,8 +40173,8 @@ pub unsafe fn MoveLayerInFrontOf(
             in("a1") other_layer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library"
@@ -40199,8 +40199,8 @@ pub unsafe fn InstallClipRegion(
             in("a1") region,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V36) (Kickstart 2.0)
@@ -40231,8 +40231,8 @@ pub unsafe fn MoveSizeLayer(
             in("d3") dh,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V36) (Kickstart 2.0)
@@ -40271,8 +40271,8 @@ pub unsafe fn CreateUpfrontHookLayer(
             in("a2") bm2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V36) (Kickstart 2.0)
@@ -40311,8 +40311,8 @@ pub unsafe fn CreateBehindHookLayer(
             in("a2") bm2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V36) (Kickstart 2.0)
@@ -40337,8 +40337,8 @@ pub unsafe fn InstallLayerHook(
             in("a1") hook,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V39) (Kickstart 3.0)
@@ -40363,8 +40363,8 @@ pub unsafe fn InstallLayerInfoHook(
             in("a1") hook,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V39) (Kickstart 3.0)
@@ -40429,8 +40429,8 @@ pub unsafe fn LayerOccluded(LayersBase: *mut Library, layer: *mut Layer) -> BOOL
             in("a0") layer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V47) (Kickstart 3.2 / 2020)
@@ -40450,8 +40450,8 @@ pub unsafe fn HideLayer(LayersBase: *mut Library, layer: *mut Layer) -> LONG {
             in("a0") layer,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V47) (Kickstart 3.2 / 2020)
@@ -40476,8 +40476,8 @@ pub unsafe fn ShowLayer(
             in("a1") in_front_of,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layers.library" (V47) (Kickstart 3.2 / 2020)
@@ -40502,8 +40502,8 @@ pub unsafe fn SetLayerInfoBounds(
             in("a1") bounds,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layout.gadget" (V40) (Kickstart 3.1)
@@ -40522,8 +40522,8 @@ pub unsafe fn LAYOUT_GetClass(LayoutBase: *mut ::core::ffi::c_void) -> *mut Clas
             basereg = in(reg) LayoutBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layout.gadget" (V40) (Kickstart 3.1)
@@ -40552,8 +40552,8 @@ pub unsafe fn ActivateLayoutGadget(
             in("d0") object,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layout.gadget" (V40) (Kickstart 3.1)
@@ -40600,8 +40600,8 @@ pub unsafe fn RethinkLayout(
             in("d0") refresh,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layout.gadget" (V40) (Kickstart 3.1)
@@ -40647,8 +40647,8 @@ pub unsafe fn PAGE_GetClass(LayoutBase: *mut ::core::ffi::c_void) -> *mut Class 
             basereg = in(reg) LayoutBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layout.gadget" (V40) (Kickstart 3.1)
@@ -40682,8 +40682,8 @@ pub unsafe fn SetPageGadgetAttrsA(
             a4reg = in(reg) tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "layout.gadget" (V40) (Kickstart 3.1)
@@ -40729,8 +40729,8 @@ pub unsafe fn LISTBROWSER_GetClass(ListBrowserBase: *mut ::core::ffi::c_void) ->
             basereg = in(reg) ListBrowserBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "listbrowser.gadget" (V40) (Kickstart 3.1)
@@ -40755,8 +40755,8 @@ pub unsafe fn AllocListBrowserNodeA(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "listbrowser.gadget" (V40) (Kickstart 3.1)
@@ -40967,8 +40967,8 @@ pub unsafe fn AllocLBColumnInfoA(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "listbrowser.gadget" (V45) (Kickstart 3.9 / 2000)
@@ -40993,8 +40993,8 @@ pub unsafe fn SetLBColumnInfoAttrsA(
             in("a0") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "listbrowser.gadget" (V45) (Kickstart 3.9 / 2000)
@@ -41019,8 +41019,8 @@ pub unsafe fn GetLBColumnInfoAttrsA(
             in("a0") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "listbrowser.gadget" (V45) (Kickstart 3.9 / 2000)
@@ -41120,8 +41120,8 @@ pub unsafe fn ConvToLower(
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41146,8 +41146,8 @@ pub unsafe fn ConvToUpper(
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41203,8 +41203,8 @@ pub unsafe fn FormatString(
             in("a3") putCharFunc,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41231,8 +41231,8 @@ pub unsafe fn GetCatalogStr(
             in("a1") defaultString,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41257,8 +41257,8 @@ pub unsafe fn GetLocaleStr(
             in("d0") stringNum,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41279,8 +41279,8 @@ pub unsafe fn IsAlNum(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41301,8 +41301,8 @@ pub unsafe fn IsAlpha(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41323,8 +41323,8 @@ pub unsafe fn IsCntrl(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41345,8 +41345,8 @@ pub unsafe fn IsDigit(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41367,8 +41367,8 @@ pub unsafe fn IsGraph(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41389,8 +41389,8 @@ pub unsafe fn IsLower(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41411,8 +41411,8 @@ pub unsafe fn IsPrint(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41433,8 +41433,8 @@ pub unsafe fn IsPunct(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41455,8 +41455,8 @@ pub unsafe fn IsSpace(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41477,8 +41477,8 @@ pub unsafe fn IsUpper(LocaleBase: *mut Library, locale: *mut Locale, character: 
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41499,8 +41499,8 @@ pub unsafe fn IsXDigit(LocaleBase: *mut Library, locale: *mut Locale, character:
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41527,8 +41527,8 @@ pub unsafe fn OpenCatalogA(
             in("a2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41548,8 +41548,8 @@ pub unsafe fn OpenLocale(LocaleBase: *mut Library, name: CONST_STRPTR) -> *mut L
             in("a0") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41578,8 +41578,8 @@ pub unsafe fn ParseDate(
             in("a3") getCharFunc,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41610,8 +41610,8 @@ pub unsafe fn StrConvert(
             in("d1") type_,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "locale.library" (V38) (Kickstart 2.1)
@@ -41642,8 +41642,8 @@ pub unsafe fn StrnCmp(
             in("d1") type_,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41663,8 +41663,8 @@ pub unsafe fn ReadJoyPort(LowLevelBase: *mut Library, port: ULONG) -> ULONG {
             in("d0") port,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41684,8 +41684,8 @@ pub unsafe fn GetLanguageSelection(LowLevelBase: *mut Library) -> UBYTE {
             basereg = in(reg) LowLevelBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value as u8;
     }
+    asm_ret_value as u8
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41704,8 +41704,8 @@ pub unsafe fn GetKey(LowLevelBase: *mut Library) -> ULONG {
             basereg = in(reg) LowLevelBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41745,8 +41745,8 @@ pub unsafe fn AddKBInt(LowLevelBase: *mut Library, intRoutine: APTR, intData: AP
             in("a1") intData,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41784,8 +41784,8 @@ pub unsafe fn SystemControlA(LowLevelBase: *mut Library, tagList: *const TagItem
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41806,8 +41806,8 @@ pub unsafe fn AddTimerInt(LowLevelBase: *mut Library, intRoutine: APTR, intData:
             in("a1") intData,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41888,8 +41888,8 @@ pub unsafe fn ElapsedTime(LowLevelBase: *mut Library, context: *mut EClockVal) -
             in("a0") context,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41910,8 +41910,8 @@ pub unsafe fn AddVBlankInt(LowLevelBase: *mut Library, intRoutine: APTR, intData
             in("a1") intData,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "lowlevel.library" (V40) (Kickstart 3.1)
@@ -41954,8 +41954,8 @@ pub unsafe fn SetJoyPortAttrsA(
             in("a1") tagList,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathffp.library"
@@ -41975,8 +41975,8 @@ pub unsafe fn SPFix(MathBase: *mut Library, parm: FLOAT) -> LONG {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathffp.library"
@@ -41996,8 +41996,8 @@ pub unsafe fn SPFlt(MathBase: *mut Library, integer: LONG) -> FLOAT {
             in("d0") integer,
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library"
@@ -42018,8 +42018,8 @@ pub unsafe fn SPCmp(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             in("d0") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathffp.library"
@@ -42039,8 +42039,8 @@ pub unsafe fn SPTst(MathBase: *mut Library, parm: FLOAT) -> LONG {
             in("d1") parm.to_bits(),
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathffp.library"
@@ -42060,8 +42060,8 @@ pub unsafe fn SPAbs(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library"
@@ -42081,8 +42081,8 @@ pub unsafe fn SPNeg(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library"
@@ -42103,8 +42103,8 @@ pub unsafe fn SPAdd(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             in("d0") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library"
@@ -42125,8 +42125,8 @@ pub unsafe fn SPSub(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             in("d0") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library"
@@ -42147,8 +42147,8 @@ pub unsafe fn SPMul(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             in("d0") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library"
@@ -42169,8 +42169,8 @@ pub unsafe fn SPDiv(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             in("d0") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library" (V33) (Kickstart 1.2)
@@ -42190,8 +42190,8 @@ pub unsafe fn SPFloor(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathffp.library" (V33) (Kickstart 1.2)
@@ -42211,8 +42211,8 @@ pub unsafe fn SPCeil(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42233,8 +42233,8 @@ pub unsafe fn IEEEDPFix(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> LONG
             in("d1") (parm.to_bits() & 0xffff_ffff) as u32,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42255,8 +42255,8 @@ pub unsafe fn IEEEDPFlt(MathIeeeDoubBasBase: *mut Library, integer: LONG) -> DOU
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42283,8 +42283,8 @@ pub unsafe fn IEEEDPCmp(
             in("d3") (rightParm.to_bits() & 0xffff_ffff) as u32,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42305,8 +42305,8 @@ pub unsafe fn IEEEDPTst(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> LONG
             in("d1") (parm.to_bits() & 0xffff_ffff) as u32,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42328,8 +42328,8 @@ pub unsafe fn IEEEDPAbs(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DOUB
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42351,8 +42351,8 @@ pub unsafe fn IEEEDPNeg(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DOUB
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42380,8 +42380,8 @@ pub unsafe fn IEEEDPAdd(
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42409,8 +42409,8 @@ pub unsafe fn IEEEDPSub(
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42438,8 +42438,8 @@ pub unsafe fn IEEEDPMul(
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library"
@@ -42467,8 +42467,8 @@ pub unsafe fn IEEEDPDiv(
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library" (V33) (Kickstart 1.2)
@@ -42490,8 +42490,8 @@ pub unsafe fn IEEEDPFloor(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DO
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubbas.library" (V33) (Kickstart 1.2)
@@ -42513,8 +42513,8 @@ pub unsafe fn IEEEDPCeil(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DOU
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42536,8 +42536,8 @@ pub unsafe fn IEEEDPAtan(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42559,8 +42559,8 @@ pub unsafe fn IEEEDPSin(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42582,8 +42582,8 @@ pub unsafe fn IEEEDPCos(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42605,8 +42605,8 @@ pub unsafe fn IEEEDPTan(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42633,8 +42633,8 @@ pub unsafe fn IEEEDPSincos(
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42656,8 +42656,8 @@ pub unsafe fn IEEEDPSinh(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42679,8 +42679,8 @@ pub unsafe fn IEEEDPCosh(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42702,8 +42702,8 @@ pub unsafe fn IEEEDPTanh(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42725,8 +42725,8 @@ pub unsafe fn IEEEDPExp(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42748,8 +42748,8 @@ pub unsafe fn IEEEDPLog(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42773,8 +42773,8 @@ pub unsafe fn IEEEDPPow(MathIeeeDoubTransBase: *mut Library, SPExp: DOUBLE, arg:
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42796,8 +42796,8 @@ pub unsafe fn IEEEDPSqrt(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42818,8 +42818,8 @@ pub unsafe fn IEEEDPTieee(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> 
             in("d1") (parm.to_bits() & 0xffff_ffff) as u32,
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42840,8 +42840,8 @@ pub unsafe fn IEEEDPFieee(MathIeeeDoubTransBase: *mut Library, single: FLOAT) ->
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42863,8 +42863,8 @@ pub unsafe fn IEEEDPAsin(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42886,8 +42886,8 @@ pub unsafe fn IEEEDPAcos(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeedoubtrans.library"
@@ -42909,8 +42909,8 @@ pub unsafe fn IEEEDPLog10(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> 
             lateout("d0") asm_ret_value.0,
             lateout("d1") asm_ret_value.1,
         );
-        return f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64);
     }
+    f64::from_bits(((asm_ret_value.0 as u64) << 32) | asm_ret_value.1 as u64)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -42930,8 +42930,8 @@ pub unsafe fn IEEESPFix(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> LONG 
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -42951,8 +42951,8 @@ pub unsafe fn IEEESPFlt(MathIeeeSingBasBase: *mut Library, integer: LONG) -> FLO
             in("d0") integer,
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -42977,8 +42977,8 @@ pub unsafe fn IEEESPCmp(
             in("d1") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -42998,8 +42998,8 @@ pub unsafe fn IEEESPTst(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> LONG 
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43019,8 +43019,8 @@ pub unsafe fn IEEESPAbs(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLOAT
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43040,8 +43040,8 @@ pub unsafe fn IEEESPNeg(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLOAT
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43066,8 +43066,8 @@ pub unsafe fn IEEESPAdd(
             in("d1") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43092,8 +43092,8 @@ pub unsafe fn IEEESPSub(
             in("d1") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43118,8 +43118,8 @@ pub unsafe fn IEEESPMul(
             in("d1") rightParm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43144,8 +43144,8 @@ pub unsafe fn IEEESPDiv(
             in("d1") divisor.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43165,8 +43165,8 @@ pub unsafe fn IEEESPFloor(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLO
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingbas.library" (V36) (Kickstart 2.0)
@@ -43186,8 +43186,8 @@ pub unsafe fn IEEESPCeil(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLOA
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43207,8 +43207,8 @@ pub unsafe fn IEEESPAtan(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43228,8 +43228,8 @@ pub unsafe fn IEEESPSin(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43249,8 +43249,8 @@ pub unsafe fn IEEESPCos(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43270,8 +43270,8 @@ pub unsafe fn IEEESPTan(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43296,8 +43296,8 @@ pub unsafe fn IEEESPSincos(
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43317,8 +43317,8 @@ pub unsafe fn IEEESPSinh(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43338,8 +43338,8 @@ pub unsafe fn IEEESPCosh(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43359,8 +43359,8 @@ pub unsafe fn IEEESPTanh(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43380,8 +43380,8 @@ pub unsafe fn IEEESPExp(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43401,8 +43401,8 @@ pub unsafe fn IEEESPLog(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43423,8 +43423,8 @@ pub unsafe fn IEEESPPow(MathIeeeSingTransBase: *mut Library, SPExp: FLOAT, arg: 
             in("d0") arg.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43444,8 +43444,8 @@ pub unsafe fn IEEESPSqrt(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43465,8 +43465,8 @@ pub unsafe fn IEEESPTieee(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> F
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43486,8 +43486,8 @@ pub unsafe fn IEEESPFieee(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> F
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43507,8 +43507,8 @@ pub unsafe fn IEEESPAsin(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43528,8 +43528,8 @@ pub unsafe fn IEEESPAcos(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathieeesingtrans.library" (V36) (Kickstart 2.0)
@@ -43549,8 +43549,8 @@ pub unsafe fn IEEESPLog10(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> F
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43570,8 +43570,8 @@ pub unsafe fn SPAtan(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43591,8 +43591,8 @@ pub unsafe fn SPSin(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43612,8 +43612,8 @@ pub unsafe fn SPCos(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43633,8 +43633,8 @@ pub unsafe fn SPTan(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43655,8 +43655,8 @@ pub unsafe fn SPSincos(MathTransBase: *mut Library, cosResult: *mut FLOAT, parm:
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43676,8 +43676,8 @@ pub unsafe fn SPSinh(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43697,8 +43697,8 @@ pub unsafe fn SPCosh(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43718,8 +43718,8 @@ pub unsafe fn SPTanh(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43739,8 +43739,8 @@ pub unsafe fn SPExp(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43760,8 +43760,8 @@ pub unsafe fn SPLog(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43782,8 +43782,8 @@ pub unsafe fn SPPow(MathTransBase: *mut Library, power: FLOAT, arg: FLOAT) -> FL
             in("d0") arg.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43803,8 +43803,8 @@ pub unsafe fn SPSqrt(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43824,8 +43824,8 @@ pub unsafe fn SPTieee(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library"
@@ -43845,8 +43845,8 @@ pub unsafe fn SPFieee(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library" (V31) (Kickstart 1.1)
@@ -43866,8 +43866,8 @@ pub unsafe fn SPAsin(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library" (V31) (Kickstart 1.1)
@@ -43887,8 +43887,8 @@ pub unsafe fn SPAcos(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "mathtrans.library" (V31) (Kickstart 1.1)
@@ -43908,8 +43908,8 @@ pub unsafe fn SPLog10(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             in("d0") parm.to_bits(),
             lateout("d0") asm_ret_value,
         );
-        return f32::from_bits(asm_ret_value);
     }
+    f32::from_bits(asm_ret_value)
 }
 
 /// libname: "misc.resource"
@@ -43934,8 +43934,8 @@ pub unsafe fn AllocMiscResource(
             in("a1") name,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "misc.resource"
@@ -43980,8 +43980,8 @@ pub unsafe fn GetCopyNV(
             in("d1") killRequesters,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "nonvolatile.library" (V40) (Kickstart 3.1)
@@ -44030,8 +44030,8 @@ pub unsafe fn StoreNV(
             in("d1") killRequesters,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "nonvolatile.library" (V40) (Kickstart 3.1)
@@ -44058,8 +44058,8 @@ pub unsafe fn DeleteNV(
             in("d1") killRequesters,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "nonvolatile.library" (V40) (Kickstart 3.1)
@@ -44079,8 +44079,8 @@ pub unsafe fn GetNVInfo(NVBase: *mut Library, killRequesters: LONG) -> *mut NVIn
             in("d1") killRequesters,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "nonvolatile.library" (V40) (Kickstart 3.1)
@@ -44105,8 +44105,8 @@ pub unsafe fn GetNVList(
             in("d1") killRequesters,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "nonvolatile.library" (V40) (Kickstart 3.1)
@@ -44135,8 +44135,8 @@ pub unsafe fn SetNVProtection(
             in("d1") killRequesters,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "palette.gadget" (V40) (Kickstart 3.1)
@@ -44155,8 +44155,8 @@ pub unsafe fn PALETTE_GetClass(PaletteBase: *mut ::core::ffi::c_void) -> *mut Cl
             basereg = in(reg) PaletteBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "penmap.image" (V40) (Kickstart 3.1)
@@ -44175,8 +44175,8 @@ pub unsafe fn PENMAP_GetClass(PenMapBase: *mut ::core::ffi::c_void) -> *mut Clas
             basereg = in(reg) PenMapBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "potgo.resource"
@@ -44196,8 +44196,8 @@ pub unsafe fn AllocPotBits(PotgoBase: *mut ::core::ffi::c_void, bits: ULONG) -> 
             in("d0") bits,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "potgo.resource"
@@ -44253,8 +44253,8 @@ pub unsafe fn RADIOBUTTON_GetClass(RadioButtonBase: *mut ::core::ffi::c_void) ->
             basereg = in(reg) RadioButtonBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "radiobutton.gadget" (V40) (Kickstart 3.1)
@@ -44279,8 +44279,8 @@ pub unsafe fn AllocRadioButtonNodeA(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "radiobutton.gadget" (V40) (Kickstart 3.1)
@@ -44363,8 +44363,8 @@ pub unsafe fn KillRAD0(RamdriveDevice: *mut ::core::ffi::c_void) -> STRPTR {
             basereg = in(reg) RamdriveDevice,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "ramdrive.device" (V36) (Kickstart 2.0)
@@ -44384,8 +44384,8 @@ pub unsafe fn KillRAD(RamdriveDevice: *mut ::core::ffi::c_void, unit: ULONG) -> 
             in("d0") unit,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44405,8 +44405,8 @@ pub unsafe fn LockRealTime(RealTimeBase: *mut Library, lockType: ULONG) -> APTR 
             in("d0") lockType,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44444,8 +44444,8 @@ pub unsafe fn CreatePlayerA(RealTimeBase: *mut Library, tagList: *const TagItem)
             in("a0") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44488,8 +44488,8 @@ pub unsafe fn SetPlayerAttrsA(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44516,8 +44516,8 @@ pub unsafe fn SetConductorState(
             in("d1") time,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44544,8 +44544,8 @@ pub unsafe fn ExternalSync(
             in("d1") maxTime,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44568,8 +44568,8 @@ pub unsafe fn NextConductor(
             in("a0") previousConductor,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44589,8 +44589,8 @@ pub unsafe fn FindConductor(RealTimeBase: *mut Library, name: CONST_STRPTR) -> *
             in("a0") name,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "realtime.library" (V37) (Kickstart 2.04)
@@ -44615,8 +44615,8 @@ pub unsafe fn GetPlayerAttrsA(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "requester.class" (V40) (Kickstart 3.1)
@@ -44635,8 +44635,8 @@ pub unsafe fn REQUESTER_GetClass(RequesterBase: *mut ::core::ffi::c_void) -> *mu
             basereg = in(reg) RequesterBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V36) (Kickstart 2.0)
@@ -44661,8 +44661,8 @@ pub unsafe fn CreateArgstring(
             in("d0") length,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V36) (Kickstart 2.0)
@@ -44700,8 +44700,8 @@ pub unsafe fn LengthArgstring(RexxSysBase: *mut Library, argstring: *const UBYTE
             in("a0") argstring,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V36) (Kickstart 2.0)
@@ -44728,8 +44728,8 @@ pub unsafe fn CreateRexxMsg(
             in("d0") host,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V36) (Kickstart 2.0)
@@ -44793,8 +44793,8 @@ pub unsafe fn FillRexxMsg(
             in("d1") mask,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V36) (Kickstart 2.0)
@@ -44814,8 +44814,8 @@ pub unsafe fn IsRexxMsg(RexxSysBase: *mut Library, msgptr: *const RexxMsg) -> BO
             in("a0") msgptr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V36) (Kickstart 2.0)
@@ -44874,8 +44874,8 @@ pub unsafe fn CreateRexxHostPort(
             in("a0") basename,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V47) (Kickstart 3.2 / 2020)
@@ -44920,8 +44920,8 @@ pub unsafe fn GetRexxVarFromMsg(
             in("a1") value,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V47) (Kickstart 3.2 / 2020)
@@ -44948,8 +44948,8 @@ pub unsafe fn SetRexxVarFromMsg(
             in("a1") value,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V47) (Kickstart 3.2 / 2020)
@@ -44980,8 +44980,8 @@ pub unsafe fn LaunchRexxScript(
             in("d2") output,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "rexxsyslib.library" (V47) (Kickstart 3.2 / 2020)
@@ -45028,8 +45028,8 @@ pub unsafe fn GetRexxBufferFromMsg(
             in("d0") buffer_size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "scroller.gadget" (V40) (Kickstart 3.1)
@@ -45048,8 +45048,8 @@ pub unsafe fn SCROLLER_GetClass(ScrollerBase: *mut ::core::ffi::c_void) -> *mut 
             basereg = in(reg) ScrollerBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "sketchboard.gadget" (V40) (Kickstart 3.1)
@@ -45068,8 +45068,8 @@ pub unsafe fn SKETCHBOARD_GetClass(SketchBoardBase: *mut ::core::ffi::c_void) ->
             basereg = in(reg) SketchBoardBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "slider.gadget" (V40) (Kickstart 3.1)
@@ -45088,8 +45088,8 @@ pub unsafe fn SLIDER_GetClass(SliderBase: *mut ::core::ffi::c_void) -> *mut Clas
             basereg = in(reg) SliderBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "space.gadget" (V40) (Kickstart 3.1)
@@ -45108,8 +45108,8 @@ pub unsafe fn SPACE_GetClass(SpaceBase: *mut ::core::ffi::c_void) -> *mut Class 
             basereg = in(reg) SpaceBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "speedbar.gadget" (V40) (Kickstart 3.1)
@@ -45128,8 +45128,8 @@ pub unsafe fn SPEEDBAR_GetClass(SpeedBarBase: *mut ::core::ffi::c_void) -> *mut 
             basereg = in(reg) SpeedBarBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "speedbar.gadget" (V40) (Kickstart 3.1)
@@ -45154,8 +45154,8 @@ pub unsafe fn AllocSpeedButtonNodeA(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "speedbar.gadget" (V40) (Kickstart 3.1)
@@ -45238,8 +45238,8 @@ pub unsafe fn STRING_GetClass(StringBase: *mut ::core::ffi::c_void) -> *mut Clas
             basereg = in(reg) StringBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "texteditor.gadget" (V40) (Kickstart 3.1)
@@ -45258,8 +45258,8 @@ pub unsafe fn TEXTEDITOR_GetClass(TextFieldBase: *mut ::core::ffi::c_void) -> *m
             basereg = in(reg) TextFieldBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "texteditor.gadget" (V47) (Kickstart 3.2 / 2020)
@@ -45357,8 +45357,8 @@ pub unsafe fn CmpTime(
             in("a1") src,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "timer.device" (V36) (Kickstart 2.0)
@@ -45378,8 +45378,8 @@ pub unsafe fn ReadEClock(TimerBase: *mut ::core::ffi::c_void, dest: *mut EClockV
             in("a0") dest,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "timer.device" (V36) (Kickstart 2.0)
@@ -45422,8 +45422,8 @@ pub unsafe fn TFStartUnitTagList(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "trackfile.device" (V47) (Kickstart 3.2 / 2020)
@@ -45448,8 +45448,8 @@ pub unsafe fn TFStopUnitTagList(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "trackfile.device" (V47) (Kickstart 3.2 / 2020)
@@ -45474,8 +45474,8 @@ pub unsafe fn TFInsertMediaTagList(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "trackfile.device" (V47) (Kickstart 3.2 / 2020)
@@ -45500,8 +45500,8 @@ pub unsafe fn TFEjectMediaTagList(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "trackfile.device" (V47) (Kickstart 3.2 / 2020)
@@ -45524,8 +45524,8 @@ pub unsafe fn TFGetUnitData(
             in("d0") which_unit,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "trackfile.device" (V47) (Kickstart 3.2 / 2020)
@@ -45571,8 +45571,8 @@ pub unsafe fn TFChangeUnitTagList(
             in("a0") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "trackfile.device" (V47) (Kickstart 3.2 / 2020)
@@ -45592,8 +45592,8 @@ pub unsafe fn TFExamineFileSize(TrackFileBase: *mut ::core::ffi::c_void, file_si
             in("d0") file_size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "translator.library"
@@ -45622,8 +45622,8 @@ pub unsafe fn Translate(
             in("d1") bufferSize,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45648,8 +45648,8 @@ pub unsafe fn FindTagItem(
             in("a0") tagList,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45676,8 +45676,8 @@ pub unsafe fn GetTagData(
             in("a0") tagList,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45704,8 +45704,8 @@ pub unsafe fn PackBoolTags(
             in("a1") boolMap,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45728,8 +45728,8 @@ pub unsafe fn NextTagItem(
             in("a0") tagListPtr,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45799,8 +45799,8 @@ pub unsafe fn AllocateTagItems(UtilityBase: *mut Library, numTags: ULONG) -> *mu
             in("d0") numTags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45820,8 +45820,8 @@ pub unsafe fn CloneTagItems(UtilityBase: *mut Library, tagList: *const TagItem) 
             in("a0") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45883,8 +45883,8 @@ pub unsafe fn TagInArray(UtilityBase: *mut Library, tagValue: Tag, tagArray: *co
             in("a0") tagArray,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45911,8 +45911,8 @@ pub unsafe fn FilterTagItems(
             in("d0") logic,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45939,8 +45939,8 @@ pub unsafe fn CallHookPkt(
             in("a1") paramPacket,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -45979,8 +45979,8 @@ pub unsafe fn Date2Amiga(UtilityBase: *mut Library, date: *const ClockData) -> U
             in("a0") date,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -46000,8 +46000,8 @@ pub unsafe fn CheckDate(UtilityBase: *mut Library, date: *const ClockData) -> UL
             in("a0") date,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -46022,8 +46022,8 @@ pub unsafe fn SMult32(UtilityBase: *mut Library, arg1: LONG, arg2: LONG) -> LONG
             in("d1") arg2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -46044,8 +46044,8 @@ pub unsafe fn UMult32(UtilityBase: *mut Library, arg1: ULONG, arg2: ULONG) -> UL
             in("d1") arg2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -46066,8 +46066,8 @@ pub unsafe fn SDivMod32(UtilityBase: *mut Library, dividend: LONG, divisor: LONG
             in("d1") divisor,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V36) (Kickstart 2.0)
@@ -46088,8 +46088,8 @@ pub unsafe fn UDivMod32(UtilityBase: *mut Library, dividend: ULONG, divisor: ULO
             in("d1") divisor,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V37) (Kickstart 2.04)
@@ -46114,8 +46114,8 @@ pub unsafe fn Stricmp(
             in("a1") string2,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V37) (Kickstart 2.04)
@@ -46142,8 +46142,8 @@ pub unsafe fn Strnicmp(
             in("d0") length,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V37) (Kickstart 2.04)
@@ -46164,8 +46164,8 @@ pub unsafe fn ToUpper(UtilityBase: *mut Library, character: ULONG) -> UBYTE {
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value as u8;
     }
+    asm_ret_value as u8
 }
 
 /// libname: "utility.library" (V37) (Kickstart 2.04)
@@ -46186,8 +46186,8 @@ pub unsafe fn ToLower(UtilityBase: *mut Library, character: ULONG) -> UBYTE {
             in("d0") character,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value as u8;
     }
+    asm_ret_value as u8
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46231,8 +46231,8 @@ pub unsafe fn SMult64(UtilityBase: *mut Library, arg1: LONG, arg2: LONG) -> LONG
             in("d1") arg2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46253,8 +46253,8 @@ pub unsafe fn UMult64(UtilityBase: *mut Library, arg1: ULONG, arg2: ULONG) -> UL
             in("d1") arg2,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46281,8 +46281,8 @@ pub unsafe fn PackStructureTags(
             in("a2") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46309,8 +46309,8 @@ pub unsafe fn UnpackStructureTags(
             in("a2") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46335,8 +46335,8 @@ pub unsafe fn AddNamedObject(
             in("a1") object,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46361,8 +46361,8 @@ pub unsafe fn AllocNamedObjectA(
             in("a1") tagList,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46382,8 +46382,8 @@ pub unsafe fn AttemptRemNamedObject(UtilityBase: *mut Library, object: *mut Name
             in("a0") object,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46410,8 +46410,8 @@ pub unsafe fn FindNamedObject(
             in("a2") lastObject,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46449,8 +46449,8 @@ pub unsafe fn NamedObjectName(UtilityBase: *mut Library, object: *mut NamedObjec
             in("a0") object,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V39) (Kickstart 3.0)
@@ -46510,8 +46510,8 @@ pub unsafe fn GetUniqueID(UtilityBase: *mut Library) -> ULONG {
             basereg = in(reg) UtilityBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V47) (Kickstart 3.2 / 2020)
@@ -46540,8 +46540,8 @@ pub unsafe fn VSNPrintf(
             in("a2") data,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V47) (Kickstart 3.2 / 2020)
@@ -46568,8 +46568,8 @@ pub unsafe fn Strncpy(
             in("d0") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V47) (Kickstart 3.2 / 2020)
@@ -46596,8 +46596,8 @@ pub unsafe fn Strncat(
             in("d0") size,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V47) (Kickstart 3.2 / 2020)
@@ -46619,8 +46619,8 @@ pub unsafe fn SDivMod64(UtilityBase: *mut Library, hi: LONG, lo: LONG, divisor: 
             in("d2") divisor,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "utility.library" (V47) (Kickstart 3.2 / 2020)
@@ -46642,8 +46642,8 @@ pub unsafe fn UDivMod64(UtilityBase: *mut Library, hi: ULONG, lo: ULONG, divisor
             in("d2") divisor,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "virtual.gadget" (V40) (Kickstart 3.1)
@@ -46662,8 +46662,8 @@ pub unsafe fn VIRTUAL_GetClass(VirtualBase: *mut ::core::ffi::c_void) -> *mut Cl
             basereg = in(reg) VirtualBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "virtual.gadget" (V40) (Kickstart 3.1)
@@ -46721,8 +46721,8 @@ pub unsafe fn RethinkVirtualSize(
             in("d0") layoutlimits,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V36) (Kickstart 2.0)
@@ -46778,8 +46778,8 @@ pub unsafe fn AddAppWindowA(
             in("a2") taglist,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V36) (Kickstart 2.0)
@@ -46799,8 +46799,8 @@ pub unsafe fn RemoveAppWindow(WorkbenchBase: *mut Library, appWindow: *mut AppWi
             in("a0") appWindow,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V36) (Kickstart 2.0)
@@ -46838,8 +46838,8 @@ pub unsafe fn AddAppIconA(
             a4reg = in(reg) taglist,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V36) (Kickstart 2.0)
@@ -46859,8 +46859,8 @@ pub unsafe fn RemoveAppIcon(WorkbenchBase: *mut Library, appIcon: *mut AppIcon) 
             in("a0") appIcon,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V36) (Kickstart 2.0)
@@ -46891,8 +46891,8 @@ pub unsafe fn AddAppMenuItemA(
             in("a2") taglist,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V36) (Kickstart 2.0)
@@ -46915,8 +46915,8 @@ pub unsafe fn RemoveAppMenuItem(
             in("a0") appMenuItem,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V39) (Kickstart 3.0)
@@ -46943,8 +46943,8 @@ pub unsafe fn WBInfo(
             in("a2") screen,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V44) (Kickstart 3.5 / 1999)
@@ -46969,8 +46969,8 @@ pub unsafe fn OpenWorkbenchObjectA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V44) (Kickstart 3.5 / 1999)
@@ -46995,8 +46995,8 @@ pub unsafe fn CloseWorkbenchObjectA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V44) (Kickstart 3.5 / 1999)
@@ -47021,8 +47021,8 @@ pub unsafe fn WorkbenchControlA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V44) (Kickstart 3.5 / 1999)
@@ -47051,8 +47051,8 @@ pub unsafe fn AddAppWindowDropZoneA(
             in("a1") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V44) (Kickstart 3.5 / 1999)
@@ -47077,8 +47077,8 @@ pub unsafe fn RemoveAppWindowDropZone(
             in("a1") dropZone,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V44) (Kickstart 3.5 / 1999)
@@ -47105,8 +47105,8 @@ pub unsafe fn ChangeWorkbenchSelectionA(
             in("a2") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V44) (Kickstart 3.5 / 1999)
@@ -47131,8 +47131,8 @@ pub unsafe fn MakeWorkbenchObjectVisibleA(
             in("a1") tags,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "workbench.library" (V47) (Kickstart 3.2 / 2020)
@@ -47161,8 +47161,8 @@ pub unsafe fn WhichWorkbenchObjectA(
             in("a1") tags,
             lateout("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "window.class" (V40) (Kickstart 3.1)
@@ -47181,8 +47181,8 @@ pub unsafe fn WINDOW_GetClass(WindowBase: *mut ::core::ffi::c_void) -> *mut Clas
             basereg = in(reg) WindowBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 /// libname: "listview.gadget" (V40) (Kickstart 3.1)
@@ -47201,8 +47201,8 @@ pub unsafe fn LISTVIEW_GetClass(ListViewBase: *mut ::core::ffi::c_void) -> *mut 
             basereg = in(reg) ListViewBase,
             out("d0") asm_ret_value,
         );
-        return asm_ret_value;
     }
+    asm_ret_value
 }
 
 #[repr(C)]

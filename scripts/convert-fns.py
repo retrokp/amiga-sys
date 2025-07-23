@@ -437,9 +437,9 @@ def print_asm_implementation(rustfn, filename, line_number):
     if rustfn["return_type"] != "VOID":
         print(f'            {asm_out}')
     print(f'        );')
-    if rustfn["return_type"] != "VOID":
-        print(f'        return {asm_ret_value};')
     print(f'    }}')
+    if rustfn["return_type"] != "VOID":
+        print(f'    {asm_ret_value}')
     print(f'}}')
     print(f'')
 
