@@ -1,0 +1,7 @@
+# Configuration for all targets
+[build]
+rustflags = ["-C", "link-arg=-nostartfiles"]
+target = "m68k-bare-metal.json"
+
+[unstable]
+build-std = ["core"]

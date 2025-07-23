@@ -1,0 +1,11 @@
+[package]
+name = "amiga-sys"
+version = "0.0.1"
+edition = "2024"
+description = "Rust FFI bindings for the Amiga (m68k) system libraries"
+repository = "https://github.com/retrokp/amiga-sys"
+license = "0BSD OR Apache-2.0"
+keywords = ["amiga", "bindings", "ffi"]
+categories = ["os", "external-ffi-bindings", "no-std", "no-std::no-alloc"]
+
+[dependencies]

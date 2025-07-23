@@ -1,0 +1,92 @@
+{
+    "sfds": {
+        "cia_lib.sfd": { "libname": "ciaa.resource|ciab.resource" },
+        "bullet_lib.sfd":  { "version": "V38" },
+        "trackfile_lib.sfd": { "version": "V47" },
+        "battclock_lib.sfd": { "version": "V36" },
+        "battmem_lib.sfd": { "version": "V36" },
+        "cardres_lib.sfd": { "version": "V40" },
+        "mathieeesingbas_lib.sfd": { "version": "V36" },
+        "mathieeesingtrans_lib.sfd": { "version": "V36" }
+    },
+    "functions": {
+        "AbortAslRequest": { "version": "V44" },
+        "ActivateAslRequest": { "version": "V44" },
+
+        "InsertMinNode": { "version": "V47" },
+        "AddHeadMinList": { "version": "V47" },
+        "AddTailMinList": { "version": "V47" },
+        "RemoveMinNode": { "version": "V47" },
+        "RemHeadMinList": { "version": "V47" },
+        "RemTailMinList": { "version": "V47" },
+
+        "ReadEClock": { "version": "V36" },
+        "GetSysTime": { "version": "V36" },
+        "FreeAlloc": { "version": "V36" },
+
+        "CreateArgstring": { "version": "V36" },
+        "DeleteArgstring": { "version": "V36" },
+        "LengthArgstring": { "version": "V36" },
+        "CreateRexxMsg": { "version": "V36" },
+        "DeleteRexxMsg": { "version": "V36" },
+        "ClearRexxMsg": { "version": "V36" },
+        "FillRexxMsg": { "version": "V36" },
+        "IsRexxMsg": { "version": "V36" },
+        "LockRexxBase": { "version": "V36" },
+        "UnlockRexxBase": { "version": "V36" },
+
+        "MoveSizeLayer": { "version": "V36" },
+        "CreateUpfrontHookLayer": { "version": "V36" },
+        "CreateBehindHookLayer": { "version": "V36" },
+        "InstallLayerHook": { "version": "V36" },
+
+        "LayerOccluded": { "version": "V47" },
+        "HideLayer": { "version": "V47" },
+        "ShowLayer": { "version": "V47" },
+        "SetLayerInfoBounds": { "version": "V47" },
+
+        "ExtendedCommandLineInterface": { "version": "V37" },
+        "ParsePatternNoCase": { "version": "V37" },
+        "MatchPatternNoCase": { "version": "V37" },
+        "DosGetString": { "version": "V36" },
+        "SameDevice": { "version": "V37" },
+        "ExAllEnd": { "version": "V39" },
+        "SetOwner": { "version": "V39" },
+        "VolumeRequestHook": { "version": "V47" },
+        "InternalRunCommand": { "version": "V47" },
+        "GetCurrentDir": { "version": "V47" },
+        "PutErrStr": { "version": "V47" },
+        "ErrorOutput": { "version": "V47" },
+        "SelectError": { "version": "V47" },
+        "DoShellMethodTagList": { "version": "V47" },
+        "DoShellMethod": { "version": "V47" },
+        "ScanStackToken": { "version": "V47" },
+
+        "CreatePool": { "version": "V39" },
+        "DeletePool": { "version": "V39" },
+        "AllocPooled": { "version": "V39" },
+        "FreePooled": { "version": "V39" },
+
+        "FindMethod": { "version": "V47" },
+        "FindTriggerMethod": { "version": "V47" },
+        "CopyDTMethods": { "version": "V47" },
+        "CopyDTTriggerMethods": { "version": "V47" },
+        "FreeDTMethods": { "version": "V47" },
+        "GetDTTriggerMethodDataFlags": { "version": "V47" },
+        "SaveDTObjectA": { "version": "V47" },
+        "SaveDTObject": { "version": "V47" },
+        "StartDragSelect": { "version": "V47" },
+
+        "CreateRexxHostPort": { "version": "V47" },
+        "DeleteRexxHostPort": { "version": "V47" },
+        "GetRexxVarFromMsg": { "version": "V47" },
+        "SetRexxVarFromMsg": { "version": "V47" },
+        "LaunchRexxScript": { "version": "V47" },
+        "FreeRexxMsg": { "version": "V47" },
+        "GetRexxBufferFromMsg": { "version": "V47" },
+
+        "BumpRevisionLength": { "version": "V47" },
+        "ShowWindow": { "version": "V47" },
+        "HideWindow": { "version": "V47" }
+    }
+}
