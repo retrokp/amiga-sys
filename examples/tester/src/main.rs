@@ -20,6 +20,9 @@ static CHIP_RAM: [u8; 13] = *include_bytes!("../chipdata.txt");
 static FAST_RAM: &[u8] = include_bytes!("../fastdata.txt");
 
 #[unsafe(no_mangle)]
+// place _start to .init section so that it is the first code block in the executable
+// (the downside is that there's one extra code hunk in the Amiga executable)
+#[unsafe(link_section = ".init")]
 extern "C" fn _start() {
     unsafe {
         let execlib = amiga_sys::abs_exec_library();
