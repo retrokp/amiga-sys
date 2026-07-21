@@ -15,7 +15,7 @@ use amiga_sys::*;
 #[unsafe(link_section = ".MEMF_CHIP")]
 static CHIP_RAM: [u8; 13] = *include_bytes!("../chipdata.txt");
 
-// static data loaded to fast ram - what if there's no fast ram?
+// static data loaded to fast ram - if the system has no fast ram, then this is loaded to chip ram
 #[unsafe(link_section = ".MEMF_FAST")]
 static FAST_RAM: &[u8] = include_bytes!("../fastdata.txt");
 
@@ -45,17 +45,17 @@ extern "C" fn _start() {
 
         print(dos, out, &CHIP_RAM);
         print(dos, out, FAST_RAM);
-        if (CHIP_RAM.as_ptr() as u32) < 0x80_0000 {
+        if amiga_sys::TypeOfMem(execlib, CHIP_RAM.as_ptr() as *const c_void) & MEMF_CHIP != 0 {
             print(dos, out, b"chip ram address: ok: ");
         } else {
-            print(dos, out, b"chip ram address: no chip?: ");
+            print(dos, out, b"chip ram address: not chip mem?: ");
         }
         print_u32_hex(dos, out, CHIP_RAM.as_ptr() as u32, true);
 
-        if (FAST_RAM.as_ptr() as u32) > 0x80_0000 {
+        if amiga_sys::TypeOfMem(execlib, FAST_RAM.as_ptr() as *const c_void) & MEMF_FAST != 0 {
             print(dos, out, b"fast ram address: ok: ");
         } else {
-            print(dos, out, b"fast ram address: no fast?: ");
+            print(dos, out, b"fast ram address: not fast mem?: ");
         }
         print_u32_hex(dos, out, FAST_RAM.as_ptr() as u32, true);
 
