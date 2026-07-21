@@ -1,7 +1,12 @@
-# Configuration for all targets
-[build]
-rustflags = ["-C", "link-arg=-nostartfiles"]
-target = "m68k-bare-metal.json"
-
 [unstable]
 build-std = ["core"]
+
+[target.m68k-unknown-none-elf]
+linker = "m68k-linux-gnu-ld"
+rustflags = [
+    "-Z", "pre-link-arg=-mm68kelf",
+    "-Z", "pre-link-arg=-nostdlib",
+    "-Z", "pre-link-arg=--emit-relocs",
+    "-Z", "pre-link-arg=--gc-sections",
+    "-Z", "pre-link-arg=-Map=target/Output.map",
+]

@@ -191,7 +191,8 @@ fn test_rawdofmt(dos: *mut Library) {
         let datastream: &mut [u8; 4] = &mut [ 0, 123, 9, 99 ];
         let execlib = amiga_sys::abs_exec_library();
         RawDoFmt(execlib, b"RawDoFmt callback: %d: ok\n\0".as_ptr(),
-            datastream.as_ptr() as *mut c_void, rawdofmt_callback as FPTR, dos as *mut c_void);
+            datastream.as_ptr() as *mut c_void, rawdofmt_callback  as *const () as FPTR,
+            dos as *mut c_void);
     }
 }
 
