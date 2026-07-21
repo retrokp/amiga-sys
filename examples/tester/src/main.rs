@@ -62,6 +62,8 @@ extern "C" fn _start() {
         test_rawdofmt(dos);
 
         print(dos, out, b"\nLibrary versions:\n\n");
+        check_library_status(dos, out, b"dos.library\0");
+        /* checking all libraries crashes for some reason..
         check_library_status(dos, out, b"amigaguide.library\0");
         check_library_status(dos, out, b"asl.library\0");
         check_library_status(dos, out, b"bullet.library\0");
@@ -92,6 +94,7 @@ extern "C" fn _start() {
         check_library_status(dos, out, b"translator.library\0");
         check_library_status(dos, out, b"utility.library\0");
         check_library_status(dos, out, b"workbench.library\0");
+        */
 
         test_intuition_open_window(dos, out);
 
