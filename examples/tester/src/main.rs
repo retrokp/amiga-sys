@@ -158,34 +158,34 @@ fn test_mathieeedoubbas(dos: *mut Library, out: BPTR) {
     }
 }
 
-// TODO: use global asm or a naked functions for callbacks?
-// this marks the function as extern "C", which may not be the correct
-// way to create these callbacks, because "C" functions have prologues etc.
-#[unsafe(no_mangle)]
-pub extern "C" fn rawdofmt_callback() {
-    use core::arch::asm;
+/// Callback is a naked function, because it doesn't follow Rust or C calling convention,
+/// it follows Amiga calling convention where parameters are passed in registers
+// TODO: change this function to `extern "custom"` when a feature flag isn't needed anymore
+// https://github.com/rust-lang/rust/issues/140829
+#[unsafe(naked)]
+pub extern "C" fn rawdofmt_callback_asm() {
+    core::arch::naked_asm!(
+        // push arguments to stack, that is the calling convention
+        // for extern "C" rawdofmt_callback_rust()
+        "move.l %a3, -(%sp)", // dos library (user data)
+        "move.l %d0, -(%sp)", // char
+        "jsr {cbrust}",
+        // pop arguments
+        "lea 8(%sp), %sp",
+        "rts",
+        cbrust = sym crate::rawdofmt_callback_rust,
+    );
+}
 
-    // read the function arguments from CPU registers d0 and a3
-    let ch_d0: u32;
-    let putchdata_a3: u32;
-    unsafe {
-        asm!(
-            "",
-            out("d0") ch_d0,
-            out("a3") putchdata_a3,
-        );
+pub extern "C" fn rawdofmt_callback_rust(ch: u32, dos: *mut Library) {
+    let out = unsafe { Output(dos) };
+    if out == 0 {
+        return;
     }
-    let ch = ch_d0 as u8;
-    let dos = putchdata_a3 as *mut Library;
+    let charr: &mut [u8; 1] = &mut [ ch as u8 ];
     unsafe {
-        let out = Output(dos);
-        if out == 0 {
-            return;
-        }
-        let charr: &mut [u8; 1] = &mut [ ch ];
         Write(dos, out, charr.as_ptr() as *const c_void, charr.len() as i32);
     }
-    // here we could write the return value to the CPU register d0, but RawDoFmt doesn't need it
 }
 
 /// Tests callback function pointer
@@ -194,7 +194,7 @@ fn test_rawdofmt(dos: *mut Library) {
         let datastream: &mut [u8; 4] = &mut [ 0, 123, 9, 99 ];
         let execlib = amiga_sys::abs_exec_library();
         RawDoFmt(execlib, b"RawDoFmt callback: %d: ok\n\0".as_ptr(),
-            datastream.as_ptr() as *mut c_void, rawdofmt_callback  as *const () as FPTR,
+            datastream.as_ptr() as *mut c_void, rawdofmt_callback_asm as *const () as FPTR,
             dos as *mut c_void);
     }
 }
