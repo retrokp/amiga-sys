@@ -5495,7 +5495,7 @@ pub type FLOAT = f32;
 pub type DOUBLE = f64;
 pub type TEXT = ::core::ffi::c_uchar;
 pub type BOOL = i16;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Node {
     pub ln_Succ: *mut Node,
@@ -5514,7 +5514,7 @@ const _: () = {
     ["Offset of field: Node::ln_Pri"][::core::mem::offset_of!(Node, ln_Pri) - 9usize];
     ["Offset of field: Node::ln_Name"][::core::mem::offset_of!(Node, ln_Name) - 10usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MinNode {
     pub mln_Succ: *mut MinNode,
@@ -5527,7 +5527,7 @@ const _: () = {
     ["Offset of field: MinNode::mln_Succ"][::core::mem::offset_of!(MinNode, mln_Succ) - 0usize];
     ["Offset of field: MinNode::mln_Pred"][::core::mem::offset_of!(MinNode, mln_Pred) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct List {
     pub lh_Head: *mut Node,
@@ -5546,7 +5546,7 @@ const _: () = {
     ["Offset of field: List::lh_Type"][::core::mem::offset_of!(List, lh_Type) - 12usize];
     ["Offset of field: List::l_pad"][::core::mem::offset_of!(List, l_pad) - 13usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MinList {
     pub mlh_Head: *mut MinNode,
@@ -5562,7 +5562,7 @@ const _: () = {
     ["Offset of field: MinList::mlh_TailPred"]
         [::core::mem::offset_of!(MinList, mlh_TailPred) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Resident {
     pub rt_MatchWord: UWORD,
@@ -5596,7 +5596,7 @@ const _: () = {
         [::core::mem::offset_of!(Resident, rt_IdString) - 18usize];
     ["Offset of field: Resident::rt_Init"][::core::mem::offset_of!(Resident, rt_Init) - 22usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MemChunk {
     pub mc_Next: *mut MemChunk,
@@ -5609,7 +5609,7 @@ const _: () = {
     ["Offset of field: MemChunk::mc_Next"][::core::mem::offset_of!(MemChunk, mc_Next) - 0usize];
     ["Offset of field: MemChunk::mc_Bytes"][::core::mem::offset_of!(MemChunk, mc_Bytes) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MemHeader {
     pub mh_Node: Node,
@@ -5634,13 +5634,13 @@ const _: () = {
         [::core::mem::offset_of!(MemHeader, mh_Upper) - 24usize];
     ["Offset of field: MemHeader::mh_Free"][::core::mem::offset_of!(MemHeader, mh_Free) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub struct MemEntry {
     pub me_Un: MemEntry__bindgen_ty_1,
     pub me_Length: ULONG,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub union MemEntry__bindgen_ty_1 {
     pub meu_Reqs: ULONG,
@@ -5679,7 +5679,7 @@ const _: () = {
         [::core::mem::offset_of!(MemList, ml_NumEntries) - 14usize];
     ["Offset of field: MemList::ml_ME"][::core::mem::offset_of!(MemList, ml_ME) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MemHandlerData {
     pub memh_RequestSize: ULONG,
@@ -5697,7 +5697,7 @@ const _: () = {
     ["Offset of field: MemHandlerData::memh_Flags"]
         [::core::mem::offset_of!(MemHandlerData, memh_Flags) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Task {
     pub tc_Node: Node,
@@ -5752,7 +5752,7 @@ const _: () = {
     ["Offset of field: Task::tc_MemEntry"][::core::mem::offset_of!(Task, tc_MemEntry) - 74usize];
     ["Offset of field: Task::tc_UserData"][::core::mem::offset_of!(Task, tc_UserData) - 88usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct StackSwapStruct {
     pub stk_Lower: APTR,
@@ -5770,7 +5770,7 @@ const _: () = {
     ["Offset of field: StackSwapStruct::stk_Pointer"]
         [::core::mem::offset_of!(StackSwapStruct, stk_Pointer) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MsgPort {
     pub mp_Node: Node,
@@ -5791,7 +5791,7 @@ const _: () = {
     ["Offset of field: MsgPort::mp_MsgList"]
         [::core::mem::offset_of!(MsgPort, mp_MsgList) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Message {
     pub mn_Node: Node,
@@ -5807,7 +5807,7 @@ const _: () = {
         [::core::mem::offset_of!(Message, mn_ReplyPort) - 14usize];
     ["Offset of field: Message::mn_Length"][::core::mem::offset_of!(Message, mn_Length) - 18usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Interrupt {
     pub is_Node: Node,
@@ -5822,7 +5822,7 @@ const _: () = {
     ["Offset of field: Interrupt::is_Data"][::core::mem::offset_of!(Interrupt, is_Data) - 14usize];
     ["Offset of field: Interrupt::is_Code"][::core::mem::offset_of!(Interrupt, is_Code) - 18usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IntVector {
     pub iv_Data: APTR,
@@ -5852,7 +5852,7 @@ const _: () = {
     ["Offset of field: SoftIntList::sh_Pad"]
         [::core::mem::offset_of!(SoftIntList, sh_Pad) - 14usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SemaphoreRequest {
     pub sr_Link: MinNode,
@@ -5867,7 +5867,7 @@ const _: () = {
     ["Offset of field: SemaphoreRequest::sr_Waiter"]
         [::core::mem::offset_of!(SemaphoreRequest, sr_Waiter) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SignalSemaphore {
     pub ss_Link: Node,
@@ -5894,7 +5894,7 @@ const _: () = {
     ["Offset of field: SignalSemaphore::ss_QueueCount"]
         [::core::mem::offset_of!(SignalSemaphore, ss_QueueCount) - 44usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SemaphoreMessage {
     pub ssm_Message: Message,
@@ -5923,7 +5923,7 @@ const _: () = {
         [::core::mem::offset_of!(Semaphore, sm_MsgPort) - 0usize];
     ["Offset of field: Semaphore::sm_Bids"][::core::mem::offset_of!(Semaphore, sm_Bids) - 34usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Library {
     pub lib_Node: Node,
@@ -5958,7 +5958,7 @@ const _: () = {
     ["Offset of field: Library::lib_OpenCnt"]
         [::core::mem::offset_of!(Library, lib_OpenCnt) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IORequest {
     pub io_Message: Message,
@@ -5984,7 +5984,7 @@ const _: () = {
     ["Offset of field: IORequest::io_Error"]
         [::core::mem::offset_of!(IORequest, io_Error) - 31usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOStdReq {
     pub io_Message: Message,
@@ -6047,7 +6047,7 @@ const _: () = {
     ["Offset of field: Unit::unit_pad"][::core::mem::offset_of!(Unit, unit_pad) - 35usize];
     ["Offset of field: Unit::unit_OpenCnt"][::core::mem::offset_of!(Unit, unit_OpenCnt) - 36usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExecBase {
     pub LibNode: Library,
@@ -6217,7 +6217,7 @@ const _: () = {
     ["Offset of field: ExecBase::ex_MemHandler"]
         [::core::mem::offset_of!(ExecBase, ex_MemHandler) - 628usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DateStamp {
     pub ds_Days: LONG,
@@ -6233,7 +6233,7 @@ const _: () = {
         [::core::mem::offset_of!(DateStamp, ds_Minute) - 4usize];
     ["Offset of field: DateStamp::ds_Tick"][::core::mem::offset_of!(DateStamp, ds_Tick) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileInfoBlock {
     pub fib_DiskKey: LONG,
@@ -6280,7 +6280,7 @@ const _: () = {
 };
 pub type BPTR = ::core::ffi::c_long;
 pub type BSTR = ::core::ffi::c_long;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct InfoData {
     pub id_NumSoftErrors: LONG,
@@ -6315,7 +6315,7 @@ const _: () = {
         [::core::mem::offset_of!(InfoData, id_VolumeNode) - 28usize];
     ["Offset of field: InfoData::id_InUse"][::core::mem::offset_of!(InfoData, id_InUse) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CSource {
     pub CS_Buffer: STRPTR,
@@ -6330,7 +6330,7 @@ const _: () = {
     ["Offset of field: CSource::CS_Length"][::core::mem::offset_of!(CSource, CS_Length) - 4usize];
     ["Offset of field: CSource::CS_CurChr"][::core::mem::offset_of!(CSource, CS_CurChr) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RDArgs {
     pub RDA_Source: CSource,
@@ -6352,7 +6352,7 @@ const _: () = {
         [::core::mem::offset_of!(RDArgs, RDA_ExtHelp) - 24usize];
     ["Offset of field: RDArgs::RDA_Flags"][::core::mem::offset_of!(RDArgs, RDA_Flags) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NexxStr {
     pub ns_Ivalue: LONG,
@@ -6371,7 +6371,7 @@ const _: () = {
     ["Offset of field: NexxStr::ns_Hash"][::core::mem::offset_of!(NexxStr, ns_Hash) - 7usize];
     ["Offset of field: NexxStr::ns_Buff"][::core::mem::offset_of!(NexxStr, ns_Buff) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RexxArg {
     pub ra_Size: LONG,
@@ -6390,7 +6390,7 @@ const _: () = {
     ["Offset of field: RexxArg::ra_Hash"][::core::mem::offset_of!(RexxArg, ra_Hash) - 7usize];
     ["Offset of field: RexxArg::ra_Buff"][::core::mem::offset_of!(RexxArg, ra_Buff) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RexxMsg {
     pub rm_Node: Message,
@@ -6432,7 +6432,7 @@ const _: () = {
     ["Offset of field: RexxMsg::rm_Stdout"][::core::mem::offset_of!(RexxMsg, rm_Stdout) - 120usize];
     ["Offset of field: RexxMsg::rm_avail"][::core::mem::offset_of!(RexxMsg, rm_avail) - 124usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RexxRsrc {
     pub rr_Node: Node,
@@ -6453,7 +6453,7 @@ const _: () = {
     ["Offset of field: RexxRsrc::rr_Arg1"][::core::mem::offset_of!(RexxRsrc, rr_Arg1) - 24usize];
     ["Offset of field: RexxRsrc::rr_Arg2"][::core::mem::offset_of!(RexxRsrc, rr_Arg2) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RexxTask {
     pub rt_Global: [BYTE; 200usize],
@@ -6505,7 +6505,7 @@ const _: () = {
     ["Offset of field: RexxTask::rt_Header5"]
         [::core::mem::offset_of!(RexxTask, rt_Header5) - 316usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SrcNode {
     pub sn_Succ: *mut SrcNode,
@@ -6522,7 +6522,7 @@ const _: () = {
     ["Offset of field: SrcNode::sn_Ptr"][::core::mem::offset_of!(SrcNode, sn_Ptr) - 8usize];
     ["Offset of field: SrcNode::sn_Size"][::core::mem::offset_of!(SrcNode, sn_Size) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RxsLib {
     pub rl_Node: Library,
@@ -6624,7 +6624,7 @@ const _: () = {
     ["Offset of field: RxsLib::rl_UtilityBase"]
         [::core::mem::offset_of!(RxsLib, rl_UtilityBase) - 252usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Hook {
     pub h_MinNode: MinNode,
@@ -6644,7 +6644,7 @@ const _: () = {
 pub type HOOKFUNC = FPTR;
 pub type Object = ULONG;
 pub type ClassID = STRPTR;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _bindgen_ty_1 {
     pub MethodID: ULONG,
@@ -6657,7 +6657,7 @@ const _: () = {
         [::core::mem::offset_of!(_bindgen_ty_1, MethodID) - 0usize];
 };
 pub type Msg = *mut _bindgen_ty_1;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opSet {
     pub MethodID: ULONG,
@@ -6672,7 +6672,7 @@ const _: () = {
     ["Offset of field: opSet::ops_AttrList"][::core::mem::offset_of!(opSet, ops_AttrList) - 4usize];
     ["Offset of field: opSet::ops_GInfo"][::core::mem::offset_of!(opSet, ops_GInfo) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opUpdate {
     pub MethodID: ULONG,
@@ -6691,7 +6691,7 @@ const _: () = {
     ["Offset of field: opUpdate::opu_Flags"]
         [::core::mem::offset_of!(opUpdate, opu_Flags) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opGet {
     pub MethodID: ULONG,
@@ -6706,7 +6706,7 @@ const _: () = {
     ["Offset of field: opGet::opg_AttrID"][::core::mem::offset_of!(opGet, opg_AttrID) - 4usize];
     ["Offset of field: opGet::opg_Storage"][::core::mem::offset_of!(opGet, opg_Storage) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opAddTail {
     pub MethodID: ULONG,
@@ -6720,7 +6720,7 @@ const _: () = {
     ["Offset of field: opAddTail::opat_List"]
         [::core::mem::offset_of!(opAddTail, opat_List) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opMember {
     pub MethodID: ULONG,
@@ -6734,7 +6734,7 @@ const _: () = {
     ["Offset of field: opMember::opam_Object"]
         [::core::mem::offset_of!(opMember, opam_Object) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IClass {
     pub cl_Dispatcher: Hook,
@@ -6771,7 +6771,7 @@ const _: () = {
     ["Offset of field: IClass::cl_Flags"][::core::mem::offset_of!(IClass, cl_Flags) - 48usize];
 };
 pub type Class = IClass;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _Object {
     pub o_Node: MinNode,
@@ -6784,7 +6784,7 @@ const _: () = {
     ["Offset of field: _Object::o_Node"][::core::mem::offset_of!(_Object, o_Node) - 0usize];
     ["Offset of field: _Object::o_Class"][::core::mem::offset_of!(_Object, o_Class) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ClassLibrary {
     pub cl_Lib: Library,
@@ -6803,7 +6803,7 @@ const _: () = {
         [::core::mem::offset_of!(ClassLibrary, cl_Class) - 36usize];
 };
 pub type Tag = ULONG;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TagItem {
     pub ti_Tag: Tag,
@@ -6816,7 +6816,7 @@ const _: () = {
     ["Offset of field: TagItem::ti_Tag"][::core::mem::offset_of!(TagItem, ti_Tag) - 0usize];
     ["Offset of field: TagItem::ti_Data"][::core::mem::offset_of!(TagItem, ti_Data) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct apExecute {
     pub MethodID: ULONG,
@@ -6842,7 +6842,7 @@ const _: () = {
         [::core::mem::offset_of!(apExecute, ape_Result) - 20usize];
     ["Offset of field: apExecute::ape_IO"][::core::mem::offset_of!(apExecute, ape_IO) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ARexxCmd {
     pub ac_Name: STRPTR,
@@ -6879,7 +6879,7 @@ pub const REQIMAGE_ERROR: _bindgen_ty_2 = 3;
 pub const REQIMAGE_QUESTION: _bindgen_ty_2 = 4;
 pub const REQIMAGE_INSERTDISK: _bindgen_ty_2 = 5;
 pub type _bindgen_ty_2 = ::core::ffi::c_uint;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct orRequest {
     pub MethodID: ULONG,
@@ -6898,7 +6898,7 @@ const _: () = {
     ["Offset of field: orRequest::or_Screen"]
         [::core::mem::offset_of!(orRequest, or_Screen) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct wmHandle {
     pub MethodID: ULONG,
@@ -6911,7 +6911,7 @@ const _: () = {
     ["Offset of field: wmHandle::MethodID"][::core::mem::offset_of!(wmHandle, MethodID) - 0usize];
     ["Offset of field: wmHandle::wmh_Code"][::core::mem::offset_of!(wmHandle, wmh_Code) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct wmActivateGadget {
     pub MethodID: ULONG,
@@ -6929,7 +6929,7 @@ const _: () = {
 pub const SnapHow_SAVE: SnapHow = 0;
 pub const SnapHow_USE: SnapHow = 1;
 pub type SnapHow = ::core::ffi::c_uint;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct wmSnapshot {
     pub MethodID: ULONG,
@@ -6943,7 +6943,7 @@ const _: () = {
         [::core::mem::offset_of!(wmSnapshot, MethodID) - 0usize];
     ["Offset of field: wmSnapshot::How"][::core::mem::offset_of!(wmSnapshot, How) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct HintInfo {
     pub hi_GadgetID: WORD,
@@ -6961,7 +6961,7 @@ const _: () = {
     ["Offset of field: HintInfo::hi_Text"][::core::mem::offset_of!(HintInfo, hi_Text) - 4usize];
     ["Offset of field: HintInfo::hi_Flags"][::core::mem::offset_of!(HintInfo, hi_Flags) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ClipboardUnitPartial {
     pub cu_Node: Node,
@@ -6976,7 +6976,7 @@ const _: () = {
     ["Offset of field: ClipboardUnitPartial::cu_UnitNum"]
         [::core::mem::offset_of!(ClipboardUnitPartial, cu_UnitNum) - 14usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOClipReq {
     pub io_Message: Message,
@@ -7016,7 +7016,7 @@ const _: () = {
     ["Offset of field: IOClipReq::io_ClipID"]
         [::core::mem::offset_of!(IOClipReq, io_ClipID) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SatisfyMsg {
     pub sm_Msg: Message,
@@ -7033,7 +7033,7 @@ const _: () = {
     ["Offset of field: SatisfyMsg::sm_ClipID"]
         [::core::mem::offset_of!(SatisfyMsg, sm_ClipID) - 22usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ClipHookMsg {
     pub chm_Type: ULONG,
@@ -7051,7 +7051,7 @@ const _: () = {
     ["Offset of field: ClipHookMsg::chm_ClipID"]
         [::core::mem::offset_of!(ClipHookMsg, chm_ClipID) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IFFHandle {
     pub iff_Stream: ULONG,
@@ -7069,7 +7069,7 @@ const _: () = {
     ["Offset of field: IFFHandle::iff_Depth"]
         [::core::mem::offset_of!(IFFHandle, iff_Depth) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IFFStreamCmd {
     pub sc_Command: LONG,
@@ -7087,7 +7087,7 @@ const _: () = {
     ["Offset of field: IFFStreamCmd::sc_NBytes"]
         [::core::mem::offset_of!(IFFStreamCmd, sc_NBytes) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ContextNode {
     pub cn_Node: MinNode,
@@ -7110,7 +7110,7 @@ const _: () = {
     ["Offset of field: ContextNode::cn_Scan"]
         [::core::mem::offset_of!(ContextNode, cn_Scan) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LocalContextItem {
     pub lci_Node: MinNode,
@@ -7131,7 +7131,7 @@ const _: () = {
     ["Offset of field: LocalContextItem::lci_Ident"]
         [::core::mem::offset_of!(LocalContextItem, lci_Ident) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct StoredProperty {
     pub sp_Size: LONG,
@@ -7146,7 +7146,7 @@ const _: () = {
     ["Offset of field: StoredProperty::sp_Data"]
         [::core::mem::offset_of!(StoredProperty, sp_Data) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CollectionItem {
     pub ci_Next: *mut CollectionItem,
@@ -7182,7 +7182,7 @@ const _: () = {
     ["Offset of field: ClipboardHandle::cbh_SatisfyPort"]
         [::core::mem::offset_of!(ClipboardHandle, cbh_SatisfyPort) - 86usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DataTypeHeader {
     pub dth_Name: STRPTR,
@@ -7221,7 +7221,7 @@ const _: () = {
     ["Offset of field: DataTypeHeader::dth_Priority"]
         [::core::mem::offset_of!(DataTypeHeader, dth_Priority) - 30usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DTHookContext {
     pub dthc_SysBase: *mut Library,
@@ -7260,7 +7260,7 @@ const _: () = {
     ["Offset of field: DTHookContext::dthc_BufferLength"]
         [::core::mem::offset_of!(DTHookContext, dthc_BufferLength) - 36usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Tool {
     pub tn_Which: UWORD,
@@ -7275,7 +7275,7 @@ const _: () = {
     ["Offset of field: Tool::tn_Flags"][::core::mem::offset_of!(Tool, tn_Flags) - 2usize];
     ["Offset of field: Tool::tn_Program"][::core::mem::offset_of!(Tool, tn_Program) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DataType {
     pub dtn_Node1: Node,
@@ -7304,7 +7304,7 @@ const _: () = {
     ["Offset of field: DataType::dtn_Length"]
         [::core::mem::offset_of!(DataType, dtn_Length) - 54usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ToolNode {
     pub tn_Node: Node,
@@ -7337,7 +7337,7 @@ const _: () = {
     ["Offset of field: Rectangle::MaxX"][::core::mem::offset_of!(Rectangle, MaxX) - 4usize];
     ["Offset of field: Rectangle::MaxY"][::core::mem::offset_of!(Rectangle, MaxY) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Rect32 {
     pub MinX: LONG,
@@ -7369,7 +7369,7 @@ const _: () = {
 };
 pub type Point = tPoint;
 pub type PLANEPTR = *mut UBYTE;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct BitMap {
     pub BytesPerRow: UWORD,
@@ -7390,7 +7390,7 @@ const _: () = {
     ["Offset of field: BitMap::pad"][::core::mem::offset_of!(BitMap, pad) - 6usize];
     ["Offset of field: BitMap::Planes"][::core::mem::offset_of!(BitMap, Planes) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Layer {
     pub front: *mut Layer,
@@ -7457,7 +7457,7 @@ const _: () = {
     ["Offset of field: Layer::reserved2"][::core::mem::offset_of!(Layer, reserved2) - 138usize];
     ["Offset of field: Layer::DamageList"][::core::mem::offset_of!(Layer, DamageList) - 156usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ClipRect {
     pub Next: *mut ClipRect,
@@ -7489,7 +7489,7 @@ pub struct CopIns {
     pub OpCode: WORD,
     pub u3: CopIns__bindgen_ty_1,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub union CopIns__bindgen_ty_1 {
     pub nxtlist: *mut CopList,
@@ -7570,7 +7570,7 @@ const _: () = {
     ["Offset of field: CopIns::OpCode"][::core::mem::offset_of!(CopIns, OpCode) - 0usize];
     ["Offset of field: CopIns::u3"][::core::mem::offset_of!(CopIns, u3) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct cprlist {
     pub Next: *mut cprlist,
@@ -7585,7 +7585,7 @@ const _: () = {
     ["Offset of field: cprlist::start"][::core::mem::offset_of!(cprlist, start) - 4usize];
     ["Offset of field: cprlist::MaxCount"][::core::mem::offset_of!(cprlist, MaxCount) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CopList {
     pub Next: *mut CopList,
@@ -7618,7 +7618,7 @@ const _: () = {
     ["Offset of field: CopList::SLRepeat"][::core::mem::offset_of!(CopList, SLRepeat) - 34usize];
     ["Offset of field: CopList::Flags"][::core::mem::offset_of!(CopList, Flags) - 36usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct UCopList {
     pub Next: *mut UCopList,
@@ -7670,7 +7670,7 @@ const _: () = {
         [::core::mem::offset_of!(copinit, wait_forever) - 164usize];
     ["Offset of field: copinit::sprstop"][::core::mem::offset_of!(copinit, sprstop) - 176usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExtendedNode {
     pub xln_Succ: *mut Node,
@@ -7706,7 +7706,7 @@ const _: () = {
     ["Offset of field: ExtendedNode::xln_Init"]
         [::core::mem::offset_of!(ExtendedNode, xln_Init) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MonitorSpec {
     pub ms_Node: ExtendedNode,
@@ -7808,7 +7808,7 @@ const _: () = {
     ["Offset of field: AnalogSignalInterval::asi_Stop"]
         [::core::mem::offset_of!(AnalogSignalInterval, asi_Stop) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SpecialMonitor {
     pub spm_Node: ExtendedNode,
@@ -7848,7 +7848,7 @@ const _: () = {
         [::core::mem::offset_of!(SpecialMonitor, vsync) - 54usize];
 };
 pub type DisplayInfoHandle = APTR;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct QueryHeader {
     pub StructID: ULONG,
@@ -7868,7 +7868,7 @@ const _: () = {
     ["Offset of field: QueryHeader::Length"]
         [::core::mem::offset_of!(QueryHeader, Length) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DisplayInfo {
     pub Header: QueryHeader,
@@ -7916,7 +7916,7 @@ const _: () = {
     ["Offset of field: DisplayInfo::reserved"]
         [::core::mem::offset_of!(DisplayInfo, reserved) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DimensionInfo {
     pub Header: QueryHeader,
@@ -7963,7 +7963,7 @@ const _: () = {
     ["Offset of field: DimensionInfo::reserved"]
         [::core::mem::offset_of!(DimensionInfo, reserved) - 80usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MonitorInfo {
     pub Header: QueryHeader,
@@ -8011,7 +8011,7 @@ const _: () = {
     ["Offset of field: MonitorInfo::reserved"]
         [::core::mem::offset_of!(MonitorInfo, reserved) - 88usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NameInfo {
     pub Header: QueryHeader,
@@ -8026,7 +8026,7 @@ const _: () = {
     ["Offset of field: NameInfo::Name"][::core::mem::offset_of!(NameInfo, Name) - 16usize];
     ["Offset of field: NameInfo::reserved"][::core::mem::offset_of!(NameInfo, reserved) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct VecInfo {
     pub Header: QueryHeader,
@@ -8047,7 +8047,7 @@ const _: () = {
     ["Offset of field: VecInfo::pad"][::core::mem::offset_of!(VecInfo, pad) - 26usize];
     ["Offset of field: VecInfo::reserved"][::core::mem::offset_of!(VecInfo, reserved) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Custom {
     pub bltddat: UWORD,
@@ -8155,7 +8155,7 @@ pub struct Custom {
     pub padf3: [UWORD; 11usize],
     pub fmode: UWORD,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Custom_AudChannel {
     pub ac_ptr: *mut UWORD,
@@ -8312,7 +8312,7 @@ const _: () = {
     ["Offset of field: Custom::padf3"][::core::mem::offset_of!(Custom, padf3) - 486usize];
     ["Offset of field: Custom::fmode"][::core::mem::offset_of!(Custom, fmode) - 508usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ViewPort {
     pub Next: *mut ViewPort,
@@ -8351,7 +8351,7 @@ const _: () = {
         [::core::mem::offset_of!(ViewPort, ExtendedModes) - 35usize];
     ["Offset of field: ViewPort::RasInfo"][::core::mem::offset_of!(ViewPort, RasInfo) - 36usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct View {
     pub ViewPort: *mut ViewPort,
@@ -8372,7 +8372,7 @@ const _: () = {
     ["Offset of field: View::DxOffset"][::core::mem::offset_of!(View, DxOffset) - 14usize];
     ["Offset of field: View::Modes"][::core::mem::offset_of!(View, Modes) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ViewExtra {
     pub n: ExtendedNode,
@@ -8389,7 +8389,7 @@ const _: () = {
     ["Offset of field: ViewExtra::Monitor"][::core::mem::offset_of!(ViewExtra, Monitor) - 28usize];
     ["Offset of field: ViewExtra::TopLine"][::core::mem::offset_of!(ViewExtra, TopLine) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ViewPortExtra {
     pub n: ExtendedNode,
@@ -8424,7 +8424,7 @@ const _: () = {
     ["Offset of field: ViewPortExtra::cop2ptr"]
         [::core::mem::offset_of!(ViewPortExtra, cop2ptr) - 62usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RasInfo {
     pub Next: *mut RasInfo,
@@ -8441,7 +8441,7 @@ const _: () = {
     ["Offset of field: RasInfo::RxOffset"][::core::mem::offset_of!(RasInfo, RxOffset) - 8usize];
     ["Offset of field: RasInfo::RyOffset"][::core::mem::offset_of!(RasInfo, RyOffset) - 10usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ColorMap {
     pub Flags: UBYTE,
@@ -8502,7 +8502,7 @@ const _: () = {
     ["Offset of field: ColorMap::Bp_1_base"]
         [::core::mem::offset_of!(ColorMap, Bp_1_base) - 50usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PaletteExtra {
     pub pe_Semaphore: SignalSemaphore,
@@ -8538,7 +8538,7 @@ const _: () = {
     ["Offset of field: PaletteExtra::pe_SharableColors"]
         [::core::mem::offset_of!(PaletteExtra, pe_SharableColors) - 66usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DBufInfo {
     pub dbi_Link1: APTR,
@@ -8588,7 +8588,7 @@ const _: () = {
     ["Offset of field: DBufInfo::dbi_BeamPos2"]
         [::core::mem::offset_of!(DBufInfo, dbi_BeamPos2) - 82usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AreaInfo {
     pub VctrTbl: *mut WORD,
@@ -8613,7 +8613,7 @@ const _: () = {
     ["Offset of field: AreaInfo::FirstX"][::core::mem::offset_of!(AreaInfo, FirstX) - 20usize];
     ["Offset of field: AreaInfo::FirstY"][::core::mem::offset_of!(AreaInfo, FirstY) - 22usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TmpRas {
     pub RasPtr: *mut BYTE,
@@ -8626,7 +8626,7 @@ const _: () = {
     ["Offset of field: TmpRas::RasPtr"][::core::mem::offset_of!(TmpRas, RasPtr) - 0usize];
     ["Offset of field: TmpRas::Size"][::core::mem::offset_of!(TmpRas, Size) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GelsInfo {
     pub sprRsrvd: BYTE,
@@ -8667,7 +8667,7 @@ const _: () = {
     ["Offset of field: GelsInfo::lastBlissObj"]
         [::core::mem::offset_of!(GelsInfo, lastBlissObj) - 34usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RastPort {
     pub Layer: *mut Layer,
@@ -8747,7 +8747,7 @@ const _: () = {
         [::core::mem::offset_of!(RastPort, wordreserved) - 78usize];
     ["Offset of field: RastPort::reserved"][::core::mem::offset_of!(RastPort, reserved) - 92usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Layer_Info {
     pub top_layer: *mut Layer,
@@ -8799,7 +8799,7 @@ const _: () = {
     ["Offset of field: Layer_Info::resPtr5"]
         [::core::mem::offset_of!(Layer_Info, resPtr5) - 98usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TextAttr {
     pub ta_Name: STRPTR,
@@ -8816,7 +8816,7 @@ const _: () = {
     ["Offset of field: TextAttr::ta_Style"][::core::mem::offset_of!(TextAttr, ta_Style) - 6usize];
     ["Offset of field: TextAttr::ta_Flags"][::core::mem::offset_of!(TextAttr, ta_Flags) - 7usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TTextAttr {
     pub tta_Name: STRPTR,
@@ -8838,7 +8838,7 @@ const _: () = {
         [::core::mem::offset_of!(TTextAttr, tta_Flags) - 7usize];
     ["Offset of field: TTextAttr::tta_Tags"][::core::mem::offset_of!(TTextAttr, tta_Tags) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TextFont {
     pub tf_Message: Message,
@@ -8888,7 +8888,7 @@ const _: () = {
     ["Offset of field: TextFont::tf_CharKern"]
         [::core::mem::offset_of!(TextFont, tf_CharKern) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TextFontExtension {
     pub tfe_MatchWord: UWORD,
@@ -8921,7 +8921,7 @@ const _: () = {
     ["Offset of field: TextFontExtension::tfe_OFontPatchK"]
         [::core::mem::offset_of!(TextFontExtension, tfe_OFontPatchK) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ColorFontColors {
     pub cfc_Reserved: UWORD,
@@ -8939,7 +8939,7 @@ const _: () = {
     ["Offset of field: ColorFontColors::cfc_ColorTable"]
         [::core::mem::offset_of!(ColorFontColors, cfc_ColorTable) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ColorTextFont {
     pub ctf_TF: TextFont,
@@ -8996,7 +8996,7 @@ const _: () = {
     ["Offset of field: TextExtent::te_Extent"]
         [::core::mem::offset_of!(TextExtent, te_Extent) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TimeVal {
     pub tv_secs: ULONG,
@@ -9024,7 +9024,7 @@ const _: () = {
     ["Offset of field: TimeRequest::tr_time"]
         [::core::mem::offset_of!(TimeRequest, tr_time) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct timeval {
     pub tv_secs: ULONG,
@@ -9054,7 +9054,7 @@ const _: () = {
 };
 pub type TimeVal_Type = timeval;
 pub type TimeRequest_Type = timerequest;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct EClockVal {
     pub ev_hi: ULONG,
@@ -9067,7 +9067,7 @@ const _: () = {
     ["Offset of field: EClockVal::ev_hi"][::core::mem::offset_of!(EClockVal, ev_hi) - 0usize];
     ["Offset of field: EClockVal::ev_lo"][::core::mem::offset_of!(EClockVal, ev_lo) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IEPointerPixel {
     pub iepp_Screen: *mut Screen,
@@ -9151,7 +9151,7 @@ const _: () = {
     ["Offset of field: IEPointerTablet::iept_Pressure"]
         [::core::mem::offset_of!(IEPointerTablet, iept_Pressure) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IENewTablet {
     pub ient_CallBack: *mut Hook,
@@ -9190,7 +9190,7 @@ const _: () = {
     ["Offset of field: IENewTablet::ient_TagList"]
         [::core::mem::offset_of!(IENewTablet, ient_TagList) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub struct InputEvent {
     pub ie_NextEvent: *mut InputEvent,
@@ -9201,7 +9201,7 @@ pub struct InputEvent {
     pub ie_position: InputEvent__bindgen_ty_1,
     pub ie_TimeStamp: TimeVal_Type,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub union InputEvent__bindgen_ty_1 {
     pub ie_xy: InputEvent__bindgen_ty_1__bindgen_ty_1,
@@ -9287,7 +9287,7 @@ const _: () = {
     ["Offset of field: InputEvent::ie_TimeStamp"]
         [::core::mem::offset_of!(InputEvent, ie_TimeStamp) - 14usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Menu {
     pub NextMenu: *mut Menu,
@@ -9320,7 +9320,7 @@ const _: () = {
     ["Offset of field: Menu::BeatX"][::core::mem::offset_of!(Menu, BeatX) - 26usize];
     ["Offset of field: Menu::BeatY"][::core::mem::offset_of!(Menu, BeatY) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MenuItem {
     pub NextItem: *mut MenuItem,
@@ -9356,7 +9356,7 @@ const _: () = {
     ["Offset of field: MenuItem::NextSelect"]
         [::core::mem::offset_of!(MenuItem, NextSelect) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Requester {
     pub OlderRequest: *mut Requester,
@@ -9408,7 +9408,7 @@ const _: () = {
         [::core::mem::offset_of!(Requester, ReqImage) - 76usize];
     ["Offset of field: Requester::ReqPad2"][::core::mem::offset_of!(Requester, ReqPad2) - 80usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Gadget {
     pub NextGadget: *mut Gadget,
@@ -9451,7 +9451,7 @@ const _: () = {
     ["Offset of field: Gadget::GadgetID"][::core::mem::offset_of!(Gadget, GadgetID) - 38usize];
     ["Offset of field: Gadget::UserData"][::core::mem::offset_of!(Gadget, UserData) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExtGadget {
     pub NextGadget: *mut ExtGadget,
@@ -9515,7 +9515,7 @@ const _: () = {
     ["Offset of field: ExtGadget::BoundsHeight"]
         [::core::mem::offset_of!(ExtGadget, BoundsHeight) - 54usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct BoolInfo {
     pub Flags: UWORD,
@@ -9563,7 +9563,7 @@ const _: () = {
     ["Offset of field: PropInfo::TopBorder"]
         [::core::mem::offset_of!(PropInfo, TopBorder) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct StringInfo {
     pub Buffer: STRPTR,
@@ -9608,7 +9608,7 @@ const _: () = {
     ["Offset of field: StringInfo::AltKeyMap"]
         [::core::mem::offset_of!(StringInfo, AltKeyMap) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IntuiText {
     pub FrontPen: UBYTE,
@@ -9635,7 +9635,7 @@ const _: () = {
     ["Offset of field: IntuiText::NextText"]
         [::core::mem::offset_of!(IntuiText, NextText) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Border {
     pub LeftEdge: WORD,
@@ -9660,7 +9660,7 @@ const _: () = {
     ["Offset of field: Border::XY"][::core::mem::offset_of!(Border, XY) - 8usize];
     ["Offset of field: Border::NextBorder"][::core::mem::offset_of!(Border, NextBorder) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Image {
     pub LeftEdge: WORD,
@@ -9687,7 +9687,7 @@ const _: () = {
     ["Offset of field: Image::PlaneOnOff"][::core::mem::offset_of!(Image, PlaneOnOff) - 15usize];
     ["Offset of field: Image::NextImage"][::core::mem::offset_of!(Image, NextImage) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IntuiMessage {
     pub ExecMessage: Message,
@@ -9728,7 +9728,7 @@ const _: () = {
     ["Offset of field: IntuiMessage::SpecialLink"]
         [::core::mem::offset_of!(IntuiMessage, SpecialLink) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExtIntuiMessage {
     pub eim_IntuiMessage: IntuiMessage,
@@ -9743,7 +9743,7 @@ const _: () = {
     ["Offset of field: ExtIntuiMessage::eim_TabletData"]
         [::core::mem::offset_of!(ExtIntuiMessage, eim_TabletData) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IntuiWheelData {
     pub Version: UWORD,
@@ -9788,7 +9788,7 @@ const _: () = {
     ["Offset of field: IBox::Width"][::core::mem::offset_of!(IBox, Width) - 4usize];
     ["Offset of field: IBox::Height"][::core::mem::offset_of!(IBox, Height) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Window {
     pub NextWindow: *mut Window,
@@ -9901,7 +9901,7 @@ const _: () = {
     ["Offset of field: Window::IFont"][::core::mem::offset_of!(Window, IFont) - 128usize];
     ["Offset of field: Window::MoreFlags"][::core::mem::offset_of!(Window, MoreFlags) - 132usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NewWindow {
     pub LeftEdge: WORD,
@@ -9954,7 +9954,7 @@ const _: () = {
         [::core::mem::offset_of!(NewWindow, MaxHeight) - 44usize];
     ["Offset of field: NewWindow::Type"][::core::mem::offset_of!(NewWindow, Type) - 46usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExtNewWindow {
     pub LeftEdge: WORD,
@@ -10018,7 +10018,7 @@ const _: () = {
     ["Offset of field: ExtNewWindow::Extension"]
         [::core::mem::offset_of!(ExtNewWindow, Extension) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DrawInfo {
     pub dri_Version: UWORD,
@@ -10074,7 +10074,7 @@ const _: () = {
     ["Offset of field: DrawInfo::dri_Reserved"]
         [::core::mem::offset_of!(DrawInfo, dri_Reserved) - 34usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Screen {
     pub NextScreen: *mut Screen,
@@ -10151,7 +10151,7 @@ const _: () = {
     ["Offset of field: Screen::ExtData"][::core::mem::offset_of!(Screen, ExtData) - 338usize];
     ["Offset of field: Screen::UserData"][::core::mem::offset_of!(Screen, UserData) - 342usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NewScreen {
     pub LeftEdge: WORD,
@@ -10191,7 +10191,7 @@ const _: () = {
     ["Offset of field: NewScreen::CustomBitMap"]
         [::core::mem::offset_of!(NewScreen, CustomBitMap) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExtNewScreen {
     pub LeftEdge: WORD,
@@ -10238,7 +10238,7 @@ const _: () = {
     ["Offset of field: ExtNewScreen::Extension"]
         [::core::mem::offset_of!(ExtNewScreen, Extension) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PubScreenNode {
     pub psn_Node: Node,
@@ -10268,7 +10268,7 @@ const _: () = {
     ["Offset of field: PubScreenNode::psn_SigBit"]
         [::core::mem::offset_of!(PubScreenNode, psn_SigBit) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ScreenBuffer {
     pub sb_BitMap: *mut BitMap,
@@ -10456,7 +10456,7 @@ const _: () = {
     ["Offset of field: Preferences::ext_size"]
         [::core::mem::offset_of!(Preferences, ext_size) - 231usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Remember {
     pub NextRemember: *mut Remember,
@@ -10491,7 +10491,7 @@ const _: () = {
     ["Offset of field: ColorSpec::Green"][::core::mem::offset_of!(ColorSpec, Green) - 4usize];
     ["Offset of field: ColorSpec::Blue"][::core::mem::offset_of!(ColorSpec, Blue) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct EasyStruct {
     pub es_StructSize: ULONG,
@@ -10515,7 +10515,7 @@ const _: () = {
     ["Offset of field: EasyStruct::es_GadgetFormat"]
         [::core::mem::offset_of!(EasyStruct, es_GadgetFormat) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TabletData {
     pub td_XFraction: UWORD,
@@ -10545,7 +10545,7 @@ const _: () = {
     ["Offset of field: TabletData::td_TagList"]
         [::core::mem::offset_of!(TabletData, td_TagList) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TabletHookData {
     pub thd_Screen: *mut Screen,
@@ -10566,7 +10566,7 @@ const _: () = {
     ["Offset of field: TabletHookData::thd_ScreenChanged"]
         [::core::mem::offset_of!(TabletHookData, thd_ScreenChanged) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOPrtCmdReq {
     pub io_Message: Message,
@@ -10608,7 +10608,7 @@ const _: () = {
     ["Offset of field: IOPrtCmdReq::io_Parm3"]
         [::core::mem::offset_of!(IOPrtCmdReq, io_Parm3) - 37usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IODRPReq {
     pub io_Message: Message,
@@ -10659,7 +10659,7 @@ const _: () = {
     ["Offset of field: IODRPReq::io_Special"]
         [::core::mem::offset_of!(IODRPReq, io_Special) - 60usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IODRPTagsReq {
     pub io_Message: Message,
@@ -10719,7 +10719,7 @@ const _: () = {
     ["Offset of field: IODRPTagsReq::io_TagList"]
         [::core::mem::offset_of!(IODRPTagsReq, io_TagList) - 62usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DRPSourceMsg {
     pub x: LONG,
@@ -10739,7 +10739,7 @@ const _: () = {
         [::core::mem::offset_of!(DRPSourceMsg, height) - 12usize];
     ["Offset of field: DRPSourceMsg::buf"][::core::mem::offset_of!(DRPSourceMsg, buf) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOPrtPrefsReq {
     pub io_Message: Message,
@@ -10769,7 +10769,7 @@ const _: () = {
     ["Offset of field: IOPrtPrefsReq::io_TagList"]
         [::core::mem::offset_of!(IOPrtPrefsReq, io_TagList) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOPrtErrReq {
     pub io_Message: Message,
@@ -10799,7 +10799,7 @@ const _: () = {
     ["Offset of field: IOPrtErrReq::io_Hook"]
         [::core::mem::offset_of!(IOPrtErrReq, io_Hook) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrtErrMsg {
     pub pe_Version: ULONG,
@@ -10825,7 +10825,7 @@ const _: () = {
     ["Offset of field: PrtErrMsg::pe_ArgList"]
         [::core::mem::offset_of!(PrtErrMsg, pe_ArgList) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOPrefsReq {
     pub io_Message: Message,
@@ -10864,7 +10864,7 @@ const _: () = {
     ["Offset of field: IOPrefsReq::io_GfxPrefs"]
         [::core::mem::offset_of!(IOPrefsReq, io_GfxPrefs) - 44usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOPArray {
     pub PTermArray0: ULONG,
@@ -10879,7 +10879,7 @@ const _: () = {
     ["Offset of field: IOPArray::PTermArray1"]
         [::core::mem::offset_of!(IOPArray, PTermArray1) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOExtPar {
     pub IOPar: IOStdReq,
@@ -10902,7 +10902,7 @@ const _: () = {
     ["Offset of field: IOExtPar::io_PTermArray"]
         [::core::mem::offset_of!(IOExtPar, io_PTermArray) - 54usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOTArray {
     pub TermArray0: ULONG,
@@ -10917,7 +10917,7 @@ const _: () = {
     ["Offset of field: IOTArray::TermArray1"]
         [::core::mem::offset_of!(IOTArray, TermArray1) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOExtSer {
     pub IOSer: IOStdReq,
@@ -10960,7 +10960,7 @@ const _: () = {
     ["Offset of field: IOExtSer::io_Status"]
         [::core::mem::offset_of!(IOExtSer, io_Status) - 80usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Process {
     pub pr_Task: Task,
@@ -11040,7 +11040,7 @@ const _: () = {
         [::core::mem::offset_of!(Process, pr_ShellPrivate) - 220usize];
     ["Offset of field: Process::pr_CES"][::core::mem::offset_of!(Process, pr_CES) - 224usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileHandle {
     pub fh_Link: *mut Message,
@@ -11076,7 +11076,7 @@ const _: () = {
     ["Offset of field: FileHandle::fh_Arg2"]
         [::core::mem::offset_of!(FileHandle, fh_Arg2) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DosPacket {
     pub dp_Link: *mut Message,
@@ -11124,7 +11124,7 @@ const _: () = {
     ["Offset of field: StandardPacket::sp_Pkt"]
         [::core::mem::offset_of!(StandardPacket, sp_Pkt) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ErrorString {
     pub estr_Nums: *mut LONG,
@@ -11139,7 +11139,7 @@ const _: () = {
     ["Offset of field: ErrorString::estr_Strings"]
         [::core::mem::offset_of!(ErrorString, estr_Strings) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DosLibrary {
     pub dl_lib: Library,
@@ -11173,7 +11173,7 @@ const _: () = {
     ["Offset of field: DosLibrary::dl_IntuitionBase"]
         [::core::mem::offset_of!(DosLibrary, dl_IntuitionBase) - 66usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RootNode {
     pub rn_TaskArray: BPTR,
@@ -11209,7 +11209,7 @@ const _: () = {
         [::core::mem::offset_of!(RootNode, rn_ShellSegment) - 48usize];
     ["Offset of field: RootNode::rn_Flags"][::core::mem::offset_of!(RootNode, rn_Flags) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CliProcList {
     pub cpl_Node: MinNode,
@@ -11227,7 +11227,7 @@ const _: () = {
     ["Offset of field: CliProcList::cpl_Array"]
         [::core::mem::offset_of!(CliProcList, cpl_Array) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DosInfo {
     pub di_McName: BPTR,
@@ -11257,7 +11257,7 @@ const _: () = {
     ["Offset of field: DosInfo::di_DeleteLock"]
         [::core::mem::offset_of!(DosInfo, di_DeleteLock) - 112usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Segment {
     pub seg_Next: BPTR,
@@ -11274,7 +11274,7 @@ const _: () = {
     ["Offset of field: Segment::seg_Seg"][::core::mem::offset_of!(Segment, seg_Seg) - 8usize];
     ["Offset of field: Segment::seg_Name"][::core::mem::offset_of!(Segment, seg_Name) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CommandLineInterface {
     pub cli_Result2: LONG,
@@ -11331,7 +11331,7 @@ const _: () = {
     ["Offset of field: CommandLineInterface::cli_Module"]
         [::core::mem::offset_of!(CommandLineInterface, cli_Module) - 60usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DeviceList {
     pub dl_Next: BPTR,
@@ -11364,7 +11364,7 @@ const _: () = {
     ["Offset of field: DeviceList::dl_Name"]
         [::core::mem::offset_of!(DeviceList, dl_Name) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DevInfo {
     pub dvi_Next: BPTR,
@@ -11401,7 +11401,7 @@ const _: () = {
         [::core::mem::offset_of!(DevInfo, dvi_GlobVec) - 36usize];
     ["Offset of field: DevInfo::dvi_Name"][::core::mem::offset_of!(DevInfo, dvi_Name) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub struct DosList {
     pub dol_Next: BPTR,
@@ -11418,7 +11418,7 @@ pub union DosList__bindgen_ty_1 {
     pub dol_volume: DosList__bindgen_ty_1__bindgen_ty_2,
     pub dol_assign: DosList__bindgen_ty_1__bindgen_ty_3,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DosList__bindgen_ty_1__bindgen_ty_1 {
     pub dol_Handler: BSTR,
@@ -11447,7 +11447,7 @@ const _: () = {
     ["Offset of field: DosList__bindgen_ty_1__bindgen_ty_1::dol_GlobVec"]
         [::core::mem::offset_of!(DosList__bindgen_ty_1__bindgen_ty_1, dol_GlobVec) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DosList__bindgen_ty_1__bindgen_ty_2 {
     pub dol_VolumeDate: DateStamp,
@@ -11467,7 +11467,7 @@ const _: () = {
     ["Offset of field: DosList__bindgen_ty_1__bindgen_ty_2::dol_DiskType"]
         [::core::mem::offset_of!(DosList__bindgen_ty_1__bindgen_ty_2, dol_DiskType) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DosList__bindgen_ty_1__bindgen_ty_3 {
     pub dol_AssignName: STRPTR,
@@ -11507,7 +11507,7 @@ const _: () = {
     ["Offset of field: DosList::dol_misc"][::core::mem::offset_of!(DosList, dol_misc) - 16usize];
     ["Offset of field: DosList::dol_Name"][::core::mem::offset_of!(DosList, dol_Name) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AssignList {
     pub al_Next: *mut AssignList,
@@ -11520,7 +11520,7 @@ const _: () = {
     ["Offset of field: AssignList::al_Next"][::core::mem::offset_of!(AssignList, al_Next) - 0usize];
     ["Offset of field: AssignList::al_Lock"][::core::mem::offset_of!(AssignList, al_Lock) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DevProc {
     pub dvp_Port: *mut MsgPort,
@@ -11538,7 +11538,7 @@ const _: () = {
     ["Offset of field: DevProc::dvp_DevNode"]
         [::core::mem::offset_of!(DevProc, dvp_DevNode) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileLock {
     pub fl_Link: BPTR,
@@ -11558,7 +11558,7 @@ const _: () = {
     ["Offset of field: FileLock::fl_Volume"]
         [::core::mem::offset_of!(FileLock, fl_Volume) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DeviceData {
     pub dd_Device: Library,
@@ -11585,7 +11585,7 @@ const _: () = {
     ["Offset of field: DeviceData::dd_NumCommands"]
         [::core::mem::offset_of!(DeviceData, dd_NumCommands) - 50usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub struct PrinterData {
     pub pd_Device: DeviceData,
@@ -11705,7 +11705,7 @@ const _: () = {
     ["Offset of field: PrinterData::pd_PQuery"]
         [::core::mem::offset_of!(PrinterData, pd_PQuery) - 6838usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrinterExtendedData {
     pub ped_PrinterName: STRPTR,
@@ -11786,7 +11786,7 @@ const _: () = {
     ["Offset of field: PrinterExtendedData::ped_CallErrHook"]
         [::core::mem::offset_of!(PrinterExtendedData, ped_CallErrHook) - 74usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrinterSegment {
     pub ps_NextSegment: ULONG,
@@ -11810,7 +11810,7 @@ const _: () = {
     ["Offset of field: PrinterSegment::ps_PED"]
         [::core::mem::offset_of!(PrinterSegment, ps_PED) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DTSpecialInfo {
     pub si_Lock: SignalSemaphore,
@@ -11855,7 +11855,7 @@ const _: () = {
     ["Offset of field: DTSpecialInfo::si_HorizUnit"]
         [::core::mem::offset_of!(DTSpecialInfo, si_HorizUnit) - 86usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DTMethod {
     pub dtm_Label: STRPTR,
@@ -11872,7 +11872,7 @@ const _: () = {
     ["Offset of field: DTMethod::dtm_Method"]
         [::core::mem::offset_of!(DTMethod, dtm_Method) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FrameInfo {
     pub fri_PropertyFlags: ULONG,
@@ -11885,7 +11885,7 @@ pub struct FrameInfo {
     pub fri_ColorMap: *mut ColorMap,
     pub fri_Flags: ULONG,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FrameInfo__bindgen_ty_1 {
     pub Width: ULONG,
@@ -11928,7 +11928,7 @@ const _: () = {
     ["Offset of field: FrameInfo::fri_Flags"]
         [::core::mem::offset_of!(FrameInfo, fri_Flags) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtGeneral {
     pub MethodID: ULONG,
@@ -11942,7 +11942,7 @@ const _: () = {
     ["Offset of field: dtGeneral::dtg_GInfo"]
         [::core::mem::offset_of!(dtGeneral, dtg_GInfo) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtSelect {
     pub MethodID: ULONG,
@@ -11958,7 +11958,7 @@ const _: () = {
     ["Offset of field: dtSelect::dts_Select"]
         [::core::mem::offset_of!(dtSelect, dts_Select) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtFrameBox {
     pub MethodID: ULONG,
@@ -11985,7 +11985,7 @@ const _: () = {
     ["Offset of field: dtFrameBox::dtf_FrameFlags"]
         [::core::mem::offset_of!(dtFrameBox, dtf_FrameFlags) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtGoto {
     pub MethodID: ULONG,
@@ -12004,7 +12004,7 @@ const _: () = {
     ["Offset of field: dtGoto::dtg_AttrList"]
         [::core::mem::offset_of!(dtGoto, dtg_AttrList) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtTrigger {
     pub MethodID: ULONG,
@@ -12039,7 +12039,7 @@ const _: () = {
     ["Offset of field: printerIO::iodrp"][::core::mem::offset_of!(printerIO, iodrp) - 0usize];
     ["Offset of field: printerIO::iopc"][::core::mem::offset_of!(printerIO, iopc) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtPrint {
     pub MethodID: ULONG,
@@ -12057,7 +12057,7 @@ const _: () = {
     ["Offset of field: dtPrint::dtp_AttrList"]
         [::core::mem::offset_of!(dtPrint, dtp_AttrList) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtDraw {
     pub MethodID: ULONG,
@@ -12087,7 +12087,7 @@ const _: () = {
     ["Offset of field: dtDraw::dtd_AttrList"]
         [::core::mem::offset_of!(dtDraw, dtd_AttrList) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct dtWrite {
     pub MethodID: ULONG,
@@ -12108,7 +12108,7 @@ const _: () = {
     ["Offset of field: dtWrite::dtw_AttrList"]
         [::core::mem::offset_of!(dtWrite, dtw_AttrList) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct pdtBlitPixelArray {
     pub MethodID: ULONG,
@@ -12141,7 +12141,7 @@ const _: () = {
     ["Offset of field: pdtBlitPixelArray::pbpa_Height"]
         [::core::mem::offset_of!(pdtBlitPixelArray, pbpa_Height) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct pdtScale {
     pub MethodID: ULONG,
@@ -12160,7 +12160,7 @@ const _: () = {
         [::core::mem::offset_of!(pdtScale, ps_NewHeight) - 8usize];
     ["Offset of field: pdtScale::ps_Flags"][::core::mem::offset_of!(pdtScale, ps_Flags) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct pdtObtainPixelArray {
     pub MethodID: ULONG,
@@ -12243,7 +12243,7 @@ const _: () = {
         [::core::mem::offset_of!(ColorRegister, green) - 1usize];
     ["Offset of field: ColorRegister::blue"][::core::mem::offset_of!(ColorRegister, blue) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct VoiceHeader {
     pub vh_OneShotHiSamples: ULONG,
@@ -12274,7 +12274,7 @@ const _: () = {
         [::core::mem::offset_of!(VoiceHeader, vh_Volume) - 16usize];
 };
 pub type SampleType = ::core::ffi::c_long;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AnimHeader {
     pub ah_Operation: UBYTE,
@@ -12315,7 +12315,7 @@ const _: () = {
         [::core::mem::offset_of!(AnimHeader, ah_Flags) - 20usize];
     ["Offset of field: AnimHeader::ah_Pad"][::core::mem::offset_of!(AnimHeader, ah_Pad) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct adtFrame {
     pub MethodID: ULONG,
@@ -12351,7 +12351,7 @@ const _: () = {
     ["Offset of field: adtFrame::alf_UserData"]
         [::core::mem::offset_of!(adtFrame, alf_UserData) - 36usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct adtNewFormatFrame {
     pub MethodID: ULONG,
@@ -12402,7 +12402,7 @@ const _: () = {
     ["Offset of field: adtNewFormatFrame::alf_SamplesPerSec"]
         [::core::mem::offset_of!(adtNewFormatFrame, alf_SamplesPerSec) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct adtStart {
     pub MethodID: ULONG,
@@ -12415,7 +12415,7 @@ const _: () = {
     ["Offset of field: adtStart::MethodID"][::core::mem::offset_of!(adtStart, MethodID) - 0usize];
     ["Offset of field: adtStart::asa_Frame"][::core::mem::offset_of!(adtStart, asa_Frame) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Line {
     pub ln_Link: MinNode,
@@ -12448,7 +12448,7 @@ const _: () = {
     ["Offset of field: Line::ln_Style"][::core::mem::offset_of!(Line, ln_Style) - 28usize];
     ["Offset of field: Line::ln_Data"][::core::mem::offset_of!(Line, ln_Data) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOAudio {
     pub ioa_Request: IORequest,
@@ -12480,7 +12480,7 @@ const _: () = {
     ["Offset of field: IOAudio::ioa_WriteMsg"]
         [::core::mem::offset_of!(IOAudio, ioa_WriteMsg) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct BootBlock {
     pub bb_id: [UBYTE; 4usize],
@@ -12546,7 +12546,7 @@ const _: () = {
     ["Offset of field: RMSF::Second"][::core::mem::offset_of!(RMSF, Second) - 2usize];
     ["Offset of field: RMSF::Frame"][::core::mem::offset_of!(RMSF, Frame) - 3usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub union LSNMSF {
     pub MSF: RMSF,
@@ -12559,7 +12559,7 @@ const _: () = {
     ["Offset of field: LSNMSF::MSF"][::core::mem::offset_of!(LSNMSF, MSF) - 0usize];
     ["Offset of field: LSNMSF::LSN"][::core::mem::offset_of!(LSNMSF, LSN) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CDXL {
     pub Node: MinNode,
@@ -12647,7 +12647,7 @@ const _: () = {
         [::core::mem::offset_of!(QCode, TrackPosition) - 4usize];
     ["Offset of field: QCode::DiskPosition"][::core::mem::offset_of!(QCode, DiskPosition) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ConsoleScrollback {
     pub cs_ScrollerGadget: APTR,
@@ -12677,7 +12677,7 @@ const _: () = {
     ["Offset of field: KeyMapResource::kr_List"]
         [::core::mem::offset_of!(KeyMapResource, kr_List) - 14usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct KeyMap {
     pub km_LoKeyMapTypes: *mut UBYTE,
@@ -12723,7 +12723,7 @@ const _: () = {
     ["Offset of field: KeyMapNode::kn_KeyMap"]
         [::core::mem::offset_of!(KeyMapNode, kn_KeyMap) - 14usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ConUnit {
     pub cu_MP: MsgPort,
@@ -12842,7 +12842,7 @@ const _: () = {
     ["Offset of field: GamePortTrigger::gpt_YDelta"]
         [::core::mem::offset_of!(GamePortTrigger, gpt_YDelta) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RigidDiskBlock {
     pub rdb_ID: ULONG,
@@ -12959,7 +12959,7 @@ const _: () = {
     ["Offset of field: RigidDiskBlock::rdb_DriveInitName"]
         [::core::mem::offset_of!(RigidDiskBlock, rdb_DriveInitName) - 216usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct BadBlockEntry {
     pub bbe_BadBlock: ULONG,
@@ -12974,7 +12974,7 @@ const _: () = {
     ["Offset of field: BadBlockEntry::bbe_GoodBlock"]
         [::core::mem::offset_of!(BadBlockEntry, bbe_GoodBlock) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct BadBlockBlock {
     pub bbb_ID: ULONG,
@@ -13004,7 +13004,7 @@ const _: () = {
     ["Offset of field: BadBlockBlock::bbb_BlockPairs"]
         [::core::mem::offset_of!(BadBlockBlock, bbb_BlockPairs) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PartitionBlock {
     pub pb_ID: ULONG,
@@ -13049,7 +13049,7 @@ const _: () = {
     ["Offset of field: PartitionBlock::pb_EReserved"]
         [::core::mem::offset_of!(PartitionBlock, pb_EReserved) - 208usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileSysHeaderBlock {
     pub fhb_ID: ULONG,
@@ -13121,7 +13121,7 @@ const _: () = {
     ["Offset of field: FileSysHeaderBlock::fhb_FileSysName"]
         [::core::mem::offset_of!(FileSysHeaderBlock, fhb_FileSysName) - 172usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LoadSegBlock {
     pub lsb_ID: ULONG,
@@ -13148,7 +13148,7 @@ const _: () = {
     ["Offset of field: LoadSegBlock::lsb_LoadData"]
         [::core::mem::offset_of!(LoadSegBlock, lsb_LoadData) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct narrator_rb {
     pub message: IOStdReq,
@@ -13248,7 +13248,7 @@ const _: () = {
     ["Offset of field: mouth_rb::shape"][::core::mem::offset_of!(mouth_rb, shape) - 90usize];
     ["Offset of field: mouth_rb::sync"][::core::mem::offset_of!(mouth_rb, sync) - 91usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NSDeviceQueryResult {
     pub nsdqr_DevQueryFormat: ULONG,
@@ -13272,7 +13272,7 @@ const _: () = {
     ["Offset of field: NSDeviceQueryResult::nsdqr_SupportedCommands"]
         [::core::mem::offset_of!(NSDeviceQueryResult, nsdqr_SupportedCommands) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub union colorEntry {
     pub colorLong: ULONG,
@@ -13302,7 +13302,7 @@ const _: () = {
     ["Offset of field: WordColorEntry::ColorWord"]
         [::core::mem::offset_of!(WordColorEntry, ColorWord) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrtInfo {
     pub pi_render: FPTR,
@@ -13420,7 +13420,7 @@ const _: () = {
     ["Offset of field: PrtInfo::pi_InvertHookBuf"]
         [::core::mem::offset_of!(PrtInfo, pi_InvertHookBuf) - 124usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SCSICmd {
     pub scsi_Data: *mut UWORD,
@@ -13461,7 +13461,7 @@ const _: () = {
     ["Offset of field: SCSICmd::scsi_SenseActual"]
         [::core::mem::offset_of!(SCSICmd, scsi_SenseActual) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IOExtTD {
     pub iotd_Req: IOStdReq,
@@ -13478,7 +13478,7 @@ const _: () = {
     ["Offset of field: IOExtTD::iotd_SecLabel"]
         [::core::mem::offset_of!(IOExtTD, iotd_SecLabel) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DriveGeometry {
     pub dg_SectorSize: ULONG,
@@ -13517,7 +13517,7 @@ const _: () = {
     ["Offset of field: DriveGeometry::dg_Reserved"]
         [::core::mem::offset_of!(DriveGeometry, dg_Reserved) - 30usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TDU_PublicUnit {
     pub tdu_Unit: Unit,
@@ -13565,7 +13565,7 @@ const _: () = {
     ["Offset of field: TDU_PublicUnit::tdu_SideSelectDelay"]
         [::core::mem::offset_of!(TDU_PublicUnit, tdu_SideSelectDelay) - 68usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TrackFileChecksum {
     pub tfc_high: ULONG,
@@ -13580,7 +13580,7 @@ const _: () = {
     ["Offset of field: TrackFileChecksum::tfc_low"]
         [::core::mem::offset_of!(TrackFileChecksum, tfc_low) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TrackFileUnitData {
     pub tfud_Next: *mut TrackFileUnitData,
@@ -13709,7 +13709,7 @@ const _: () = {
     ["Offset of field: FontContentsHeader::fch_NumEntries"]
         [::core::mem::offset_of!(FontContentsHeader, fch_NumEntries) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DiskFontHeader {
     pub dfh_DF: Node,
@@ -13776,7 +13776,7 @@ const _: () = {
     ["Offset of field: AvailFontsHeader::afh_NumEntries"]
         [::core::mem::offset_of!(AvailFontsHeader, afh_NumEntries) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct EGlyphEngine {
     pub ege_Reserved: APTR,
@@ -13794,7 +13794,7 @@ const _: () = {
     ["Offset of field: EGlyphEngine::ege_GlyphEngine"]
         [::core::mem::offset_of!(EGlyphEngine, ege_GlyphEngine) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct OutlineFont {
     pub olf_OTagPath: STRPTR,
@@ -13824,7 +13824,7 @@ const _: () = {
     ["Offset of field: OutlineFont::olf_UserData"]
         [::core::mem::offset_of!(OutlineFont, olf_UserData) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GlyphEngine {
     pub gle_Library: *mut Library,
@@ -13840,7 +13840,7 @@ const _: () = {
         [::core::mem::offset_of!(GlyphEngine, gle_Name) - 4usize];
 };
 pub type FIXED = LONG;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GlyphMap {
     pub glm_BMModulo: UWORD,
@@ -13887,7 +13887,7 @@ const _: () = {
     ["Offset of field: GlyphMap::glm_BitMap"]
         [::core::mem::offset_of!(GlyphMap, glm_BitMap) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GlyphWidthEntry {
     pub gwe_Node: MinNode,
@@ -13905,7 +13905,7 @@ const _: () = {
     ["Offset of field: GlyphWidthEntry::gwe_Width"]
         [::core::mem::offset_of!(GlyphWidthEntry, gwe_Width) - 10usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GlyphWidthEntry32 {
     pub gwe32_Node: MinNode,
@@ -13926,7 +13926,7 @@ const _: () = {
     ["Offset of field: GlyphWidthEntry32::gwe32_Code"]
         [::core::mem::offset_of!(GlyphWidthEntry32, gwe32_Code) - 14usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DateTime {
     pub dat_Stamp: DateStamp,
@@ -13952,7 +13952,7 @@ const _: () = {
     ["Offset of field: DateTime::dat_StrTime"]
         [::core::mem::offset_of!(DateTime, dat_StrTime) - 22usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AnchorPath {
     pub ap_Base: *mut AChain,
@@ -13985,7 +13985,7 @@ const _: () = {
         [::core::mem::offset_of!(AnchorPath, ap_Info) - 20usize];
     ["Offset of field: AnchorPath::ap_Buf"][::core::mem::offset_of!(AnchorPath, ap_Buf) - 280usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AChain {
     pub an_Child: *mut AChain,
@@ -14006,7 +14006,7 @@ const _: () = {
     ["Offset of field: AChain::an_Flags"][::core::mem::offset_of!(AChain, an_Flags) - 272usize];
     ["Offset of field: AChain::an_String"][::core::mem::offset_of!(AChain, an_String) - 273usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExAllData {
     pub ed_Next: *mut ExAllData,
@@ -14041,7 +14041,7 @@ const _: () = {
     ["Offset of field: ExAllData::ed_OwnerGID"]
         [::core::mem::offset_of!(ExAllData, ed_OwnerGID) - 38usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExAllControl {
     pub eac_Entries: ULONG,
@@ -14062,7 +14062,7 @@ const _: () = {
     ["Offset of field: ExAllControl::eac_MatchFunc"]
         [::core::mem::offset_of!(ExAllControl, eac_MatchFunc) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DosEnvec {
     pub de_TableSize: ULONG,
@@ -14128,7 +14128,7 @@ const _: () = {
     ["Offset of field: DosEnvec::de_BootBlocks"]
         [::core::mem::offset_of!(DosEnvec, de_BootBlocks) - 76usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileSysStartupMsg {
     pub fssm_Unit: ULONG,
@@ -14149,7 +14149,7 @@ const _: () = {
     ["Offset of field: FileSysStartupMsg::fssm_Flags"]
         [::core::mem::offset_of!(FileSysStartupMsg, fssm_Flags) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DeviceNode {
     pub dn_Next: BPTR,
@@ -14188,7 +14188,7 @@ const _: () = {
     ["Offset of field: DeviceNode::dn_Name"]
         [::core::mem::offset_of!(DeviceNode, dn_Name) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NotifyMessage {
     pub nm_ExecMessage: Message,
@@ -14215,7 +14215,7 @@ const _: () = {
     ["Offset of field: NotifyMessage::nm_DoNotTouch2"]
         [::core::mem::offset_of!(NotifyMessage, nm_DoNotTouch2) - 34usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub struct NotifyRequest {
     pub nr_Name: STRPTR,
@@ -14233,7 +14233,7 @@ pub union NotifyRequest__bindgen_ty_1 {
     pub nr_Msg: NotifyRequest__bindgen_ty_1__bindgen_ty_1,
     pub nr_Signal: NotifyRequest__bindgen_ty_1__bindgen_ty_2,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NotifyRequest__bindgen_ty_1__bindgen_ty_1 {
     pub nr_Port: *mut MsgPort,
@@ -14247,7 +14247,7 @@ const _: () = {
     ["Offset of field: NotifyRequest__bindgen_ty_1__bindgen_ty_1::nr_Port"]
         [::core::mem::offset_of!(NotifyRequest__bindgen_ty_1__bindgen_ty_1, nr_Port) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NotifyRequest__bindgen_ty_1__bindgen_ty_2 {
     pub nr_Task: *mut Task,
@@ -14299,7 +14299,7 @@ const _: () = {
     ["Offset of field: NotifyRequest::nr_Handler"]
         [::core::mem::offset_of!(NotifyRequest, nr_Handler) - 44usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RecordLock {
     pub rec_FH: BPTR,
@@ -14319,7 +14319,7 @@ const _: () = {
     ["Offset of field: RecordLock::rec_Mode"]
         [::core::mem::offset_of!(RecordLock, rec_Mode) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExtendedCommandLineInterface {
     pub cle_Result2: LONG,
@@ -14387,7 +14387,7 @@ const _: () = {
     ["Offset of field: ExtendedCommandLineInterface::cle_Version"]
         [::core::mem::offset_of!(ExtendedCommandLineInterface, cle_Version) - 88usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct HistoryNode {
     pub hn_Node: MinNode,
@@ -14402,7 +14402,7 @@ const _: () = {
     ["Offset of field: HistoryNode::hn_Line"]
         [::core::mem::offset_of!(HistoryNode, hn_Line) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LocalVar {
     pub lv_Node: Node,
@@ -14419,7 +14419,7 @@ const _: () = {
     ["Offset of field: LocalVar::lv_Value"][::core::mem::offset_of!(LocalVar, lv_Value) - 16usize];
     ["Offset of field: LocalVar::lv_Len"][::core::mem::offset_of!(LocalVar, lv_Len) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpHitTest {
     pub MethodID: ULONG,
@@ -14452,7 +14452,7 @@ const _: () = {
     ["Offset of field: gpHitTest::gpht_Mouse"]
         [::core::mem::offset_of!(gpHitTest, gpht_Mouse) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpRender {
     pub MethodID: ULONG,
@@ -14470,7 +14470,7 @@ const _: () = {
     ["Offset of field: gpRender::gpr_Redraw"]
         [::core::mem::offset_of!(gpRender, gpr_Redraw) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpInput {
     pub MethodID: ULONG,
@@ -14509,7 +14509,7 @@ const _: () = {
     ["Offset of field: gpInput::gpi_TabletData"]
         [::core::mem::offset_of!(gpInput, gpi_TabletData) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpGoInactive {
     pub MethodID: ULONG,
@@ -14527,7 +14527,7 @@ const _: () = {
     ["Offset of field: gpGoInactive::gpgi_Abort"]
         [::core::mem::offset_of!(gpGoInactive, gpgi_Abort) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpLayout {
     pub MethodID: ULONG,
@@ -14543,7 +14543,7 @@ const _: () = {
     ["Offset of field: gpLayout::gpl_Initial"]
         [::core::mem::offset_of!(gpLayout, gpl_Initial) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpDomain {
     pub MethodID: ULONG,
@@ -14567,7 +14567,7 @@ const _: () = {
     ["Offset of field: gpDomain::gpd_Attrs"]
         [::core::mem::offset_of!(gpDomain, gpd_Attrs) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpKeyTest {
     pub MethodID: ULONG,
@@ -14587,7 +14587,7 @@ const _: () = {
     ["Offset of field: gpKeyTest::gpkt_VanillaKey"]
         [::core::mem::offset_of!(gpKeyTest, gpkt_VanillaKey) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpKeyInput {
     pub MethodID: ULONG,
@@ -14608,7 +14608,7 @@ const _: () = {
     ["Offset of field: gpKeyInput::gpk_Termination"]
         [::core::mem::offset_of!(gpKeyInput, gpk_Termination) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpKeyGoInactive {
     pub MethodID: ULONG,
@@ -14626,7 +14626,7 @@ const _: () = {
     ["Offset of field: gpKeyGoInactive::gpki_Abort"]
         [::core::mem::offset_of!(gpKeyGoInactive, gpki_Abort) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct impFrameBox {
     pub MethodID: ULONG,
@@ -14650,7 +14650,7 @@ const _: () = {
     ["Offset of field: impFrameBox::imp_FrameFlags"]
         [::core::mem::offset_of!(impFrameBox, imp_FrameFlags) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct impDraw {
     pub MethodID: ULONG,
@@ -14705,7 +14705,7 @@ const _: () = {
     ["Offset of field: impDraw::imp_Dimensions"]
         [::core::mem::offset_of!(impDraw, imp_Dimensions) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct impErase {
     pub MethodID: ULONG,
@@ -14756,7 +14756,7 @@ const _: () = {
     ["Offset of field: impErase::imp_Dimensions"]
         [::core::mem::offset_of!(impErase, imp_Dimensions) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct impHitTest {
     pub MethodID: ULONG,
@@ -14808,7 +14808,7 @@ const _: () = {
     ["Offset of field: impHitTest::imp_Dimensions"]
         [::core::mem::offset_of!(impHitTest, imp_Dimensions) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct impDomainFrame {
     pub MethodID: ULONG,
@@ -14835,7 +14835,7 @@ const _: () = {
     ["Offset of field: impDomainFrame::imp_Attrs"]
         [::core::mem::offset_of!(impDomainFrame, imp_Attrs) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ColorWheelHSB {
     pub cw_Hue: ULONG,
@@ -14853,7 +14853,7 @@ const _: () = {
     ["Offset of field: ColorWheelHSB::cw_Brightness"]
         [::core::mem::offset_of!(ColorWheelHSB, cw_Brightness) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ColorWheelRGB {
     pub cw_Red: ULONG,
@@ -14871,7 +14871,7 @@ const _: () = {
     ["Offset of field: ColorWheelRGB::cw_Blue"]
         [::core::mem::offset_of!(ColorWheelRGB, cw_Blue) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gcRequest {
     pub MethodID: ULONG,
@@ -14885,7 +14885,7 @@ const _: () = {
     ["Offset of field: gcRequest::gcr_Window"]
         [::core::mem::offset_of!(gcRequest, gcr_Window) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gfileRequest {
     pub MethodID: ULONG,
@@ -14900,7 +14900,7 @@ const _: () = {
     ["Offset of field: gfileRequest::gfile_Window"]
         [::core::mem::offset_of!(gfileRequest, gfile_Window) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gfileFreelist {
     pub MethodID: ULONG,
@@ -14915,7 +14915,7 @@ const _: () = {
     ["Offset of field: gfileFreelist::gfile_Filelist"]
         [::core::mem::offset_of!(gfileFreelist, gfile_Filelist) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gfRequest {
     pub MethodID: ULONG,
@@ -14929,7 +14929,7 @@ const _: () = {
     ["Offset of field: gfRequest::gfr_Window"]
         [::core::mem::offset_of!(gfRequest, gfr_Window) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gsmRequest {
     pub MethodID: ULONG,
@@ -14944,7 +14944,7 @@ const _: () = {
     ["Offset of field: gsmRequest::gsmr_Window"]
         [::core::mem::offset_of!(gsmRequest, gsmr_Window) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct WeightObject {
     pub wb_SuccHeight: ULONG,
@@ -14992,7 +14992,7 @@ const _: () = {
     ["Offset of field: LayoutLimits::MaxHeight"]
         [::core::mem::offset_of!(LayoutLimits, MaxHeight) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lmAddChild {
     pub MethodID: ULONG,
@@ -15013,7 +15013,7 @@ const _: () = {
     ["Offset of field: lmAddChild::lm_ObjectAttrs"]
         [::core::mem::offset_of!(lmAddChild, lm_ObjectAttrs) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lmAddImage {
     pub MethodID: ULONG,
@@ -15034,7 +15034,7 @@ const _: () = {
     ["Offset of field: lmAddImage::lm_ObjectAttrs"]
         [::core::mem::offset_of!(lmAddImage, lm_ObjectAttrs) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lmRemoveChild {
     pub MethodID: ULONG,
@@ -15052,7 +15052,7 @@ const _: () = {
     ["Offset of field: lmRemoveChild::lm_Object"]
         [::core::mem::offset_of!(lmRemoveChild, lm_Object) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lmModifyChild {
     pub MethodID: ULONG,
@@ -15073,7 +15073,7 @@ const _: () = {
     ["Offset of field: lmModifyChild::lm_ObjectAttrs"]
         [::core::mem::offset_of!(lmModifyChild, lm_ObjectAttrs) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lbAddNode {
     pub MethodID: ULONG,
@@ -15092,7 +15092,7 @@ const _: () = {
     ["Offset of field: lbAddNode::lba_NodeAttrs"]
         [::core::mem::offset_of!(lbAddNode, lba_NodeAttrs) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lbRemNode {
     pub MethodID: ULONG,
@@ -15108,7 +15108,7 @@ const _: () = {
         [::core::mem::offset_of!(lbRemNode, lbr_GInfo) - 4usize];
     ["Offset of field: lbRemNode::lbr_Node"][::core::mem::offset_of!(lbRemNode, lbr_Node) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lbEditNode {
     pub MethodID: ULONG,
@@ -15129,7 +15129,7 @@ const _: () = {
     ["Offset of field: lbEditNode::lbe_NodeAttrs"]
         [::core::mem::offset_of!(lbEditNode, lbe_NodeAttrs) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lbSort {
     pub MethodID: ULONG,
@@ -15150,7 +15150,7 @@ const _: () = {
     ["Offset of field: lbSort::lbs_CompareHook"]
         [::core::mem::offset_of!(lbSort, lbs_CompareHook) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lbShowChildren {
     pub MethodID: ULONG,
@@ -15171,7 +15171,7 @@ const _: () = {
     ["Offset of field: lbShowChildren::lbsc_Depth"]
         [::core::mem::offset_of!(lbShowChildren, lbsc_Depth) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lbHideChildren {
     pub MethodID: ULONG,
@@ -15192,7 +15192,7 @@ const _: () = {
     ["Offset of field: lbHideChildren::lbhc_Depth"]
         [::core::mem::offset_of!(lbHideChildren, lbhc_Depth) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LBDrawMsg {
     pub lbdm_MethodID: ULONG,
@@ -15216,7 +15216,7 @@ const _: () = {
     ["Offset of field: LBDrawMsg::lbdm_State"]
         [::core::mem::offset_of!(LBDrawMsg, lbdm_State) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub struct LBSortMsg {
     pub lbsm_TypeA: ULONG,
@@ -15228,7 +15228,7 @@ pub struct LBSortMsg {
     pub lbsm_Column: WORD,
     pub lbsm_Direction: ULONG,
 }
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub union LBSortMsg__bindgen_ty_1 {
     pub Integer: LONG,
@@ -15244,7 +15244,7 @@ const _: () = {
     ["Offset of field: LBSortMsg__bindgen_ty_1::Text"]
         [::core::mem::offset_of!(LBSortMsg__bindgen_ty_1, Text) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Copy, Clone)]
 pub union LBSortMsg__bindgen_ty_2 {
     pub Integer: LONG,
@@ -15281,7 +15281,7 @@ const _: () = {
     ["Offset of field: LBSortMsg::lbsm_Direction"]
         [::core::mem::offset_of!(LBSortMsg, lbsm_Direction) - 26usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ColumnInfo {
     pub ci_Width: WORD,
@@ -15299,7 +15299,7 @@ const _: () = {
     ["Offset of field: ColumnInfo::ci_Flags"]
         [::core::mem::offset_of!(ColumnInfo, ci_Flags) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ListLabelNode {
     pub lvn_Node: Node,
@@ -15353,7 +15353,7 @@ const _: () = {
     ["Offset of field: ListLabelNode::lvn_Selected"]
         [::core::mem::offset_of!(ListLabelNode, lvn_Selected) - 46usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PBoxDrawMsg {
     pub pbdm_MethodID: ULONG,
@@ -15383,7 +15383,7 @@ const _: () = {
     ["Offset of field: PBoxDrawMsg::pbdm_Gadget"]
         [::core::mem::offset_of!(PBoxDrawMsg, pbdm_Gadget) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GadgetInfo {
     pub gi_Screen: *mut Screen,
@@ -15449,7 +15449,7 @@ const _: () = {
     ["Offset of field: PGX::pgx_Container"][::core::mem::offset_of!(PGX, pgx_Container) - 0usize];
     ["Offset of field: PGX::pgx_NewKnob"][::core::mem::offset_of!(PGX, pgx_NewKnob) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct spGeneral {
     pub MethodID: ULONG,
@@ -15462,7 +15462,7 @@ const _: () = {
     ["Offset of field: spGeneral::MethodID"][::core::mem::offset_of!(spGeneral, MethodID) - 0usize];
     ["Offset of field: spGeneral::GInfo"][::core::mem::offset_of!(spGeneral, GInfo) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct spScrollRaster {
     pub MethodID: ULONG,
@@ -15483,7 +15483,7 @@ const _: () = {
     ["Offset of field: spScrollRaster::DeltaY"]
         [::core::mem::offset_of!(spScrollRaster, DeltaY) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct sbSetNodeAttrs {
     pub MethodID: ULONG,
@@ -15504,7 +15504,7 @@ const _: () = {
     ["Offset of field: sbSetNodeAttrs::sb_AttrList"]
         [::core::mem::offset_of!(sbSetNodeAttrs, sb_AttrList) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct tagTabLabel {
     pub tl_Label: STRPTR,
@@ -15524,7 +15524,7 @@ const _: () = {
 };
 pub type TabLabel = tagTabLabel;
 pub type TabLabelP = *mut tagTabLabel;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ChangeListener {
     pub onCharsInserted: FPTR,
@@ -15557,7 +15557,7 @@ const _: () = {
     ["Offset of field: ChangeListener::Reserved5"]
         [::core::mem::offset_of!(ChangeListener, Reserved5) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_ARexxCmd {
     pub MethodID: ULONG,
@@ -15576,7 +15576,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_ARexxCmd::command"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_ARexxCmd, command) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_BlockInfo {
     pub MethodID: ULONG,
@@ -15605,7 +15605,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_BlockInfo::stopy"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_BlockInfo, stopy) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_ClearText {
     pub MethodID: ULONG,
@@ -15621,7 +15621,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_ClearText::GInfo"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_ClearText, GInfo) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_ExportText {
     pub MethodID: ULONG,
@@ -15638,7 +15638,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_ExportText::GInfo"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_ExportText, GInfo) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_HandleError {
     pub MethodID: ULONG,
@@ -15655,7 +15655,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_HandleError::errorcode"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_HandleError, errorcode) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_InsertText {
     pub MethodID: ULONG,
@@ -15678,7 +15678,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_InsertText::pos"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_InsertText, pos) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_MarkText {
     pub MethodID: ULONG,
@@ -15706,7 +15706,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_MarkText::stop_crsr_y"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_MarkText, stop_crsr_y) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_Replace {
     pub MethodID: ULONG,
@@ -15728,7 +15728,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_Replace::flags"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_Replace, flags) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_Search {
     pub MethodID: ULONG,
@@ -15749,7 +15749,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_Search::flags"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_Search, flags) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_AddChangeListener {
     pub MethodID: ULONG,
@@ -15766,7 +15766,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_AddChangeListener::listener"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_AddChangeListener, listener) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GP_TEXTEDITOR_ReplaceAll {
     pub MethodID: ULONG,
@@ -15792,7 +15792,7 @@ const _: () = {
     ["Offset of field: GP_TEXTEDITOR_ReplaceAll::flags"]
         [::core::mem::offset_of!(GP_TEXTEDITOR_ReplaceAll, flags) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ClickMessage {
     pub LineContents: STRPTR,
@@ -15807,7 +15807,7 @@ const _: () = {
     ["Offset of field: ClickMessage::ClickPosition"]
         [::core::mem::offset_of!(ClickMessage, ClickPosition) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct HighlightMessage {
     pub Version: ULONG,
@@ -15825,7 +15825,7 @@ const _: () = {
     ["Offset of field: HighlightMessage::StatusOfPrevBlock"]
         [::core::mem::offset_of!(HighlightMessage, StatusOfPrevBlock) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LeftBarRenderMessage {
     pub Command: UWORD,
@@ -15849,7 +15849,7 @@ const _: () = {
     ["Offset of field: LeftBarRenderMessage::RastPort"]
         [::core::mem::offset_of!(LeftBarRenderMessage, RastPort) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LeftBarMouseMessage {
     pub Command: UWORD,
@@ -15882,7 +15882,7 @@ const _: () = {
     ["Offset of field: LeftBarMouseMessage::TimeStamp"]
         [::core::mem::offset_of!(LeftBarMouseMessage, TimeStamp) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct VSprite {
     pub NextVSprite: *mut VSprite,
@@ -15939,7 +15939,7 @@ const _: () = {
         [::core::mem::offset_of!(VSprite, PlaneOnOff) - 57usize];
     ["Offset of field: VSprite::VUserExt"][::core::mem::offset_of!(VSprite, VUserExt) - 58usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Bob {
     pub Flags: WORD,
@@ -15966,7 +15966,7 @@ const _: () = {
     ["Offset of field: Bob::DBuffer"][::core::mem::offset_of!(Bob, DBuffer) - 26usize];
     ["Offset of field: Bob::BUserExt"][::core::mem::offset_of!(Bob, BUserExt) - 30usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AnimComp {
     pub Flags: WORD,
@@ -16000,7 +16000,7 @@ const _: () = {
     ["Offset of field: AnimComp::HeadOb"][::core::mem::offset_of!(AnimComp, HeadOb) - 30usize];
     ["Offset of field: AnimComp::AnimBob"][::core::mem::offset_of!(AnimComp, AnimBob) - 34usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AnimOb {
     pub NextOb: *mut AnimOb,
@@ -16042,7 +16042,7 @@ const _: () = {
     ["Offset of field: AnimOb::HeadComp"][::core::mem::offset_of!(AnimOb, HeadComp) - 36usize];
     ["Offset of field: AnimOb::AUserExt"][::core::mem::offset_of!(AnimOb, AUserExt) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DBufPacket {
     pub BufY: WORD,
@@ -16060,7 +16060,7 @@ const _: () = {
     ["Offset of field: DBufPacket::BufBuffer"]
         [::core::mem::offset_of!(DBufPacket, BufBuffer) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct collTable {
     pub collPtrs: [FPTR; 16usize],
@@ -16071,7 +16071,7 @@ const _: () = {
     ["Alignment of collTable"][::core::mem::align_of::<collTable>() - 2usize];
     ["Offset of field: collTable::collPtrs"][::core::mem::offset_of!(collTable, collPtrs) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GfxBase {
     pub LibNode: Library,
@@ -16341,7 +16341,7 @@ const _: () = {
     ["Offset of field: GfxBase::ScratchSize"]
         [::core::mem::offset_of!(GfxBase, ScratchSize) - 548usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Isrvstr {
     pub is_Node: Node,
@@ -16360,7 +16360,7 @@ const _: () = {
     ["Offset of field: Isrvstr::ccode"][::core::mem::offset_of!(Isrvstr, ccode) - 22usize];
     ["Offset of field: Isrvstr::Carg"][::core::mem::offset_of!(Isrvstr, Carg) - 26usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RegionRectangle {
     pub Next: *mut RegionRectangle,
@@ -16378,7 +16378,7 @@ const _: () = {
     ["Offset of field: RegionRectangle::bounds"]
         [::core::mem::offset_of!(RegionRectangle, bounds) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Region {
     pub bounds: Rectangle,
@@ -16392,7 +16392,7 @@ const _: () = {
     ["Offset of field: Region::RegionRectangle"]
         [::core::mem::offset_of!(Region, RegionRectangle) - 8usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct BitScaleArgs {
     pub bsa_SrcX: UWORD,
@@ -16458,7 +16458,7 @@ const _: () = {
     ["Offset of field: BitScaleArgs::bsa_Reserved2"]
         [::core::mem::offset_of!(BitScaleArgs, bsa_Reserved2) - 44usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SimpleSprite {
     pub posctldata: *mut UWORD,
@@ -16497,7 +16497,7 @@ const _: () = {
     ["Offset of field: ExtSprite::es_flags"]
         [::core::mem::offset_of!(ExtSprite, es_flags) - 14usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct bltnode {
     pub n: *mut bltnode,
@@ -16612,7 +16612,7 @@ const _: () = {
     ["Offset of field: DrawList::dl_Y2"][::core::mem::offset_of!(DrawList, dl_Y2) - 8usize];
     ["Offset of field: DrawList::dl_Pen"][::core::mem::offset_of!(DrawList, dl_Pen) - 10usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IntuitionBase {
     pub LibNode: Library,
@@ -16651,7 +16651,7 @@ const _: () = {
     ["Offset of field: IntuitionBase::Micros"]
         [::core::mem::offset_of!(IntuitionBase, Micros) - 76usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct StringExtend {
     pub Font: *mut TextFont,
@@ -16679,7 +16679,7 @@ const _: () = {
     ["Offset of field: StringExtend::Reserved"]
         [::core::mem::offset_of!(StringExtend, Reserved) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SGWork {
     pub Gadget: *mut Gadget,
@@ -16715,7 +16715,7 @@ const _: () = {
     ["Offset of field: SGWork::EditOp"][::core::mem::offset_of!(SGWork, EditOp) - 42usize];
 };
 pub type AMIGAGUIDECONTEXT = *mut ::core::ffi::c_void;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AmigaGuideMsg {
     pub agm_Msg: Message,
@@ -16751,7 +16751,7 @@ const _: () = {
     ["Offset of field: AmigaGuideMsg::agm_System2"]
         [::core::mem::offset_of!(AmigaGuideMsg, agm_System2) - 48usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NewAmigaGuide {
     pub nag_Lock: BPTR,
@@ -16800,7 +16800,7 @@ const _: () = {
         [::core::mem::offset_of!(NewAmigaGuide, nag_Client) - 48usize];
 };
 pub type AMIGAGUIDEHOST = *mut AmigaGuideHost;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct XRef {
     pub xr_Node: Node,
@@ -16823,7 +16823,7 @@ const _: () = {
     ["Offset of field: XRef::xr_Line"][::core::mem::offset_of!(XRef, xr_Line) - 28usize];
     ["Offset of field: XRef::xr_Reserved"][::core::mem::offset_of!(XRef, xr_Reserved) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AmigaGuideHost {
     pub agh_Dispatcher: Hook,
@@ -16850,7 +16850,7 @@ const _: () = {
     ["Offset of field: AmigaGuideHost::agh_UserData"]
         [::core::mem::offset_of!(AmigaGuideHost, agh_UserData) - 36usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opFindHost {
     pub MethodID: ULONG,
@@ -16880,7 +16880,7 @@ const _: () = {
     ["Offset of field: opFindHost::ofh_Prev"]
         [::core::mem::offset_of!(opFindHost, ofh_Prev) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opNodeIO {
     pub MethodID: ULONG,
@@ -16907,7 +16907,7 @@ const _: () = {
     ["Offset of field: opNodeIO::onm_Flags"]
         [::core::mem::offset_of!(opNodeIO, onm_Flags) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct opExpungeNode {
     pub MethodID: ULONG,
@@ -16922,7 +16922,7 @@ const _: () = {
     ["Offset of field: opExpungeNode::oen_Attrs"]
         [::core::mem::offset_of!(opExpungeNode, oen_Attrs) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct WBStartup {
     pub sm_Message: Message,
@@ -16949,7 +16949,7 @@ const _: () = {
     ["Offset of field: WBStartup::sm_ArgList"]
         [::core::mem::offset_of!(WBStartup, sm_ArgList) - 36usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct WBArg {
     pub wa_Lock: BPTR,
@@ -16962,7 +16962,7 @@ const _: () = {
     ["Offset of field: WBArg::wa_Lock"][::core::mem::offset_of!(WBArg, wa_Lock) - 0usize];
     ["Offset of field: WBArg::wa_Name"][::core::mem::offset_of!(WBArg, wa_Name) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileRequester {
     pub fr_Reserved0: [UBYTE; 4usize],
@@ -17013,7 +17013,7 @@ const _: () = {
     ["Offset of field: FileRequester::fr_Pattern"]
         [::core::mem::offset_of!(FileRequester, fr_Pattern) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FontRequester {
     pub fo_Reserved0: [UBYTE; 8usize],
@@ -17058,7 +17058,7 @@ const _: () = {
     ["Offset of field: FontRequester::fo_TAttr"]
         [::core::mem::offset_of!(FontRequester, fo_TAttr) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ScreenModeRequester {
     pub sm_DisplayID: ULONG,
@@ -17121,7 +17121,7 @@ const _: () = {
     ["Offset of field: ScreenModeRequester::sm_UserData"]
         [::core::mem::offset_of!(ScreenModeRequester, sm_UserData) - 44usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DisplayMode {
     pub dm_Node: Node,
@@ -17139,7 +17139,7 @@ const _: () = {
     ["Offset of field: DisplayMode::dm_PropertyFlags"]
         [::core::mem::offset_of!(DisplayMode, dm_PropertyFlags) - 102usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AslSemaphore {
     pub as_Semaphore: SignalSemaphore,
@@ -17181,7 +17181,7 @@ const _: () = {
     ["Offset of field: AslSemaphore::as_RelativeHeight"]
         [::core::mem::offset_of!(AslSemaphore, as_RelativeHeight) - 61usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NewBroker {
     pub nb_Version: BYTE,
@@ -17247,7 +17247,7 @@ const _: () = {
         [::core::mem::offset_of!(InputXpression, ix_QualSame) - 10usize];
 };
 pub type IX = InputXpression;
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExpansionRom {
     pub er_Type: UBYTE,
@@ -17375,7 +17375,7 @@ const _: () = {
     ["Offset of field: DiagArea::da_Reserved02"]
         [::core::mem::offset_of!(DiagArea, da_Reserved02) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ConfigDev {
     pub cd_Node: Node,
@@ -17414,7 +17414,7 @@ const _: () = {
     ["Offset of field: ConfigDev::cd_Unused"]
         [::core::mem::offset_of!(ConfigDev, cd_Unused) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CurrentBinding {
     pub cb_ConfigDev: *mut ConfigDev,
@@ -17435,7 +17435,7 @@ const _: () = {
     ["Offset of field: CurrentBinding::cb_ToolTypes"]
         [::core::mem::offset_of!(CurrentBinding, cb_ToolTypes) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct BootNode {
     pub bn_Node: Node,
@@ -17451,7 +17451,7 @@ const _: () = {
     ["Offset of field: BootNode::bn_DeviceNode"]
         [::core::mem::offset_of!(BootNode, bn_DeviceNode) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ExpansionBase {
     pub LibNode: Library,
@@ -17484,7 +17484,7 @@ const _: () = {
     ["Offset of field: ExpansionBase::MountList"]
         [::core::mem::offset_of!(ExpansionBase, MountList) - 74usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NewGadget {
     pub ng_LeftEdge: WORD,
@@ -17522,7 +17522,7 @@ const _: () = {
     ["Offset of field: NewGadget::ng_UserData"]
         [::core::mem::offset_of!(NewGadget, ng_UserData) - 26usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NewMenu {
     pub nm_Type: UBYTE,
@@ -17545,7 +17545,7 @@ const _: () = {
     ["Offset of field: NewMenu::nm_UserData"]
         [::core::mem::offset_of!(NewMenu, nm_UserData) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LVDrawMsg {
     pub lvdm_MethodID: ULONG,
@@ -17584,7 +17584,7 @@ const _: () = {
     ["Offset of field: LocaleBase::lb_SysPatches"]
         [::core::mem::offset_of!(LocaleBase, lb_SysPatches) - 34usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Locale {
     pub loc_LocaleName: STRPTR,
@@ -17720,7 +17720,7 @@ const _: () = {
     ["Offset of field: Locale::loc_Reserved3"]
         [::core::mem::offset_of!(Locale, loc_Reserved3) - 167usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Catalog {
     pub cat_Link: Node,
@@ -17760,7 +17760,7 @@ const _: () = {
     ["Offset of field: KeyQuery::kq_Pressed"]
         [::core::mem::offset_of!(KeyQuery, kq_Pressed) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MathIEEEBase {
     pub MathIEEEBase_LibNode: Library,
@@ -17781,7 +17781,7 @@ const _: () = {
     ["Offset of field: MathIEEEBase::MathIEEEBase_TaskCloseLib"]
         [::core::mem::offset_of!(MathIEEEBase, MathIEEEBase_TaskCloseLib) - 56usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct MathIEEEResource {
     pub MathIEEEResource_Node: Node,
@@ -17817,7 +17817,7 @@ const _: () = {
     ["Offset of field: MathIEEEResource::MathIEEEResource_ExtTransInit"]
         [::core::mem::offset_of!(MathIEEEResource, MathIEEEResource_ExtTransInit) - 40usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NVInfo {
     pub nvi_MaxStorage: ULONG,
@@ -17832,7 +17832,7 @@ const _: () = {
     ["Offset of field: NVInfo::nvi_FreeStorage"]
         [::core::mem::offset_of!(NVInfo, nvi_FreeStorage) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NVEntry {
     pub nve_Node: MinNode,
@@ -17850,7 +17850,7 @@ const _: () = {
     ["Offset of field: NVEntry::nve_Protection"]
         [::core::mem::offset_of!(NVEntry, nve_Protection) - 16usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Conductor {
     pub cdt_Link: Node,
@@ -17891,7 +17891,7 @@ const _: () = {
     ["Offset of field: Conductor::cdt_State"]
         [::core::mem::offset_of!(Conductor, cdt_State) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Player {
     pub pl_Link: Node,
@@ -17928,7 +17928,7 @@ const _: () = {
         [::core::mem::offset_of!(Player, pl_PlayerID) - 40usize];
     ["Offset of field: Player::pl_Flags"][::core::mem::offset_of!(Player, pl_Flags) - 42usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct pmTime {
     pub pmt_Method: ULONG,
@@ -17941,7 +17941,7 @@ const _: () = {
     ["Offset of field: pmTime::pmt_Method"][::core::mem::offset_of!(pmTime, pmt_Method) - 0usize];
     ["Offset of field: pmTime::pmt_Time"][::core::mem::offset_of!(pmTime, pmt_Time) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct pmState {
     pub pms_Method: ULONG,
@@ -17955,7 +17955,7 @@ const _: () = {
     ["Offset of field: pmState::pms_OldState"]
         [::core::mem::offset_of!(pmState, pms_OldState) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct RealTimeBase {
     pub rtb_LibNode: Library,
@@ -17982,7 +17982,7 @@ const _: () = {
     ["Offset of field: RealTimeBase::rtb_TickErr"]
         [::core::mem::offset_of!(RealTimeBase, rtb_TickErr) - 46usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AslPrefs {
     pub ap_Reserved: [LONG; 4usize],
@@ -18018,7 +18018,7 @@ const _: () = {
     ["Offset of field: AslPrefs::ap_RelativeHeight"]
         [::core::mem::offset_of!(AslPrefs, ap_RelativeHeight) - 25usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FontPrefs {
     pub fp_Reserved: [LONG; 3usize],
@@ -18052,7 +18052,7 @@ const _: () = {
         [::core::mem::offset_of!(FontPrefs, fp_TextAttr) - 20usize];
     ["Offset of field: FontPrefs::fp_Name"][::core::mem::offset_of!(FontPrefs, fp_Name) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IControlPrefs {
     pub ic_Reserved: [LONG; 4usize],
@@ -18222,7 +18222,7 @@ const _: () = {
     ["Offset of field: InputPrefs::ip_MouseAccel"]
         [::core::mem::offset_of!(InputPrefs, ip_MouseAccel) - 42usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CountryPrefs {
     pub cp_Reserved: [ULONG; 4usize],
@@ -18333,7 +18333,7 @@ const _: () = {
     ["Offset of field: CountryPrefs::cp_CalendarType"]
         [::core::mem::offset_of!(CountryPrefs, cp_CalendarType) - 503usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct LocalePrefs {
     pub lp_Reserved: [ULONG; 4usize],
@@ -18360,7 +18360,7 @@ const _: () = {
     ["Offset of field: LocalePrefs::lp_CountryData"]
         [::core::mem::offset_of!(LocalePrefs, lp_CountryData) - 356usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct OverscanPrefs {
     pub os_Reserved: ULONG,
@@ -18399,7 +18399,7 @@ const _: () = {
     ["Offset of field: OverscanPrefs::os_Standard"]
         [::core::mem::offset_of!(OverscanPrefs, os_Standard) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PalettePrefs {
     pub pap_Reserved: [LONG; 4usize],
@@ -18420,7 +18420,7 @@ const _: () = {
     ["Offset of field: PalettePrefs::pap_Colors"]
         [::core::mem::offset_of!(PalettePrefs, pap_Colors) - 144usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PointerPrefs {
     pub pp_Reserved: [ULONG; 4usize],
@@ -18470,7 +18470,7 @@ const _: () = {
     ["Offset of field: RGBTable::t_Green"][::core::mem::offset_of!(RGBTable, t_Green) - 1usize];
     ["Offset of field: RGBTable::t_Blue"][::core::mem::offset_of!(RGBTable, t_Blue) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrefHeader {
     pub ph_Version: UBYTE,
@@ -18487,7 +18487,7 @@ const _: () = {
     ["Offset of field: PrefHeader::ph_Flags"]
         [::core::mem::offset_of!(PrefHeader, ph_Flags) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrinterGfxPrefs {
     pub pg_Reserved: [LONG; 4usize],
@@ -18538,7 +18538,7 @@ const _: () = {
     ["Offset of field: PrinterGfxPrefs::pg_PrintYOffset"]
         [::core::mem::offset_of!(PrinterGfxPrefs, pg_PrintYOffset) - 37usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrinterPSPrefs {
     pub ps_Reserved: [LONG; 4usize],
@@ -18649,7 +18649,7 @@ const _: () = {
     ["Offset of field: PrinterPSPrefs::ps_Reserved6"]
         [::core::mem::offset_of!(PrinterPSPrefs, ps_Reserved6) - 116usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrinterTxtPrefs {
     pub pt_Reserved: [LONG; 4usize],
@@ -18691,7 +18691,7 @@ const _: () = {
     ["Offset of field: PrinterTxtPrefs::pt_Quality"]
         [::core::mem::offset_of!(PrinterTxtPrefs, pt_Quality) - 62usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrinterUnitPrefs {
     pub pu_Reserved: [LONG; 4usize],
@@ -18712,7 +18712,7 @@ const _: () = {
     ["Offset of field: PrinterUnitPrefs::pu_DeviceName"]
         [::core::mem::offset_of!(PrinterUnitPrefs, pu_DeviceName) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct PrinterDeviceUnitPrefs {
     pub pd_Reserved: [LONG; 4usize],
@@ -18782,7 +18782,7 @@ const _: () = {
     ["Offset of field: ReactionPrefs::rp_Pattern"]
         [::core::mem::offset_of!(ReactionPrefs, rp_Pattern) - 290usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ScreenModePrefs {
     pub smp_Reserved: [ULONG; 4usize],
@@ -18809,7 +18809,7 @@ const _: () = {
     ["Offset of field: ScreenModePrefs::smp_Control"]
         [::core::mem::offset_of!(ScreenModePrefs, smp_Control) - 26usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SerialPrefs {
     pub sp_Reserved: [LONG; 3usize],
@@ -18848,7 +18848,7 @@ const _: () = {
     ["Offset of field: SerialPrefs::sp_StopBits"]
         [::core::mem::offset_of!(SerialPrefs, sp_StopBits) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SoundPrefs {
     pub sop_Reserved: [LONG; 4usize],
@@ -18881,7 +18881,7 @@ const _: () = {
     ["Offset of field: SoundPrefs::sop_AudioFileName"]
         [::core::mem::offset_of!(SoundPrefs, sop_AudioFileName) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct WBPatternPrefs {
     pub wbp_Reserved: [ULONG; 4usize],
@@ -18908,7 +18908,7 @@ const _: () = {
     ["Offset of field: WBPatternPrefs::wbp_DataLength"]
         [::core::mem::offset_of!(WBPatternPrefs, wbp_DataLength) - 22usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct WorkbenchPrefs {
     pub wbp_DefaultStackSize: ULONG,
@@ -18941,7 +18941,7 @@ const _: () = {
     ["Offset of field: WorkbenchPrefs::wbp_ColorIconSupport"]
         [::core::mem::offset_of!(WorkbenchPrefs, wbp_ColorIconSupport) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct WorkbenchExtendedPrefs {
     pub wbe_BasicPrefs: WorkbenchPrefs,
@@ -19003,7 +19003,7 @@ const _: () = {
     ["Offset of field: WorkbenchTitleFormatPrefs::wtfp_Format"]
         [::core::mem::offset_of!(WorkbenchTitleFormatPrefs, wtfp_Format) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct UIExtPens {
     pub extp_Version: WORD,
@@ -19021,7 +19021,7 @@ const _: () = {
     ["Offset of field: UIExtPens::extp_LightPen"]
         [::core::mem::offset_of!(UIExtPens, extp_LightPen) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SpecialPens {
     pub sp_Version: WORD,
@@ -19039,7 +19039,7 @@ const _: () = {
     ["Offset of field: SpecialPens::sp_LightPen"]
         [::core::mem::offset_of!(SpecialPens, sp_LightPen) - 6usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gpClipRect {
     pub MethodID: ULONG,
@@ -19060,7 +19060,7 @@ const _: () = {
     ["Offset of field: gpClipRect::gpc_Flags"]
         [::core::mem::offset_of!(gpClipRect, gpc_Flags) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct UIPrefs {
     pub cap_Semaphore: SignalSemaphore,
@@ -19126,7 +19126,7 @@ const _: () = {
     ["Offset of field: UIPrefs::cap_LabelAttr"]
         [::core::mem::offset_of!(UIPrefs, cap_LabelAttr) - 336usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CardHandle {
     pub cah_CardNode: Node,
@@ -19150,7 +19150,7 @@ const _: () = {
     ["Offset of field: CardHandle::cah_CardFlags"]
         [::core::mem::offset_of!(CardHandle, cah_CardFlags) - 26usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DeviceTData {
     pub dtd_DTsize: ULONG,
@@ -19171,7 +19171,7 @@ const _: () = {
     ["Offset of field: DeviceTData::dtd_DTflags"]
         [::core::mem::offset_of!(DeviceTData, dtd_DTflags) - 9usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CardMemoryMap {
     pub cmm_CommonMemory: *mut UBYTE,
@@ -19243,7 +19243,7 @@ const _: () = {
     ["Offset of field: DiscResourceUnit::dru_Index"]
         [::core::mem::offset_of!(DiscResourceUnit, dru_Index) - 64usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DiscResource {
     pub dr_Library: Library,
@@ -19288,7 +19288,7 @@ const _: () = {
     ["Offset of field: DiscResource::dr_CurrTask"]
         [::core::mem::offset_of!(DiscResource, dr_CurrTask) - 144usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileSysResource {
     pub fsr_Node: Node,
@@ -19306,7 +19306,7 @@ const _: () = {
     ["Offset of field: FileSysResource::fsr_FileSysEntries"]
         [::core::mem::offset_of!(FileSysResource, fsr_FileSysEntries) - 18usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct FileSysEntry {
     pub fse_Node: Node,
@@ -19354,7 +19354,7 @@ const _: () = {
     ["Offset of field: FileSysEntry::fse_GlobalVec"]
         [::core::mem::offset_of!(FileSysEntry, fse_GlobalVec) - 58usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IoBuff {
     pub iobNode: RexxRsrc,
@@ -19418,7 +19418,7 @@ const _: () = {
     ["Offset of field: ClockData::year"][::core::mem::offset_of!(ClockData, year) - 10usize];
     ["Offset of field: ClockData::wday"][::core::mem::offset_of!(ClockData, wday) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct NamedObject {
     pub no_Object: APTR,
@@ -19448,7 +19448,7 @@ const _: () = {
     ["Offset of field: UtilityBase::ub_Reserved"]
         [::core::mem::offset_of!(UtilityBase, ub_Reserved) - 35usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IconIdentifyMsg {
     pub iim_SysBase: *mut Library,
@@ -19484,7 +19484,7 @@ const _: () = {
     ["Offset of field: IconIdentifyMsg::iim_Tags"]
         [::core::mem::offset_of!(IconIdentifyMsg, iim_Tags) - 32usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct OldDrawerData {
     pub dd_NewWindow: NewWindow,
@@ -19502,7 +19502,7 @@ const _: () = {
     ["Offset of field: OldDrawerData::dd_CurrentY"]
         [::core::mem::offset_of!(OldDrawerData, dd_CurrentY) - 52usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DrawerData {
     pub dd_NewWindow: NewWindow,
@@ -19526,7 +19526,7 @@ const _: () = {
     ["Offset of field: DrawerData::dd_ViewModes"]
         [::core::mem::offset_of!(DrawerData, dd_ViewModes) - 60usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DiskObject {
     pub do_Magic: UWORD,
@@ -19583,7 +19583,7 @@ const _: () = {
     ["Offset of field: FreeList::fl_MemList"]
         [::core::mem::offset_of!(FreeList, fl_MemList) - 2usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppMessage {
     pub am_Message: Message,
@@ -19630,7 +19630,7 @@ const _: () = {
     ["Offset of field: AppMessage::am_Reserved"]
         [::core::mem::offset_of!(AppMessage, am_Reserved) - 54usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppWindow {
     pub aw_PRIVATE: *mut ::core::ffi::c_void,
@@ -19642,7 +19642,7 @@ const _: () = {
     ["Offset of field: AppWindow::aw_PRIVATE"]
         [::core::mem::offset_of!(AppWindow, aw_PRIVATE) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppWindowDropZone {
     pub awdz_PRIVATE: *mut ::core::ffi::c_void,
@@ -19654,7 +19654,7 @@ const _: () = {
     ["Offset of field: AppWindowDropZone::awdz_PRIVATE"]
         [::core::mem::offset_of!(AppWindowDropZone, awdz_PRIVATE) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppIcon {
     pub ai_PRIVATE: *mut ::core::ffi::c_void,
@@ -19665,7 +19665,7 @@ const _: () = {
     ["Alignment of AppIcon"][::core::mem::align_of::<AppIcon>() - 2usize];
     ["Offset of field: AppIcon::ai_PRIVATE"][::core::mem::offset_of!(AppIcon, ai_PRIVATE) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppMenuItem {
     pub ami_PRIVATE: *mut ::core::ffi::c_void,
@@ -19677,7 +19677,7 @@ const _: () = {
     ["Offset of field: AppMenuItem::ami_PRIVATE"]
         [::core::mem::offset_of!(AppMenuItem, ami_PRIVATE) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppMenu {
     pub am_PRIVATE: *mut ::core::ffi::c_void,
@@ -19688,7 +19688,7 @@ const _: () = {
     ["Alignment of AppMenu"][::core::mem::align_of::<AppMenu>() - 2usize];
     ["Offset of field: AppMenu::am_PRIVATE"][::core::mem::offset_of!(AppMenu, am_PRIVATE) - 0usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SetupCleanupHookMsg {
     pub schm_Length: ULONG,
@@ -19703,7 +19703,7 @@ const _: () = {
     ["Offset of field: SetupCleanupHookMsg::schm_State"]
         [::core::mem::offset_of!(SetupCleanupHookMsg, schm_State) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppIconRenderMsg {
     pub arm_RastPort: *mut RastPort,
@@ -19739,7 +19739,7 @@ const _: () = {
     ["Offset of field: AppIconRenderMsg::arm_State"]
         [::core::mem::offset_of!(AppIconRenderMsg, arm_State) - 24usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct AppWindowDropZoneMsg {
     pub adzm_RastPort: *mut RastPort,
@@ -19763,7 +19763,7 @@ const _: () = {
     ["Offset of field: AppWindowDropZoneMsg::adzm_Action"]
         [::core::mem::offset_of!(AppWindowDropZoneMsg, adzm_Action) - 20usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct IconSelectMsg {
     pub ism_Length: ULONG,
@@ -19808,7 +19808,7 @@ const _: () = {
     ["Offset of field: IconSelectMsg::ism_Height"]
         [::core::mem::offset_of!(IconSelectMsg, ism_Height) - 34usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CopyBeginMsg {
     pub cbm_Length: ULONG,
@@ -19829,7 +19829,7 @@ const _: () = {
     ["Offset of field: CopyBeginMsg::cbm_DestinationDrawer"]
         [::core::mem::offset_of!(CopyBeginMsg, cbm_DestinationDrawer) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CopyDataMsg {
     pub cdm_Length: ULONG,
@@ -19862,7 +19862,7 @@ const _: () = {
     ["Offset of field: CopyDataMsg::cdm_DestinationY"]
         [::core::mem::offset_of!(CopyDataMsg, cdm_DestinationY) - 28usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct CopyEndMsg {
     pub cem_Length: ULONG,
@@ -19877,7 +19877,7 @@ const _: () = {
     ["Offset of field: CopyEndMsg::cem_Action"]
         [::core::mem::offset_of!(CopyEndMsg, cem_Action) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DeleteBeginMsg {
     pub dbm_Length: ULONG,
@@ -19892,7 +19892,7 @@ const _: () = {
     ["Offset of field: DeleteBeginMsg::dbm_Action"]
         [::core::mem::offset_of!(DeleteBeginMsg, dbm_Action) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DeleteDataMsg {
     pub ddm_Length: ULONG,
@@ -19913,7 +19913,7 @@ const _: () = {
     ["Offset of field: DeleteDataMsg::ddm_Name"]
         [::core::mem::offset_of!(DeleteDataMsg, ddm_Name) - 12usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct DeleteEndMsg {
     pub dem_Length: ULONG,
@@ -19928,7 +19928,7 @@ const _: () = {
     ["Offset of field: DeleteEndMsg::dem_Action"]
         [::core::mem::offset_of!(DeleteEndMsg, dem_Action) - 4usize];
 };
-#[repr(C, packed(2))]
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TextInputMsg {
     pub tim_Length: ULONG,
