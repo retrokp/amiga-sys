@@ -413,11 +413,9 @@ def print_asm_implementation(rustfn, filename, line_number):
     print(f'        asm!(')
     # save d0-d1 and a0-a1 because system functions treat them as scratch registers
     if rustfn["return_type"] == "VOID":
-        print(f'            ".short 0x48e7", // movem.l %d0-%d1/%a0-%a1, -(%sp)')
-        print(f'            ".short 0xc0c0",')
+        print(f'            "movem.l %d0-%d1/%a0-%a1, -(%sp)",')
     else:
-        print(f'            ".short 0x48e7", // movem.l %d1/%a0-%a1, -(%sp)')
-        print(f'            ".short 0x40c0",')
+        print(f'            "movem.l %d1/%a0-%a1, -(%sp)",')
     for sreg in saved_regs:
         print(f'            "move.l %{sreg}, -(%sp)",')
     for pmi in pre_move_instr:
