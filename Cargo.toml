@@ -8,4 +8,8 @@ license = "0BSD OR Apache-2.0"
 keywords = ["amiga", "bindings", "ffi"]
 categories = ["os", "external-ffi-bindings", "no-std", "no-std::no-alloc"]
 
-[dependencies]
+[package.metadata.docs.rs]
+all-features = true
+default-target = "m68k-unknown-none-elf"
+targets = []
+cargo-args = ["-Z", "build-std=core"]
