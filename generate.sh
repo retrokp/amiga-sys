@@ -1,7 +1,7 @@
 set -e
 
 # block common constants (INCLUDE_VERSION, LIBRARY_MINIMUM), standard C types ending with '_t', and few missing structs (DiskFont, DiskResourceUnit, DTMethods)
-bindgen wrapper.h --rust-target nightly --rust-edition 2024 --use-core --wrap-unsafe-ops --no-include-path-detection --no-doc-comments --blocklist-item=INCLUDE_VERSION --blocklist-item=LIBRARY_MINIMUM --blocklist-item='.*_t' --blocklist-type=DiskFont --blocklist-type=DiskResourceUnit --blocklist-type=DTMethods > src/cbindings.rs -- -I../NDK3.2R4/Include_H --target=m68k-bare-metal.json
+bindgen wrapper.h --rust-target nightly --rust-edition 2024 --use-core --wrap-unsafe-ops --no-include-path-detection --no-doc-comments --blocklist-item=INCLUDE_VERSION --blocklist-item=LIBRARY_MINIMUM --blocklist-item='.*_t' --blocklist-type=DiskFont --blocklist-type=DiskResourceUnit --blocklist-type=DTMethods > src/cbindings.rs -- -I../NDK3.2R4/Include_H --target=m68k-unknown-none-elf
 
 # convert functions to asm
 python3 ./scripts/convert-fns.py src/cbindings.rs ../NDK3.2R4/SFD --override=amiga-ndk3.2.0-overrides.json --doc-kickstart-version=true > src/bindings.rs
@@ -48,5 +48,5 @@ python3 ./scripts/replace-strings.py 'align_of::<RGBTable>() - 1usize];' 'align_
 
 # build it to ensure there's no errors
 cargo +nightly fmt
-cargo build --target m68k-bare-metal.json -Zbuild-std="core" --release
+cargo +nightly build --target m68k-unknown-none-elf -Zbuild-std="core" --release
 cargo +nightly doc
