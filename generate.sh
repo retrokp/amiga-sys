@@ -1,8 +1,9 @@
 set -e
 
 # print nightly versions
-rustc +nightly --version
+rustc +nightly --version --verbose
 cargo +nightly --version
+bindgen --version
 
 # block common constants (INCLUDE_VERSION, LIBRARY_MINIMUM), standard C types ending with '_t', and few missing structs (DiskFont, DiskResourceUnit, DTMethods)
 bindgen wrapper.h --rust-target nightly --rust-edition 2024 --use-core --wrap-unsafe-ops --no-include-path-detection --no-doc-comments --blocklist-item=INCLUDE_VERSION --blocklist-item=LIBRARY_MINIMUM --blocklist-item='.*_t' --blocklist-type=DiskFont --blocklist-type=DiskResourceUnit --blocklist-type=DTMethods > src/cbindings.rs -- -I../NDK3.2R4/Include_H --target=m68k-unknown-none-elf
@@ -50,7 +51,11 @@ python3 ./scripts/replace-strings.py 'pub struct RGBTable {' '#[repr(align(2))] 
 python3 ./scripts/replace-strings.py 'size_of::<RGBTable>() - 3usize];' 'size_of::<RGBTable>() - 4usize];' src/bindings.rs
 python3 ./scripts/replace-strings.py 'align_of::<RGBTable>() - 1usize];' 'align_of::<RGBTable>() - 2usize];' src/bindings.rs
 
-# build it to ensure there's no errors
+# build to ensure there's no errors
 cargo +nightly fmt
 cargo +nightly build --target m68k-unknown-none-elf -Zbuild-std="core" --release
 cargo +nightly doc
+cd examples/hello-cli
+cargo +nightly build --target m68k-unknown-none-elf --release
+cd ../tester
+cargo +nightly build --target m68k-unknown-none-elf --release
