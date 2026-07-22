@@ -19954,7 +19954,7 @@ pub unsafe fn LockAmigaGuideBase(AmigaGuideBase: *mut Library, handle: APTR) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -19973,7 +19973,7 @@ pub unsafe fn UnlockAmigaGuideBase(AmigaGuideBase: *mut Library, key: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -19995,7 +19995,7 @@ pub unsafe fn OpenAmigaGuideA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20020,7 +20020,7 @@ pub unsafe fn OpenAmigaGuideAsyncA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20040,7 +20040,7 @@ pub unsafe fn CloseAmigaGuide(AmigaGuideBase: *mut Library, cl: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20058,7 +20058,7 @@ pub unsafe fn AmigaGuideSignal(AmigaGuideBase: *mut Library, cl: APTR) -> ULONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20078,7 +20078,7 @@ pub unsafe fn GetAmigaGuideMsg(AmigaGuideBase: *mut Library, cl: APTR) -> *mut A
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20097,7 +20097,7 @@ pub unsafe fn ReplyAmigaGuideMsg(AmigaGuideBase: *mut Library, amsg: *mut AmigaG
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20120,7 +20120,7 @@ pub unsafe fn SetAmigaGuideContextA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20146,7 +20146,7 @@ pub unsafe fn SendAmigaGuideContextA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20172,7 +20172,7 @@ pub unsafe fn SendAmigaGuideCmdA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20198,7 +20198,7 @@ pub unsafe fn SetAmigaGuideAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20224,7 +20224,7 @@ pub unsafe fn GetAmigaGuideAttr(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20246,7 +20246,7 @@ pub unsafe fn LoadXRef(AmigaGuideBase: *mut Library, lock: BPTR, name: STRPTR) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20266,7 +20266,7 @@ pub unsafe fn ExpungeXRef(AmigaGuideBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20288,7 +20288,7 @@ pub unsafe fn AddAmigaGuideHostA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20314,7 +20314,7 @@ pub unsafe fn RemoveAmigaGuideHostA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20335,7 +20335,7 @@ pub unsafe fn GetAmigaGuideString(AmigaGuideBase: *mut Library, id: LONG) -> STR
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20355,7 +20355,7 @@ pub unsafe fn AREXX_GetClass(ARexxBase: *mut ::core::ffi::c_void) -> *mut Class 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20374,7 +20374,7 @@ pub unsafe fn AllocFileRequest(AslBase: *mut Library) -> *mut FileRequester {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20392,7 +20392,7 @@ pub unsafe fn FreeFileRequest(AslBase: *mut Library, fileReq: *mut FileRequester
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20410,7 +20410,7 @@ pub unsafe fn RequestFile(AslBase: *mut Library, fileReq: *mut FileRequester) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20434,7 +20434,7 @@ pub unsafe fn AllocAslRequest(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20454,7 +20454,7 @@ pub unsafe fn FreeAslRequest(AslBase: *mut Library, requester: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20472,7 +20472,7 @@ pub unsafe fn AslRequest(AslBase: *mut Library, requester: APTR, tagList: *const
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20492,7 +20492,7 @@ pub unsafe fn AbortAslRequest(AslBase: *mut Library, requester: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20509,7 +20509,7 @@ pub unsafe fn ActivateAslRequest(AslBase: *mut Library, requester: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20526,7 +20526,7 @@ pub unsafe fn ResetBattClock(BattClockBase: *mut ::core::ffi::c_void) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -6(a6)
+            ".short 0x4eae", // jsr (-6, %a6)
             ".short -6",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20543,7 +20543,7 @@ pub unsafe fn ReadBattClock(BattClockBase: *mut ::core::ffi::c_void) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -12(a6)
+            ".short 0x4eae", // jsr (-12, %a6)
             ".short -12",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20561,7 +20561,7 @@ pub unsafe fn WriteBattClock(BattClockBase: *mut ::core::ffi::c_void, time: ULON
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -18(a6)
+            ".short 0x4eae", // jsr (-18, %a6)
             ".short -18",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20578,7 +20578,7 @@ pub unsafe fn ObtainBattSemaphore(BattMemBase: *mut ::core::ffi::c_void) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -6(a6)
+            ".short 0x4eae", // jsr (-6, %a6)
             ".short -6",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20594,7 +20594,7 @@ pub unsafe fn ReleaseBattSemaphore(BattMemBase: *mut ::core::ffi::c_void) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -12(a6)
+            ".short 0x4eae", // jsr (-12, %a6)
             ".short -12",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20616,7 +20616,7 @@ pub unsafe fn ReadBattMem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -18(a6)
+            ".short 0x4eae", // jsr (-18, %a6)
             ".short -18",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20643,7 +20643,7 @@ pub unsafe fn WriteBattMem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -24(a6)
+            ".short 0x4eae", // jsr (-24, %a6)
             ".short -24",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20665,7 +20665,7 @@ pub unsafe fn BEVEL_GetClass(BevelBase: *mut ::core::ffi::c_void) -> *mut Class 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20684,7 +20684,7 @@ pub unsafe fn BITMAP_GetClass(BitMapBase: *mut ::core::ffi::c_void) -> *mut Clas
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20703,7 +20703,7 @@ pub unsafe fn OpenEngine(BulletBase: *mut Library) -> *mut GlyphEngine {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20721,7 +20721,7 @@ pub unsafe fn CloseEngine(BulletBase: *mut Library, glyphEngine: *mut GlyphEngin
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20743,7 +20743,7 @@ pub unsafe fn SetInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20768,7 +20768,7 @@ pub unsafe fn ObtainInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20793,7 +20793,7 @@ pub unsafe fn ReleaseInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20814,7 +20814,7 @@ pub unsafe fn BUTTON_GetClass(ButtonBase: *mut ::core::ffi::c_void) -> *mut Clas
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20836,7 +20836,7 @@ pub unsafe fn OwnCard(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -6(a6)
+            ".short 0x4eae", // jsr (-6, %a6)
             ".short -6",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20859,7 +20859,7 @@ pub unsafe fn ReleaseCard(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -12(a6)
+            ".short 0x4eae", // jsr (-12, %a6)
             ".short -12",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -20878,7 +20878,7 @@ pub unsafe fn GetCardMap(CardResource: *mut ::core::ffi::c_void) -> *mut CardMem
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -18(a6)
+            ".short 0x4eae", // jsr (-18, %a6)
             ".short -18",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20900,7 +20900,7 @@ pub unsafe fn BeginCardAccess(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -24(a6)
+            ".short 0x4eae", // jsr (-24, %a6)
             ".short -24",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20923,7 +20923,7 @@ pub unsafe fn EndCardAccess(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20943,7 +20943,7 @@ pub unsafe fn ReadCardStatus(CardResource: *mut ::core::ffi::c_void) -> UBYTE {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "and.w #0x00ff, %d0",
             "move.l (%sp)+, %a6",
@@ -20967,7 +20967,7 @@ pub unsafe fn CardResetRemove(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -20992,7 +20992,7 @@ pub unsafe fn CardMiscControl(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "and.w #0x00ff, %d0",
             "move.l (%sp)+, %a6",
@@ -21018,7 +21018,7 @@ pub unsafe fn CardAccessSpeed(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21043,7 +21043,7 @@ pub unsafe fn CardProgramVoltage(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21067,7 +21067,7 @@ pub unsafe fn CardResetCard(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21093,7 +21093,7 @@ pub unsafe fn CopyTuple(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21120,7 +21120,7 @@ pub unsafe fn DeviceTuple(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21144,7 +21144,7 @@ pub unsafe fn IfAmigaXIP(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21164,7 +21164,7 @@ pub unsafe fn CardForceChange(CardResource: *mut ::core::ffi::c_void) -> BOOL {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21183,7 +21183,7 @@ pub unsafe fn CardChangeCount(CardResource: *mut ::core::ffi::c_void) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21202,7 +21202,7 @@ pub unsafe fn CardInterface(CardResource: *mut ::core::ffi::c_void) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21221,7 +21221,7 @@ pub unsafe fn CHECKBOX_GetClass(CheckBoxBase: *mut ::core::ffi::c_void) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21240,7 +21240,7 @@ pub unsafe fn CHOOSER_GetClass(ChooserBase: *mut ::core::ffi::c_void) -> *mut Cl
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21262,7 +21262,7 @@ pub unsafe fn AllocChooserNodeA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21281,7 +21281,7 @@ pub unsafe fn FreeChooserNode(ChooserBase: *mut ::core::ffi::c_void, node: *mut 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21302,7 +21302,7 @@ pub unsafe fn SetChooserNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21324,7 +21324,7 @@ pub unsafe fn GetChooserNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21349,7 +21349,7 @@ pub unsafe fn ShowChooser(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21371,7 +21371,7 @@ pub unsafe fn HideChooser(ChooserBase: *mut ::core::ffi::c_void, o: *mut Object,
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21394,7 +21394,7 @@ pub unsafe fn AddICRVector(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -6(a6)
+            ".short 0x4eae", // jsr (-6, %a6)
             ".short -6",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21414,7 +21414,7 @@ pub unsafe fn RemICRVector(resource: *mut Library, iCRBit: LONG, interrupt: *mut
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -12(a6)
+            ".short 0x4eae", // jsr (-12, %a6)
             ".short -12",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21433,7 +21433,7 @@ pub unsafe fn AbleICR(resource: *mut Library, mask: LONG) -> WORD {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -18(a6)
+            ".short 0x4eae", // jsr (-18, %a6)
             ".short -18",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21453,7 +21453,7 @@ pub unsafe fn SetICR(resource: *mut Library, mask: LONG) -> WORD {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -24(a6)
+            ".short 0x4eae", // jsr (-24, %a6)
             ".short -24",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21473,7 +21473,7 @@ pub unsafe fn CLICKTAB_GetClass(ClickTabBase: *mut ::core::ffi::c_void) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21495,7 +21495,7 @@ pub unsafe fn AllocClickTabNodeA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21514,7 +21514,7 @@ pub unsafe fn FreeClickTabNode(ClickTabBase: *mut ::core::ffi::c_void, node: *mu
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21535,7 +21535,7 @@ pub unsafe fn SetClickTabNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21557,7 +21557,7 @@ pub unsafe fn GetClickTabNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21579,7 +21579,7 @@ pub unsafe fn ConvertHSBToRGB(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21601,7 +21601,7 @@ pub unsafe fn ConvertRGBToHSB(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21625,7 +21625,7 @@ pub unsafe fn CreateCxObj(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21647,7 +21647,7 @@ pub unsafe fn CxBroker(CxBase: *mut Library, nb: *const NewBroker, error: *mut L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21668,7 +21668,7 @@ pub unsafe fn ActivateCxObj(CxBase: *mut Library, co: *mut CxObj, flag: LONG) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21688,7 +21688,7 @@ pub unsafe fn DeleteCxObj(CxBase: *mut Library, co: *mut CxObj) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21705,7 +21705,7 @@ pub unsafe fn DeleteCxObjAll(CxBase: *mut Library, co: *mut CxObj) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21723,7 +21723,7 @@ pub unsafe fn CxObjType(CxBase: *mut Library, co: *const CxObj) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21743,7 +21743,7 @@ pub unsafe fn CxObjError(CxBase: *mut Library, co: *const CxObj) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21762,7 +21762,7 @@ pub unsafe fn ClearCxObjError(CxBase: *mut Library, co: *mut CxObj) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21780,7 +21780,7 @@ pub unsafe fn SetCxObjPri(CxBase: *mut Library, co: *mut CxObj, pri: LONG) -> LO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21800,7 +21800,7 @@ pub unsafe fn AttachCxObj(CxBase: *mut Library, headObj: *mut CxObj, co: *mut Cx
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21818,7 +21818,7 @@ pub unsafe fn EnqueueCxObj(CxBase: *mut Library, headObj: *mut CxObj, co: *mut C
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21841,7 +21841,7 @@ pub unsafe fn InsertCxObj(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21860,7 +21860,7 @@ pub unsafe fn RemoveCxObj(CxBase: *mut Library, co: *mut CxObj) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21877,7 +21877,7 @@ pub unsafe fn SetTranslate(CxBase: *mut Library, translator: *mut CxObj, events:
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21895,7 +21895,7 @@ pub unsafe fn SetFilter(CxBase: *mut Library, filter: *mut CxObj, text: CONST_ST
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21913,7 +21913,7 @@ pub unsafe fn SetFilterIX(CxBase: *mut Library, filter: *mut CxObj, ix: *const I
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -21932,7 +21932,7 @@ pub unsafe fn ParseIX(CxBase: *mut Library, description: CONST_STRPTR, ix: *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21953,7 +21953,7 @@ pub unsafe fn CxMsgType(CxBase: *mut Library, cxm: *const CxMsg) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21973,7 +21973,7 @@ pub unsafe fn CxMsgData(CxBase: *mut Library, cxm: *const CxMsg) -> APTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -21993,7 +21993,7 @@ pub unsafe fn CxMsgID(CxBase: *mut Library, cxm: *const CxMsg) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22017,7 +22017,7 @@ pub unsafe fn DivertCxMsg(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22036,7 +22036,7 @@ pub unsafe fn RouteCxMsg(CxBase: *mut Library, cxm: *mut CxMsg, co: *mut CxObj) 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22054,7 +22054,7 @@ pub unsafe fn DisposeCxMsg(CxBase: *mut Library, cxm: *mut CxMsg) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22077,7 +22077,7 @@ pub unsafe fn InvertKeyMap(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22098,7 +22098,7 @@ pub unsafe fn AddIEvents(CxBase: *mut Library, events: *mut InputEvent) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22116,7 +22116,7 @@ pub unsafe fn MatchIX(CxBase: *mut Library, event: *const InputEvent, ix: *const
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22141,7 +22141,7 @@ pub unsafe fn CDInputHandler(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22168,7 +22168,7 @@ pub unsafe fn RawKeyConvert(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22196,7 +22196,7 @@ pub unsafe fn ObtainDataTypeA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22217,7 +22217,7 @@ pub unsafe fn ReleaseDataType(DataTypesBase: *mut Library, dt: *mut DataType) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22239,7 +22239,7 @@ pub unsafe fn NewDTObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22259,7 +22259,7 @@ pub unsafe fn DisposeDTObject(DataTypesBase: *mut Library, o: *mut Object) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22283,7 +22283,7 @@ pub unsafe fn SetDTAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22310,7 +22310,7 @@ pub unsafe fn GetDTAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22337,7 +22337,7 @@ pub unsafe fn AddDTObject(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22365,7 +22365,7 @@ pub unsafe fn RefreshDTObjectA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22390,7 +22390,7 @@ pub unsafe fn DoAsyncLayout(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22417,7 +22417,7 @@ pub unsafe fn DoDTMethodA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22444,7 +22444,7 @@ pub unsafe fn RemoveDTObject(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22465,7 +22465,7 @@ pub unsafe fn GetDTMethods(DataTypesBase: *mut Library, object: *const Object) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22488,7 +22488,7 @@ pub unsafe fn GetDTTriggerMethods(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22514,7 +22514,7 @@ pub unsafe fn PrintDTObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22537,7 +22537,7 @@ pub unsafe fn GetDTString(DataTypesBase: *mut Library, id: ULONG) -> STRPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22561,7 +22561,7 @@ pub unsafe fn FindMethod(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22587,7 +22587,7 @@ pub unsafe fn FindTriggerMethod(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22614,7 +22614,7 @@ pub unsafe fn CopyDTMethods(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -270(a6)
+            ".short 0x4eae", // jsr (-270, %a6)
             ".short -270",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22641,7 +22641,7 @@ pub unsafe fn CopyDTTriggerMethods(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -276(a6)
+            ".short 0x4eae", // jsr (-276, %a6)
             ".short -276",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22666,7 +22666,7 @@ pub unsafe fn FreeDTMethods(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -282(a6)
+            ".short 0x4eae", // jsr (-282, %a6)
             ".short -282",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22689,7 +22689,7 @@ pub unsafe fn GetDTTriggerMethodDataFlags(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -288(a6)
+            ".short 0x4eae", // jsr (-288, %a6)
             ".short -288",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22720,7 +22720,7 @@ pub unsafe fn SaveDTObjectA(
             "move.l %a4, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a4reg}, %a4",
-            ".short 0x4eae", // jsr -294(a6)
+            ".short 0x4eae", // jsr (-294, %a6)
             ".short -294",
             "move.l (%sp)+, %a4",
             "move.l (%sp)+, %a6",
@@ -22747,7 +22747,7 @@ pub unsafe fn StartDragSelect(DataTypesBase: *mut Library, o: *mut Object) -> UL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -300(a6)
+            ".short 0x4eae", // jsr (-300, %a6)
             ".short -300",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22767,7 +22767,7 @@ pub unsafe fn DATEBROWSER_GetClass(DateBrowserBase: *mut ::core::ffi::c_void) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22791,7 +22791,7 @@ pub unsafe fn JulianWeekDay(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22817,7 +22817,7 @@ pub unsafe fn JulianMonthDays(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22838,7 +22838,7 @@ pub unsafe fn JulianLeapYear(DateBrowserBase: *mut ::core::ffi::c_void, year: LO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22858,7 +22858,7 @@ pub unsafe fn AllocUnit(DiskBase: *mut ::core::ffi::c_void, unitNum: LONG) -> BO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -6(a6)
+            ".short 0x4eae", // jsr (-6, %a6)
             ".short -6",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22877,7 +22877,7 @@ pub unsafe fn FreeUnit(DiskBase: *mut ::core::ffi::c_void, unitNum: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -12(a6)
+            ".short 0x4eae", // jsr (-12, %a6)
             ".short -12",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22898,7 +22898,7 @@ pub unsafe fn GetUnit(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -18(a6)
+            ".short 0x4eae", // jsr (-18, %a6)
             ".short -18",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22917,7 +22917,7 @@ pub unsafe fn GiveUnit(DiskBase: *mut ::core::ffi::c_void) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -24(a6)
+            ".short 0x4eae", // jsr (-24, %a6)
             ".short -24",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -22934,7 +22934,7 @@ pub unsafe fn GetUnitID(DiskBase: *mut ::core::ffi::c_void, unitNum: LONG) -> LO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22954,7 +22954,7 @@ pub unsafe fn ReadUnitID(DiskBase: *mut ::core::ffi::c_void, unitNum: LONG) -> L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22974,7 +22974,7 @@ pub unsafe fn OpenDiskFont(DiskfontBase: *mut Library, textAttr: *mut TextAttr) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -22999,7 +22999,7 @@ pub unsafe fn AvailFonts(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23025,7 +23025,7 @@ pub unsafe fn NewFontContents(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23048,7 +23048,7 @@ pub unsafe fn DisposeFontContents(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23070,7 +23070,7 @@ pub unsafe fn NewScaledDiskFont(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23091,7 +23091,7 @@ pub unsafe fn GetDiskFontCtrl(DiskfontBase: *mut Library, tagid: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23110,7 +23110,7 @@ pub unsafe fn SetDiskFontCtrlA(DiskfontBase: *mut Library, taglist: *const TagIt
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23128,7 +23128,7 @@ pub unsafe fn EOpenEngine(DiskfontBase: *mut Library, eEngine: *mut EGlyphEngine
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23147,7 +23147,7 @@ pub unsafe fn ECloseEngine(DiskfontBase: *mut Library, eEngine: *mut EGlyphEngin
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23169,7 +23169,7 @@ pub unsafe fn ESetInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23194,7 +23194,7 @@ pub unsafe fn EObtainInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23219,7 +23219,7 @@ pub unsafe fn EReleaseInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23245,7 +23245,7 @@ pub unsafe fn OpenOutlineFont(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23266,7 +23266,7 @@ pub unsafe fn CloseOutlineFont(DiskfontBase: *mut Library, olf: *mut OutlineFont
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23290,7 +23290,7 @@ pub unsafe fn WriteFontContents(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23317,7 +23317,7 @@ pub unsafe fn WriteDiskFontHeaderA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23344,7 +23344,7 @@ pub unsafe fn ObtainCharsetInfo(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23366,7 +23366,7 @@ pub unsafe fn Open(DOSBase: *mut Library, name: CONST_STRPTR, accessMode: LONG) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23387,7 +23387,7 @@ pub unsafe fn Close(DOSBase: *mut Library, file: BPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23407,7 +23407,7 @@ pub unsafe fn Read(DOSBase: *mut Library, file: BPTR, buffer: APTR, length: LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23429,7 +23429,7 @@ pub unsafe fn Write(DOSBase: *mut Library, file: BPTR, buffer: CONST_APTR, lengt
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23451,7 +23451,7 @@ pub unsafe fn Input(DOSBase: *mut Library) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23470,7 +23470,7 @@ pub unsafe fn Output(DOSBase: *mut Library) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23489,7 +23489,7 @@ pub unsafe fn Seek(DOSBase: *mut Library, file: BPTR, position: LONG, offset: LO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23511,7 +23511,7 @@ pub unsafe fn DeleteFile(DOSBase: *mut Library, name: CONST_STRPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23531,7 +23531,7 @@ pub unsafe fn Rename(DOSBase: *mut Library, oldName: CONST_STRPTR, newName: CONS
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23552,7 +23552,7 @@ pub unsafe fn Lock(DOSBase: *mut Library, name: CONST_STRPTR, type_: LONG) -> BP
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23572,7 +23572,7 @@ pub unsafe fn UnLock(DOSBase: *mut Library, lock: BPTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23590,7 +23590,7 @@ pub unsafe fn DupLock(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23614,7 +23614,7 @@ pub unsafe fn Examine(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23635,7 +23635,7 @@ pub unsafe fn ExNext(DOSBase: *mut Library, lock: BPTR, fileInfoBlock: *mut File
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23656,7 +23656,7 @@ pub unsafe fn Info(DOSBase: *mut Library, lock: BPTR, parameterBlock: *mut InfoD
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23677,7 +23677,7 @@ pub unsafe fn CreateDir(DOSBase: *mut Library, name: CONST_STRPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23697,7 +23697,7 @@ pub unsafe fn CurrentDir(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23717,7 +23717,7 @@ pub unsafe fn IoErr(DOSBase: *mut Library) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23742,7 +23742,7 @@ pub unsafe fn CreateProc(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23764,7 +23764,7 @@ pub unsafe fn Exit(DOSBase: *mut Library, returnCode: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23782,7 +23782,7 @@ pub unsafe fn LoadSeg(DOSBase: *mut Library, name: CONST_STRPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23801,7 +23801,7 @@ pub unsafe fn UnLoadSeg(DOSBase: *mut Library, seglist: BPTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23819,7 +23819,7 @@ pub unsafe fn DeviceProc(DOSBase: *mut Library, name: CONST_STRPTR) -> *mut MsgP
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23839,7 +23839,7 @@ pub unsafe fn SetComment(DOSBase: *mut Library, name: CONST_STRPTR, comment: CON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23860,7 +23860,7 @@ pub unsafe fn SetProtection(DOSBase: *mut Library, name: CONST_STRPTR, protect: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23881,7 +23881,7 @@ pub unsafe fn DateStamp(DOSBase: *mut Library, date: *mut DateStamp) -> *mut Dat
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -192(a6)
+            ".short 0x4eae", // jsr (-192, %a6)
             ".short -192",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23900,7 +23900,7 @@ pub unsafe fn Delay(DOSBase: *mut Library, timeout: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -23918,7 +23918,7 @@ pub unsafe fn WaitForChar(DOSBase: *mut Library, file: BPTR, timeout: LONG) -> L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23939,7 +23939,7 @@ pub unsafe fn ParentDir(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23959,7 +23959,7 @@ pub unsafe fn IsInteractive(DOSBase: *mut Library, file: BPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -216(a6)
+            ".short 0x4eae", // jsr (-216, %a6)
             ".short -216",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -23984,7 +23984,7 @@ pub unsafe fn Execute(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -222(a6)
+            ".short 0x4eae", // jsr (-222, %a6)
             ".short -222",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24006,7 +24006,7 @@ pub unsafe fn AllocDosObject(DOSBase: *mut Library, type_: ULONG, tags: *const T
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24031,7 +24031,7 @@ pub unsafe fn AllocDosObjectTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24051,7 +24051,7 @@ pub unsafe fn FreeDosObject(DOSBase: *mut Library, type_: ULONG, ptr: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -24079,7 +24079,7 @@ pub unsafe fn DoPkt(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24105,7 +24105,7 @@ pub unsafe fn DoPkt0(DOSBase: *mut Library, port: *mut MsgPort, action: LONG) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24126,7 +24126,7 @@ pub unsafe fn DoPkt1(DOSBase: *mut Library, port: *mut MsgPort, action: LONG, ar
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24154,7 +24154,7 @@ pub unsafe fn DoPkt2(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24184,7 +24184,7 @@ pub unsafe fn DoPkt3(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24216,7 +24216,7 @@ pub unsafe fn DoPkt4(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24245,7 +24245,7 @@ pub unsafe fn SendPkt(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -246(a6)
+            ".short 0x4eae", // jsr (-246, %a6)
             ".short -246",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -24265,7 +24265,7 @@ pub unsafe fn WaitPkt(DOSBase: *mut Library) -> *mut DosPacket {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -252(a6)
+            ".short 0x4eae", // jsr (-252, %a6)
             ".short -252",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24283,7 +24283,7 @@ pub unsafe fn ReplyPkt(DOSBase: *mut Library, dp: *mut DosPacket, res1: LONG, re
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -24302,7 +24302,7 @@ pub unsafe fn AbortPkt(DOSBase: *mut Library, port: *mut MsgPort, pkt: *mut DosP
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -24328,7 +24328,7 @@ pub unsafe fn LockRecord(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -270(a6)
+            ".short 0x4eae", // jsr (-270, %a6)
             ".short -270",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24356,7 +24356,7 @@ pub unsafe fn LockRecords(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -276(a6)
+            ".short 0x4eae", // jsr (-276, %a6)
             ".short -276",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24377,7 +24377,7 @@ pub unsafe fn UnLockRecord(DOSBase: *mut Library, fh: BPTR, offset: ULONG, lengt
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -282(a6)
+            ".short 0x4eae", // jsr (-282, %a6)
             ".short -282",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24399,7 +24399,7 @@ pub unsafe fn UnLockRecords(DOSBase: *mut Library, recArray: *const RecordLock) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -288(a6)
+            ".short 0x4eae", // jsr (-288, %a6)
             ".short -288",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24419,7 +24419,7 @@ pub unsafe fn SelectInput(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -294(a6)
+            ".short 0x4eae", // jsr (-294, %a6)
             ".short -294",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24439,7 +24439,7 @@ pub unsafe fn SelectOutput(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -300(a6)
+            ".short 0x4eae", // jsr (-300, %a6)
             ".short -300",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24459,7 +24459,7 @@ pub unsafe fn FGetC(DOSBase: *mut Library, fh: BPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -306(a6)
+            ".short 0x4eae", // jsr (-306, %a6)
             ".short -306",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24479,7 +24479,7 @@ pub unsafe fn FPutC(DOSBase: *mut Library, fh: BPTR, ch: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -312(a6)
+            ".short 0x4eae", // jsr (-312, %a6)
             ".short -312",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24500,7 +24500,7 @@ pub unsafe fn UnGetC(DOSBase: *mut Library, fh: BPTR, character: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -318(a6)
+            ".short 0x4eae", // jsr (-318, %a6)
             ".short -318",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24527,7 +24527,7 @@ pub unsafe fn FRead(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -324(a6)
+            ".short 0x4eae", // jsr (-324, %a6)
             ".short -324",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24556,7 +24556,7 @@ pub unsafe fn FWrite(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -330(a6)
+            ".short 0x4eae", // jsr (-330, %a6)
             ".short -330",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24579,7 +24579,7 @@ pub unsafe fn FGets(DOSBase: *mut Library, fh: BPTR, buf: STRPTR, buflen: ULONG)
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -336(a6)
+            ".short 0x4eae", // jsr (-336, %a6)
             ".short -336",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24601,7 +24601,7 @@ pub unsafe fn FPuts(DOSBase: *mut Library, fh: BPTR, str_: CONST_STRPTR) -> LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -342(a6)
+            ".short 0x4eae", // jsr (-342, %a6)
             ".short -342",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24626,7 +24626,7 @@ pub unsafe fn VFWritef(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -348(a6)
+            ".short 0x4eae", // jsr (-348, %a6)
             ".short -348",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -24651,7 +24651,7 @@ pub unsafe fn VFPrintf(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -354(a6)
+            ".short 0x4eae", // jsr (-354, %a6)
             ".short -354",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24673,7 +24673,7 @@ pub unsafe fn Flush(DOSBase: *mut Library, fh: BPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -360(a6)
+            ".short 0x4eae", // jsr (-360, %a6)
             ".short -360",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24699,7 +24699,7 @@ pub unsafe fn SetVBuf(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -366(a6)
+            ".short 0x4eae", // jsr (-366, %a6)
             ".short -366",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24722,7 +24722,7 @@ pub unsafe fn DupLockFromFH(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -372(a6)
+            ".short 0x4eae", // jsr (-372, %a6)
             ".short -372",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24742,7 +24742,7 @@ pub unsafe fn OpenFromLock(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -378(a6)
+            ".short 0x4eae", // jsr (-378, %a6)
             ".short -378",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24762,7 +24762,7 @@ pub unsafe fn ParentOfFH(DOSBase: *mut Library, fh: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -384(a6)
+            ".short 0x4eae", // jsr (-384, %a6)
             ".short -384",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24782,7 +24782,7 @@ pub unsafe fn ExamineFH(DOSBase: *mut Library, fh: BPTR, fib: *mut FileInfoBlock
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -390(a6)
+            ".short 0x4eae", // jsr (-390, %a6)
             ".short -390",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24807,7 +24807,7 @@ pub unsafe fn SetFileDate(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -396(a6)
+            ".short 0x4eae", // jsr (-396, %a6)
             ".short -396",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24828,7 +24828,7 @@ pub unsafe fn NameFromLock(DOSBase: *mut Library, lock: BPTR, buffer: STRPTR, le
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -402(a6)
+            ".short 0x4eae", // jsr (-402, %a6)
             ".short -402",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24850,7 +24850,7 @@ pub unsafe fn NameFromFH(DOSBase: *mut Library, fh: BPTR, buffer: STRPTR, len: L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -408(a6)
+            ".short 0x4eae", // jsr (-408, %a6)
             ".short -408",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24879,7 +24879,7 @@ pub unsafe fn SplitName(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -414(a6)
+            ".short 0x4eae", // jsr (-414, %a6)
             ".short -414",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24903,7 +24903,7 @@ pub unsafe fn SameLock(DOSBase: *mut Library, lock1: BPTR, lock2: BPTR) -> LONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -420(a6)
+            ".short 0x4eae", // jsr (-420, %a6)
             ".short -420",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24924,7 +24924,7 @@ pub unsafe fn SetMode(DOSBase: *mut Library, fh: BPTR, mode: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -426(a6)
+            ".short 0x4eae", // jsr (-426, %a6)
             ".short -426",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24952,7 +24952,7 @@ pub unsafe fn ExAll(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -432(a6)
+            ".short 0x4eae", // jsr (-432, %a6)
             ".short -432",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -24983,7 +24983,7 @@ pub unsafe fn ReadLink(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -438(a6)
+            ".short 0x4eae", // jsr (-438, %a6)
             ".short -438",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25007,7 +25007,7 @@ pub unsafe fn MakeLink(DOSBase: *mut Library, name: CONST_STRPTR, dest: LONG, so
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -444(a6)
+            ".short 0x4eae", // jsr (-444, %a6)
             ".short -444",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25029,7 +25029,7 @@ pub unsafe fn ChangeMode(DOSBase: *mut Library, type_: LONG, fh: BPTR, newmode: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -450(a6)
+            ".short 0x4eae", // jsr (-450, %a6)
             ".short -450",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25051,7 +25051,7 @@ pub unsafe fn SetFileSize(DOSBase: *mut Library, fh: BPTR, pos: LONG, mode: LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -456(a6)
+            ".short 0x4eae", // jsr (-456, %a6)
             ".short -456",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25073,7 +25073,7 @@ pub unsafe fn SetIoErr(DOSBase: *mut Library, result: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -462(a6)
+            ".short 0x4eae", // jsr (-462, %a6)
             ".short -462",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25099,7 +25099,7 @@ pub unsafe fn Fault(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -468(a6)
+            ".short 0x4eae", // jsr (-468, %a6)
             ".short -468",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25122,7 +25122,7 @@ pub unsafe fn PrintFault(DOSBase: *mut Library, code: LONG, header: CONST_STRPTR
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -474(a6)
+            ".short 0x4eae", // jsr (-474, %a6)
             ".short -474",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25149,7 +25149,7 @@ pub unsafe fn ErrorReport(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -480(a6)
+            ".short 0x4eae", // jsr (-480, %a6)
             ".short -480",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25172,7 +25172,7 @@ pub unsafe fn Cli(DOSBase: *mut Library) -> *mut CommandLineInterface {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -492(a6)
+            ".short 0x4eae", // jsr (-492, %a6)
             ".short -492",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25191,7 +25191,7 @@ pub unsafe fn CreateNewProc(DOSBase: *mut Library, tags: *const TagItem) -> *mut
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -498(a6)
+            ".short 0x4eae", // jsr (-498, %a6)
             ".short -498",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25211,7 +25211,7 @@ pub unsafe fn CreateNewProcTagList(DOSBase: *mut Library, tags: *const TagItem) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -498(a6)
+            ".short 0x4eae", // jsr (-498, %a6)
             ".short -498",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25237,7 +25237,7 @@ pub unsafe fn RunCommand(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -504(a6)
+            ".short 0x4eae", // jsr (-504, %a6)
             ".short -504",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25260,7 +25260,7 @@ pub unsafe fn GetConsoleTask(DOSBase: *mut Library) -> *mut MsgPort {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -510(a6)
+            ".short 0x4eae", // jsr (-510, %a6)
             ".short -510",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25279,7 +25279,7 @@ pub unsafe fn SetConsoleTask(DOSBase: *mut Library, task: *mut MsgPort) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -516(a6)
+            ".short 0x4eae", // jsr (-516, %a6)
             ".short -516",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25299,7 +25299,7 @@ pub unsafe fn GetFileSysTask(DOSBase: *mut Library) -> *mut MsgPort {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -522(a6)
+            ".short 0x4eae", // jsr (-522, %a6)
             ".short -522",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25318,7 +25318,7 @@ pub unsafe fn SetFileSysTask(DOSBase: *mut Library, task: *mut MsgPort) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -528(a6)
+            ".short 0x4eae", // jsr (-528, %a6)
             ".short -528",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25338,7 +25338,7 @@ pub unsafe fn GetArgStr(DOSBase: *mut Library) -> STRPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -534(a6)
+            ".short 0x4eae", // jsr (-534, %a6)
             ".short -534",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25357,7 +25357,7 @@ pub unsafe fn SetArgStr(DOSBase: *mut Library, string: STRPTR) -> STRPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -540(a6)
+            ".short 0x4eae", // jsr (-540, %a6)
             ".short -540",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25377,7 +25377,7 @@ pub unsafe fn FindCliProc(DOSBase: *mut Library, num: ULONG) -> *mut Process {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -546(a6)
+            ".short 0x4eae", // jsr (-546, %a6)
             ".short -546",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25397,7 +25397,7 @@ pub unsafe fn MaxCli(DOSBase: *mut Library) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -552(a6)
+            ".short 0x4eae", // jsr (-552, %a6)
             ".short -552",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25416,7 +25416,7 @@ pub unsafe fn SetCurrentDirName(DOSBase: *mut Library, name: CONST_STRPTR) -> BO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -558(a6)
+            ".short 0x4eae", // jsr (-558, %a6)
             ".short -558",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25436,7 +25436,7 @@ pub unsafe fn GetCurrentDirName(DOSBase: *mut Library, buf: STRPTR, len: LONG) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -564(a6)
+            ".short 0x4eae", // jsr (-564, %a6)
             ".short -564",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25457,7 +25457,7 @@ pub unsafe fn SetProgramName(DOSBase: *mut Library, name: CONST_STRPTR) -> BOOL 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -570(a6)
+            ".short 0x4eae", // jsr (-570, %a6)
             ".short -570",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25477,7 +25477,7 @@ pub unsafe fn GetProgramName(DOSBase: *mut Library, buf: STRPTR, len: LONG) -> B
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -576(a6)
+            ".short 0x4eae", // jsr (-576, %a6)
             ".short -576",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25498,7 +25498,7 @@ pub unsafe fn SetPrompt(DOSBase: *mut Library, name: CONST_STRPTR) -> BOOL {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -582(a6)
+            ".short 0x4eae", // jsr (-582, %a6)
             ".short -582",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25518,7 +25518,7 @@ pub unsafe fn GetPrompt(DOSBase: *mut Library, buf: STRPTR, len: LONG) -> BOOL {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -588(a6)
+            ".short 0x4eae", // jsr (-588, %a6)
             ".short -588",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25539,7 +25539,7 @@ pub unsafe fn SetProgramDir(DOSBase: *mut Library, lock: BPTR) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -594(a6)
+            ".short 0x4eae", // jsr (-594, %a6)
             ".short -594",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25559,7 +25559,7 @@ pub unsafe fn GetProgramDir(DOSBase: *mut Library) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -600(a6)
+            ".short 0x4eae", // jsr (-600, %a6)
             ".short -600",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25582,7 +25582,7 @@ pub unsafe fn SystemTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -606(a6)
+            ".short 0x4eae", // jsr (-606, %a6)
             ".short -606",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25603,7 +25603,7 @@ pub unsafe fn System(DOSBase: *mut Library, command: CONST_STRPTR, tags: *const 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -606(a6)
+            ".short 0x4eae", // jsr (-606, %a6)
             ".short -606",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25624,7 +25624,7 @@ pub unsafe fn AssignLock(DOSBase: *mut Library, name: CONST_STRPTR, lock: BPTR) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -612(a6)
+            ".short 0x4eae", // jsr (-612, %a6)
             ".short -612",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25645,7 +25645,7 @@ pub unsafe fn AssignLate(DOSBase: *mut Library, name: CONST_STRPTR, path: CONST_
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -618(a6)
+            ".short 0x4eae", // jsr (-618, %a6)
             ".short -618",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25666,7 +25666,7 @@ pub unsafe fn AssignPath(DOSBase: *mut Library, name: CONST_STRPTR, path: CONST_
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -624(a6)
+            ".short 0x4eae", // jsr (-624, %a6)
             ".short -624",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25687,7 +25687,7 @@ pub unsafe fn AssignAdd(DOSBase: *mut Library, name: CONST_STRPTR, lock: BPTR) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -630(a6)
+            ".short 0x4eae", // jsr (-630, %a6)
             ".short -630",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25708,7 +25708,7 @@ pub unsafe fn RemAssignList(DOSBase: *mut Library, name: CONST_STRPTR, lock: BPT
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -636(a6)
+            ".short 0x4eae", // jsr (-636, %a6)
             ".short -636",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25733,7 +25733,7 @@ pub unsafe fn GetDeviceProc(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -642(a6)
+            ".short 0x4eae", // jsr (-642, %a6)
             ".short -642",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25753,7 +25753,7 @@ pub unsafe fn FreeDeviceProc(DOSBase: *mut Library, dp: *mut DevProc) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -648(a6)
+            ".short 0x4eae", // jsr (-648, %a6)
             ".short -648",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -25771,7 +25771,7 @@ pub unsafe fn LockDosList(DOSBase: *mut Library, flags: ULONG) -> *mut DosList {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -654(a6)
+            ".short 0x4eae", // jsr (-654, %a6)
             ".short -654",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25790,7 +25790,7 @@ pub unsafe fn UnLockDosList(DOSBase: *mut Library, flags: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -660(a6)
+            ".short 0x4eae", // jsr (-660, %a6)
             ".short -660",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -25808,7 +25808,7 @@ pub unsafe fn AttemptLockDosList(DOSBase: *mut Library, flags: ULONG) -> *mut Do
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -666(a6)
+            ".short 0x4eae", // jsr (-666, %a6)
             ".short -666",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25828,7 +25828,7 @@ pub unsafe fn RemDosEntry(DOSBase: *mut Library, dlist: *mut DosList) -> BOOL {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -672(a6)
+            ".short 0x4eae", // jsr (-672, %a6)
             ".short -672",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25848,7 +25848,7 @@ pub unsafe fn AddDosEntry(DOSBase: *mut Library, dlist: *mut DosList) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -678(a6)
+            ".short 0x4eae", // jsr (-678, %a6)
             ".short -678",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25873,7 +25873,7 @@ pub unsafe fn FindDosEntry(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -684(a6)
+            ".short 0x4eae", // jsr (-684, %a6)
             ".short -684",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25899,7 +25899,7 @@ pub unsafe fn NextDosEntry(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -690(a6)
+            ".short 0x4eae", // jsr (-690, %a6)
             ".short -690",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25920,7 +25920,7 @@ pub unsafe fn MakeDosEntry(DOSBase: *mut Library, name: CONST_STRPTR, type_: LON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -696(a6)
+            ".short 0x4eae", // jsr (-696, %a6)
             ".short -696",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25940,7 +25940,7 @@ pub unsafe fn FreeDosEntry(DOSBase: *mut Library, dlist: *mut DosList) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -702(a6)
+            ".short 0x4eae", // jsr (-702, %a6)
             ".short -702",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -25958,7 +25958,7 @@ pub unsafe fn IsFileSystem(DOSBase: *mut Library, name: CONST_STRPTR) -> BOOL {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -708(a6)
+            ".short 0x4eae", // jsr (-708, %a6)
             ".short -708",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -25983,7 +25983,7 @@ pub unsafe fn Format(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -714(a6)
+            ".short 0x4eae", // jsr (-714, %a6)
             ".short -714",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26005,7 +26005,7 @@ pub unsafe fn Relabel(DOSBase: *mut Library, drive: CONST_STRPTR, newname: CONST
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -720(a6)
+            ".short 0x4eae", // jsr (-720, %a6)
             ".short -720",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26026,7 +26026,7 @@ pub unsafe fn Inhibit(DOSBase: *mut Library, name: CONST_STRPTR, onoff: LONG) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -726(a6)
+            ".short 0x4eae", // jsr (-726, %a6)
             ".short -726",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26047,7 +26047,7 @@ pub unsafe fn AddBuffers(DOSBase: *mut Library, name: CONST_STRPTR, number: LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -732(a6)
+            ".short 0x4eae", // jsr (-732, %a6)
             ".short -732",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26072,7 +26072,7 @@ pub unsafe fn CompareDates(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -738(a6)
+            ".short 0x4eae", // jsr (-738, %a6)
             ".short -738",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26093,7 +26093,7 @@ pub unsafe fn DateToStr(DOSBase: *mut Library, datetime: *mut DateTime) -> LONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -744(a6)
+            ".short 0x4eae", // jsr (-744, %a6)
             ".short -744",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26113,7 +26113,7 @@ pub unsafe fn StrToDate(DOSBase: *mut Library, datetime: *mut DateTime) -> LONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -750(a6)
+            ".short 0x4eae", // jsr (-750, %a6)
             ".short -750",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26139,7 +26139,7 @@ pub unsafe fn InternalLoadSeg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -756(a6)
+            ".short 0x4eae", // jsr (-756, %a6)
             ".short -756",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26162,7 +26162,7 @@ pub unsafe fn InternalUnLoadSeg(DOSBase: *mut Library, seglist: BPTR, freefunc: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -762(a6)
+            ".short 0x4eae", // jsr (-762, %a6)
             ".short -762",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26183,7 +26183,7 @@ pub unsafe fn NewLoadSeg(DOSBase: *mut Library, file: CONST_STRPTR, tags: *const
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -768(a6)
+            ".short 0x4eae", // jsr (-768, %a6)
             ".short -768",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26208,7 +26208,7 @@ pub unsafe fn NewLoadSegTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -768(a6)
+            ".short 0x4eae", // jsr (-768, %a6)
             ".short -768",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26234,7 +26234,7 @@ pub unsafe fn AddSegment(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -774(a6)
+            ".short 0x4eae", // jsr (-774, %a6)
             ".short -774",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26261,7 +26261,7 @@ pub unsafe fn FindSegment(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -780(a6)
+            ".short 0x4eae", // jsr (-780, %a6)
             ".short -780",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26283,7 +26283,7 @@ pub unsafe fn RemSegment(DOSBase: *mut Library, seg: *mut Segment) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -786(a6)
+            ".short 0x4eae", // jsr (-786, %a6)
             ".short -786",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26303,7 +26303,7 @@ pub unsafe fn CheckSignal(DOSBase: *mut Library, mask: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -792(a6)
+            ".short 0x4eae", // jsr (-792, %a6)
             ".short -792",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26328,7 +26328,7 @@ pub unsafe fn ReadArgs(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -798(a6)
+            ".short 0x4eae", // jsr (-798, %a6)
             ".short -798",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26354,7 +26354,7 @@ pub unsafe fn FindArg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -804(a6)
+            ".short 0x4eae", // jsr (-804, %a6)
             ".short -804",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26380,7 +26380,7 @@ pub unsafe fn ReadItem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -810(a6)
+            ".short 0x4eae", // jsr (-810, %a6)
             ".short -810",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26402,7 +26402,7 @@ pub unsafe fn StrToLong(DOSBase: *mut Library, string: CONST_STRPTR, value: *mut
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -816(a6)
+            ".short 0x4eae", // jsr (-816, %a6)
             ".short -816",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26427,7 +26427,7 @@ pub unsafe fn MatchFirst(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -822(a6)
+            ".short 0x4eae", // jsr (-822, %a6)
             ".short -822",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26448,7 +26448,7 @@ pub unsafe fn MatchNext(DOSBase: *mut Library, anchor: *mut AnchorPath) -> LONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -828(a6)
+            ".short 0x4eae", // jsr (-828, %a6)
             ".short -828",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26467,7 +26467,7 @@ pub unsafe fn MatchEnd(DOSBase: *mut Library, anchor: *mut AnchorPath) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -834(a6)
+            ".short 0x4eae", // jsr (-834, %a6)
             ".short -834",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -26490,7 +26490,7 @@ pub unsafe fn ParsePattern(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -840(a6)
+            ".short 0x4eae", // jsr (-840, %a6)
             ".short -840",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26516,7 +26516,7 @@ pub unsafe fn MatchPattern(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -846(a6)
+            ".short 0x4eae", // jsr (-846, %a6)
             ".short -846",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26536,7 +26536,7 @@ pub unsafe fn FreeArgs(DOSBase: *mut Library, args: *mut RDArgs) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -858(a6)
+            ".short 0x4eae", // jsr (-858, %a6)
             ".short -858",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -26554,7 +26554,7 @@ pub unsafe fn FilePart(DOSBase: *mut Library, path: CONST_STRPTR) -> STRPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -870(a6)
+            ".short 0x4eae", // jsr (-870, %a6)
             ".short -870",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26574,7 +26574,7 @@ pub unsafe fn PathPart(DOSBase: *mut Library, path: CONST_STRPTR) -> STRPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -876(a6)
+            ".short 0x4eae", // jsr (-876, %a6)
             ".short -876",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26599,7 +26599,7 @@ pub unsafe fn AddPart(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -882(a6)
+            ".short 0x4eae", // jsr (-882, %a6)
             ".short -882",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26621,7 +26621,7 @@ pub unsafe fn StartNotify(DOSBase: *mut Library, notify: *mut NotifyRequest) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -888(a6)
+            ".short 0x4eae", // jsr (-888, %a6)
             ".short -888",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26640,7 +26640,7 @@ pub unsafe fn EndNotify(DOSBase: *mut Library, notify: *mut NotifyRequest) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -894(a6)
+            ".short 0x4eae", // jsr (-894, %a6)
             ".short -894",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -26664,7 +26664,7 @@ pub unsafe fn SetVar(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -900(a6)
+            ".short 0x4eae", // jsr (-900, %a6)
             ".short -900",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26693,7 +26693,7 @@ pub unsafe fn GetVar(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -906(a6)
+            ".short 0x4eae", // jsr (-906, %a6)
             ".short -906",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26716,7 +26716,7 @@ pub unsafe fn DeleteVar(DOSBase: *mut Library, name: CONST_STRPTR, flags: ULONG)
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -912(a6)
+            ".short 0x4eae", // jsr (-912, %a6)
             ".short -912",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26737,7 +26737,7 @@ pub unsafe fn FindVar(DOSBase: *mut Library, name: CONST_STRPTR, type_: ULONG) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -918(a6)
+            ".short 0x4eae", // jsr (-918, %a6)
             ".short -918",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26758,7 +26758,7 @@ pub unsafe fn CliInitNewcli(DOSBase: *mut Library, dp: *mut DosPacket) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -930(a6)
+            ".short 0x4eae", // jsr (-930, %a6)
             ".short -930",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26778,7 +26778,7 @@ pub unsafe fn CliInitRun(DOSBase: *mut Library, dp: *mut DosPacket) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -936(a6)
+            ".short 0x4eae", // jsr (-936, %a6)
             ".short -936",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26798,7 +26798,7 @@ pub unsafe fn WriteChars(DOSBase: *mut Library, buf: CONST_STRPTR, buflen: ULONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -942(a6)
+            ".short 0x4eae", // jsr (-942, %a6)
             ".short -942",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26819,7 +26819,7 @@ pub unsafe fn PutStr(DOSBase: *mut Library, str_: CONST_STRPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -948(a6)
+            ".short 0x4eae", // jsr (-948, %a6)
             ".short -948",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26839,7 +26839,7 @@ pub unsafe fn VPrintf(DOSBase: *mut Library, format: CONST_STRPTR, argarray: CON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -954(a6)
+            ".short 0x4eae", // jsr (-954, %a6)
             ".short -954",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26865,7 +26865,7 @@ pub unsafe fn ParsePatternNoCase(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -966(a6)
+            ".short 0x4eae", // jsr (-966, %a6)
             ".short -966",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26891,7 +26891,7 @@ pub unsafe fn MatchPatternNoCase(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -972(a6)
+            ".short 0x4eae", // jsr (-972, %a6)
             ".short -972",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26912,7 +26912,7 @@ pub unsafe fn SameDevice(DOSBase: *mut Library, lock1: BPTR, lock2: BPTR) -> BOO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -984(a6)
+            ".short 0x4eae", // jsr (-984, %a6)
             ".short -984",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26939,7 +26939,7 @@ pub unsafe fn ExAllEnd(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -990(a6)
+            ".short 0x4eae", // jsr (-990, %a6)
             ".short -990",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -26961,7 +26961,7 @@ pub unsafe fn SetOwner(DOSBase: *mut Library, name: CONST_STRPTR, owner_info: LO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -996(a6)
+            ".short 0x4eae", // jsr (-996, %a6)
             ".short -996",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -26982,7 +26982,7 @@ pub unsafe fn VolumeRequestHook(DOSBase: *mut Library, vol: CONST_STRPTR) -> LON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1014(a6)
+            ".short 0x4eae", // jsr (-1014, %a6)
             ".short -1014",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27002,7 +27002,7 @@ pub unsafe fn GetCurrentDir(DOSBase: *mut Library) -> BPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1026(a6)
+            ".short 0x4eae", // jsr (-1026, %a6)
             ".short -1026",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27021,7 +27021,7 @@ pub unsafe fn PutErrStr(DOSBase: *mut Library, str_: CONST_STRPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1128(a6)
+            ".short 0x4eae", // jsr (-1128, %a6)
             ".short -1128",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27041,7 +27041,7 @@ pub unsafe fn ErrorOutput(DOSBase: *mut Library) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1134(a6)
+            ".short 0x4eae", // jsr (-1134, %a6)
             ".short -1134",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27060,7 +27060,7 @@ pub unsafe fn SelectError(DOSBase: *mut Library, fh: BPTR) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1140(a6)
+            ".short 0x4eae", // jsr (-1140, %a6)
             ".short -1140",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27084,7 +27084,7 @@ pub unsafe fn DoShellMethodTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1152(a6)
+            ".short 0x4eae", // jsr (-1152, %a6)
             ".short -1152",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27105,7 +27105,7 @@ pub unsafe fn ScanStackToken(DOSBase: *mut Library, seg: BPTR, defaultstack: LON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1158(a6)
+            ".short 0x4eae", // jsr (-1158, %a6)
             ".short -1158",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27126,7 +27126,7 @@ pub unsafe fn DRAWLIST_GetClass(DrawListBase: *mut ::core::ffi::c_void) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27147,7 +27147,7 @@ pub unsafe fn Supervisor(SysBase: *mut Library, userFunction: FPTR) -> ULONG {
             "move.l %a5, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a5reg}, %a5",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a5",
             "move.l (%sp)+, %a6",
@@ -27167,7 +27167,7 @@ pub unsafe fn InitCode(SysBase: *mut Library, startClass: ULONG, version: ULONG)
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27185,7 +27185,7 @@ pub unsafe fn InitStruct(SysBase: *mut Library, initTable: CONST_APTR, memory: A
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27212,7 +27212,7 @@ pub unsafe fn MakeLibrary(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27240,7 +27240,7 @@ pub unsafe fn MakeFunctions(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27260,7 +27260,7 @@ pub unsafe fn FindResident(SysBase: *mut Library, name: CONST_STRPTR) -> *mut Re
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27284,7 +27284,7 @@ pub unsafe fn InitResident(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27304,7 +27304,7 @@ pub unsafe fn Alert(SysBase: *mut Library, alertNum: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27321,7 +27321,7 @@ pub unsafe fn Debug(SysBase: *mut Library, flags: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27338,7 +27338,7 @@ pub unsafe fn Disable(SysBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27354,7 +27354,7 @@ pub unsafe fn Enable(SysBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27370,7 +27370,7 @@ pub unsafe fn Forbid(SysBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27386,7 +27386,7 @@ pub unsafe fn Permit(SysBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27403,7 +27403,7 @@ pub unsafe fn SetSR(SysBase: *mut Library, newSR: ULONG, mask: ULONG) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27424,7 +27424,7 @@ pub unsafe fn SuperState(SysBase: *mut Library) -> APTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27442,7 +27442,7 @@ pub unsafe fn UserState(SysBase: *mut Library, sysStack: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27464,7 +27464,7 @@ pub unsafe fn SetIntVector(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27484,7 +27484,7 @@ pub unsafe fn AddIntServer(SysBase: *mut Library, intNumber: LONG, interrupt: *m
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27502,7 +27502,7 @@ pub unsafe fn RemIntServer(SysBase: *mut Library, intNumber: LONG, interrupt: *m
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27520,7 +27520,7 @@ pub unsafe fn Cause(SysBase: *mut Library, interrupt: *const Interrupt) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27538,7 +27538,7 @@ pub unsafe fn Allocate(SysBase: *mut Library, freeList: *mut MemHeader, byteSize
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27563,7 +27563,7 @@ pub unsafe fn Deallocate(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -192(a6)
+            ".short 0x4eae", // jsr (-192, %a6)
             ".short -192",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27583,7 +27583,7 @@ pub unsafe fn AllocMem(SysBase: *mut Library, byteSize: ULONG, requirements: ULO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27604,7 +27604,7 @@ pub unsafe fn AllocAbs(SysBase: *mut Library, byteSize: ULONG, location: APTR) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27624,7 +27624,7 @@ pub unsafe fn FreeMem(SysBase: *mut Library, memoryBlock: APTR, byteSize: ULONG)
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27643,7 +27643,7 @@ pub unsafe fn AvailMem(SysBase: *mut Library, requirements: ULONG) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -216(a6)
+            ".short 0x4eae", // jsr (-216, %a6)
             ".short -216",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27663,7 +27663,7 @@ pub unsafe fn AllocEntry(SysBase: *mut Library, entry: *const MemList) -> *mut M
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -222(a6)
+            ".short 0x4eae", // jsr (-222, %a6)
             ".short -222",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27682,7 +27682,7 @@ pub unsafe fn FreeEntry(SysBase: *mut Library, entry: *mut MemList) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27699,7 +27699,7 @@ pub unsafe fn Insert(SysBase: *mut Library, list: *mut List, node: *mut Node, pr
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27723,7 +27723,7 @@ pub unsafe fn InsertMinNode(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27742,7 +27742,7 @@ pub unsafe fn AddHead(SysBase: *mut Library, list: *mut List, node: *mut Node) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27760,7 +27760,7 @@ pub unsafe fn AddHeadMinList(SysBase: *mut Library, minlist: *mut MinList, minno
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27778,7 +27778,7 @@ pub unsafe fn AddTail(SysBase: *mut Library, list: *mut List, node: *mut Node) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -246(a6)
+            ".short 0x4eae", // jsr (-246, %a6)
             ".short -246",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27796,7 +27796,7 @@ pub unsafe fn AddTailMinList(SysBase: *mut Library, minlist: *mut MinList, minno
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -246(a6)
+            ".short 0x4eae", // jsr (-246, %a6)
             ".short -246",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27814,7 +27814,7 @@ pub unsafe fn Remove(SysBase: *mut Library, node: *mut Node) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -252(a6)
+            ".short 0x4eae", // jsr (-252, %a6)
             ".short -252",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27831,7 +27831,7 @@ pub unsafe fn RemoveMinNode(SysBase: *mut Library, minnode: *mut MinNode) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -252(a6)
+            ".short 0x4eae", // jsr (-252, %a6)
             ".short -252",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27849,7 +27849,7 @@ pub unsafe fn RemHead(SysBase: *mut Library, list: *mut List) -> *mut Node {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27869,7 +27869,7 @@ pub unsafe fn RemHeadMinList(SysBase: *mut Library, minlist: *mut MinList) -> *m
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27889,7 +27889,7 @@ pub unsafe fn RemTail(SysBase: *mut Library, list: *mut List) -> *mut Node {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27909,7 +27909,7 @@ pub unsafe fn RemTailMinList(SysBase: *mut Library, minlist: *mut MinList) -> *m
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27928,7 +27928,7 @@ pub unsafe fn Enqueue(SysBase: *mut Library, list: *mut List, node: *mut Node) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -270(a6)
+            ".short 0x4eae", // jsr (-270, %a6)
             ".short -270",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -27947,7 +27947,7 @@ pub unsafe fn FindName(SysBase: *mut Library, list: *mut List, name: CONST_STRPT
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -276(a6)
+            ".short 0x4eae", // jsr (-276, %a6)
             ".short -276",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27968,7 +27968,7 @@ pub unsafe fn AddTask(SysBase: *mut Library, task: *mut Task, initPC: APTR, fina
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -282(a6)
+            ".short 0x4eae", // jsr (-282, %a6)
             ".short -282",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -27989,7 +27989,7 @@ pub unsafe fn RemTask(SysBase: *mut Library, task: *mut Task) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -288(a6)
+            ".short 0x4eae", // jsr (-288, %a6)
             ".short -288",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28007,7 +28007,7 @@ pub unsafe fn FindTask(SysBase: *mut Library, name: CONST_STRPTR) -> *mut Task {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -294(a6)
+            ".short 0x4eae", // jsr (-294, %a6)
             ".short -294",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28027,7 +28027,7 @@ pub unsafe fn SetTaskPri(SysBase: *mut Library, task: *mut Task, priority: LONG)
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -300(a6)
+            ".short 0x4eae", // jsr (-300, %a6)
             ".short -300",
             "ext.w %d0",
             "move.l (%sp)+, %a6",
@@ -28049,7 +28049,7 @@ pub unsafe fn SetSignal(SysBase: *mut Library, newSignals: ULONG, signalSet: ULO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -306(a6)
+            ".short 0x4eae", // jsr (-306, %a6)
             ".short -306",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28070,7 +28070,7 @@ pub unsafe fn SetExcept(SysBase: *mut Library, newSignals: ULONG, signalSet: ULO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -312(a6)
+            ".short 0x4eae", // jsr (-312, %a6)
             ".short -312",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28091,7 +28091,7 @@ pub unsafe fn Wait(SysBase: *mut Library, signalSet: ULONG) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -318(a6)
+            ".short 0x4eae", // jsr (-318, %a6)
             ".short -318",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28110,7 +28110,7 @@ pub unsafe fn Signal(SysBase: *mut Library, task: *mut Task, signalSet: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -324(a6)
+            ".short 0x4eae", // jsr (-324, %a6)
             ".short -324",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28129,7 +28129,7 @@ pub unsafe fn AllocSignal(SysBase: *mut Library, signalNum: LONG) -> BYTE {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -330(a6)
+            ".short 0x4eae", // jsr (-330, %a6)
             ".short -330",
             "ext.w %d0",
             "move.l (%sp)+, %a6",
@@ -28149,7 +28149,7 @@ pub unsafe fn FreeSignal(SysBase: *mut Library, signalNum: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -336(a6)
+            ".short 0x4eae", // jsr (-336, %a6)
             ".short -336",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28167,7 +28167,7 @@ pub unsafe fn AllocTrap(SysBase: *mut Library, trapNum: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -342(a6)
+            ".short 0x4eae", // jsr (-342, %a6)
             ".short -342",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28186,7 +28186,7 @@ pub unsafe fn FreeTrap(SysBase: *mut Library, trapNum: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -348(a6)
+            ".short 0x4eae", // jsr (-348, %a6)
             ".short -348",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28203,7 +28203,7 @@ pub unsafe fn AddPort(SysBase: *mut Library, port: *mut MsgPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -354(a6)
+            ".short 0x4eae", // jsr (-354, %a6)
             ".short -354",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28220,7 +28220,7 @@ pub unsafe fn RemPort(SysBase: *mut Library, port: *mut MsgPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -360(a6)
+            ".short 0x4eae", // jsr (-360, %a6)
             ".short -360",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28237,7 +28237,7 @@ pub unsafe fn PutMsg(SysBase: *mut Library, port: *mut MsgPort, message: *mut Me
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -366(a6)
+            ".short 0x4eae", // jsr (-366, %a6)
             ".short -366",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28256,7 +28256,7 @@ pub unsafe fn GetMsg(SysBase: *mut Library, port: *mut MsgPort) -> *mut Message 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -372(a6)
+            ".short 0x4eae", // jsr (-372, %a6)
             ".short -372",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28275,7 +28275,7 @@ pub unsafe fn ReplyMsg(SysBase: *mut Library, message: *mut Message) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -378(a6)
+            ".short 0x4eae", // jsr (-378, %a6)
             ".short -378",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28293,7 +28293,7 @@ pub unsafe fn WaitPort(SysBase: *mut Library, port: *mut MsgPort) -> *mut Messag
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -384(a6)
+            ".short 0x4eae", // jsr (-384, %a6)
             ".short -384",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28313,7 +28313,7 @@ pub unsafe fn FindPort(SysBase: *mut Library, name: CONST_STRPTR) -> *mut MsgPor
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -390(a6)
+            ".short 0x4eae", // jsr (-390, %a6)
             ".short -390",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28332,7 +28332,7 @@ pub unsafe fn AddLibrary(SysBase: *mut Library, library: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -396(a6)
+            ".short 0x4eae", // jsr (-396, %a6)
             ".short -396",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28349,7 +28349,7 @@ pub unsafe fn RemLibrary(SysBase: *mut Library, library: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -402(a6)
+            ".short 0x4eae", // jsr (-402, %a6)
             ".short -402",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28367,7 +28367,7 @@ pub unsafe fn OldOpenLibrary(SysBase: *mut Library, libName: CONST_STRPTR) -> *m
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -408(a6)
+            ".short 0x4eae", // jsr (-408, %a6)
             ".short -408",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28386,7 +28386,7 @@ pub unsafe fn CloseLibrary(SysBase: *mut Library, library: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -414(a6)
+            ".short 0x4eae", // jsr (-414, %a6)
             ".short -414",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28409,7 +28409,7 @@ pub unsafe fn SetFunction(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -420(a6)
+            ".short 0x4eae", // jsr (-420, %a6)
             ".short -420",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28430,7 +28430,7 @@ pub unsafe fn SumLibrary(SysBase: *mut Library, library: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -426(a6)
+            ".short 0x4eae", // jsr (-426, %a6)
             ".short -426",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28447,7 +28447,7 @@ pub unsafe fn AddDevice(SysBase: *mut Library, device: *mut Device) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -432(a6)
+            ".short 0x4eae", // jsr (-432, %a6)
             ".short -432",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28464,7 +28464,7 @@ pub unsafe fn RemDevice(SysBase: *mut Library, device: *mut Device) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -438(a6)
+            ".short 0x4eae", // jsr (-438, %a6)
             ".short -438",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28488,7 +28488,7 @@ pub unsafe fn OpenDevice(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -444(a6)
+            ".short 0x4eae", // jsr (-444, %a6)
             ".short -444",
             "ext.w %d0",
             "move.l (%sp)+, %a6",
@@ -28511,7 +28511,7 @@ pub unsafe fn CloseDevice(SysBase: *mut Library, ioRequest: *mut IORequest) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -450(a6)
+            ".short 0x4eae", // jsr (-450, %a6)
             ".short -450",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28529,7 +28529,7 @@ pub unsafe fn DoIO(SysBase: *mut Library, ioRequest: *mut IORequest) -> BYTE {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -456(a6)
+            ".short 0x4eae", // jsr (-456, %a6)
             ".short -456",
             "ext.w %d0",
             "move.l (%sp)+, %a6",
@@ -28549,7 +28549,7 @@ pub unsafe fn SendIO(SysBase: *mut Library, ioRequest: *mut IORequest) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -462(a6)
+            ".short 0x4eae", // jsr (-462, %a6)
             ".short -462",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28567,7 +28567,7 @@ pub unsafe fn CheckIO(SysBase: *mut Library, ioRequest: *const IORequest) -> *mu
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -468(a6)
+            ".short 0x4eae", // jsr (-468, %a6)
             ".short -468",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28587,7 +28587,7 @@ pub unsafe fn WaitIO(SysBase: *mut Library, ioRequest: *mut IORequest) -> BYTE {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -474(a6)
+            ".short 0x4eae", // jsr (-474, %a6)
             ".short -474",
             "ext.w %d0",
             "move.l (%sp)+, %a6",
@@ -28607,7 +28607,7 @@ pub unsafe fn AbortIO(SysBase: *mut Library, ioRequest: *mut IORequest) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -480(a6)
+            ".short 0x4eae", // jsr (-480, %a6)
             ".short -480",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28624,7 +28624,7 @@ pub unsafe fn AddResource(SysBase: *mut Library, resource: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -486(a6)
+            ".short 0x4eae", // jsr (-486, %a6)
             ".short -486",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28641,7 +28641,7 @@ pub unsafe fn RemResource(SysBase: *mut Library, resource: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -492(a6)
+            ".short 0x4eae", // jsr (-492, %a6)
             ".short -492",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28659,7 +28659,7 @@ pub unsafe fn OpenResource(SysBase: *mut Library, resName: CONST_STRPTR) -> APTR
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -498(a6)
+            ".short 0x4eae", // jsr (-498, %a6)
             ".short -498",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28685,7 +28685,7 @@ pub unsafe fn RawDoFmt(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -522(a6)
+            ".short 0x4eae", // jsr (-522, %a6)
             ".short -522",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28708,7 +28708,7 @@ pub unsafe fn GetCC(SysBase: *mut Library) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -528(a6)
+            ".short 0x4eae", // jsr (-528, %a6)
             ".short -528",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28727,7 +28727,7 @@ pub unsafe fn TypeOfMem(SysBase: *mut Library, address: CONST_APTR) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -534(a6)
+            ".short 0x4eae", // jsr (-534, %a6)
             ".short -534",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28751,7 +28751,7 @@ pub unsafe fn Procure(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -540(a6)
+            ".short 0x4eae", // jsr (-540, %a6)
             ".short -540",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28775,7 +28775,7 @@ pub unsafe fn Vacate(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -546(a6)
+            ".short 0x4eae", // jsr (-546, %a6)
             ".short -546",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28798,7 +28798,7 @@ pub unsafe fn OpenLibrary(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -552(a6)
+            ".short 0x4eae", // jsr (-552, %a6)
             ".short -552",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28818,7 +28818,7 @@ pub unsafe fn InitSemaphore(SysBase: *mut Library, sigSem: *mut SignalSemaphore)
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -558(a6)
+            ".short 0x4eae", // jsr (-558, %a6)
             ".short -558",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28835,7 +28835,7 @@ pub unsafe fn ObtainSemaphore(SysBase: *mut Library, sigSem: *mut SignalSemaphor
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -564(a6)
+            ".short 0x4eae", // jsr (-564, %a6)
             ".short -564",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28852,7 +28852,7 @@ pub unsafe fn ReleaseSemaphore(SysBase: *mut Library, sigSem: *mut SignalSemapho
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -570(a6)
+            ".short 0x4eae", // jsr (-570, %a6)
             ".short -570",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28870,7 +28870,7 @@ pub unsafe fn AttemptSemaphore(SysBase: *mut Library, sigSem: *mut SignalSemapho
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -576(a6)
+            ".short 0x4eae", // jsr (-576, %a6)
             ".short -576",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28889,7 +28889,7 @@ pub unsafe fn ObtainSemaphoreList(SysBase: *mut Library, sigSem: *mut List) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -582(a6)
+            ".short 0x4eae", // jsr (-582, %a6)
             ".short -582",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28906,7 +28906,7 @@ pub unsafe fn ReleaseSemaphoreList(SysBase: *mut Library, sigSem: *mut List) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -588(a6)
+            ".short 0x4eae", // jsr (-588, %a6)
             ".short -588",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28924,7 +28924,7 @@ pub unsafe fn FindSemaphore(SysBase: *mut Library, name: CONST_STRPTR) -> *mut S
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -594(a6)
+            ".short 0x4eae", // jsr (-594, %a6)
             ".short -594",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -28943,7 +28943,7 @@ pub unsafe fn AddSemaphore(SysBase: *mut Library, sigSem: *mut SignalSemaphore) 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -600(a6)
+            ".short 0x4eae", // jsr (-600, %a6)
             ".short -600",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28960,7 +28960,7 @@ pub unsafe fn RemSemaphore(SysBase: *mut Library, sigSem: *mut SignalSemaphore) 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -606(a6)
+            ".short 0x4eae", // jsr (-606, %a6)
             ".short -606",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -28978,7 +28978,7 @@ pub unsafe fn SumKickData(SysBase: *mut Library) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -612(a6)
+            ".short 0x4eae", // jsr (-612, %a6)
             ".short -612",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29003,7 +29003,7 @@ pub unsafe fn AddMemList(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -618(a6)
+            ".short 0x4eae", // jsr (-618, %a6)
             ".short -618",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29024,7 +29024,7 @@ pub unsafe fn CopyMem(SysBase: *mut Library, source: CONST_APTR, dest: APTR, siz
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -624(a6)
+            ".short 0x4eae", // jsr (-624, %a6)
             ".short -624",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29043,7 +29043,7 @@ pub unsafe fn CopyMemQuick(SysBase: *mut Library, source: CONST_APTR, dest: APTR
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -630(a6)
+            ".short 0x4eae", // jsr (-630, %a6)
             ".short -630",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29062,7 +29062,7 @@ pub unsafe fn CacheClearU(SysBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -636(a6)
+            ".short 0x4eae", // jsr (-636, %a6)
             ".short -636",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29078,7 +29078,7 @@ pub unsafe fn CacheClearE(SysBase: *mut Library, address: APTR, length: ULONG, c
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -642(a6)
+            ".short 0x4eae", // jsr (-642, %a6)
             ".short -642",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29098,7 +29098,7 @@ pub unsafe fn CacheControl(SysBase: *mut Library, cacheBits: ULONG, cacheMask: U
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -648(a6)
+            ".short 0x4eae", // jsr (-648, %a6)
             ".short -648",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29119,7 +29119,7 @@ pub unsafe fn CreateIORequest(SysBase: *mut Library, port: *mut MsgPort, size: U
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -654(a6)
+            ".short 0x4eae", // jsr (-654, %a6)
             ".short -654",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29139,7 +29139,7 @@ pub unsafe fn DeleteIORequest(SysBase: *mut Library, iorequest: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -660(a6)
+            ".short 0x4eae", // jsr (-660, %a6)
             ".short -660",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29157,7 +29157,7 @@ pub unsafe fn CreateMsgPort(SysBase: *mut Library) -> *mut MsgPort {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -666(a6)
+            ".short 0x4eae", // jsr (-666, %a6)
             ".short -666",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29175,7 +29175,7 @@ pub unsafe fn DeleteMsgPort(SysBase: *mut Library, port: *mut MsgPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -672(a6)
+            ".short 0x4eae", // jsr (-672, %a6)
             ".short -672",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29192,7 +29192,7 @@ pub unsafe fn ObtainSemaphoreShared(SysBase: *mut Library, sigSem: *mut SignalSe
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -678(a6)
+            ".short 0x4eae", // jsr (-678, %a6)
             ".short -678",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29210,7 +29210,7 @@ pub unsafe fn AllocVec(SysBase: *mut Library, byteSize: ULONG, requirements: ULO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -684(a6)
+            ".short 0x4eae", // jsr (-684, %a6)
             ".short -684",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29230,7 +29230,7 @@ pub unsafe fn FreeVec(SysBase: *mut Library, memoryBlock: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -690(a6)
+            ".short 0x4eae", // jsr (-690, %a6)
             ".short -690",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29253,7 +29253,7 @@ pub unsafe fn CreatePool(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -696(a6)
+            ".short 0x4eae", // jsr (-696, %a6)
             ".short -696",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29274,7 +29274,7 @@ pub unsafe fn DeletePool(SysBase: *mut Library, poolHeader: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -702(a6)
+            ".short 0x4eae", // jsr (-702, %a6)
             ".short -702",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29292,7 +29292,7 @@ pub unsafe fn AllocPooled(SysBase: *mut Library, poolHeader: APTR, memSize: ULON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -708(a6)
+            ".short 0x4eae", // jsr (-708, %a6)
             ".short -708",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29312,7 +29312,7 @@ pub unsafe fn FreePooled(SysBase: *mut Library, poolHeader: APTR, memory: APTR, 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -714(a6)
+            ".short 0x4eae", // jsr (-714, %a6)
             ".short -714",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29332,7 +29332,7 @@ pub unsafe fn AttemptSemaphoreShared(SysBase: *mut Library, sigSem: *mut SignalS
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -720(a6)
+            ".short 0x4eae", // jsr (-720, %a6)
             ".short -720",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29351,7 +29351,7 @@ pub unsafe fn ColdReboot(SysBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -726(a6)
+            ".short 0x4eae", // jsr (-726, %a6)
             ".short -726",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29367,7 +29367,7 @@ pub unsafe fn StackSwap(SysBase: *mut Library, newStack: *mut StackSwapStruct) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -732(a6)
+            ".short 0x4eae", // jsr (-732, %a6)
             ".short -732",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29390,7 +29390,7 @@ pub unsafe fn CachePreDMA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -762(a6)
+            ".short 0x4eae", // jsr (-762, %a6)
             ".short -762",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29416,7 +29416,7 @@ pub unsafe fn CachePostDMA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -768(a6)
+            ".short 0x4eae", // jsr (-768, %a6)
             ".short -768",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29435,7 +29435,7 @@ pub unsafe fn AddMemHandler(SysBase: *mut Library, memhand: *mut Interrupt) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -774(a6)
+            ".short 0x4eae", // jsr (-774, %a6)
             ".short -774",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29452,7 +29452,7 @@ pub unsafe fn RemMemHandler(SysBase: *mut Library, memhand: *mut Interrupt) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -780(a6)
+            ".short 0x4eae", // jsr (-780, %a6)
             ".short -780",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29470,7 +29470,7 @@ pub unsafe fn ObtainQuickVector(SysBase: *mut Library, interruptCode: APTR) -> U
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -786(a6)
+            ".short 0x4eae", // jsr (-786, %a6)
             ".short -786",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29489,7 +29489,7 @@ pub unsafe fn NewMinList(SysBase: *mut Library, minlist: *mut MinList) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -828(a6)
+            ".short 0x4eae", // jsr (-828, %a6)
             ".short -828",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29506,7 +29506,7 @@ pub unsafe fn AddConfigDev(ExpansionBase: *mut Library, configDev: *mut ConfigDe
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29530,7 +29530,7 @@ pub unsafe fn AddBootNode(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29552,7 +29552,7 @@ pub unsafe fn AllocBoardMem(ExpansionBase: *mut Library, slotSpec: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29570,7 +29570,7 @@ pub unsafe fn AllocConfigDev(ExpansionBase: *mut Library) -> *mut ConfigDev {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29593,7 +29593,7 @@ pub unsafe fn AllocExpansionMem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29613,7 +29613,7 @@ pub unsafe fn ConfigBoard(ExpansionBase: *mut Library, board: APTR, configDev: *
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29631,7 +29631,7 @@ pub unsafe fn ConfigChain(ExpansionBase: *mut Library, baseAddr: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29654,7 +29654,7 @@ pub unsafe fn FindConfigDev(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29675,7 +29675,7 @@ pub unsafe fn FreeBoardMem(ExpansionBase: *mut Library, startSlot: ULONG, slotSp
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29693,7 +29693,7 @@ pub unsafe fn FreeConfigDev(ExpansionBase: *mut Library, configDev: *mut ConfigD
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29710,7 +29710,7 @@ pub unsafe fn FreeExpansionMem(ExpansionBase: *mut Library, startSlot: ULONG, nu
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29733,7 +29733,7 @@ pub unsafe fn ReadExpansionByte(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "and.w #0x00ff, %d0",
             "move.l (%sp)+, %a6",
@@ -29758,7 +29758,7 @@ pub unsafe fn ReadExpansionRom(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29776,7 +29776,7 @@ pub unsafe fn RemConfigDev(ExpansionBase: *mut Library, configDev: *mut ConfigDe
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29798,7 +29798,7 @@ pub unsafe fn WriteExpansionByte(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29817,7 +29817,7 @@ pub unsafe fn ObtainConfigBinding(ExpansionBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29833,7 +29833,7 @@ pub unsafe fn ReleaseConfigBinding(ExpansionBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29853,7 +29853,7 @@ pub unsafe fn SetCurrentBinding(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -29876,7 +29876,7 @@ pub unsafe fn GetCurrentBinding(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29897,7 +29897,7 @@ pub unsafe fn MakeDosNode(ExpansionBase: *mut Library, parmPacket: CONST_APTR) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29922,7 +29922,7 @@ pub unsafe fn AddDosNode(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29944,7 +29944,7 @@ pub unsafe fn FUELGAUGE_GetClass(FuelGaugeBase: *mut ::core::ffi::c_void) -> *mu
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29969,7 +29969,7 @@ pub unsafe fn CreateGadgetA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -29991,7 +29991,7 @@ pub unsafe fn FreeGadgets(GadToolsBase: *mut Library, gad: *mut Gadget) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30014,7 +30014,7 @@ pub unsafe fn GT_SetGadgetAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30039,7 +30039,7 @@ pub unsafe fn CreateMenusA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30059,7 +30059,7 @@ pub unsafe fn FreeMenus(GadToolsBase: *mut Library, menu: *mut Menu) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30082,7 +30082,7 @@ pub unsafe fn LayoutMenuItemsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30109,7 +30109,7 @@ pub unsafe fn LayoutMenusA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30131,7 +30131,7 @@ pub unsafe fn GT_GetIMsg(GadToolsBase: *mut Library, iport: *mut MsgPort) -> *mu
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30150,7 +30150,7 @@ pub unsafe fn GT_ReplyIMsg(GadToolsBase: *mut Library, imsg: *mut IntuiMessage) 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30167,7 +30167,7 @@ pub unsafe fn GT_RefreshWindow(GadToolsBase: *mut Library, win: *mut Window, req
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30185,7 +30185,7 @@ pub unsafe fn GT_BeginRefresh(GadToolsBase: *mut Library, win: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30202,7 +30202,7 @@ pub unsafe fn GT_EndRefresh(GadToolsBase: *mut Library, win: *mut Window, comple
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30224,7 +30224,7 @@ pub unsafe fn GT_FilterIMsg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30247,7 +30247,7 @@ pub unsafe fn GT_PostFilterIMsg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30267,7 +30267,7 @@ pub unsafe fn CreateContext(GadToolsBase: *mut Library, glistptr: *mut *mut Gadg
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30294,7 +30294,7 @@ pub unsafe fn DrawBevelBoxA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30321,7 +30321,7 @@ pub unsafe fn GetVisualInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30341,7 +30341,7 @@ pub unsafe fn FreeVisualInfo(GadToolsBase: *mut Library, vi: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30364,7 +30364,7 @@ pub unsafe fn SetDesignFontA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30390,7 +30390,7 @@ pub unsafe fn ScaleGadgetRectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30417,7 +30417,7 @@ pub unsafe fn GT_GetGadgetAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30440,7 +30440,7 @@ pub unsafe fn GETCOLOR_GetClass(GetColorBase: *mut ::core::ffi::c_void) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30459,7 +30459,7 @@ pub unsafe fn GETFILE_GetClass(GetFileBase: *mut ::core::ffi::c_void) -> *mut Cl
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30478,7 +30478,7 @@ pub unsafe fn GETFONT_GetClass(GetFontBase: *mut ::core::ffi::c_void) -> *mut Cl
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30497,7 +30497,7 @@ pub unsafe fn GETSCREENMODE_GetClass(GetScreenModeBase: *mut ::core::ffi::c_void
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30516,7 +30516,7 @@ pub unsafe fn GLYPH_GetClass(GlyphBase: *mut ::core::ffi::c_void) -> *mut Class 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30548,7 +30548,7 @@ pub unsafe fn BltBitMap(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30587,7 +30587,7 @@ pub unsafe fn BltTemplate(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30611,7 +30611,7 @@ pub unsafe fn ClearEOL(GfxBase: *mut Library, rp: *mut RastPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30628,7 +30628,7 @@ pub unsafe fn ClearScreen(GfxBase: *mut Library, rp: *mut RastPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30651,7 +30651,7 @@ pub unsafe fn TextLength(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30678,7 +30678,7 @@ pub unsafe fn Text(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30700,7 +30700,7 @@ pub unsafe fn SetFont(GfxBase: *mut Library, rp: *mut RastPort, textFont: *mut T
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30721,7 +30721,7 @@ pub unsafe fn OpenFont(GfxBase: *mut Library, textAttr: *const TextAttr) -> *mut
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30740,7 +30740,7 @@ pub unsafe fn CloseFont(GfxBase: *mut Library, textFont: *mut TextFont) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30758,7 +30758,7 @@ pub unsafe fn AskSoftStyle(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30783,7 +30783,7 @@ pub unsafe fn SetSoftStyle(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -30804,7 +30804,7 @@ pub unsafe fn AddBob(GfxBase: *mut Library, bob: *mut Bob, rp: *mut RastPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30822,7 +30822,7 @@ pub unsafe fn AddVSprite(GfxBase: *mut Library, vSprite: *mut VSprite, rp: *mut 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30840,7 +30840,7 @@ pub unsafe fn DoCollision(GfxBase: *mut Library, rp: *mut RastPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30857,7 +30857,7 @@ pub unsafe fn DrawGList(GfxBase: *mut Library, rp: *mut RastPort, vp: *mut ViewP
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30880,7 +30880,7 @@ pub unsafe fn InitGels(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30899,7 +30899,7 @@ pub unsafe fn InitMasks(GfxBase: *mut Library, vSprite: *mut VSprite) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30916,7 +30916,7 @@ pub unsafe fn RemIBob(GfxBase: *mut Library, bob: *mut Bob, rp: *mut RastPort, v
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30935,7 +30935,7 @@ pub unsafe fn RemVSprite(GfxBase: *mut Library, vSprite: *mut VSprite) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30957,7 +30957,7 @@ pub unsafe fn SetCollision(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30976,7 +30976,7 @@ pub unsafe fn SortGList(GfxBase: *mut Library, rp: *mut RastPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -30998,7 +30998,7 @@ pub unsafe fn AddAnimOb(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31017,7 +31017,7 @@ pub unsafe fn Animate(GfxBase: *mut Library, anKey: *mut *mut AnimOb, rp: *mut R
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31041,7 +31041,7 @@ pub unsafe fn GetGBuffers(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31062,7 +31062,7 @@ pub unsafe fn InitGMasks(GfxBase: *mut Library, anOb: *mut AnimOb) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31086,7 +31086,7 @@ pub unsafe fn DrawEllipse(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31115,7 +31115,7 @@ pub unsafe fn AreaEllipse(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31143,7 +31143,7 @@ pub unsafe fn LoadRGB4(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -192(a6)
+            ".short 0x4eae", // jsr (-192, %a6)
             ".short -192",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31162,7 +31162,7 @@ pub unsafe fn InitRastPort(GfxBase: *mut Library, rp: *mut RastPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31179,7 +31179,7 @@ pub unsafe fn InitVPort(GfxBase: *mut Library, vp: *mut ViewPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31197,7 +31197,7 @@ pub unsafe fn MrgCop(GfxBase: *mut Library, view: *mut View) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31217,7 +31217,7 @@ pub unsafe fn MakeVPort(GfxBase: *mut Library, view: *mut View, vp: *mut ViewPor
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -216(a6)
+            ".short 0x4eae", // jsr (-216, %a6)
             ".short -216",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31237,7 +31237,7 @@ pub unsafe fn LoadView(GfxBase: *mut Library, view: *mut View) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -222(a6)
+            ".short 0x4eae", // jsr (-222, %a6)
             ".short -222",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31254,7 +31254,7 @@ pub unsafe fn WaitBlit(GfxBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31270,7 +31270,7 @@ pub unsafe fn SetRast(GfxBase: *mut Library, rp: *mut RastPort, pen: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31288,7 +31288,7 @@ pub unsafe fn Move(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31307,7 +31307,7 @@ pub unsafe fn Draw(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -246(a6)
+            ".short 0x4eae", // jsr (-246, %a6)
             ".short -246",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31327,7 +31327,7 @@ pub unsafe fn AreaMove(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -252(a6)
+            ".short 0x4eae", // jsr (-252, %a6)
             ".short -252",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31349,7 +31349,7 @@ pub unsafe fn AreaDraw(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31371,7 +31371,7 @@ pub unsafe fn AreaEnd(GfxBase: *mut Library, rp: *mut RastPort) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31390,7 +31390,7 @@ pub unsafe fn WaitTOF(GfxBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -270(a6)
+            ".short 0x4eae", // jsr (-270, %a6)
             ".short -270",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31406,7 +31406,7 @@ pub unsafe fn QBlit(GfxBase: *mut Library, blit: *mut bltnode) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -276(a6)
+            ".short 0x4eae", // jsr (-276, %a6)
             ".short -276",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31428,7 +31428,7 @@ pub unsafe fn InitArea(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -282(a6)
+            ".short 0x4eae", // jsr (-282, %a6)
             ".short -282",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31454,7 +31454,7 @@ pub unsafe fn SetRGB4(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -288(a6)
+            ".short 0x4eae", // jsr (-288, %a6)
             ".short -288",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31475,7 +31475,7 @@ pub unsafe fn QBSBlit(GfxBase: *mut Library, blit: *mut bltnode) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -294(a6)
+            ".short 0x4eae", // jsr (-294, %a6)
             ".short -294",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31492,7 +31492,7 @@ pub unsafe fn BltClear(GfxBase: *mut Library, memBlock: PLANEPTR, byteCount: ULO
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -300(a6)
+            ".short 0x4eae", // jsr (-300, %a6)
             ".short -300",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31518,7 +31518,7 @@ pub unsafe fn RectFill(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -306(a6)
+            ".short 0x4eae", // jsr (-306, %a6)
             ".short -306",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31548,7 +31548,7 @@ pub unsafe fn BltPattern(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -312(a6)
+            ".short 0x4eae", // jsr (-312, %a6)
             ".short -312",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31572,7 +31572,7 @@ pub unsafe fn ReadPixel(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: LO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -318(a6)
+            ".short 0x4eae", // jsr (-318, %a6)
             ".short -318",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31594,7 +31594,7 @@ pub unsafe fn WritePixel(GfxBase: *mut Library, rp: *mut RastPort, x: LONG, y: L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -324(a6)
+            ".short 0x4eae", // jsr (-324, %a6)
             ".short -324",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31622,7 +31622,7 @@ pub unsafe fn Flood(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -330(a6)
+            ".short 0x4eae", // jsr (-330, %a6)
             ".short -330",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31649,7 +31649,7 @@ pub unsafe fn PolyDraw(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -336(a6)
+            ".short 0x4eae", // jsr (-336, %a6)
             ".short -336",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31668,7 +31668,7 @@ pub unsafe fn SetAPen(GfxBase: *mut Library, rp: *mut RastPort, pen: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -342(a6)
+            ".short 0x4eae", // jsr (-342, %a6)
             ".short -342",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31686,7 +31686,7 @@ pub unsafe fn SetBPen(GfxBase: *mut Library, rp: *mut RastPort, pen: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -348(a6)
+            ".short 0x4eae", // jsr (-348, %a6)
             ".short -348",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31704,7 +31704,7 @@ pub unsafe fn SetDrMd(GfxBase: *mut Library, rp: *mut RastPort, drawMode: ULONG)
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -354(a6)
+            ".short 0x4eae", // jsr (-354, %a6)
             ".short -354",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31722,7 +31722,7 @@ pub unsafe fn InitView(GfxBase: *mut Library, view: *mut View) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -360(a6)
+            ".short 0x4eae", // jsr (-360, %a6)
             ".short -360",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31739,7 +31739,7 @@ pub unsafe fn CBump(GfxBase: *mut Library, copList: *mut UCopList) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -366(a6)
+            ".short 0x4eae", // jsr (-366, %a6)
             ".short -366",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31762,7 +31762,7 @@ pub unsafe fn CMove(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -372(a6)
+            ".short 0x4eae", // jsr (-372, %a6)
             ".short -372",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31784,7 +31784,7 @@ pub unsafe fn CWait(GfxBase: *mut Library, copList: *mut UCopList, v: LONG, h: L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -378(a6)
+            ".short 0x4eae", // jsr (-378, %a6)
             ".short -378",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31806,7 +31806,7 @@ pub unsafe fn VBeamPos(GfxBase: *mut Library) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -384(a6)
+            ".short 0x4eae", // jsr (-384, %a6)
             ".short -384",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31830,7 +31830,7 @@ pub unsafe fn InitBitMap(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -390(a6)
+            ".short 0x4eae", // jsr (-390, %a6)
             ".short -390",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31859,7 +31859,7 @@ pub unsafe fn ScrollRaster(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -396(a6)
+            ".short 0x4eae", // jsr (-396, %a6)
             ".short -396",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31882,7 +31882,7 @@ pub unsafe fn WaitBOVP(GfxBase: *mut Library, vp: *mut ViewPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -402(a6)
+            ".short 0x4eae", // jsr (-402, %a6)
             ".short -402",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31900,7 +31900,7 @@ pub unsafe fn GetSprite(GfxBase: *mut Library, sprite: *mut SimpleSprite, num: L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -408(a6)
+            ".short 0x4eae", // jsr (-408, %a6)
             ".short -408",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -31920,7 +31920,7 @@ pub unsafe fn FreeSprite(GfxBase: *mut Library, num: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -414(a6)
+            ".short 0x4eae", // jsr (-414, %a6)
             ".short -414",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31942,7 +31942,7 @@ pub unsafe fn ChangeSprite(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -420(a6)
+            ".short 0x4eae", // jsr (-420, %a6)
             ".short -420",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31967,7 +31967,7 @@ pub unsafe fn MoveSprite(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -426(a6)
+            ".short 0x4eae", // jsr (-426, %a6)
             ".short -426",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -31989,7 +31989,7 @@ pub unsafe fn LockLayerRom(GfxBase: *mut Library, layer: *mut Layer) {
             "move.l %a5, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a5reg}, %a5",
-            ".short 0x4eae", // jsr -432(a6)
+            ".short 0x4eae", // jsr (-432, %a6)
             ".short -432",
             "move.l (%sp)+, %a5",
             "move.l (%sp)+, %a6",
@@ -32009,7 +32009,7 @@ pub unsafe fn UnlockLayerRom(GfxBase: *mut Library, layer: *mut Layer) {
             "move.l %a5, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a5reg}, %a5",
-            ".short 0x4eae", // jsr -438(a6)
+            ".short 0x4eae", // jsr (-438, %a6)
             ".short -438",
             "move.l (%sp)+, %a5",
             "move.l (%sp)+, %a6",
@@ -32027,7 +32027,7 @@ pub unsafe fn SyncSBitMap(GfxBase: *mut Library, layer: *mut Layer) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -444(a6)
+            ".short 0x4eae", // jsr (-444, %a6)
             ".short -444",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32044,7 +32044,7 @@ pub unsafe fn CopySBitMap(GfxBase: *mut Library, layer: *mut Layer) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -450(a6)
+            ".short 0x4eae", // jsr (-450, %a6)
             ".short -450",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32061,7 +32061,7 @@ pub unsafe fn OwnBlitter(GfxBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -456(a6)
+            ".short 0x4eae", // jsr (-456, %a6)
             ".short -456",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32077,7 +32077,7 @@ pub unsafe fn DisownBlitter(GfxBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -462(a6)
+            ".short 0x4eae", // jsr (-462, %a6)
             ".short -462",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32099,7 +32099,7 @@ pub unsafe fn InitTmpRas(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -468(a6)
+            ".short 0x4eae", // jsr (-468, %a6)
             ".short -468",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32120,7 +32120,7 @@ pub unsafe fn AskFont(GfxBase: *mut Library, rp: *mut RastPort, textAttr: *mut T
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -474(a6)
+            ".short 0x4eae", // jsr (-474, %a6)
             ".short -474",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32138,7 +32138,7 @@ pub unsafe fn AddFont(GfxBase: *mut Library, textFont: *mut TextFont) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -480(a6)
+            ".short 0x4eae", // jsr (-480, %a6)
             ".short -480",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32155,7 +32155,7 @@ pub unsafe fn RemFont(GfxBase: *mut Library, textFont: *mut TextFont) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -486(a6)
+            ".short 0x4eae", // jsr (-486, %a6)
             ".short -486",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32173,7 +32173,7 @@ pub unsafe fn AllocRaster(GfxBase: *mut Library, width: ULONG, height: ULONG) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -492(a6)
+            ".short 0x4eae", // jsr (-492, %a6)
             ".short -492",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32193,7 +32193,7 @@ pub unsafe fn FreeRaster(GfxBase: *mut Library, p: PLANEPTR, width: ULONG, heigh
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -498(a6)
+            ".short 0x4eae", // jsr (-498, %a6)
             ".short -498",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32216,7 +32216,7 @@ pub unsafe fn AndRectRegion(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -504(a6)
+            ".short 0x4eae", // jsr (-504, %a6)
             ".short -504",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32239,7 +32239,7 @@ pub unsafe fn OrRectRegion(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -510(a6)
+            ".short 0x4eae", // jsr (-510, %a6)
             ".short -510",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32260,7 +32260,7 @@ pub unsafe fn NewRegion(GfxBase: *mut Library) -> *mut Region {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -516(a6)
+            ".short 0x4eae", // jsr (-516, %a6)
             ".short -516",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32283,7 +32283,7 @@ pub unsafe fn ClearRectRegion(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -522(a6)
+            ".short 0x4eae", // jsr (-522, %a6)
             ".short -522",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32303,7 +32303,7 @@ pub unsafe fn ClearRegion(GfxBase: *mut Library, region: *mut Region) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -528(a6)
+            ".short 0x4eae", // jsr (-528, %a6)
             ".short -528",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32320,7 +32320,7 @@ pub unsafe fn DisposeRegion(GfxBase: *mut Library, region: *mut Region) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -534(a6)
+            ".short 0x4eae", // jsr (-534, %a6)
             ".short -534",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32337,7 +32337,7 @@ pub unsafe fn FreeVPortCopLists(GfxBase: *mut Library, vp: *mut ViewPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -540(a6)
+            ".short 0x4eae", // jsr (-540, %a6)
             ".short -540",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32354,7 +32354,7 @@ pub unsafe fn FreeCopList(GfxBase: *mut Library, copList: *mut CopList) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -546(a6)
+            ".short 0x4eae", // jsr (-546, %a6)
             ".short -546",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32382,7 +32382,7 @@ pub unsafe fn ClipBlit(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -552(a6)
+            ".short 0x4eae", // jsr (-552, %a6)
             ".short -552",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32412,7 +32412,7 @@ pub unsafe fn XorRectRegion(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -558(a6)
+            ".short 0x4eae", // jsr (-558, %a6)
             ".short -558",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32432,7 +32432,7 @@ pub unsafe fn FreeCprList(GfxBase: *mut Library, cprList: *mut cprlist) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -564(a6)
+            ".short 0x4eae", // jsr (-564, %a6)
             ".short -564",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32450,7 +32450,7 @@ pub unsafe fn GetColorMap(GfxBase: *mut Library, entries: LONG) -> *mut ColorMap
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -570(a6)
+            ".short 0x4eae", // jsr (-570, %a6)
             ".short -570",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32469,7 +32469,7 @@ pub unsafe fn FreeColorMap(GfxBase: *mut Library, colorMap: *mut ColorMap) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -576(a6)
+            ".short 0x4eae", // jsr (-576, %a6)
             ".short -576",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32487,7 +32487,7 @@ pub unsafe fn GetRGB4(GfxBase: *mut Library, colorMap: *mut ColorMap, entry: LON
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -582(a6)
+            ".short 0x4eae", // jsr (-582, %a6)
             ".short -582",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32507,7 +32507,7 @@ pub unsafe fn ScrollVPort(GfxBase: *mut Library, vp: *mut ViewPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -588(a6)
+            ".short 0x4eae", // jsr (-588, %a6)
             ".short -588",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32529,7 +32529,7 @@ pub unsafe fn UCopperListInit(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -594(a6)
+            ".short 0x4eae", // jsr (-594, %a6)
             ".short -594",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32554,7 +32554,7 @@ pub unsafe fn FreeGBuffers(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -600(a6)
+            ".short 0x4eae", // jsr (-600, %a6)
             ".short -600",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32584,7 +32584,7 @@ pub unsafe fn BltBitMapRastPort(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -606(a6)
+            ".short 0x4eae", // jsr (-606, %a6)
             ".short -606",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32614,7 +32614,7 @@ pub unsafe fn OrRegionRegion(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -612(a6)
+            ".short 0x4eae", // jsr (-612, %a6)
             ".short -612",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32639,7 +32639,7 @@ pub unsafe fn XorRegionRegion(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -618(a6)
+            ".short 0x4eae", // jsr (-618, %a6)
             ".short -618",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32664,7 +32664,7 @@ pub unsafe fn AndRegionRegion(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -624(a6)
+            ".short 0x4eae", // jsr (-624, %a6)
             ".short -624",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32691,7 +32691,7 @@ pub unsafe fn SetRGB4CM(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -630(a6)
+            ".short 0x4eae", // jsr (-630, %a6)
             ".short -630",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32724,7 +32724,7 @@ pub unsafe fn BltMaskBitMapRastPort(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -636(a6)
+            ".short 0x4eae", // jsr (-636, %a6)
             ".short -636",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32753,7 +32753,7 @@ pub unsafe fn AttemptLockLayerRom(GfxBase: *mut Library, layer: *mut Layer) -> B
             "move.l %a5, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a5reg}, %a5",
-            ".short 0x4eae", // jsr -654(a6)
+            ".short 0x4eae", // jsr (-654, %a6)
             ".short -654",
             "move.l (%sp)+, %a5",
             "move.l (%sp)+, %a6",
@@ -32774,7 +32774,7 @@ pub unsafe fn GfxNew(GfxBase: *mut Library, gfxNodeType: ULONG) -> APTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -660(a6)
+            ".short 0x4eae", // jsr (-660, %a6)
             ".short -660",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32793,7 +32793,7 @@ pub unsafe fn GfxFree(GfxBase: *mut Library, gfxNodePtr: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -666(a6)
+            ".short 0x4eae", // jsr (-666, %a6)
             ".short -666",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32810,7 +32810,7 @@ pub unsafe fn GfxAssociate(GfxBase: *mut Library, associateNode: APTR, gfxNodePt
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -672(a6)
+            ".short 0x4eae", // jsr (-672, %a6)
             ".short -672",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32828,7 +32828,7 @@ pub unsafe fn BitMapScale(GfxBase: *mut Library, bitScaleArgs: *mut BitScaleArgs
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -678(a6)
+            ".short 0x4eae", // jsr (-678, %a6)
             ".short -678",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -32851,7 +32851,7 @@ pub unsafe fn ScalerDiv(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -684(a6)
+            ".short 0x4eae", // jsr (-684, %a6)
             ".short -684",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32879,7 +32879,7 @@ pub unsafe fn TextExtent(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -690(a6)
+            ".short 0x4eae", // jsr (-690, %a6)
             ".short -690",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32912,7 +32912,7 @@ pub unsafe fn TextFit(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -696(a6)
+            ".short 0x4eae", // jsr (-696, %a6)
             ".short -696",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32939,7 +32939,7 @@ pub unsafe fn GfxLookUp(GfxBase: *mut Library, associateNode: CONST_APTR) -> APT
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -702(a6)
+            ".short 0x4eae", // jsr (-702, %a6)
             ".short -702",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32963,7 +32963,7 @@ pub unsafe fn VideoControl(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -708(a6)
+            ".short 0x4eae", // jsr (-708, %a6)
             ".short -708",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -32988,7 +32988,7 @@ pub unsafe fn OpenMonitor(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -714(a6)
+            ".short 0x4eae", // jsr (-714, %a6)
             ".short -714",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33009,7 +33009,7 @@ pub unsafe fn CloseMonitor(GfxBase: *mut Library, monitorSpec: *mut MonitorSpec)
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -720(a6)
+            ".short 0x4eae", // jsr (-720, %a6)
             ".short -720",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33029,7 +33029,7 @@ pub unsafe fn FindDisplayInfo(GfxBase: *mut Library, displayID: ULONG) -> Displa
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -726(a6)
+            ".short 0x4eae", // jsr (-726, %a6)
             ".short -726",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33049,7 +33049,7 @@ pub unsafe fn NextDisplayInfo(GfxBase: *mut Library, displayID: ULONG) -> ULONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -732(a6)
+            ".short 0x4eae", // jsr (-732, %a6)
             ".short -732",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33076,7 +33076,7 @@ pub unsafe fn GetDisplayInfoData(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -756(a6)
+            ".short 0x4eae", // jsr (-756, %a6)
             ".short -756",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33103,7 +33103,7 @@ pub unsafe fn FontExtent(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -762(a6)
+            ".short 0x4eae", // jsr (-762, %a6)
             ".short -762",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33130,7 +33130,7 @@ pub unsafe fn ReadPixelLine8(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -768(a6)
+            ".short 0x4eae", // jsr (-768, %a6)
             ".short -768",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33163,7 +33163,7 @@ pub unsafe fn WritePixelLine8(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -774(a6)
+            ".short 0x4eae", // jsr (-774, %a6)
             ".short -774",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33197,7 +33197,7 @@ pub unsafe fn ReadPixelArray8(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -780(a6)
+            ".short 0x4eae", // jsr (-780, %a6)
             ".short -780",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33232,7 +33232,7 @@ pub unsafe fn WritePixelArray8(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -786(a6)
+            ".short 0x4eae", // jsr (-786, %a6)
             ".short -786",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33258,7 +33258,7 @@ pub unsafe fn GetVPModeID(GfxBase: *mut Library, vp: *const ViewPort) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -792(a6)
+            ".short 0x4eae", // jsr (-792, %a6)
             ".short -792",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33278,7 +33278,7 @@ pub unsafe fn ModeNotAvailable(GfxBase: *mut Library, modeID: ULONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -798(a6)
+            ".short 0x4eae", // jsr (-798, %a6)
             ".short -798",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33303,7 +33303,7 @@ pub unsafe fn WeighTAMatch(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -804(a6)
+            ".short 0x4eae", // jsr (-804, %a6)
             ".short -804",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33331,7 +33331,7 @@ pub unsafe fn EraseRect(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -810(a6)
+            ".short 0x4eae", // jsr (-810, %a6)
             ".short -810",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33357,7 +33357,7 @@ pub unsafe fn ExtendFont(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -816(a6)
+            ".short 0x4eae", // jsr (-816, %a6)
             ".short -816",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33377,7 +33377,7 @@ pub unsafe fn StripFont(GfxBase: *mut Library, font: *mut TextFont) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -822(a6)
+            ".short 0x4eae", // jsr (-822, %a6)
             ".short -822",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33395,7 +33395,7 @@ pub unsafe fn CalcIVG(GfxBase: *mut Library, v: *mut View, vp: *mut ViewPort) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -828(a6)
+            ".short 0x4eae", // jsr (-828, %a6)
             ".short -828",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33416,7 +33416,7 @@ pub unsafe fn AttachPalExtra(GfxBase: *mut Library, cm: *mut ColorMap, vp: *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -834(a6)
+            ".short 0x4eae", // jsr (-834, %a6)
             ".short -834",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33444,7 +33444,7 @@ pub unsafe fn ObtainBestPenA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -840(a6)
+            ".short 0x4eae", // jsr (-840, %a6)
             ".short -840",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33474,7 +33474,7 @@ pub unsafe fn SetRGB32(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -852(a6)
+            ".short 0x4eae", // jsr (-852, %a6)
             ".short -852",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33496,7 +33496,7 @@ pub unsafe fn GetAPen(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -858(a6)
+            ".short 0x4eae", // jsr (-858, %a6)
             ".short -858",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33516,7 +33516,7 @@ pub unsafe fn GetBPen(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -864(a6)
+            ".short 0x4eae", // jsr (-864, %a6)
             ".short -864",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33536,7 +33536,7 @@ pub unsafe fn GetDrMd(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -870(a6)
+            ".short 0x4eae", // jsr (-870, %a6)
             ".short -870",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33556,7 +33556,7 @@ pub unsafe fn GetOutlinePen(GfxBase: *mut Library, rp: *mut RastPort) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -876(a6)
+            ".short 0x4eae", // jsr (-876, %a6)
             ".short -876",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33575,7 +33575,7 @@ pub unsafe fn LoadRGB32(GfxBase: *mut Library, vp: *mut ViewPort, table: *const 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -882(a6)
+            ".short 0x4eae", // jsr (-882, %a6)
             ".short -882",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33594,7 +33594,7 @@ pub unsafe fn SetChipRev(GfxBase: *mut Library, want: ULONG) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -888(a6)
+            ".short 0x4eae", // jsr (-888, %a6)
             ".short -888",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33619,7 +33619,7 @@ pub unsafe fn SetABPenDrMd(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -894(a6)
+            ".short 0x4eae", // jsr (-894, %a6)
             ".short -894",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33645,7 +33645,7 @@ pub unsafe fn GetRGB32(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -900(a6)
+            ".short 0x4eae", // jsr (-900, %a6)
             ".short -900",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33673,7 +33673,7 @@ pub unsafe fn AllocBitMap(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -918(a6)
+            ".short 0x4eae", // jsr (-918, %a6)
             ".short -918",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33696,7 +33696,7 @@ pub unsafe fn FreeBitMap(GfxBase: *mut Library, bm: *mut BitMap) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -924(a6)
+            ".short 0x4eae", // jsr (-924, %a6)
             ".short -924",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33718,7 +33718,7 @@ pub unsafe fn GetExtSpriteA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -930(a6)
+            ".short 0x4eae", // jsr (-930, %a6)
             ".short -930",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33744,7 +33744,7 @@ pub unsafe fn CoerceMode(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -936(a6)
+            ".short 0x4eae", // jsr (-936, %a6)
             ".short -936",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33770,7 +33770,7 @@ pub unsafe fn ChangeVPBitMap(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -942(a6)
+            ".short 0x4eae", // jsr (-942, %a6)
             ".short -942",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33789,7 +33789,7 @@ pub unsafe fn ReleasePen(GfxBase: *mut Library, cm: *mut ColorMap, n: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -948(a6)
+            ".short 0x4eae", // jsr (-948, %a6)
             ".short -948",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33816,7 +33816,7 @@ pub unsafe fn ObtainPen(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -954(a6)
+            ".short 0x4eae", // jsr (-954, %a6)
             ".short -954",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33841,7 +33841,7 @@ pub unsafe fn GetBitMapAttr(GfxBase: *mut Library, bm: *const BitMap, attrnum: U
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -960(a6)
+            ".short 0x4eae", // jsr (-960, %a6)
             ".short -960",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33862,7 +33862,7 @@ pub unsafe fn AllocDBufInfo(GfxBase: *mut Library, vp: *mut ViewPort) -> *mut DB
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -966(a6)
+            ".short 0x4eae", // jsr (-966, %a6)
             ".short -966",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33881,7 +33881,7 @@ pub unsafe fn FreeDBufInfo(GfxBase: *mut Library, dbi: *mut DBufInfo) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -972(a6)
+            ".short 0x4eae", // jsr (-972, %a6)
             ".short -972",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33899,7 +33899,7 @@ pub unsafe fn SetOutlinePen(GfxBase: *mut Library, rp: *mut RastPort, pen: ULONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -978(a6)
+            ".short 0x4eae", // jsr (-978, %a6)
             ".short -978",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33920,7 +33920,7 @@ pub unsafe fn SetWriteMask(GfxBase: *mut Library, rp: *mut RastPort, msk: ULONG)
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -984(a6)
+            ".short 0x4eae", // jsr (-984, %a6)
             ".short -984",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -33940,7 +33940,7 @@ pub unsafe fn SetMaxPen(GfxBase: *mut Library, rp: *mut RastPort, maxpen: ULONG)
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -990(a6)
+            ".short 0x4eae", // jsr (-990, %a6)
             ".short -990",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33965,7 +33965,7 @@ pub unsafe fn SetRGB32CM(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -996(a6)
+            ".short 0x4eae", // jsr (-996, %a6)
             ".short -996",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -33995,7 +33995,7 @@ pub unsafe fn ScrollRasterBF(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1002(a6)
+            ".short 0x4eae", // jsr (-1002, %a6)
             ".short -1002",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34026,7 +34026,7 @@ pub unsafe fn FindColor(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1008(a6)
+            ".short 0x4eae", // jsr (-1008, %a6)
             ".short -1008",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34054,7 +34054,7 @@ pub unsafe fn AllocSpriteDataA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1020(a6)
+            ".short 0x4eae", // jsr (-1020, %a6)
             ".short -1020",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34081,7 +34081,7 @@ pub unsafe fn ChangeExtSpriteA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1026(a6)
+            ".short 0x4eae", // jsr (-1026, %a6)
             ".short -1026",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34103,7 +34103,7 @@ pub unsafe fn FreeSpriteData(GfxBase: *mut Library, sp: *mut ExtSprite) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1032(a6)
+            ".short 0x4eae", // jsr (-1032, %a6)
             ".short -1032",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34120,7 +34120,7 @@ pub unsafe fn SetRPAttrsA(GfxBase: *mut Library, rp: *mut RastPort, tags: *const
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1038(a6)
+            ".short 0x4eae", // jsr (-1038, %a6)
             ".short -1038",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34138,7 +34138,7 @@ pub unsafe fn GetRPAttrsA(GfxBase: *mut Library, rp: *mut RastPort, tags: *const
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1044(a6)
+            ".short 0x4eae", // jsr (-1044, %a6)
             ".short -1044",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34157,7 +34157,7 @@ pub unsafe fn BestModeIDA(GfxBase: *mut Library, tags: *const TagItem) -> ULONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1050(a6)
+            ".short 0x4eae", // jsr (-1050, %a6)
             ".short -1050",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34185,7 +34185,7 @@ pub unsafe fn WriteChunkyPixels(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1056(a6)
+            ".short 0x4eae", // jsr (-1056, %a6)
             ".short -1056",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34208,7 +34208,7 @@ pub unsafe fn FreeFreeList(IconBase: *mut Library, freelist: *mut FreeList) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34231,7 +34231,7 @@ pub unsafe fn AddFreeList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34253,7 +34253,7 @@ pub unsafe fn GetDiskObject(IconBase: *mut Library, name: CONST_STRPTR) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34277,7 +34277,7 @@ pub unsafe fn PutDiskObject(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34297,7 +34297,7 @@ pub unsafe fn FreeDiskObject(IconBase: *mut Library, diskobj: *mut DiskObject) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34319,7 +34319,7 @@ pub unsafe fn FindToolType(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34344,7 +34344,7 @@ pub unsafe fn MatchToolValue(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34369,7 +34369,7 @@ pub unsafe fn BumpRevision(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34395,7 +34395,7 @@ pub unsafe fn FreeAlloc(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34417,7 +34417,7 @@ pub unsafe fn GetDefDiskObject(IconBase: *mut Library, type_: LONG) -> *mut Disk
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34437,7 +34437,7 @@ pub unsafe fn PutDefDiskObject(IconBase: *mut Library, diskObject: *const DiskOb
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34457,7 +34457,7 @@ pub unsafe fn GetDiskObjectNew(IconBase: *mut Library, name: CONST_STRPTR) -> *m
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34477,7 +34477,7 @@ pub unsafe fn DeleteDiskObject(IconBase: *mut Library, name: CONST_STRPTR) -> BO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34496,7 +34496,7 @@ pub unsafe fn FreeFree(IconBase: *mut Library, fl: *mut FreeList, address: APTR)
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34519,7 +34519,7 @@ pub unsafe fn DupDiskObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34544,7 +34544,7 @@ pub unsafe fn IconControlA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34573,7 +34573,7 @@ pub unsafe fn DrawIconStateA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34606,7 +34606,7 @@ pub unsafe fn GetIconRectangleA(
             "move.l %a4, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a4reg}, %a4",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a4",
             "move.l (%sp)+, %a6",
@@ -34631,7 +34631,7 @@ pub unsafe fn NewDiskObject(IconBase: *mut Library, type_: LONG) -> *mut DiskObj
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34655,7 +34655,7 @@ pub unsafe fn GetIconTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34681,7 +34681,7 @@ pub unsafe fn PutIconTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34708,7 +34708,7 @@ pub unsafe fn LayoutIconA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -192(a6)
+            ".short 0x4eae", // jsr (-192, %a6)
             ".short -192",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34729,7 +34729,7 @@ pub unsafe fn ChangeToSelectedIconColor(IconBase: *mut Library, cr: *mut ColorRe
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34752,7 +34752,7 @@ pub unsafe fn BumpRevisionLength(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34774,7 +34774,7 @@ pub unsafe fn AllocIFF(IFFParseBase: *mut Library) -> *mut IFFHandle {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34793,7 +34793,7 @@ pub unsafe fn OpenIFF(IFFParseBase: *mut Library, iff: *mut IFFHandle, rwMode: L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34814,7 +34814,7 @@ pub unsafe fn ParseIFF(IFFParseBase: *mut Library, iff: *mut IFFHandle, control:
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34834,7 +34834,7 @@ pub unsafe fn CloseIFF(IFFParseBase: *mut Library, iff: *mut IFFHandle) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34851,7 +34851,7 @@ pub unsafe fn FreeIFF(IFFParseBase: *mut Library, iff: *mut IFFHandle) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -34874,7 +34874,7 @@ pub unsafe fn ReadChunkBytes(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34901,7 +34901,7 @@ pub unsafe fn WriteChunkBytes(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34929,7 +34929,7 @@ pub unsafe fn ReadChunkRecords(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34958,7 +34958,7 @@ pub unsafe fn WriteChunkRecords(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -34987,7 +34987,7 @@ pub unsafe fn PushChunk(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35010,7 +35010,7 @@ pub unsafe fn PopChunk(IFFParseBase: *mut Library, iff: *mut IFFHandle) -> LONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35038,7 +35038,7 @@ pub unsafe fn EntryHandler(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35071,7 +35071,7 @@ pub unsafe fn ExitHandler(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35101,7 +35101,7 @@ pub unsafe fn PropChunk(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35128,7 +35128,7 @@ pub unsafe fn PropChunks(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35155,7 +35155,7 @@ pub unsafe fn StopChunk(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35182,7 +35182,7 @@ pub unsafe fn StopChunks(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35209,7 +35209,7 @@ pub unsafe fn CollectionChunk(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35236,7 +35236,7 @@ pub unsafe fn CollectionChunks(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35263,7 +35263,7 @@ pub unsafe fn StopOnExit(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35290,7 +35290,7 @@ pub unsafe fn FindProp(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35317,7 +35317,7 @@ pub unsafe fn FindCollection(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35339,7 +35339,7 @@ pub unsafe fn FindPropContext(IFFParseBase: *mut Library, iff: *mut IFFHandle) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35359,7 +35359,7 @@ pub unsafe fn CurrentChunk(IFFParseBase: *mut Library, iff: *mut IFFHandle) -> *
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35382,7 +35382,7 @@ pub unsafe fn ParentChunk(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35408,7 +35408,7 @@ pub unsafe fn AllocLocalItem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35431,7 +35431,7 @@ pub unsafe fn LocalItemData(IFFParseBase: *mut Library, localItem: *mut LocalCon
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -192(a6)
+            ".short 0x4eae", // jsr (-192, %a6)
             ".short -192",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35454,7 +35454,7 @@ pub unsafe fn SetLocalItemPurge(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35472,7 +35472,7 @@ pub unsafe fn FreeLocalItem(IFFParseBase: *mut Library, localItem: *mut LocalCon
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35496,7 +35496,7 @@ pub unsafe fn FindLocalItem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35524,7 +35524,7 @@ pub unsafe fn StoreLocalItem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -216(a6)
+            ".short 0x4eae", // jsr (-216, %a6)
             ".short -216",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35550,7 +35550,7 @@ pub unsafe fn StoreItemInContext(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -222(a6)
+            ".short 0x4eae", // jsr (-222, %a6)
             ".short -222",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35574,7 +35574,7 @@ pub unsafe fn InitIFF(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35593,7 +35593,7 @@ pub unsafe fn InitIFFasDOS(IFFParseBase: *mut Library, iff: *mut IFFHandle) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35610,7 +35610,7 @@ pub unsafe fn InitIFFasClip(IFFParseBase: *mut Library, iff: *mut IFFHandle) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35628,7 +35628,7 @@ pub unsafe fn OpenClipboard(IFFParseBase: *mut Library, unitNumber: LONG) -> *mu
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -246(a6)
+            ".short 0x4eae", // jsr (-246, %a6)
             ".short -246",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35647,7 +35647,7 @@ pub unsafe fn CloseClipboard(IFFParseBase: *mut Library, clipHandle: *mut Clipbo
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -252(a6)
+            ".short 0x4eae", // jsr (-252, %a6)
             ".short -252",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35665,7 +35665,7 @@ pub unsafe fn GoodID(IFFParseBase: *mut Library, id: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35685,7 +35685,7 @@ pub unsafe fn GoodType(IFFParseBase: *mut Library, type_: LONG) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35705,7 +35705,7 @@ pub unsafe fn IDtoStr(IFFParseBase: *mut Library, id: LONG, buf: STRPTR) -> STRP
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -270(a6)
+            ".short 0x4eae", // jsr (-270, %a6)
             ".short -270",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35726,7 +35726,7 @@ pub unsafe fn PeekQualifier(InputBase: *mut ::core::ffi::c_void) -> UWORD {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35745,7 +35745,7 @@ pub unsafe fn INTEGER_GetClass(IntegerBase: *mut ::core::ffi::c_void) -> *mut Cl
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35763,7 +35763,7 @@ pub unsafe fn OpenIntuition(IntuitionBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35779,7 +35779,7 @@ pub unsafe fn Intuition(IntuitionBase: *mut Library, iEvent: *mut InputEvent) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35802,7 +35802,7 @@ pub unsafe fn AddGadget(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35824,7 +35824,7 @@ pub unsafe fn ClearDMRequest(IntuitionBase: *mut Library, window: *mut Window) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35843,7 +35843,7 @@ pub unsafe fn ClearMenuStrip(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35860,7 +35860,7 @@ pub unsafe fn ClearPointer(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35878,7 +35878,7 @@ pub unsafe fn CloseScreen(IntuitionBase: *mut Library, screen: *mut Screen) -> B
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35897,7 +35897,7 @@ pub unsafe fn CloseWindow(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35915,7 +35915,7 @@ pub unsafe fn CloseWorkBench(IntuitionBase: *mut Library) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35933,7 +35933,7 @@ pub unsafe fn CurrentTime(IntuitionBase: *mut Library, seconds: *mut ULONG, micr
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -35957,7 +35957,7 @@ pub unsafe fn DisplayAlert(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -35978,7 +35978,7 @@ pub unsafe fn DisplayBeep(IntuitionBase: *mut Library, screen: *mut Screen) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36002,7 +36002,7 @@ pub unsafe fn DoubleClick(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36030,7 +36030,7 @@ pub unsafe fn DrawBorder(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36056,7 +36056,7 @@ pub unsafe fn DrawImage(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36080,7 +36080,7 @@ pub unsafe fn EndRequest(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36103,7 +36103,7 @@ pub unsafe fn GetDefPrefs(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36128,7 +36128,7 @@ pub unsafe fn GetPrefs(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36148,7 +36148,7 @@ pub unsafe fn InitRequester(IntuitionBase: *mut Library, requester: *mut Request
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36170,7 +36170,7 @@ pub unsafe fn ItemAddress(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36191,7 +36191,7 @@ pub unsafe fn ModifyIDCMP(IntuitionBase: *mut Library, window: *mut Window, flag
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36221,7 +36221,7 @@ pub unsafe fn ModifyProp(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36245,7 +36245,7 @@ pub unsafe fn MoveScreen(IntuitionBase: *mut Library, screen: *mut Screen, dx: L
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36264,7 +36264,7 @@ pub unsafe fn MoveWindow(IntuitionBase: *mut Library, window: *mut Window, dx: L
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36288,7 +36288,7 @@ pub unsafe fn OffGadget(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36307,7 +36307,7 @@ pub unsafe fn OffMenu(IntuitionBase: *mut Library, window: *mut Window, menuNumb
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36330,7 +36330,7 @@ pub unsafe fn OnGadget(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36349,7 +36349,7 @@ pub unsafe fn OnMenu(IntuitionBase: *mut Library, window: *mut Window, menuNumbe
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -192(a6)
+            ".short 0x4eae", // jsr (-192, %a6)
             ".short -192",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36368,7 +36368,7 @@ pub unsafe fn OpenScreen(IntuitionBase: *mut Library, newScreen: *const NewScree
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36388,7 +36388,7 @@ pub unsafe fn OpenWindow(IntuitionBase: *mut Library, newWindow: *const NewWindo
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36408,7 +36408,7 @@ pub unsafe fn OpenWorkBench(IntuitionBase: *mut Library) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36432,7 +36432,7 @@ pub unsafe fn PrintIText(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -216(a6)
+            ".short 0x4eae", // jsr (-216, %a6)
             ".short -216",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36457,7 +36457,7 @@ pub unsafe fn RefreshGadgets(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -222(a6)
+            ".short 0x4eae", // jsr (-222, %a6)
             ".short -222",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36481,7 +36481,7 @@ pub unsafe fn RemoveGadget(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36501,7 +36501,7 @@ pub unsafe fn ReportMouse(IntuitionBase: *mut Library, flag: LONG, window: *mut 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36519,7 +36519,7 @@ pub unsafe fn ReportMouse1(IntuitionBase: *mut Library, window: *mut Window, fla
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36542,7 +36542,7 @@ pub unsafe fn Request(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36562,7 +36562,7 @@ pub unsafe fn ScreenToBack(IntuitionBase: *mut Library, screen: *mut Screen) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -246(a6)
+            ".short 0x4eae", // jsr (-246, %a6)
             ".short -246",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36579,7 +36579,7 @@ pub unsafe fn ScreenToFront(IntuitionBase: *mut Library, screen: *mut Screen) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -252(a6)
+            ".short 0x4eae", // jsr (-252, %a6)
             ".short -252",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36601,7 +36601,7 @@ pub unsafe fn SetDMRequest(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36626,7 +36626,7 @@ pub unsafe fn SetMenuStrip(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36654,7 +36654,7 @@ pub unsafe fn SetPointer(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -270(a6)
+            ".short 0x4eae", // jsr (-270, %a6)
             ".short -270",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36681,7 +36681,7 @@ pub unsafe fn SetWindowTitles(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -276(a6)
+            ".short 0x4eae", // jsr (-276, %a6)
             ".short -276",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36700,7 +36700,7 @@ pub unsafe fn ShowTitle(IntuitionBase: *mut Library, screen: *mut Screen, showIt
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -282(a6)
+            ".short 0x4eae", // jsr (-282, %a6)
             ".short -282",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36718,7 +36718,7 @@ pub unsafe fn SizeWindow(IntuitionBase: *mut Library, window: *mut Window, dx: L
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -288(a6)
+            ".short 0x4eae", // jsr (-288, %a6)
             ".short -288",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36738,7 +36738,7 @@ pub unsafe fn ViewAddress(IntuitionBase: *mut Library) -> *mut View {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -294(a6)
+            ".short 0x4eae", // jsr (-294, %a6)
             ".short -294",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36757,7 +36757,7 @@ pub unsafe fn ViewPortAddress(IntuitionBase: *mut Library, window: *const Window
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -300(a6)
+            ".short 0x4eae", // jsr (-300, %a6)
             ".short -300",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36776,7 +36776,7 @@ pub unsafe fn WindowToBack(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -306(a6)
+            ".short 0x4eae", // jsr (-306, %a6)
             ".short -306",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36793,7 +36793,7 @@ pub unsafe fn WindowToFront(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -312(a6)
+            ".short 0x4eae", // jsr (-312, %a6)
             ".short -312",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36818,7 +36818,7 @@ pub unsafe fn WindowLimits(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -318(a6)
+            ".short 0x4eae", // jsr (-318, %a6)
             ".short -318",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36847,7 +36847,7 @@ pub unsafe fn SetPrefs(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -324(a6)
+            ".short 0x4eae", // jsr (-324, %a6)
             ".short -324",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36869,7 +36869,7 @@ pub unsafe fn IntuiTextLength(IntuitionBase: *mut Library, iText: *const IntuiTe
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -330(a6)
+            ".short 0x4eae", // jsr (-330, %a6)
             ".short -330",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36889,7 +36889,7 @@ pub unsafe fn WBenchToBack(IntuitionBase: *mut Library) -> BOOL {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -336(a6)
+            ".short 0x4eae", // jsr (-336, %a6)
             ".short -336",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36908,7 +36908,7 @@ pub unsafe fn WBenchToFront(IntuitionBase: *mut Library) -> BOOL {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -342(a6)
+            ".short 0x4eae", // jsr (-342, %a6)
             ".short -342",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36937,7 +36937,7 @@ pub unsafe fn AutoRequest(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -348(a6)
+            ".short 0x4eae", // jsr (-348, %a6)
             ".short -348",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -36963,7 +36963,7 @@ pub unsafe fn BeginRefresh(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -354(a6)
+            ".short 0x4eae", // jsr (-354, %a6)
             ".short -354",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -36990,7 +36990,7 @@ pub unsafe fn BuildSysRequest(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -360(a6)
+            ".short 0x4eae", // jsr (-360, %a6)
             ".short -360",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37015,7 +37015,7 @@ pub unsafe fn EndRefresh(IntuitionBase: *mut Library, window: *mut Window, compl
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -366(a6)
+            ".short 0x4eae", // jsr (-366, %a6)
             ".short -366",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37033,7 +37033,7 @@ pub unsafe fn FreeSysRequest(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -372(a6)
+            ".short 0x4eae", // jsr (-372, %a6)
             ".short -372",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37051,7 +37051,7 @@ pub unsafe fn MakeScreen(IntuitionBase: *mut Library, screen: *mut Screen) -> LO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -378(a6)
+            ".short 0x4eae", // jsr (-378, %a6)
             ".short -378",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37071,7 +37071,7 @@ pub unsafe fn RemakeDisplay(IntuitionBase: *mut Library) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -384(a6)
+            ".short 0x4eae", // jsr (-384, %a6)
             ".short -384",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37090,7 +37090,7 @@ pub unsafe fn RethinkDisplay(IntuitionBase: *mut Library) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -390(a6)
+            ".short 0x4eae", // jsr (-390, %a6)
             ".short -390",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37114,7 +37114,7 @@ pub unsafe fn AllocRemember(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -396(a6)
+            ".short 0x4eae", // jsr (-396, %a6)
             ".short -396",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37135,7 +37135,7 @@ pub unsafe fn AlohaWorkbench(IntuitionBase: *mut Library, wbport: LONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -402(a6)
+            ".short 0x4eae", // jsr (-402, %a6)
             ".short -402",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37156,7 +37156,7 @@ pub unsafe fn FreeRemember(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -408(a6)
+            ".short 0x4eae", // jsr (-408, %a6)
             ".short -408",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37175,7 +37175,7 @@ pub unsafe fn LockIBase(IntuitionBase: *mut Library, dontknow: ULONG) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -414(a6)
+            ".short 0x4eae", // jsr (-414, %a6)
             ".short -414",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37194,7 +37194,7 @@ pub unsafe fn UnlockIBase(IntuitionBase: *mut Library, ibLock: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -420(a6)
+            ".short 0x4eae", // jsr (-420, %a6)
             ".short -420",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37218,7 +37218,7 @@ pub unsafe fn GetScreenData(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -426(a6)
+            ".short 0x4eae", // jsr (-426, %a6)
             ".short -426",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37246,7 +37246,7 @@ pub unsafe fn RefreshGList(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -432(a6)
+            ".short 0x4eae", // jsr (-432, %a6)
             ".short -432",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37274,7 +37274,7 @@ pub unsafe fn AddGList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -438(a6)
+            ".short 0x4eae", // jsr (-438, %a6)
             ".short -438",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37303,7 +37303,7 @@ pub unsafe fn RemoveGList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -444(a6)
+            ".short 0x4eae", // jsr (-444, %a6)
             ".short -444",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37324,7 +37324,7 @@ pub unsafe fn ActivateWindow(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -450(a6)
+            ".short 0x4eae", // jsr (-450, %a6)
             ".short -450",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37341,7 +37341,7 @@ pub unsafe fn RefreshWindowFrame(IntuitionBase: *mut Library, window: *mut Windo
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -456(a6)
+            ".short 0x4eae", // jsr (-456, %a6)
             ".short -456",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37364,7 +37364,7 @@ pub unsafe fn ActivateGadget(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -462(a6)
+            ".short 0x4eae", // jsr (-462, %a6)
             ".short -462",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37396,7 +37396,7 @@ pub unsafe fn NewModifyProp(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -468(a6)
+            ".short 0x4eae", // jsr (-468, %a6)
             ".short -468",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37427,7 +37427,7 @@ pub unsafe fn QueryOverscan(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -474(a6)
+            ".short 0x4eae", // jsr (-474, %a6)
             ".short -474",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37452,7 +37452,7 @@ pub unsafe fn MoveWindowInFrontOf(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -480(a6)
+            ".short 0x4eae", // jsr (-480, %a6)
             ".short -480",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37477,7 +37477,7 @@ pub unsafe fn ChangeWindowBox(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -486(a6)
+            ".short 0x4eae", // jsr (-486, %a6)
             ".short -486",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37499,7 +37499,7 @@ pub unsafe fn SetEditHook(IntuitionBase: *mut Library, hook: *mut Hook) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -492(a6)
+            ".short 0x4eae", // jsr (-492, %a6)
             ".short -492",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37523,7 +37523,7 @@ pub unsafe fn SetMouseQueue(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -498(a6)
+            ".short 0x4eae", // jsr (-498, %a6)
             ".short -498",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37543,7 +37543,7 @@ pub unsafe fn ZipWindow(IntuitionBase: *mut Library, window: *mut Window) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -504(a6)
+            ".short 0x4eae", // jsr (-504, %a6)
             ".short -504",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37561,7 +37561,7 @@ pub unsafe fn LockPubScreen(IntuitionBase: *mut Library, name: CONST_STRPTR) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -510(a6)
+            ".short 0x4eae", // jsr (-510, %a6)
             ".short -510",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37584,7 +37584,7 @@ pub unsafe fn UnlockPubScreen(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -516(a6)
+            ".short 0x4eae", // jsr (-516, %a6)
             ".short -516",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37603,7 +37603,7 @@ pub unsafe fn LockPubScreenList(IntuitionBase: *mut Library) -> *mut List {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -522(a6)
+            ".short 0x4eae", // jsr (-522, %a6)
             ".short -522",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37621,7 +37621,7 @@ pub unsafe fn UnlockPubScreenList(IntuitionBase: *mut Library) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -528(a6)
+            ".short 0x4eae", // jsr (-528, %a6)
             ".short -528",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37642,7 +37642,7 @@ pub unsafe fn NextPubScreen(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -534(a6)
+            ".short 0x4eae", // jsr (-534, %a6)
             ".short -534",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37662,7 +37662,7 @@ pub unsafe fn SetDefaultPubScreen(IntuitionBase: *mut Library, name: CONST_STRPT
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -540(a6)
+            ".short 0x4eae", // jsr (-540, %a6)
             ".short -540",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37680,7 +37680,7 @@ pub unsafe fn SetPubScreenModes(IntuitionBase: *mut Library, modes: ULONG) -> UW
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -546(a6)
+            ".short 0x4eae", // jsr (-546, %a6)
             ".short -546",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37704,7 +37704,7 @@ pub unsafe fn PubScreenStatus(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -552(a6)
+            ".short 0x4eae", // jsr (-552, %a6)
             ".short -552",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37725,7 +37725,7 @@ pub unsafe fn ObtainGIRPort(IntuitionBase: *mut Library, gInfo: *mut GadgetInfo)
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -558(a6)
+            ".short 0x4eae", // jsr (-558, %a6)
             ".short -558",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37744,7 +37744,7 @@ pub unsafe fn ReleaseGIRPort(IntuitionBase: *mut Library, rp: *mut RastPort) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -564(a6)
+            ".short 0x4eae", // jsr (-564, %a6)
             ".short -564",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37766,7 +37766,7 @@ pub unsafe fn GadgetMouse(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -570(a6)
+            ".short 0x4eae", // jsr (-570, %a6)
             ".short -570",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37785,7 +37785,7 @@ pub unsafe fn GetDefaultPubScreen(IntuitionBase: *mut Library, nameBuffer: STRPT
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -582(a6)
+            ".short 0x4eae", // jsr (-582, %a6)
             ".short -582",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37809,7 +37809,7 @@ pub unsafe fn EasyRequestArgs(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -588(a6)
+            ".short 0x4eae", // jsr (-588, %a6)
             ".short -588",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37838,7 +37838,7 @@ pub unsafe fn BuildEasyRequestArgs(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -594(a6)
+            ".short 0x4eae", // jsr (-594, %a6)
             ".short -594",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37866,7 +37866,7 @@ pub unsafe fn SysReqHandler(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -600(a6)
+            ".short 0x4eae", // jsr (-600, %a6)
             ".short -600",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37892,7 +37892,7 @@ pub unsafe fn OpenWindowTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -606(a6)
+            ".short 0x4eae", // jsr (-606, %a6)
             ".short -606",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37917,7 +37917,7 @@ pub unsafe fn OpenScreenTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -612(a6)
+            ".short 0x4eae", // jsr (-612, %a6)
             ".short -612",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37945,7 +37945,7 @@ pub unsafe fn DrawImageState(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -618(a6)
+            ".short 0x4eae", // jsr (-618, %a6)
             ".short -618",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -37968,7 +37968,7 @@ pub unsafe fn PointInImage(IntuitionBase: *mut Library, point: ULONG, image: *co
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -624(a6)
+            ".short 0x4eae", // jsr (-624, %a6)
             ".short -624",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -37994,7 +37994,7 @@ pub unsafe fn EraseImage(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -630(a6)
+            ".short 0x4eae", // jsr (-630, %a6)
             ".short -630",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38020,7 +38020,7 @@ pub unsafe fn NewObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -636(a6)
+            ".short 0x4eae", // jsr (-636, %a6)
             ".short -636",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38041,7 +38041,7 @@ pub unsafe fn DisposeObject(IntuitionBase: *mut Library, object: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -642(a6)
+            ".short 0x4eae", // jsr (-642, %a6)
             ".short -642",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38063,7 +38063,7 @@ pub unsafe fn SetAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -648(a6)
+            ".short 0x4eae", // jsr (-648, %a6)
             ".short -648",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38089,7 +38089,7 @@ pub unsafe fn GetAttr(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -654(a6)
+            ".short 0x4eae", // jsr (-654, %a6)
             ".short -654",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38117,7 +38117,7 @@ pub unsafe fn SetGadgetAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -660(a6)
+            ".short 0x4eae", // jsr (-660, %a6)
             ".short -660",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38140,7 +38140,7 @@ pub unsafe fn NextObject(IntuitionBase: *mut Library, objectPtrPtr: CONST_APTR) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -666(a6)
+            ".short 0x4eae", // jsr (-666, %a6)
             ".short -666",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38167,7 +38167,7 @@ pub unsafe fn MakeClass(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -678(a6)
+            ".short 0x4eae", // jsr (-678, %a6)
             ".short -678",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38190,7 +38190,7 @@ pub unsafe fn AddClass(IntuitionBase: *mut Library, classPtr: *mut IClass) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -684(a6)
+            ".short 0x4eae", // jsr (-684, %a6)
             ".short -684",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38208,7 +38208,7 @@ pub unsafe fn GetScreenDrawInfo(IntuitionBase: *mut Library, screen: *mut Screen
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -690(a6)
+            ".short 0x4eae", // jsr (-690, %a6)
             ".short -690",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38231,7 +38231,7 @@ pub unsafe fn FreeScreenDrawInfo(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -696(a6)
+            ".short 0x4eae", // jsr (-696, %a6)
             ".short -696",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38254,7 +38254,7 @@ pub unsafe fn ResetMenuStrip(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -702(a6)
+            ".short 0x4eae", // jsr (-702, %a6)
             ".short -702",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38274,7 +38274,7 @@ pub unsafe fn RemoveClass(IntuitionBase: *mut Library, classPtr: *mut IClass) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -708(a6)
+            ".short 0x4eae", // jsr (-708, %a6)
             ".short -708",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38292,7 +38292,7 @@ pub unsafe fn FreeClass(IntuitionBase: *mut Library, classPtr: *mut IClass) -> B
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -714(a6)
+            ".short 0x4eae", // jsr (-714, %a6)
             ".short -714",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38317,7 +38317,7 @@ pub unsafe fn AllocScreenBuffer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -768(a6)
+            ".short 0x4eae", // jsr (-768, %a6)
             ".short -768",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38342,7 +38342,7 @@ pub unsafe fn FreeScreenBuffer(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -774(a6)
+            ".short 0x4eae", // jsr (-774, %a6)
             ".short -774",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38365,7 +38365,7 @@ pub unsafe fn ChangeScreenBuffer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -780(a6)
+            ".short 0x4eae", // jsr (-780, %a6)
             ".short -780",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38390,7 +38390,7 @@ pub unsafe fn ScreenDepth(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -786(a6)
+            ".short 0x4eae", // jsr (-786, %a6)
             ".short -786",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38417,7 +38417,7 @@ pub unsafe fn ScreenPosition(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -792(a6)
+            ".short 0x4eae", // jsr (-792, %a6)
             ".short -792",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38448,7 +38448,7 @@ pub unsafe fn ScrollWindowRaster(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -798(a6)
+            ".short 0x4eae", // jsr (-798, %a6)
             ".short -798",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38475,7 +38475,7 @@ pub unsafe fn LendMenus(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -804(a6)
+            ".short 0x4eae", // jsr (-804, %a6)
             ".short -804",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38500,7 +38500,7 @@ pub unsafe fn DoGadgetMethodA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -810(a6)
+            ".short 0x4eae", // jsr (-810, %a6)
             ".short -810",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38526,7 +38526,7 @@ pub unsafe fn SetWindowPointerA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -816(a6)
+            ".short 0x4eae", // jsr (-816, %a6)
             ".short -816",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38551,7 +38551,7 @@ pub unsafe fn TimedDisplayAlert(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -822(a6)
+            ".short 0x4eae", // jsr (-822, %a6)
             ".short -822",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38573,7 +38573,7 @@ pub unsafe fn HelpControl(IntuitionBase: *mut Library, win: *mut Window, flags: 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -828(a6)
+            ".short 0x4eae", // jsr (-828, %a6)
             ".short -828",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38596,7 +38596,7 @@ pub unsafe fn ShowWindow(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -834(a6)
+            ".short 0x4eae", // jsr (-834, %a6)
             ".short -834",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38617,7 +38617,7 @@ pub unsafe fn HideWindow(IntuitionBase: *mut Library, window: *mut Window) -> BO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -840(a6)
+            ".short 0x4eae", // jsr (-840, %a6)
             ".short -840",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38641,7 +38641,7 @@ pub unsafe fn IntuitionControlA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -1212(a6)
+            ".short 0x4eae", // jsr (-1212, %a6)
             ".short -1212",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38661,7 +38661,7 @@ pub unsafe fn SetKeyMapDefault(KeymapBase: *mut Library, keyMap: *mut KeyMap) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38679,7 +38679,7 @@ pub unsafe fn AskKeyMapDefault(KeymapBase: *mut Library) -> *mut KeyMap {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38704,7 +38704,7 @@ pub unsafe fn MapRawKey(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38734,7 +38734,7 @@ pub unsafe fn MapANSI(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38758,7 +38758,7 @@ pub unsafe fn LABEL_GetClass(LabelBase: *mut ::core::ffi::c_void) -> *mut Class 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38776,7 +38776,7 @@ pub unsafe fn InitLayers(LayersBase: *mut Library, li: *mut Layer_Info) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38804,7 +38804,7 @@ pub unsafe fn CreateUpfrontLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38841,7 +38841,7 @@ pub unsafe fn CreateBehindLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38868,7 +38868,7 @@ pub unsafe fn UpfrontLayer(LayersBase: *mut Library, dummy: LONG, layer: *mut La
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38889,7 +38889,7 @@ pub unsafe fn BehindLayer(LayersBase: *mut Library, dummy: LONG, layer: *mut Lay
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38916,7 +38916,7 @@ pub unsafe fn MoveLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38945,7 +38945,7 @@ pub unsafe fn SizeLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -38973,7 +38973,7 @@ pub unsafe fn ScrollLayer(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -38994,7 +38994,7 @@ pub unsafe fn BeginUpdate(LayersBase: *mut Library, l: *mut Layer) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39013,7 +39013,7 @@ pub unsafe fn EndUpdate(LayersBase: *mut Library, layer: *mut Layer, flag: ULONG
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39032,7 +39032,7 @@ pub unsafe fn DeleteLayer(LayersBase: *mut Library, dummy: LONG, layer: *mut Lay
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39052,7 +39052,7 @@ pub unsafe fn LockLayer(LayersBase: *mut Library, dummy: LONG, layer: *mut Layer
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39070,7 +39070,7 @@ pub unsafe fn UnlockLayer(LayersBase: *mut Library, layer: *mut Layer) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39087,7 +39087,7 @@ pub unsafe fn LockLayers(LayersBase: *mut Library, li: *mut Layer_Info) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39104,7 +39104,7 @@ pub unsafe fn UnlockLayers(LayersBase: *mut Library, li: *mut Layer_Info) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39121,7 +39121,7 @@ pub unsafe fn LockLayerInfo(LayersBase: *mut Library, li: *mut Layer_Info) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39142,7 +39142,7 @@ pub unsafe fn SwapBitsRastPortClipRect(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39166,7 +39166,7 @@ pub unsafe fn WhichLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39187,7 +39187,7 @@ pub unsafe fn UnlockLayerInfo(LayersBase: *mut Library, li: *mut Layer_Info) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39205,7 +39205,7 @@ pub unsafe fn NewLayerInfo(LayersBase: *mut Library) -> *mut Layer_Info {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39223,7 +39223,7 @@ pub unsafe fn DisposeLayerInfo(LayersBase: *mut Library, li: *mut Layer_Info) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39241,7 +39241,7 @@ pub unsafe fn FattenLayerInfo(LayersBase: *mut Library, li: *mut Layer_Info) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39260,7 +39260,7 @@ pub unsafe fn ThinLayerInfo(LayersBase: *mut Library, li: *mut Layer_Info) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39282,7 +39282,7 @@ pub unsafe fn MoveLayerInFrontOf(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39307,7 +39307,7 @@ pub unsafe fn InstallClipRegion(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39335,7 +39335,7 @@ pub unsafe fn MoveSizeLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39370,7 +39370,7 @@ pub unsafe fn CreateUpfrontHookLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39409,7 +39409,7 @@ pub unsafe fn CreateBehindHookLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -192(a6)
+            ".short 0x4eae", // jsr (-192, %a6)
             ".short -192",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39441,7 +39441,7 @@ pub unsafe fn InstallLayerHook(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39466,7 +39466,7 @@ pub unsafe fn InstallLayerInfoHook(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39486,7 +39486,7 @@ pub unsafe fn SortLayerCR(LayersBase: *mut Library, layer: *mut Layer, dx: LONG,
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39510,7 +39510,7 @@ pub unsafe fn DoHookClipRects(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -216(a6)
+            ".short 0x4eae", // jsr (-216, %a6)
             ".short -216",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39530,7 +39530,7 @@ pub unsafe fn LayerOccluded(LayersBase: *mut Library, layer: *mut Layer) -> BOOL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -222(a6)
+            ".short 0x4eae", // jsr (-222, %a6)
             ".short -222",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39550,7 +39550,7 @@ pub unsafe fn HideLayer(LayersBase: *mut Library, layer: *mut Layer) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39574,7 +39574,7 @@ pub unsafe fn ShowLayer(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39599,7 +39599,7 @@ pub unsafe fn SetLayerInfoBounds(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39620,7 +39620,7 @@ pub unsafe fn LAYOUT_GetClass(LayoutBase: *mut ::core::ffi::c_void) -> *mut Clas
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39645,7 +39645,7 @@ pub unsafe fn ActivateLayoutGadget(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39667,7 +39667,7 @@ pub unsafe fn FlushLayoutDomainCache(LayoutBase: *mut ::core::ffi::c_void, gadge
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39691,7 +39691,7 @@ pub unsafe fn RethinkLayout(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39719,7 +39719,7 @@ pub unsafe fn LayoutLimits(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39740,7 +39740,7 @@ pub unsafe fn PAGE_GetClass(LayoutBase: *mut ::core::ffi::c_void) -> *mut Class 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39768,7 +39768,7 @@ pub unsafe fn SetPageGadgetAttrsA(
             "move.l %a4, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a4reg}, %a4",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a4",
             "move.l (%sp)+, %a6",
@@ -39798,7 +39798,7 @@ pub unsafe fn RefreshPageGadget(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39819,7 +39819,7 @@ pub unsafe fn LISTBROWSER_GetClass(ListBrowserBase: *mut ::core::ffi::c_void) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39842,7 +39842,7 @@ pub unsafe fn AllocListBrowserNodeA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -39862,7 +39862,7 @@ pub unsafe fn FreeListBrowserNode(ListBrowserBase: *mut ::core::ffi::c_void, nod
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39883,7 +39883,7 @@ pub unsafe fn SetListBrowserNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39905,7 +39905,7 @@ pub unsafe fn GetListBrowserNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39923,7 +39923,7 @@ pub unsafe fn ListBrowserSelectAll(ListBrowserBase: *mut ::core::ffi::c_void, li
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39944,7 +39944,7 @@ pub unsafe fn ShowListBrowserNodeChildren(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39965,7 +39965,7 @@ pub unsafe fn HideListBrowserNodeChildren(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -39985,7 +39985,7 @@ pub unsafe fn ShowAllListBrowserChildren(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40005,7 +40005,7 @@ pub unsafe fn HideAllListBrowserChildren(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40022,7 +40022,7 @@ pub unsafe fn FreeListBrowserList(ListBrowserBase: *mut ::core::ffi::c_void, lis
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40044,7 +40044,7 @@ pub unsafe fn AllocLBColumnInfoA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40069,7 +40069,7 @@ pub unsafe fn SetLBColumnInfoAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40094,7 +40094,7 @@ pub unsafe fn GetLBColumnInfoAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40117,7 +40117,7 @@ pub unsafe fn FreeLBColumnInfo(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40134,7 +40134,7 @@ pub unsafe fn ListBrowserClearAll(ListBrowserBase: *mut ::core::ffi::c_void, lis
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40151,7 +40151,7 @@ pub unsafe fn CloseCatalog(LocaleBase: *mut Library, catalog: *mut Catalog) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40168,7 +40168,7 @@ pub unsafe fn CloseLocale(LocaleBase: *mut Library, locale: *mut Locale) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40190,7 +40190,7 @@ pub unsafe fn ConvToLower(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40215,7 +40215,7 @@ pub unsafe fn ConvToUpper(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40241,7 +40241,7 @@ pub unsafe fn FormatDate(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40268,7 +40268,7 @@ pub unsafe fn FormatString(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40296,7 +40296,7 @@ pub unsafe fn GetCatalogStr(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40322,7 +40322,7 @@ pub unsafe fn GetLocaleStr(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40343,7 +40343,7 @@ pub unsafe fn IsAlNum(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40364,7 +40364,7 @@ pub unsafe fn IsAlpha(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40385,7 +40385,7 @@ pub unsafe fn IsCntrl(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40406,7 +40406,7 @@ pub unsafe fn IsDigit(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40427,7 +40427,7 @@ pub unsafe fn IsGraph(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40448,7 +40448,7 @@ pub unsafe fn IsLower(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40469,7 +40469,7 @@ pub unsafe fn IsPrint(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40490,7 +40490,7 @@ pub unsafe fn IsPunct(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40511,7 +40511,7 @@ pub unsafe fn IsSpace(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40532,7 +40532,7 @@ pub unsafe fn IsUpper(LocaleBase: *mut Library, locale: *mut Locale, character: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40553,7 +40553,7 @@ pub unsafe fn IsXDigit(LocaleBase: *mut Library, locale: *mut Locale, character:
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40579,7 +40579,7 @@ pub unsafe fn OpenCatalogA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40601,7 +40601,7 @@ pub unsafe fn OpenLocale(LocaleBase: *mut Library, name: CONST_STRPTR) -> *mut L
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40627,7 +40627,7 @@ pub unsafe fn ParseDate(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40657,7 +40657,7 @@ pub unsafe fn StrConvert(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40688,7 +40688,7 @@ pub unsafe fn StrnCmp(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40712,7 +40712,7 @@ pub unsafe fn ReadJoyPort(LowLevelBase: *mut Library, port: ULONG) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40732,7 +40732,7 @@ pub unsafe fn GetLanguageSelection(LowLevelBase: *mut Library) -> UBYTE {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "and.w #0x00ff, %d0",
             "move.l (%sp)+, %a6",
@@ -40752,7 +40752,7 @@ pub unsafe fn GetKey(LowLevelBase: *mut Library) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40770,7 +40770,7 @@ pub unsafe fn QueryKeys(LowLevelBase: *mut Library, queryArray: *mut KeyQuery, a
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40789,7 +40789,7 @@ pub unsafe fn AddKBInt(LowLevelBase: *mut Library, intRoutine: APTR, intData: AP
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40809,7 +40809,7 @@ pub unsafe fn RemKBInt(LowLevelBase: *mut Library, intHandle: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40827,7 +40827,7 @@ pub unsafe fn SystemControlA(LowLevelBase: *mut Library, tagList: *const TagItem
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40847,7 +40847,7 @@ pub unsafe fn AddTimerInt(LowLevelBase: *mut Library, intRoutine: APTR, intData:
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40867,7 +40867,7 @@ pub unsafe fn RemTimerInt(LowLevelBase: *mut Library, intHandle: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40884,7 +40884,7 @@ pub unsafe fn StopTimerInt(LowLevelBase: *mut Library, intHandle: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40906,7 +40906,7 @@ pub unsafe fn StartTimerInt(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40926,7 +40926,7 @@ pub unsafe fn ElapsedTime(LowLevelBase: *mut Library, context: *mut EClockVal) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40946,7 +40946,7 @@ pub unsafe fn AddVBlankInt(LowLevelBase: *mut Library, intRoutine: APTR, intData
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -40966,7 +40966,7 @@ pub unsafe fn RemVBlankInt(LowLevelBase: *mut Library, intHandle: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -40988,7 +40988,7 @@ pub unsafe fn SetJoyPortAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41009,7 +41009,7 @@ pub unsafe fn SPFix(MathBase: *mut Library, parm: FLOAT) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41029,7 +41029,7 @@ pub unsafe fn SPFlt(MathBase: *mut Library, integer: LONG) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41049,7 +41049,7 @@ pub unsafe fn SPCmp(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41070,7 +41070,7 @@ pub unsafe fn SPTst(MathBase: *mut Library, parm: FLOAT) -> LONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41090,7 +41090,7 @@ pub unsafe fn SPAbs(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41110,7 +41110,7 @@ pub unsafe fn SPNeg(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41130,7 +41130,7 @@ pub unsafe fn SPAdd(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41151,7 +41151,7 @@ pub unsafe fn SPSub(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41172,7 +41172,7 @@ pub unsafe fn SPMul(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41193,7 +41193,7 @@ pub unsafe fn SPDiv(MathBase: *mut Library, leftParm: FLOAT, rightParm: FLOAT) -
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41214,7 +41214,7 @@ pub unsafe fn SPFloor(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41234,7 +41234,7 @@ pub unsafe fn SPCeil(MathBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41254,7 +41254,7 @@ pub unsafe fn IEEEDPFix(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41275,7 +41275,7 @@ pub unsafe fn IEEEDPFlt(MathIeeeDoubBasBase: *mut Library, integer: LONG) -> DOU
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41300,7 +41300,7 @@ pub unsafe fn IEEEDPCmp(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41323,7 +41323,7 @@ pub unsafe fn IEEEDPTst(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41344,7 +41344,7 @@ pub unsafe fn IEEEDPAbs(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DOUB
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41366,7 +41366,7 @@ pub unsafe fn IEEEDPNeg(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DOUB
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41392,7 +41392,7 @@ pub unsafe fn IEEEDPAdd(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41420,7 +41420,7 @@ pub unsafe fn IEEEDPSub(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41448,7 +41448,7 @@ pub unsafe fn IEEEDPMul(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41476,7 +41476,7 @@ pub unsafe fn IEEEDPDiv(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41500,7 +41500,7 @@ pub unsafe fn IEEEDPFloor(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41522,7 +41522,7 @@ pub unsafe fn IEEEDPCeil(MathIeeeDoubBasBase: *mut Library, parm: DOUBLE) -> DOU
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41544,7 +41544,7 @@ pub unsafe fn IEEEDPAtan(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41566,7 +41566,7 @@ pub unsafe fn IEEEDPSin(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41588,7 +41588,7 @@ pub unsafe fn IEEEDPCos(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41610,7 +41610,7 @@ pub unsafe fn IEEEDPTan(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41636,7 +41636,7 @@ pub unsafe fn IEEEDPSincos(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41659,7 +41659,7 @@ pub unsafe fn IEEEDPSinh(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41681,7 +41681,7 @@ pub unsafe fn IEEEDPCosh(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41703,7 +41703,7 @@ pub unsafe fn IEEEDPTanh(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41725,7 +41725,7 @@ pub unsafe fn IEEEDPExp(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41747,7 +41747,7 @@ pub unsafe fn IEEEDPLog(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> DO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41769,7 +41769,7 @@ pub unsafe fn IEEEDPPow(MathIeeeDoubTransBase: *mut Library, SPExp: DOUBLE, arg:
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41793,7 +41793,7 @@ pub unsafe fn IEEEDPSqrt(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41815,7 +41815,7 @@ pub unsafe fn IEEEDPTieee(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41836,7 +41836,7 @@ pub unsafe fn IEEEDPFieee(MathIeeeDoubTransBase: *mut Library, single: FLOAT) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41857,7 +41857,7 @@ pub unsafe fn IEEEDPAsin(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41879,7 +41879,7 @@ pub unsafe fn IEEEDPAcos(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> D
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41901,7 +41901,7 @@ pub unsafe fn IEEEDPLog10(MathIeeeDoubTransBase: *mut Library, parm: DOUBLE) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41923,7 +41923,7 @@ pub unsafe fn IEEESPFix(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> LONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41943,7 +41943,7 @@ pub unsafe fn IEEESPFlt(MathIeeeSingBasBase: *mut Library, integer: LONG) -> FLO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41967,7 +41967,7 @@ pub unsafe fn IEEESPCmp(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -41988,7 +41988,7 @@ pub unsafe fn IEEESPTst(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> LONG 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42008,7 +42008,7 @@ pub unsafe fn IEEESPAbs(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLOAT
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42028,7 +42028,7 @@ pub unsafe fn IEEESPNeg(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLOAT
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42052,7 +42052,7 @@ pub unsafe fn IEEESPAdd(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42077,7 +42077,7 @@ pub unsafe fn IEEESPSub(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42102,7 +42102,7 @@ pub unsafe fn IEEESPMul(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42127,7 +42127,7 @@ pub unsafe fn IEEESPDiv(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42148,7 +42148,7 @@ pub unsafe fn IEEESPFloor(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42168,7 +42168,7 @@ pub unsafe fn IEEESPCeil(MathIeeeSingBasBase: *mut Library, parm: FLOAT) -> FLOA
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42188,7 +42188,7 @@ pub unsafe fn IEEESPAtan(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42208,7 +42208,7 @@ pub unsafe fn IEEESPSin(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42228,7 +42228,7 @@ pub unsafe fn IEEESPCos(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42248,7 +42248,7 @@ pub unsafe fn IEEESPTan(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42272,7 +42272,7 @@ pub unsafe fn IEEESPSincos(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42293,7 +42293,7 @@ pub unsafe fn IEEESPSinh(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42313,7 +42313,7 @@ pub unsafe fn IEEESPCosh(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42333,7 +42333,7 @@ pub unsafe fn IEEESPTanh(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42353,7 +42353,7 @@ pub unsafe fn IEEESPExp(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42373,7 +42373,7 @@ pub unsafe fn IEEESPLog(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FLO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42393,7 +42393,7 @@ pub unsafe fn IEEESPPow(MathIeeeSingTransBase: *mut Library, SPExp: FLOAT, arg: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42414,7 +42414,7 @@ pub unsafe fn IEEESPSqrt(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42434,7 +42434,7 @@ pub unsafe fn IEEESPTieee(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> F
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42454,7 +42454,7 @@ pub unsafe fn IEEESPFieee(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> F
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42474,7 +42474,7 @@ pub unsafe fn IEEESPAsin(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42494,7 +42494,7 @@ pub unsafe fn IEEESPAcos(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42514,7 +42514,7 @@ pub unsafe fn IEEESPLog10(MathIeeeSingTransBase: *mut Library, parm: FLOAT) -> F
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42534,7 +42534,7 @@ pub unsafe fn SPAtan(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42554,7 +42554,7 @@ pub unsafe fn SPSin(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42574,7 +42574,7 @@ pub unsafe fn SPCos(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42594,7 +42594,7 @@ pub unsafe fn SPTan(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42614,7 +42614,7 @@ pub unsafe fn SPSincos(MathTransBase: *mut Library, cosResult: *mut FLOAT, parm:
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42635,7 +42635,7 @@ pub unsafe fn SPSinh(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42655,7 +42655,7 @@ pub unsafe fn SPCosh(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42675,7 +42675,7 @@ pub unsafe fn SPTanh(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42695,7 +42695,7 @@ pub unsafe fn SPExp(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42715,7 +42715,7 @@ pub unsafe fn SPLog(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42735,7 +42735,7 @@ pub unsafe fn SPPow(MathTransBase: *mut Library, power: FLOAT, arg: FLOAT) -> FL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42756,7 +42756,7 @@ pub unsafe fn SPSqrt(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42776,7 +42776,7 @@ pub unsafe fn SPTieee(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42796,7 +42796,7 @@ pub unsafe fn SPFieee(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42816,7 +42816,7 @@ pub unsafe fn SPAsin(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42836,7 +42836,7 @@ pub unsafe fn SPAcos(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42856,7 +42856,7 @@ pub unsafe fn SPLog10(MathTransBase: *mut Library, parm: FLOAT) -> FLOAT {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42880,7 +42880,7 @@ pub unsafe fn AllocMiscResource(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -6(a6)
+            ".short 0x4eae", // jsr (-6, %a6)
             ".short -6",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42900,7 +42900,7 @@ pub unsafe fn FreeMiscResource(MiscBase: *mut ::core::ffi::c_void, unitNum: ULON
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -12(a6)
+            ".short 0x4eae", // jsr (-12, %a6)
             ".short -12",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -42923,7 +42923,7 @@ pub unsafe fn GetCopyNV(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42944,7 +42944,7 @@ pub unsafe fn FreeNVData(NVBase: *mut Library, data: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -42969,7 +42969,7 @@ pub unsafe fn StoreNV(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -42998,7 +42998,7 @@ pub unsafe fn DeleteNV(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43020,7 +43020,7 @@ pub unsafe fn GetNVInfo(NVBase: *mut Library, killRequesters: LONG) -> *mut NVIn
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43044,7 +43044,7 @@ pub unsafe fn GetNVList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43071,7 +43071,7 @@ pub unsafe fn SetNVProtection(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43094,7 +43094,7 @@ pub unsafe fn PALETTE_GetClass(PaletteBase: *mut ::core::ffi::c_void) -> *mut Cl
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43113,7 +43113,7 @@ pub unsafe fn PENMAP_GetClass(PenMapBase: *mut ::core::ffi::c_void) -> *mut Clas
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43132,7 +43132,7 @@ pub unsafe fn AllocPotBits(PotgoBase: *mut ::core::ffi::c_void, bits: ULONG) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -6(a6)
+            ".short 0x4eae", // jsr (-6, %a6)
             ".short -6",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43151,7 +43151,7 @@ pub unsafe fn FreePotBits(PotgoBase: *mut ::core::ffi::c_void, bits: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -12(a6)
+            ".short 0x4eae", // jsr (-12, %a6)
             ".short -12",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43168,7 +43168,7 @@ pub unsafe fn WritePotgo(PotgoBase: *mut ::core::ffi::c_void, word: ULONG, mask:
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -18(a6)
+            ".short 0x4eae", // jsr (-18, %a6)
             ".short -18",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43187,7 +43187,7 @@ pub unsafe fn RADIOBUTTON_GetClass(RadioButtonBase: *mut ::core::ffi::c_void) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43210,7 +43210,7 @@ pub unsafe fn AllocRadioButtonNodeA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43230,7 +43230,7 @@ pub unsafe fn FreeRadioButtonNode(RadioButtonBase: *mut ::core::ffi::c_void, nod
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43251,7 +43251,7 @@ pub unsafe fn SetRadioButtonNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43273,7 +43273,7 @@ pub unsafe fn GetRadioButtonNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43292,7 +43292,7 @@ pub unsafe fn KillRAD0(RamdriveDevice: *mut ::core::ffi::c_void) -> STRPTR {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43311,7 +43311,7 @@ pub unsafe fn KillRAD(RamdriveDevice: *mut ::core::ffi::c_void, unit: ULONG) -> 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43331,7 +43331,7 @@ pub unsafe fn LockRealTime(RealTimeBase: *mut Library, lockType: ULONG) -> APTR 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43350,7 +43350,7 @@ pub unsafe fn UnlockRealTime(RealTimeBase: *mut Library, lock: APTR) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43368,7 +43368,7 @@ pub unsafe fn CreatePlayerA(RealTimeBase: *mut Library, tagList: *const TagItem)
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43387,7 +43387,7 @@ pub unsafe fn DeletePlayer(RealTimeBase: *mut Library, player: *mut Player) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43409,7 +43409,7 @@ pub unsafe fn SetPlayerAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43435,7 +43435,7 @@ pub unsafe fn SetConductorState(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43462,7 +43462,7 @@ pub unsafe fn ExternalSync(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43487,7 +43487,7 @@ pub unsafe fn NextConductor(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43507,7 +43507,7 @@ pub unsafe fn FindConductor(RealTimeBase: *mut Library, name: CONST_STRPTR) -> *
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43531,7 +43531,7 @@ pub unsafe fn GetPlayerAttrsA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43552,7 +43552,7 @@ pub unsafe fn REQUESTER_GetClass(RequesterBase: *mut ::core::ffi::c_void) -> *mu
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43575,7 +43575,7 @@ pub unsafe fn CreateArgstring(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43595,7 +43595,7 @@ pub unsafe fn DeleteArgstring(RexxSysBase: *mut Library, argstring: *mut UBYTE) 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43613,7 +43613,7 @@ pub unsafe fn LengthArgstring(RexxSysBase: *mut Library, argstring: *const UBYTE
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43638,7 +43638,7 @@ pub unsafe fn CreateRexxMsg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43659,7 +43659,7 @@ pub unsafe fn DeleteRexxMsg(RexxSysBase: *mut Library, packet: *mut RexxMsg) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43676,7 +43676,7 @@ pub unsafe fn ClearRexxMsg(RexxSysBase: *mut Library, msgptr: *mut RexxMsg, coun
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43700,7 +43700,7 @@ pub unsafe fn FillRexxMsg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43722,7 +43722,7 @@ pub unsafe fn IsRexxMsg(RexxSysBase: *mut Library, msgptr: *const RexxMsg) -> BO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43741,7 +43741,7 @@ pub unsafe fn LockRexxBase(RexxSysBase: *mut Library, resource: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -450(a6)
+            ".short 0x4eae", // jsr (-450, %a6)
             ".short -450",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43758,7 +43758,7 @@ pub unsafe fn UnlockRexxBase(RexxSysBase: *mut Library, resource: ULONG) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -456(a6)
+            ".short 0x4eae", // jsr (-456, %a6)
             ".short -456",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43779,7 +43779,7 @@ pub unsafe fn CreateRexxHostPort(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -480(a6)
+            ".short 0x4eae", // jsr (-480, %a6)
             ".short -480",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43798,7 +43798,7 @@ pub unsafe fn DeleteRexxHostPort(RexxSysBase: *mut Library, port: *mut MsgPort) 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -486(a6)
+            ".short 0x4eae", // jsr (-486, %a6)
             ".short -486",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43821,7 +43821,7 @@ pub unsafe fn GetRexxVarFromMsg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -492(a6)
+            ".short 0x4eae", // jsr (-492, %a6)
             ".short -492",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43848,7 +43848,7 @@ pub unsafe fn SetRexxVarFromMsg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -498(a6)
+            ".short 0x4eae", // jsr (-498, %a6)
             ".short -498",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43877,7 +43877,7 @@ pub unsafe fn LaunchRexxScript(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -504(a6)
+            ".short 0x4eae", // jsr (-504, %a6)
             ".short -504",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43900,7 +43900,7 @@ pub unsafe fn FreeRexxMsg(RexxSysBase: *mut Library, msgptr: *mut RexxMsg) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -510(a6)
+            ".short 0x4eae", // jsr (-510, %a6)
             ".short -510",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -43924,7 +43924,7 @@ pub unsafe fn GetRexxBufferFromMsg(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -516(a6)
+            ".short 0x4eae", // jsr (-516, %a6)
             ".short -516",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43947,7 +43947,7 @@ pub unsafe fn SCROLLER_GetClass(ScrollerBase: *mut ::core::ffi::c_void) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43966,7 +43966,7 @@ pub unsafe fn SKETCHBOARD_GetClass(SketchBoardBase: *mut ::core::ffi::c_void) ->
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -43985,7 +43985,7 @@ pub unsafe fn SLIDER_GetClass(SliderBase: *mut ::core::ffi::c_void) -> *mut Clas
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44004,7 +44004,7 @@ pub unsafe fn SPACE_GetClass(SpaceBase: *mut ::core::ffi::c_void) -> *mut Class 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44023,7 +44023,7 @@ pub unsafe fn SPEEDBAR_GetClass(SpeedBarBase: *mut ::core::ffi::c_void) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44046,7 +44046,7 @@ pub unsafe fn AllocSpeedButtonNodeA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44066,7 +44066,7 @@ pub unsafe fn FreeSpeedButtonNode(SpeedBarBase: *mut ::core::ffi::c_void, node: 
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44087,7 +44087,7 @@ pub unsafe fn SetSpeedButtonNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44109,7 +44109,7 @@ pub unsafe fn GetSpeedButtonNodeAttrsA(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44128,7 +44128,7 @@ pub unsafe fn STRING_GetClass(StringBase: *mut ::core::ffi::c_void) -> *mut Clas
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44147,7 +44147,7 @@ pub unsafe fn TEXTEDITOR_GetClass(TextFieldBase: *mut ::core::ffi::c_void) -> *m
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44171,7 +44171,7 @@ pub unsafe fn HighlightSetFormat(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44195,7 +44195,7 @@ pub unsafe fn AddTime(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44217,7 +44217,7 @@ pub unsafe fn SubTime(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44240,7 +44240,7 @@ pub unsafe fn CmpTime(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44261,7 +44261,7 @@ pub unsafe fn ReadEClock(TimerBase: *mut ::core::ffi::c_void, dest: *mut EClockV
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44280,7 +44280,7 @@ pub unsafe fn GetSysTime(TimerBase: *mut ::core::ffi::c_void, dest: *mut TimeVal
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44302,7 +44302,7 @@ pub unsafe fn TFStartUnitTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44327,7 +44327,7 @@ pub unsafe fn TFStopUnitTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44352,7 +44352,7 @@ pub unsafe fn TFInsertMediaTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44377,7 +44377,7 @@ pub unsafe fn TFEjectMediaTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44401,7 +44401,7 @@ pub unsafe fn TFGetUnitData(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44423,7 +44423,7 @@ pub unsafe fn TFFreeUnitData(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44445,7 +44445,7 @@ pub unsafe fn TFChangeUnitTagList(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44466,7 +44466,7 @@ pub unsafe fn TFExamineFileSize(TrackFileBase: *mut ::core::ffi::c_void, file_si
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44492,7 +44492,7 @@ pub unsafe fn Translate(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44519,7 +44519,7 @@ pub unsafe fn FindTagItem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44545,7 +44545,7 @@ pub unsafe fn GetTagData(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44572,7 +44572,7 @@ pub unsafe fn PackBoolTags(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44597,7 +44597,7 @@ pub unsafe fn NextTagItem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44621,7 +44621,7 @@ pub unsafe fn FilterTagChanges(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44645,7 +44645,7 @@ pub unsafe fn MapTags(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44665,7 +44665,7 @@ pub unsafe fn AllocateTagItems(UtilityBase: *mut Library, numTags: ULONG) -> *mu
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44685,7 +44685,7 @@ pub unsafe fn CloneTagItems(UtilityBase: *mut Library, tagList: *const TagItem) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44704,7 +44704,7 @@ pub unsafe fn FreeTagItems(UtilityBase: *mut Library, tagList: *mut TagItem) {
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44725,7 +44725,7 @@ pub unsafe fn RefreshTagItemClones(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -84(a6)
+            ".short 0x4eae", // jsr (-84, %a6)
             ".short -84",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44744,7 +44744,7 @@ pub unsafe fn TagInArray(UtilityBase: *mut Library, tagValue: Tag, tagArray: *co
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44770,7 +44770,7 @@ pub unsafe fn FilterTagItems(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44797,7 +44797,7 @@ pub unsafe fn CallHookPkt(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44818,7 +44818,7 @@ pub unsafe fn Amiga2Date(UtilityBase: *mut Library, seconds: ULONG, result: *mut
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -44837,7 +44837,7 @@ pub unsafe fn Date2Amiga(UtilityBase: *mut Library, date: *const ClockData) -> U
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44857,7 +44857,7 @@ pub unsafe fn CheckDate(UtilityBase: *mut Library, date: *const ClockData) -> UL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44877,7 +44877,7 @@ pub unsafe fn SMult32(UtilityBase: *mut Library, arg1: LONG, arg2: LONG) -> LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44898,7 +44898,7 @@ pub unsafe fn UMult32(UtilityBase: *mut Library, arg1: ULONG, arg2: ULONG) -> UL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -144(a6)
+            ".short 0x4eae", // jsr (-144, %a6)
             ".short -144",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44919,7 +44919,7 @@ pub unsafe fn SDivMod32(UtilityBase: *mut Library, dividend: LONG, divisor: LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -150(a6)
+            ".short 0x4eae", // jsr (-150, %a6)
             ".short -150",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44940,7 +44940,7 @@ pub unsafe fn UDivMod32(UtilityBase: *mut Library, dividend: ULONG, divisor: ULO
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -156(a6)
+            ".short 0x4eae", // jsr (-156, %a6)
             ".short -156",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44965,7 +44965,7 @@ pub unsafe fn Stricmp(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -162(a6)
+            ".short 0x4eae", // jsr (-162, %a6)
             ".short -162",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -44991,7 +44991,7 @@ pub unsafe fn Strnicmp(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -168(a6)
+            ".short 0x4eae", // jsr (-168, %a6)
             ".short -168",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45013,7 +45013,7 @@ pub unsafe fn ToUpper(UtilityBase: *mut Library, character: ULONG) -> UBYTE {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -174(a6)
+            ".short 0x4eae", // jsr (-174, %a6)
             ".short -174",
             "and.w #0x00ff, %d0",
             "move.l (%sp)+, %a6",
@@ -45034,7 +45034,7 @@ pub unsafe fn ToLower(UtilityBase: *mut Library, character: ULONG) -> UBYTE {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -180(a6)
+            ".short 0x4eae", // jsr (-180, %a6)
             ".short -180",
             "and.w #0x00ff, %d0",
             "move.l (%sp)+, %a6",
@@ -45058,7 +45058,7 @@ pub unsafe fn ApplyTagChanges(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -186(a6)
+            ".short 0x4eae", // jsr (-186, %a6)
             ".short -186",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -45077,7 +45077,7 @@ pub unsafe fn SMult64(UtilityBase: *mut Library, arg1: LONG, arg2: LONG) -> LONG
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -198(a6)
+            ".short 0x4eae", // jsr (-198, %a6)
             ".short -198",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45098,7 +45098,7 @@ pub unsafe fn UMult64(UtilityBase: *mut Library, arg1: ULONG, arg2: ULONG) -> UL
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -204(a6)
+            ".short 0x4eae", // jsr (-204, %a6)
             ".short -204",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45124,7 +45124,7 @@ pub unsafe fn PackStructureTags(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -210(a6)
+            ".short 0x4eae", // jsr (-210, %a6)
             ".short -210",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45151,7 +45151,7 @@ pub unsafe fn UnpackStructureTags(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -216(a6)
+            ".short 0x4eae", // jsr (-216, %a6)
             ".short -216",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45177,7 +45177,7 @@ pub unsafe fn AddNamedObject(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -222(a6)
+            ".short 0x4eae", // jsr (-222, %a6)
             ".short -222",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45202,7 +45202,7 @@ pub unsafe fn AllocNamedObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -228(a6)
+            ".short 0x4eae", // jsr (-228, %a6)
             ".short -228",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45223,7 +45223,7 @@ pub unsafe fn AttemptRemNamedObject(UtilityBase: *mut Library, object: *mut Name
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -234(a6)
+            ".short 0x4eae", // jsr (-234, %a6)
             ".short -234",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45248,7 +45248,7 @@ pub unsafe fn FindNamedObject(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -240(a6)
+            ".short 0x4eae", // jsr (-240, %a6)
             ".short -240",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45269,7 +45269,7 @@ pub unsafe fn FreeNamedObject(UtilityBase: *mut Library, object: *mut NamedObjec
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -246(a6)
+            ".short 0x4eae", // jsr (-246, %a6)
             ".short -246",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -45287,7 +45287,7 @@ pub unsafe fn NamedObjectName(UtilityBase: *mut Library, object: *mut NamedObjec
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -252(a6)
+            ".short 0x4eae", // jsr (-252, %a6)
             ".short -252",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45306,7 +45306,7 @@ pub unsafe fn ReleaseNamedObject(UtilityBase: *mut Library, object: *mut NamedOb
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -258(a6)
+            ".short 0x4eae", // jsr (-258, %a6)
             ".short -258",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -45327,7 +45327,7 @@ pub unsafe fn RemNamedObject(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -264(a6)
+            ".short 0x4eae", // jsr (-264, %a6)
             ".short -264",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -45346,7 +45346,7 @@ pub unsafe fn GetUniqueID(UtilityBase: *mut Library) -> ULONG {
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -270(a6)
+            ".short 0x4eae", // jsr (-270, %a6)
             ".short -270",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45371,7 +45371,7 @@ pub unsafe fn VSNPrintf(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -312(a6)
+            ".short 0x4eae", // jsr (-312, %a6)
             ".short -312",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45399,7 +45399,7 @@ pub unsafe fn Strncpy(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -438(a6)
+            ".short 0x4eae", // jsr (-438, %a6)
             ".short -438",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45426,7 +45426,7 @@ pub unsafe fn Strncat(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -444(a6)
+            ".short 0x4eae", // jsr (-444, %a6)
             ".short -444",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45448,7 +45448,7 @@ pub unsafe fn SDivMod64(UtilityBase: *mut Library, hi: LONG, lo: LONG, divisor: 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -450(a6)
+            ".short 0x4eae", // jsr (-450, %a6)
             ".short -450",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45470,7 +45470,7 @@ pub unsafe fn UDivMod64(UtilityBase: *mut Library, hi: ULONG, lo: ULONG, divisor
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -456(a6)
+            ".short 0x4eae", // jsr (-456, %a6)
             ".short -456",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45492,7 +45492,7 @@ pub unsafe fn VIRTUAL_GetClass(VirtualBase: *mut ::core::ffi::c_void) -> *mut Cl
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45516,7 +45516,7 @@ pub unsafe fn RefreshVirtualGadget(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -36(a6)
+            ".short 0x4eae", // jsr (-36, %a6)
             ".short -36",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -45544,7 +45544,7 @@ pub unsafe fn RethinkVirtualSize(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -42(a6)
+            ".short 0x4eae", // jsr (-42, %a6)
             ".short -42",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45572,7 +45572,7 @@ pub unsafe fn UpdateWorkbench(
             "movem.l %d0-%d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d0-%d1/%a0-%a1",
@@ -45599,7 +45599,7 @@ pub unsafe fn AddAppWindowA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -48(a6)
+            ".short 0x4eae", // jsr (-48, %a6)
             ".short -48",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45623,7 +45623,7 @@ pub unsafe fn RemoveAppWindow(WorkbenchBase: *mut Library, appWindow: *mut AppWi
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -54(a6)
+            ".short 0x4eae", // jsr (-54, %a6)
             ".short -54",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45654,7 +45654,7 @@ pub unsafe fn AddAppIconA(
             "move.l %a4, -(%sp)",
             "move.l {basereg}, %a6",
             "move.l {a4reg}, %a4",
-            ".short 0x4eae", // jsr -60(a6)
+            ".short 0x4eae", // jsr (-60, %a6)
             ".short -60",
             "move.l (%sp)+, %a4",
             "move.l (%sp)+, %a6",
@@ -45681,7 +45681,7 @@ pub unsafe fn RemoveAppIcon(WorkbenchBase: *mut Library, appIcon: *mut AppIcon) 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -66(a6)
+            ".short 0x4eae", // jsr (-66, %a6)
             ".short -66",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45708,7 +45708,7 @@ pub unsafe fn AddAppMenuItemA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -72(a6)
+            ".short 0x4eae", // jsr (-72, %a6)
             ".short -72",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45735,7 +45735,7 @@ pub unsafe fn RemoveAppMenuItem(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -78(a6)
+            ".short 0x4eae", // jsr (-78, %a6)
             ".short -78",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45760,7 +45760,7 @@ pub unsafe fn WBInfo(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -90(a6)
+            ".short 0x4eae", // jsr (-90, %a6)
             ".short -90",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45786,7 +45786,7 @@ pub unsafe fn OpenWorkbenchObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -96(a6)
+            ".short 0x4eae", // jsr (-96, %a6)
             ".short -96",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45811,7 +45811,7 @@ pub unsafe fn CloseWorkbenchObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -102(a6)
+            ".short 0x4eae", // jsr (-102, %a6)
             ".short -102",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45836,7 +45836,7 @@ pub unsafe fn WorkbenchControlA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -108(a6)
+            ".short 0x4eae", // jsr (-108, %a6)
             ".short -108",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45863,7 +45863,7 @@ pub unsafe fn AddAppWindowDropZoneA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -114(a6)
+            ".short 0x4eae", // jsr (-114, %a6)
             ".short -114",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45890,7 +45890,7 @@ pub unsafe fn RemoveAppWindowDropZone(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -120(a6)
+            ".short 0x4eae", // jsr (-120, %a6)
             ".short -120",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45916,7 +45916,7 @@ pub unsafe fn ChangeWorkbenchSelectionA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -126(a6)
+            ".short 0x4eae", // jsr (-126, %a6)
             ".short -126",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45942,7 +45942,7 @@ pub unsafe fn MakeWorkbenchObjectVisibleA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -132(a6)
+            ".short 0x4eae", // jsr (-132, %a6)
             ".short -132",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45969,7 +45969,7 @@ pub unsafe fn WhichWorkbenchObjectA(
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -138(a6)
+            ".short 0x4eae", // jsr (-138, %a6)
             ".short -138",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -45992,7 +45992,7 @@ pub unsafe fn WINDOW_GetClass(WindowBase: *mut ::core::ffi::c_void) -> *mut Clas
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",
@@ -46011,7 +46011,7 @@ pub unsafe fn LISTVIEW_GetClass(ListViewBase: *mut ::core::ffi::c_void) -> *mut 
             "movem.l %d1/%a0-%a1, -(%sp)",
             "move.l %a6, -(%sp)",
             "move.l {basereg}, %a6",
-            ".short 0x4eae", // jsr -30(a6)
+            ".short 0x4eae", // jsr (-30, %a6)
             ".short -30",
             "move.l (%sp)+, %a6",
             "movem.l (%sp)+, %d1/%a0-%a1",

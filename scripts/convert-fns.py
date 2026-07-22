@@ -420,7 +420,8 @@ def print_asm_implementation(rustfn, filename, line_number):
         print(f'            "move.l %{sreg}, -(%sp)",')
     for pmi in pre_move_instr:
         print(pmi)
-    print(f'            ".short 0x4eae", // jsr {fnoffset}(a6)')
+    #print(f'            "jsr ({fnoffset}, %a6)",')
+    print(f'            ".short 0x4eae", // jsr ({fnoffset}, %a6)')
     print(f'            ".short {fnoffset}",')
     if asm_additional_cast:
         print(asm_additional_cast)
