@@ -16,7 +16,7 @@ compile, because many pieces are still missing:
 
  - the LLVM compiler has only experimental support for m68k: it may produce invalid code or
    crash during compilation because of [many LLVM bugs for m68k](https://github.com/llvm/llvm-project/issues?q=state%3Aopen%20label%3A%22backend%3Am68k%22)
- - there's [many Rust bugs for m68k](https://github.com/rust-lang/rust/issues?q=is%3Aissue%20m68k%20label%3AO-motorola68k)
+ - there's [many Rust bugs for m68k](https://github.com/rust-lang/rust/issues?q=is%3Aissue%20label%3AO-motorola68k)
  - this crate isn't well tested: it may have bugs and corrupt memory
 
 If you still want to try this out, then read on..
@@ -107,6 +107,7 @@ which is the same as [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#H
 
 ## Related
 
+ - [amidos](https://github.com/retrokp/amidos): safe API to write CLI programs for Amiga m68k
  - [amiga-rust](https://github.com/grahambates/amiga-rust): direct access to hardware
  - [amiga-debug Visual Studio Code Extension](https://github.com/BartmanAbyss/vscode-amiga-debug/tree/master):
    C/C++ and build tools for Amiga
