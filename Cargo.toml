@@ -1,6 +1,6 @@
 [package]
 name = "amiga-sys"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 description = "Rust FFI bindings for the Amiga (m68k) system libraries"
 repository = "https://github.com/retrokp/amiga-sys"
