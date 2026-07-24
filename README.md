@@ -16,7 +16,7 @@ compile, because many pieces are still missing:
 
  - the LLVM compiler has only experimental support for m68k: it may produce invalid code or
    crash during compilation because of [many LLVM bugs for m68k](https://github.com/llvm/llvm-project/issues?q=state%3Aopen%20label%3A%22backend%3Am68k%22)
- - there's [many Rust bugs for m68k](https://github.com/rust-lang/rust/issues?q=is%3Aissue%20label%3AO-motorola68k)
+ - there's [many Rust bugs for m68k](https://github.com/rust-lang/rust/issues?q=is%3Aissue%20label%3AO-motorola68k%20state%3Aopen)
  - this crate isn't well tested: it may have bugs and corrupt memory
 
 If you still want to try this out, then read on..
