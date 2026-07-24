@@ -19,6 +19,13 @@ static CHIP_RAM: [u8; 13] = *include_bytes!("../chipdata.txt");
 #[unsafe(link_section = ".MEMF_FAST")]
 static FAST_RAM: &[u8] = include_bytes!("../fastdata.txt");
 
+// test struct to check that rect is even aligned, uses repr(C) so that Rust doesn't reorder fields
+#[repr(C)]
+struct RectWrapper {
+    padding: u8,
+    rect: amiga_sys::Rectangle,
+}
+
 #[unsafe(no_mangle)]
 // place _start to .init section so that it is the first code block in the executable
 // (the downside is that there's one extra code hunk in the Amiga executable)
@@ -58,6 +65,26 @@ extern "C" fn _start() {
             print(dos, out, b"fast ram address: not fast mem?: ");
         }
         print_u32_hex(dos, out, FAST_RAM.as_ptr() as u32, true);
+
+        // check alignment
+        assert_eq!(core::mem::align_of::<u8>(), 1);
+        assert_eq!(core::mem::align_of::<u16>(), 2);
+        assert_eq!(core::mem::align_of::<u32>(), 2);
+        let rectw = RectWrapper {
+            padding: 123,
+            rect: amiga_sys::Rectangle {
+                MinX: 10,
+                MinY: 10,
+                MaxX: 100,
+                MaxY: 100,
+            }
+        };
+        assert_eq!(rectw.padding, 123);
+        let rectw_addr = &rectw as *const _ as usize;
+        assert!(rectw_addr & 1 == 0); // even address
+        assert_eq!(&rectw.padding as *const _ as usize, rectw_addr);
+        assert_eq!(&rectw.rect as *const _ as usize, rectw_addr + 2);
+        assert_eq!(&rectw.rect.MinX as *const _ as usize, rectw_addr + 2);
 
         test_mathieeesingbas(dos, out);
         test_mathieeedoubbas(dos, out);
